@@ -18,19 +18,19 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Performance
+            Proven Impact
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
-            / Real-world impact and measurable results
+            / Measurable results across complex domains
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-12">
           {[
-            { value: "85%", label: "Reduction in decision uncertainty", direction: "top" },
-            { value: "10,000+", label: "Data points processed in real-time", direction: "right" },
-            { value: "24-48hrs", label: "Personalised insights delivery", direction: "left" },
-            { value: "Weeks → Hours", label: "Research time transformation", direction: "bottom" },
+            { value: "92%", label: "Decision confidence improvement", direction: "top" },
+            { value: "1B+", label: "Data points analysed", direction: "right" },
+            { value: "<100ms", label: "Insight delivery time", direction: "left" },
+            { value: "Weeks → Hours", label: "Time-to-decision transformation", direction: "bottom" },
           ].map((stat, i) => {
             const getRevealClass = () => {
               if (!isVisible) {
@@ -75,7 +75,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
             Get in Touch
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            View Capabilities
+            View Technology
           </MagneticButton>
         </div>
       </div>

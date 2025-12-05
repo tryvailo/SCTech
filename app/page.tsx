@@ -235,7 +235,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Capabilities", "Empowering", "About", "Performance"].map((item, index) => (
+          {["Home", "Technology", "Solutions", "Impact", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -275,27 +275,27 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="mb-4 flex flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 md:mb-6">
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Enterprise-grade AI</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Deep Intelligence</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Real-time Analytics</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Decision Analytics</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Intelligent Automation</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Predictive AI</p>
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Transforming Complex Choices into Clear Confidence</span>
+              <span className="text-balance">Data Intelligence for Decisions That Matter</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                We harness cutting-edge artificial intelligence, machine learning, and sophisticated data analytics to
-                transform overwhelming complexity into clear, actionable insights when decisions matter most.
+                We build AI systems that transform fragmented data into clear, confident decisions — 
+                where complexity meets clarity, and insight drives action.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(1)}>
-                Explore Capabilities
+                Explore Technology
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
                 Contact Us

@@ -17,10 +17,10 @@ export function WorkSection() {
           }`}
         >
           <h2 className="mb-1 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl lg:text-6xl">
-            Performance
+            Our Technology
           </h2>
           <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Real-world impact and measurable results
+            / Intelligence infrastructure for complex domains
           </p>
         </div>
 
@@ -28,26 +28,26 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "85%",
-              description: "Reduction in decision uncertainty",
+              title: "Deep Learning Core",
+              description: "Proprietary models trained to find patterns in high-dimensional, unstructured decision spaces",
               direction: "left",
             },
             {
               number: "02",
-              title: "10,000+",
-              description: "Data points processed in real-time",
+              title: "Real-time Analytics",
+              description: "Process thousands of variables simultaneously to surface actionable insights in milliseconds",
               direction: "right",
             },
             {
               number: "03",
-              title: "24-48hrs",
-              description: "Personalised insights delivery",
+              title: "Adaptive Intelligence",
+              description: "Self-improving algorithms that learn from outcomes and refine accuracy over time",
               direction: "left",
             },
             {
               number: "04",
-              title: "Weeks → Hours",
-              description: "Research time transformation",
+              title: "Explainable Outputs",
+              description: "Transparent reasoning paths that stakeholders can audit, trust, and act upon",
               direction: "right",
             },
           ].map((capability, i) => (

@@ -17,46 +17,45 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-xl font-light tracking-tight text-foreground md:text-2xl lg:text-4xl">
-            Empowering Life's Most Important Decisions
+            Intelligence at Scale
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            Technology with purpose. Intelligence with empathy.
+            Turning data complexity into decision clarity
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-            Behind every algorithm is a human story. Behind every data point is a family seeking clarity. We don't just
-            process information — we transform life's most overwhelming decisions into moments of confidence and peace
-            of mind.
+            Complex decisions demand more than data — they require intelligence. Our platform synthesises disparate 
+            information sources, applies domain-specific reasoning, and delivers insights that cut through noise.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:gap-x-16 lg:gap-y-6">
           {[
             {
-              title: "Reducing Stress",
+              title: "Predictive Modeling",
               description:
-                "Our AI eliminates the anxiety of not knowing by providing clear, comprehensive answers when you need them most.",
-              metric: "87% reduction in decision-related stress",
+                "Anticipate outcomes by analysing patterns across millions of historical data points with precision.",
+              metric: "89% forecast accuracy",
               direction: "top",
             },
             {
-              title: "Saving Time",
+              title: "Decision Intelligence",
               description:
-                "What used to take weeks of research and phone calls now takes hours, giving you more time for what truly matters.",
-              metric: "Average 40 hours saved per decision",
+                "Transform multi-variable complexity into ranked, explainable recommendations you can act on.",
+              metric: "4x faster decision cycles",
               direction: "right",
             },
             {
-              title: "Providing Clarity",
+              title: "Data Synthesis",
               description:
-                "We cut through jargon, hidden costs, and conflicting advice to deliver straightforward, actionable insights.",
-              metric: "95% of families feel confident in decisions",
+                "Unify fragmented sources into coherent, queryable intelligence layers that reveal hidden connections.",
+              metric: "50+ integration connectors",
               direction: "left",
             },
             {
-              title: "Supporting Families",
+              title: "Outcome Analytics",
               description:
-                "Our platform facilitates difficult conversations by providing objective information that brings loved ones together.",
-              metric: "78% improvement in family communication",
+                "Measure, learn, and optimise — continuous feedback loops that improve predictions every cycle.",
+              metric: "2.3x ROI improvement",
               direction: "bottom",
             },
           ].map((service, i) => (
@@ -71,7 +70,7 @@ export function ServicesSection() {
           style={{ transitionDelay: "600ms" }}
         >
           <p className="text-xs italic text-foreground/90 md:text-sm lg:text-lg">
-            Because when life gets complicated, your technology should make it simpler.
+            Where others see noise, we find signal.
           </p>
         </div>
       </div>
