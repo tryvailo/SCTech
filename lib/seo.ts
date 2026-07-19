@@ -1,4 +1,4 @@
-const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://sc-tech.vercel.app").replace(/\/$/, "")
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.smartcoretech.co.uk").replace(/\/$/, "")
 
 export const siteConfig = {
   name: "SmartCore Technologies Ltd",
