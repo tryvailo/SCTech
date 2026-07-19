@@ -61,13 +61,27 @@ export default function Home() {
   }
 
   useEffect(() => {
+    const canScrollSection = (target: EventTarget | null, deltaY: number) => {
+      if (!(target instanceof Element)) return false
+
+      const section = target.closest("section")
+      if (!section || section.scrollHeight <= section.clientHeight) return false
+
+      const maxScrollTop = section.scrollHeight - section.clientHeight
+      if (deltaY > 0) return section.scrollTop < maxScrollTop - 1
+      if (deltaY < 0) return section.scrollTop > 1
+
+      return false
+    }
+
     const handleTouchStart = (e: TouchEvent) => {
       touchStartY.current = e.touches[0].clientY
       touchStartX.current = e.touches[0].clientX
     }
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (Math.abs(e.touches[0].clientY - touchStartY.current) > 10) {
+      const deltaY = touchStartY.current - e.touches[0].clientY
+      if (Math.abs(deltaY) > 10 && !canScrollSection(e.target, deltaY)) {
         e.preventDefault()
       }
     }
@@ -78,7 +92,7 @@ export default function Home() {
       const deltaY = touchStartY.current - touchEndY
       const deltaX = touchStartX.current - touchEndX
 
-      if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50) {
+      if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50 && !canScrollSection(e.target, deltaY)) {
         if (deltaY > 0 && currentSection < 4) {
           scrollToSection(currentSection + 1)
         } else if (deltaY < 0 && currentSection > 0) {
@@ -173,7 +187,7 @@ export default function Home() {
   }, [currentSection])
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-background">
+    <main className="relative h-[100dvh] w-full overflow-hidden bg-background">
       <CustomCursor />
       <GrainOverlay />
 
@@ -213,7 +227,7 @@ export default function Home() {
       </div>
 
       <nav
-        className={`relative md:fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-4 transition-opacity duration-700 md:px-12 md:py-6 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-4 transition-opacity duration-700 sm:px-6 md:px-12 md:py-6 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -234,8 +248,8 @@ export default function Home() {
           </div>
         </button>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Technology", "Solutions", "Impact", "Contact"].map((item, index) => (
+        <div className="hidden items-center gap-8 lg:flex">
+          {["Home", "Approach", "Capabilities", "Outcomes", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -261,7 +275,7 @@ export default function Home() {
       <div
         ref={scrollContainerRef}
         data-scroll-container
-        className={`relative z-10 flex h-screen overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${
+        className={`relative z-10 flex h-[100dvh] overflow-x-auto overflow-y-hidden transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
         style={{
@@ -271,34 +285,34 @@ export default function Home() {
           paddingBottom: `calc(var(--footer-height, 0px) + env(safe-area-inset-bottom))`,
         }}
       >
-        <section className="flex min-h-screen w-screen shrink-0 flex-col justify-center px-6 py-20 md:px-12 md:py-24">
+        <section className="flex h-full w-screen shrink-0 flex-col justify-center overflow-y-auto px-6 py-6 md:px-12 md:py-14">
           <div className="max-w-4xl">
             <div className="mb-4 flex flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 md:mb-6">
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Deep Intelligence</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Strategic Advisory</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Decision Analytics</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">AI-Enabled Automation</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Predictive AI</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Operational Intelligence</p>
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Data Intelligence for Decisions That Matter</span>
+              <span className="text-balance">Practical Intelligence for Complex Work</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                We build AI systems that transform fragmented data into clear, confident decisions — 
-                where complexity meets clarity, and insight drives action.
+                We help organisations make sense of complex operations, improve decision flows, and build AI-enabled
+                systems that support better work at scale.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(1)}>
-                Explore Technology
+                Explore Approach
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
-                Contact Us
+                Discuss a Project
               </MagneticButton>
             </div>
           </div>

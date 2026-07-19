@@ -8,54 +8,54 @@ export function ServicesSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start justify-center overflow-y-auto px-6 pb-20 pt-20 md:px-12 md:pb-16 md:pt-20 lg:items-center lg:overflow-y-visible lg:px-16 lg:py-16"
+      className="flex h-full w-screen shrink-0 snap-start justify-center overflow-y-auto px-6 py-6 md:px-12 md:py-14 lg:items-center lg:px-16"
     >
-      <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-center">
+      <div className="mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center">
         <div
           className={`mb-4 transition-all duration-700 md:mb-5 lg:mb-8 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
           <h2 className="mb-2 font-sans text-xl font-light tracking-tight text-foreground md:text-2xl lg:text-4xl">
-            Intelligence at Scale
+            Capabilities in Practice
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            Turning data complexity into decision clarity
+            From ambiguous operations to usable systems
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-            Complex decisions demand more than data — they require intelligence. Our platform synthesises disparate 
-            information sources, applies domain-specific reasoning, and delivers insights that cut through noise.
+            Complex work rarely needs technology first. It needs structure: a clearer view of the problem, the workflow,
+            the data, and the points where automation can make work easier to run.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:gap-x-16 lg:gap-y-6">
           {[
             {
-              title: "Predictive Modeling",
+              title: "Process Mapping",
               description:
-                "Anticipate outcomes by analysing patterns across millions of historical data points with precision.",
-              metric: "89% forecast accuracy",
+                "Map how people, tools, data, and decisions move through the organisation before choosing what to change.",
+              metric: "Discovery -> Direction",
               direction: "top",
             },
             {
-              title: "Decision Intelligence",
+              title: "Automation Design",
               description:
-                "Transform multi-variable complexity into ranked, explainable recommendations you can act on.",
-              metric: "4x faster decision cycles",
+                "Shape practical workflows where AI and automation reduce repeated effort without hiding accountability.",
+              metric: "Manual -> Assisted",
               direction: "right",
             },
             {
-              title: "Data Synthesis",
+              title: "Intelligence Layers",
               description:
-                "Unify fragmented sources into coherent, queryable intelligence layers that reveal hidden connections.",
-              metric: "50+ integration connectors",
+                "Connect scattered information into clearer views that help teams see patterns, risks, and next steps.",
+              metric: "Fragmented -> Structured",
               direction: "left",
             },
             {
-              title: "Outcome Analytics",
+              title: "Delivery Support",
               description:
-                "Measure, learn, and optimise — continuous feedback loops that improve predictions every cycle.",
-              metric: "2.3x ROI improvement",
+                "Move from strategy into working prototypes, internal tools, and systems that fit the operating reality.",
+              metric: "Idea -> Capability",
               direction: "bottom",
             },
           ].map((service, i) => (
@@ -70,7 +70,7 @@ export function ServicesSection() {
           style={{ transitionDelay: "600ms" }}
         >
           <p className="text-xs italic text-foreground/90 md:text-sm lg:text-lg">
-            Where others see noise, we find signal.
+            When work is complex, the right system should make the next step clearer.
           </p>
         </div>
       </div>
@@ -88,21 +88,8 @@ function ServiceCard({
   isVisible: boolean
 }) {
   const getRevealClass = () => {
-    if (!isVisible) {
-      switch (service.direction) {
-        case "left":
-          return "-translate-x-16 opacity-0"
-        case "right":
-          return "translate-x-16 opacity-0"
-        case "top":
-          return "-translate-y-16 opacity-0"
-        case "bottom":
-          return "translate-y-16 opacity-0"
-        default:
-          return "translate-y-12 opacity-0"
-      }
-    }
-    return "translate-x-0 translate-y-0 opacity-100"
+    if (!isVisible) return "translate-y-6 opacity-0"
+    return "translate-y-0 opacity-100"
   }
 
   return (

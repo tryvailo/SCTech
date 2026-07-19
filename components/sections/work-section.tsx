@@ -8,19 +8,19 @@ export function WorkSection() {
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start justify-center px-6 pt-20 pb-20 md:px-12 md:pt-20 md:pb-16 lg:items-center lg:px-16 lg:pt-0 lg:pb-0"
+      className="flex h-full w-screen shrink-0 snap-start justify-center overflow-y-auto px-6 py-6 md:px-12 md:py-14 lg:items-center lg:px-16"
     >
-      <div className="mx-auto flex h-full w-full max-w-7xl flex-col justify-center">
+      <div className="mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center">
         <div
           className={`mb-4 transition-all duration-700 md:mb-6 lg:mb-12 ${
             isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
           }`}
         >
           <h2 className="mb-1 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl lg:text-6xl">
-            Our Technology
+            Our Approach
           </h2>
           <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Intelligence infrastructure for complex domains
+            / Advisory, automation, and systems delivery for complex work
           </p>
         </div>
 
@@ -28,26 +28,30 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "Deep Learning Core",
-              description: "Proprietary models trained to find patterns in high-dimensional, unstructured decision spaces",
+              title: "Strategic Advisory",
+              description:
+                "Clarify priorities, map operational challenges, and identify where technology or process change can create meaningful leverage",
               direction: "left",
             },
             {
               number: "02",
-              title: "Real-time Analytics",
-              description: "Process thousands of variables simultaneously to surface actionable insights in milliseconds",
+              title: "Process Intelligence",
+              description:
+                "Turn fragmented workflows, data points, and decision paths into operating models that are easier to understand and improve",
               direction: "right",
             },
             {
               number: "03",
-              title: "Adaptive Intelligence",
-              description: "Self-improving algorithms that learn from outcomes and refine accuracy over time",
+              title: "AI-Enabled Automation",
+              description:
+                "Design practical automation layers that reduce manual effort while keeping human judgement in the right places",
               direction: "left",
             },
             {
               number: "04",
-              title: "Explainable Outputs",
-              description: "Transparent reasoning paths that stakeholders can audit, trust, and act upon",
+              title: "Systems Delivery",
+              description:
+                "Support the move from discovery to prototypes, internal tools, workflow redesign, and implementation",
               direction: "right",
             },
           ].map((capability, i) => (
@@ -69,10 +73,8 @@ function CapabilityCard({
   isVisible: boolean
 }) {
   const getRevealClass = () => {
-    if (!isVisible) {
-      return capability.direction === "left" ? "-translate-x-16 opacity-0" : "translate-x-16 opacity-0"
-    }
-    return "translate-x-0 opacity-100"
+    if (!isVisible) return "translate-y-6 opacity-0"
+    return "translate-y-0 opacity-100"
   }
 
   return (

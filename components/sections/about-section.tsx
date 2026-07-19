@@ -9,46 +9,33 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
   return (
     <section
       ref={ref}
-      className="flex h-screen w-screen shrink-0 snap-start items-center px-4 pt-20 md:px-12 md:pt-0 lg:px-16"
+      className="flex h-full w-screen shrink-0 snap-start items-start overflow-y-auto px-4 py-6 md:items-center md:px-12 md:py-14 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-8 transition-all duration-700 md:mb-16 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Proven Impact
+          <h2 className="mb-2 font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
+            Practical Outcomes
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
-            / Measurable results across complex domains
+            / Clearer work without narrowing the operating context
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 md:gap-12">
+        <div className="grid gap-5 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {[
-            { value: "92%", label: "Decision confidence improvement", direction: "top" },
-            { value: "1B+", label: "Data points analysed", direction: "right" },
-            { value: "<100ms", label: "Insight delivery time", direction: "left" },
-            { value: "Weeks → Hours", label: "Time-to-decision transformation", direction: "bottom" },
+            { value: "Clarity", label: "Sharper understanding of where change will create the most value", direction: "top" },
+            { value: "Automation", label: "Repeatable workflows supported by practical AI-enabled systems", direction: "right" },
+            { value: "Flow", label: "Information structured around the moments where teams need to act", direction: "left" },
+            { value: "Scale", label: "Tools and processes designed to grow with operational complexity", direction: "bottom" },
           ].map((stat, i) => {
-            const getRevealClass = () => {
-              if (!isVisible) {
-                switch (stat.direction) {
-                  case "left":
-                    return "-translate-x-16 opacity-0"
-                  case "right":
-                    return "translate-x-16 opacity-0"
-                  case "top":
-                    return "-translate-y-16 opacity-0"
-                  case "bottom":
-                    return "translate-y-16 opacity-0"
-                  default:
-                    return "translate-y-12 opacity-0"
-                }
+              const getRevealClass = () => {
+                if (!isVisible) return "translate-y-6 opacity-0"
+                return "translate-y-0 opacity-100"
               }
-              return "translate-x-0 translate-y-0 opacity-100"
-            }
 
             return (
               <div
@@ -58,24 +45,26 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
                   transitionDelay: `${i * 150}ms`,
                 }}
               >
-                <div className="mb-3 text-4xl font-light text-foreground md:text-5xl lg:text-6xl">{stat.value}</div>
-                <div className="font-sans text-base leading-relaxed text-foreground/80 md:text-lg">{stat.label}</div>
+                    <div className="mb-2 text-2xl font-light text-foreground md:mb-3 md:text-4xl lg:text-5xl">
+                      {stat.value}
+                    </div>
+                    <div className="font-sans text-sm leading-relaxed text-foreground/80 md:text-lg">{stat.label}</div>
               </div>
             )
           })}
         </div>
 
         <div
-          className={`mt-12 flex flex-wrap gap-3 transition-all duration-700 md:mt-16 md:gap-4 ${
+          className={`mt-8 flex flex-wrap gap-3 transition-all duration-700 md:mt-16 md:gap-4 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
           style={{ transitionDelay: "600ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Get in Touch
+            Discuss a Project
           </MagneticButton>
-          <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection?.(1)}>
-            View Technology
+          <MagneticButton size="lg" variant="secondary" className="hidden sm:inline-flex" onClick={() => scrollToSection?.(1)}>
+            View Approach
           </MagneticButton>
         </div>
       </div>

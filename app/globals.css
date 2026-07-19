@@ -133,7 +133,6 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    cursor: none;
   }
   body {
     @apply bg-background text-foreground;
@@ -156,5 +155,11 @@
   button {
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none;
   }
 }
