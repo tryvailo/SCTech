@@ -31,6 +31,12 @@ export interface InsightOutcome {
   detail: string
 }
 
+export interface InsightAnswerBox {
+  heading: string
+  paragraphs: string[]
+  bullets?: string[]
+}
+
 export interface Insight {
   slug: string
   title: string
@@ -45,6 +51,8 @@ export interface Insight {
   searchIntent: "Informational" | "Commercial Investigation" | "Implementation"
   keywords: string[]
   summary: string
+  answerBox?: InsightAnswerBox
+  editorialNote?: string
   outcome?: InsightOutcome
   takeaways: string[]
   sections: InsightSection[]
@@ -130,6 +138,10 @@ const sharedSources = {
     title: "AWS: Amazon Textract",
     url: "https://aws.amazon.com/textract/",
   },
+  awsIntelligentDocumentProcessing: {
+    title: "AWS: what is intelligent document processing?",
+    url: "https://aws.amazon.com/what-is/intelligent-document-processing/",
+  },
   ibmAiConsulting: {
     title: "IBM: artificial intelligence services and consulting",
     url: "https://www.ibm.com/consulting/artificial-intelligence",
@@ -152,9 +164,9 @@ export const insights: Insight[] = [
     description:
       "Practical AI workflow automation examples for teams that need to turn repetitive operational work into controlled, reviewable systems.",
     seoDescription:
-      "Explore practical AI workflow automation examples for operations teams, including feedback analysis, product data enrichment, document processing, reporting, and market monitoring.",
+      "Explore 12 AI workflow automation examples for operations teams, with inputs, review points, outputs, and production metrics.",
     category: "Guide",
-    readingTime: "11 min read",
+    readingTime: "12 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
     targetQuery: "AI workflow automation examples",
@@ -171,6 +183,18 @@ export const insights: Insight[] = [
     ],
     summary:
       "The best AI workflow automation examples are not one-off prompts. They are repeatable operating systems that collect inputs, apply AI to a defined task, route exceptions to people, and produce an output the business can trust.",
+    answerBox: {
+      heading: "The strongest first AI workflow automations are narrow, repeatable, and reviewable.",
+      paragraphs: [
+        "Good examples include feedback analysis, product data cleanup, image QA, document extraction, content checks, reporting, and competitor monitoring. Each one has defined inputs, a model task, rules, human review, and a measurable output.",
+      ],
+      bullets: [
+        "Best first fit: frequent operational work with clear acceptance criteria.",
+        "Avoid first: rare, subjective, high-risk decisions that cannot be reviewed before use.",
+      ],
+    },
+    editorialNote:
+      "Reviewed by SmartCore Technologies as a workflow-design guide for operations, product, content, and reporting teams.",
     takeaways: [
       "Start with workflows that are frequent, measurable, and reviewable before moving into high-risk automation.",
       "A useful AI workflow has inputs, rules, model tasks, review points, outputs, and monitoring, not just a chatbot or prompt library.",
@@ -193,6 +217,30 @@ export const insights: Insight[] = [
             ["Review", "Uncertain, sensitive, or externally visible outputs go to a person before they become operational truth."],
             ["Output", "The workflow creates a report, queue, dataset, ticket, update, dashboard, or decision pack."],
             ["Monitoring", "The team tracks correction patterns, exceptions, drift, cycle time, and whether the output is actually used."],
+          ],
+        },
+      },
+      {
+        heading: "12 AI Workflow Automation Examples Matrix",
+        paragraphs: [
+          "A useful examples list should show the operating pattern, not only the department. The matrix below maps each workflow to the input, AI task, human control, and output a production team would expect.",
+          "Use it as a shortlist for choosing the first workflow to assess before selecting tools or building a custom system.",
+        ],
+        table: {
+          columns: ["Example", "Input", "AI task", "Reviewable output"],
+          rows: [
+            ["Customer review intelligence", "Reviews, surveys, support notes", "Classify themes and extract evidence", "Issue queue and weekly insight brief"],
+            ["Product data enrichment", "Supplier sheets, pages, images", "Extract and normalise attributes", "PIM-ready suggestions with exceptions"],
+            ["Image QA", "Catalogue images and image rules", "Detect visual issues and mismatches", "Asset approval or remediation queue"],
+            ["Document extraction", "PDFs, forms, invoices, certificates", "Classify documents and extract fields", "Structured records with source evidence"],
+            ["Content fact checking", "Drafts and approved sources", "Find unsupported claims", "Annotated review notes"],
+            ["Release notes", "Tickets, commits, project notes", "Group changes and draft summaries", "Reviewable release update"],
+            ["Leadership reporting", "Dashboards, tasks, updates", "Summarise status and gaps", "Decision-ready briefing"],
+            ["Competitor monitoring", "Approved public sources", "Detect and classify changes", "Evidence-backed market brief"],
+            ["Support triage", "Tickets and historical resolutions", "Classify urgency and likely route", "Prioritised queue with confidence labels"],
+            ["Supplier onboarding", "Forms and compliance documents", "Extract fields and flag missing evidence", "Reviewer checklist"],
+            ["Knowledge base refresh", "Support cases and docs", "Identify outdated or missing guidance", "Draft updates for approval"],
+            ["Data quality monitoring", "Exports and system records", "Find duplicates, missing values, and anomalies", "Correction queue"],
           ],
         },
       },
@@ -311,6 +359,24 @@ export const insights: Insight[] = [
           "Measure cycle time, exception rate, correction rate, and whether the team uses the output.",
           "Keep human judgement where accuracy, accountability, or customer trust depends on it.",
         ],
+      },
+      {
+        heading: "What To Measure Before Production",
+        paragraphs: [
+          "AI workflow automation should be judged by whether it improves the operating loop, not by how many outputs it generates. Production metrics should connect speed, quality, coverage, review effort, and adoption.",
+          "A practical pilot should run on real examples and include edge cases, rejected outputs, reviewer corrections, and unresolved exceptions.",
+        ],
+        table: {
+          columns: ["Metric", "Why it matters"],
+          rows: [
+            ["Cycle time", "Shows whether work moves from input to approved output faster."],
+            ["Coverage", "Shows whether the workflow processes more of the backlog or source set."],
+            ["Correction rate", "Shows how often reviewers need to edit AI output."],
+            ["Exception rate", "Shows where source quality, rules, or model output still break down."],
+            ["Adoption", "Shows whether the target team actually uses the output in decisions."],
+            ["Control quality", "Shows whether evidence, ownership, and escalation paths are visible enough for production."],
+          ],
+        },
       },
     ],
     faq: [
@@ -453,7 +519,7 @@ export const insights: Insight[] = [
   {
     slug: "how-to-know-if-a-workflow-is-worth-automating",
     title: "AI Automation Assessment Checklist: How To Choose the Right Workflow",
-    seoTitle: "AI Automation Assessment Checklist for Choosing the Right Workflow",
+    seoTitle: "AI Automation Assessment Checklist for Workflows",
     description:
       "A practical assessment checklist for choosing which workflow to automate with AI before investing in a pilot or production build.",
     seoDescription:
@@ -477,6 +543,18 @@ export const insights: Insight[] = [
     ],
     summary:
       "An AI automation assessment helps a team choose one workflow that is frequent, measurable, input-ready, reviewable, and valuable enough to test before a production build.",
+    answerBox: {
+      heading: "Score one workflow before choosing an AI tool, consultant, or custom build.",
+      paragraphs: [
+        "A strong AI automation candidate is frequent, input-ready, measurable, reviewable, and valuable enough to improve. If those conditions are weak, the next step is usually process redesign, data cleanup, or clearer ownership before automation.",
+      ],
+      bullets: [
+        "Use the checklist with real examples from the current process.",
+        "A high score supports a pilot; a low score points to cleanup or redesign first.",
+      ],
+    },
+    editorialNote:
+      "Reviewed by SmartCore Technologies as an implementation checklist for workflow diagnostics and AI readiness decisions.",
     takeaways: [
       "Assess one workflow at a time; broad AI readiness work is less useful when the operational loop is still undefined.",
       "Strong candidates have repeatable inputs, clear outputs, visible drag, and errors that can be reviewed before they matter.",
@@ -579,9 +657,9 @@ export const insights: Insight[] = [
         },
       },
       {
-        heading: "Step 6: Use a Simple Workflow Scorecard",
+        heading: "Step 6: Use the SmartCore Workflow Fit Score",
         paragraphs: [
-          "A scorecard turns the assessment from opinion into a decision. Score each area from zero to two. The goal is not to create false precision; it is to make trade-offs visible before the team chooses a pilot.",
+          "The SmartCore Workflow Fit Score turns the assessment from opinion into a decision. Score each area from zero to two. The goal is not to create false precision; it is to make trade-offs visible before the team chooses a pilot.",
           "A workflow that scores high across frequency, inputs, output clarity, reviewability, risk control, and value is a good automation candidate. A workflow with one or two weak areas may still be worth testing after a focused cleanup step.",
         ],
         table: {
@@ -593,6 +671,22 @@ export const insights: Insight[] = [
             ["Reviewability", "Errors hard to see", "Some cases reviewable", "Outputs can be checked before use"],
             ["Risk control", "High impact with weak controls", "Controls need design", "Boundaries, escalation, and ownership are clear"],
             ["Value", "Limited operational effect", "Potential value but unmeasured", "Clear drag, delay, rework, or decision impact"],
+          ],
+        },
+      },
+      {
+        heading: "How To Interpret the Workflow Fit Score",
+        paragraphs: [
+          "Add the six criteria for a score from zero to twelve. The number is a decision aid, not a promise. A high score means the workflow is ready to test; a low score means the team should improve the process before asking AI to carry it.",
+          "This is especially useful when several teams have competing automation ideas. The score makes it easier to choose one first workflow without turning the discussion into a vendor or technology debate.",
+        ],
+        table: {
+          columns: ["Score", "Recommendation", "Next step"],
+          rows: [
+            ["10-12", "Strong pilot candidate", "Run a narrow workflow test with real inputs, review rules, and success metrics."],
+            ["7-9", "Promising but incomplete", "Fix the weakest criterion before a pilot, usually input quality, output clarity, or ownership."],
+            ["4-6", "Redesign or cleanup first", "Map the process, standardise sources, define acceptance criteria, or clarify ownership."],
+            ["0-3", "Keep manual for now", "Do not automate until the workflow is more frequent, measurable, or reviewable."],
           ],
         },
       },
@@ -648,6 +742,11 @@ export const insights: Insight[] = [
         answer:
           "Do not automate first when the task is rare, poorly owned, highly subjective, missing source data, impossible to review, or risky enough that mistakes cannot be caught before they matter.",
       },
+      {
+        question: "Is this the same as a general AI readiness checklist?",
+        answer:
+          "No. A general AI readiness checklist looks at the organisation. This checklist scores one workflow, which makes it more practical for choosing a first automation pilot.",
+      },
     ],
     sources: [
       sharedSources.atlassianAiWorkflow,
@@ -671,7 +770,7 @@ export const insights: Insight[] = [
     seoDescription:
       "Compare AI automation consulting, off-the-shelf tools, and custom AI workflows so operations teams can choose the right path before implementation.",
     category: "Guide",
-    readingTime: "11 min read",
+    readingTime: "12 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
     targetQuery: "AI automation consulting",
@@ -686,9 +785,23 @@ export const insights: Insight[] = [
       "AI automation tools",
       "AI workflow consulting",
       "AI implementation consultant",
+      "automation consulting",
+      "AI automation consulting UK",
     ],
     summary:
       "AI automation consulting is most useful when a team needs to choose, design, or govern a workflow that cannot be solved safely by a single off-the-shelf tool.",
+    answerBox: {
+      heading: "Use a consultant when the workflow is valuable but not yet ready for a tool or build.",
+      paragraphs: [
+        "A tool is enough when the process is standard and low-risk. A consultant helps when the workflow needs diagnosis, source rules, review design, ownership, or a commercial decision between tool, custom workflow, cleanup, and process redesign.",
+      ],
+      bullets: [
+        "Best consultant fit: unclear workflow boundary, messy inputs, cross-team ownership, or review risk.",
+        "Best tool fit: known task, clean source, simple owner, and built-in approval path.",
+      ],
+    },
+    editorialNote:
+      "Reviewed by SmartCore Technologies as a commercial guide for operations teams comparing consulting, tools, and controlled workflow builds.",
     takeaways: [
       "Use a tool when the workflow is standard, low-risk, and already fits the tool's data model.",
       "Use a consultant when the workflow is valuable but unclear, cross-functional, sensitive, or difficult to scope internally.",
@@ -790,6 +903,22 @@ export const insights: Insight[] = [
         },
       },
       {
+        heading: "Automation Consulting for UK and European Teams",
+        paragraphs: [
+          "For UK and European operations teams, AI automation consulting often needs to account for practical governance as well as workflow design. Source access, customer data, supplier records, approval paths, and audit expectations can shape whether a tool or custom workflow is appropriate.",
+          "The useful consulting output is not a generic AI roadmap. It is a workflow-level recommendation that shows what can be tested safely, what should stay under human review, and what needs data or process cleanup first.",
+        ],
+        table: {
+          columns: ["Buying question", "What a useful consulting answer should cover"],
+          rows: [
+            ["Can this be handled by an existing tool?", "Whether the workflow fits the tool's source model, review flow, and output format."],
+            ["Is a custom workflow justified?", "Which business rules, evidence needs, or integrations require a controlled layer."],
+            ["What governance is needed?", "Source boundaries, data handling, reviewer ownership, audit trail, and escalation rules."],
+            ["How small can the first pilot be?", "The narrowest workflow test that can prove output quality on real examples."],
+          ],
+        },
+      },
+      {
         heading: "What Good AI Automation Consulting Should Produce",
         paragraphs: [
           "Good consulting output should be usable by operators, leaders, and builders. It should not stop at a strategy narrative. The team needs a clear workflow decision, a testable scope, and enough operational detail to move into implementation.",
@@ -872,7 +1001,7 @@ export const insights: Insight[] = [
   {
     slug: "document-processing-data-extraction-automation",
     title: "Document Processing and Data Extraction Automation",
-    seoTitle: "AI Document Processing and Data Extraction Automation",
+    seoTitle: "Intelligent Document Processing and Data Extraction",
     description:
       "How AI document processing workflows extract fields, classify files, validate results, and route exceptions from PDFs, forms, invoices, and business documents.",
     seoDescription:
@@ -885,17 +1014,31 @@ export const insights: Insight[] = [
     searchIntent: "Commercial Investigation",
     keywords: [
       "document processing automation",
+      "intelligent document processing",
+      "IDP automation",
       "AI document processing",
       "document data extraction",
       "automated document processing",
       "data extraction automation",
       "AI data extraction from documents",
-      "intelligent document processing",
       "document extraction automation",
       "PDF data extraction automation",
+      "OCR vs intelligent document processing",
     ],
     summary:
       "Document processing automation turns PDFs, forms, invoices, certificates, and document packs into structured records with source evidence, validation rules, and human review where accuracy matters.",
+    answerBox: {
+      heading: "Intelligent document processing is more than OCR.",
+      paragraphs: [
+        "OCR converts images or scans into text. Intelligent document processing classifies documents, extracts fields and tables, validates the result, captures evidence, and routes exceptions before structured data enters business systems.",
+      ],
+      bullets: [
+        "Best first fit: repeated document families with known fields and reviewers.",
+        "Production requirement: confidence, source evidence, validation rules, and an exception queue.",
+      ],
+    },
+    editorialNote:
+      "Reviewed by SmartCore Technologies as a workflow guide for document extraction, validation, and reviewable operations.",
     takeaways: [
       "The workflow should classify the document, extract fields, validate the result, and route exceptions instead of only running OCR.",
       "Good first candidates have repeated document types, clear target fields, known downstream systems, and reviewers who can verify errors.",
@@ -933,6 +1076,22 @@ export const insights: Insight[] = [
           "Manual review slows down when documents require cross-checking against records or policies.",
           "Errors become harder to unwind when extracted data flows into finance, compliance, onboarding, reporting, or customer operations.",
         ],
+      },
+      {
+        heading: "IDP vs OCR vs Document AI",
+        paragraphs: [
+          "Search results often use OCR, Document AI, and intelligent document processing together, but they are not the same operating layer. The distinction matters when a team is choosing what to automate.",
+          "OCR is a component. Document AI is usually a platform or model capability. Intelligent document processing is the wider workflow that turns document content into validated, reviewable business data.",
+        ],
+        table: {
+          columns: ["Term", "What it does", "Where it fits"],
+          rows: [
+            ["OCR", "Reads printed or scanned text from images and documents.", "Useful capture step, but not enough for field validation or routing."],
+            ["Document AI", "Uses AI models to classify, extract, summarise, or understand document content.", "Model capability that needs workflow rules around it."],
+            ["Intelligent document processing", "Combines capture, classification, extraction, validation, review, and export.", "Production workflow for turning documents into structured operational records."],
+            ["Data extraction automation", "Pulls specific fields or tables into a structured format.", "A core step inside IDP, strongest when target fields and evidence rules are defined."],
+          ],
+        },
       },
       {
         heading: "How AI Document Data Extraction Works",
@@ -1054,12 +1213,18 @@ export const insights: Insight[] = [
         answer:
           "Early workflows should usually create a reviewable queue or import file first. Direct system updates are safer after the team has validated field accuracy, exception handling, audit trails, and reviewer ownership.",
       },
+      {
+        question: "What is the difference between intelligent document processing and Document AI?",
+        answer:
+          "Document AI usually refers to model or platform capabilities for understanding documents. Intelligent document processing is the end-to-end workflow that adds validation, review, routing, and approved export into business systems.",
+      },
     ],
     sources: [
       sharedSources.googleDocumentAi,
       sharedSources.azureDocumentIntelligence,
       sharedSources.microsoftDocumentProcessing,
       sharedSources.awsTextract,
+      sharedSources.awsIntelligentDocumentProcessing,
       sharedSources.ibmBusinessProcessAutomation,
     ],
     related: [
@@ -1174,13 +1339,13 @@ export const insights: Insight[] = [
   {
     slug: "product-data-cleanup-automation",
     title: "Product Data Cleanup Automation for PIM and Catalogue Teams",
-    seoTitle: "AI Product Data Cleanup Automation for PIM and Ecommerce Teams",
+    seoTitle: "AI Product Data Cleanup Automation for Ecommerce",
     description:
       "How AI workflows clean, enrich, validate, and prepare product catalogue data for PIM, ecommerce, merchandising, and search teams.",
     seoDescription:
       "Learn how AI product data cleanup automation enriches attributes, standardises catalogue records, validates fields, and prepares reviewable PIM imports.",
     category: "Automation Example",
-    readingTime: "11 min read",
+    readingTime: "12 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
     targetQuery: "AI product data cleanup automation",
@@ -1189,11 +1354,14 @@ export const insights: Insight[] = [
       "AI product data cleanup",
       "AI product data cleanup automation",
       "PIM data automation",
+      "PIM data cleansing",
       "PIM data quality automation",
+      "product data quality",
       "catalogue data enrichment",
       "catalog data enrichment",
       "product data enrichment automation",
       "ecommerce product data enrichment",
+      "ecommerce PIM automation",
       "product attribute extraction",
       "product data quality automation",
       "product information management automation",
@@ -1201,6 +1369,18 @@ export const insights: Insight[] = [
     ],
     summary:
       "Product data cleanup automation uses AI to enrich missing attributes, normalise messy catalogue records, validate field quality, and prepare reviewable updates before they enter a PIM, ecommerce platform, or merchandising workflow.",
+    answerBox: {
+      heading: "AI product data cleanup should improve PIM data quality without silent catalogue rewrites.",
+      paragraphs: [
+        "The workflow should extract attributes, standardise values, find conflicts, and prepare evidence-linked suggestions. Catalogue owners still approve changes before they affect PIM records, ecommerce pages, search filters, or marketplace feeds.",
+      ],
+      bullets: [
+        "Best first fit: one category, one attribute family, or one supplier feed.",
+        "Production requirement: source evidence, allowed values, exception reasons, and approval history.",
+      ],
+    },
+    editorialNote:
+      "Reviewed by SmartCore Technologies as an ecommerce operations guide for PIM data quality, enrichment, and reviewable catalogue updates.",
     takeaways: [
       "Start with one catalogue segment or attribute family so source rules, accepted values, and reviewer decisions are easy to validate.",
       "AI product data cleanup should create evidence-linked suggestions and exception queues, not silent PIM rewrites.",
@@ -1238,6 +1418,22 @@ export const insights: Insight[] = [
           "Weak taxonomy: products sit in broad or incorrect categories, so the wrong attributes are requested or displayed.",
           "No review history: teams cannot see why a value was changed, who approved it, or which source supported it.",
         ],
+      },
+      {
+        heading: "PIM Data Cleansing vs Enrichment vs Governance",
+        paragraphs: [
+          "Product data work is easier to automate when the team separates cleanup, enrichment, and governance. Each layer has a different job, even when the same workflow supports all three.",
+          "This distinction also helps search and operations teams choose a useful first project. Cleaning every product record at once is broad; improving one category's missing attributes or supplier feed quality is easier to test.",
+        ],
+        table: {
+          columns: ["Layer", "What it fixes", "AI workflow output"],
+          rows: [
+            ["Data cleansing", "Duplicates, invalid values, inconsistent units, missing identifiers, and formatting issues.", "Correction queue or clean import file."],
+            ["Data enrichment", "Missing attributes, taxonomy fields, compatibility notes, packaging details, and category-specific values.", "Suggested values with source evidence."],
+            ["Data governance", "Source priority, allowed values, approval rules, correction history, and import controls.", "Rules, exceptions, and reviewer decisions."],
+            ["Ecommerce readiness", "Search filters, recommendations, marketplace feed requirements, and merchandising rules.", "Approved updates mapped to downstream systems."],
+          ],
+        },
       },
       {
         heading: "How AI Product Data Cleanup Works",
@@ -1400,6 +1596,11 @@ export const insights: Insight[] = [
         question: "How should AI product data suggestions be reviewed?",
         answer:
           "Reviewers should see product ID, current value, suggested value, source evidence, confidence, issue type, and action. Low-confidence or conflicting values should stay in an exception queue until approved or corrected.",
+      },
+      {
+        question: "How is PIM data cleansing different from ecommerce product enrichment?",
+        answer:
+          "PIM data cleansing fixes inaccurate, duplicated, inconsistent, or invalid values. Ecommerce product enrichment adds missing useful fields such as attributes, taxonomy, compatibility, and merchandising data.",
       },
     ],
     sources: [
@@ -1724,19 +1925,20 @@ export const insights: Insight[] = [
   {
     slug: "market-competitor-monitoring-automation",
     title: "Market and Competitor Monitoring Automation",
-    seoTitle: "AI Market and Competitor Monitoring Automation for Operations Teams",
+    seoTitle: "AI Competitor Monitoring Automation for Teams",
     description:
       "How AI workflows can track approved public sources, classify competitor changes, preserve evidence, and turn market signals into reviewable decision briefs.",
     seoDescription:
       "Learn how AI competitor monitoring automation tracks public signals, filters noise, preserves source evidence, and prepares decision-ready market briefs.",
     category: "Automation Example",
-    readingTime: "11 min read",
+    readingTime: "12 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
-    targetQuery: "AI competitor monitoring automation",
+    targetQuery: "competitor monitoring tools and automation",
     searchIntent: "Commercial Investigation",
     keywords: [
       "AI competitor monitoring",
+      "competitor monitoring tools",
       "competitor monitoring automation",
       "market monitoring automation",
       "AI competitive intelligence",
@@ -1749,6 +1951,18 @@ export const insights: Insight[] = [
     ],
     summary:
       "Market and competitor monitoring automation collects approved public signals, compares them with prior snapshots, classifies what changed, and produces evidence-backed briefs for teams that need to decide what deserves attention.",
+    answerBox: {
+      heading: "Competitor monitoring automation works best when tools, source policy, and human review fit the decision.",
+      paragraphs: [
+        "Use a monitoring tool when the sources and alerts are standard. Use a custom workflow when teams need approved source rules, evidence capture, signal classification, confidence labels, and decision briefs tailored to sales, product, marketing, or operations.",
+      ],
+      bullets: [
+        "Best first fit: weekly briefs from approved public sources.",
+        "Production requirement: evidence links, source snapshots, confidence labels, and escalation rules.",
+      ],
+    },
+    editorialNote:
+      "Reviewed by SmartCore Technologies as a market-intelligence workflow guide for public-source monitoring and decision-ready competitor briefs.",
     outcome: {
       value: "Weekly",
       label: "decision-ready monitoring cadence",
@@ -1895,6 +2109,23 @@ export const insights: Insight[] = [
         },
       },
       {
+        heading: "Competitor Monitoring Tools vs Custom Workflow",
+        paragraphs: [
+          "Competitor monitoring tools are useful when the team needs alerts from common public channels and can work inside the tool's source model. A custom workflow is more useful when the monitoring process needs internal source rules, business-specific signal categories, evidence capture, or routing into existing operating rhythms.",
+          "The decision should be based on how the insight will be used. If the output is a generic alert, a tool may be enough. If the output needs to become a sales note, product review, content update, support briefing, or leadership decision pack, the workflow layer matters.",
+        ],
+        table: {
+          columns: ["Decision factor", "Monitoring tool", "Custom workflow"],
+          rows: [
+            ["Source coverage", "Works well for standard web, search, social, review, or news sources.", "Best when approved sources, source terms, or internal evidence rules are specific."],
+            ["Signal taxonomy", "Uses built-in categories and dashboards.", "Uses company-specific categories, impact areas, owners, and escalation rules."],
+            ["Evidence standard", "Provides alerts and links when available.", "Stores snapshots, source links, dates, confidence labels, and reviewer decisions."],
+            ["Output format", "Useful for feeds, alerts, and dashboards.", "Useful for decision briefs, tickets, reports, and team-specific summaries."],
+            ["Best first step", "Pilot on a focused watchlist.", "Map the brief, source policy, and review workflow before building."],
+          ],
+        },
+      },
+      {
         heading: "Market Monitoring Controls",
         paragraphs: [
           "The workflow needs clear source rules, rate limits, evidence capture, and confidence labels. Sensitive decisions should stay with people, especially when public data is incomplete or ambiguous.",
@@ -1952,6 +2183,11 @@ export const insights: Insight[] = [
         answer:
           "Use a narrow watchlist, classify signals by decision impact, compare changes against prior snapshots, suppress duplicate alerts, and escalate only when the signal has evidence and an owner.",
       },
+      {
+        question: "Should teams use competitor monitoring tools or build a custom workflow?",
+        answer:
+          "Use a tool when standard alerts and dashboards are enough. Use a custom workflow when the team needs approved sources, evidence snapshots, company-specific signal labels, review ownership, and decision-ready briefs.",
+      },
     ],
     sources: [
       sharedSources.mckinseyRetailEurope,
@@ -1984,6 +2220,14 @@ export function getInsightUrl(slug: string) {
 }
 
 export function getArticlePlainText(insight: Insight) {
+  const answerBoxText = insight.answerBox
+    ? [
+        insight.answerBox.heading,
+        ...insight.answerBox.paragraphs,
+        insight.answerBox.bullets?.join(" ") ?? "",
+      ].join(" ")
+    : ""
+
   const sectionText = insight.sections
     .map((section) => {
       const bullets = section.bullets?.join(" ") ?? ""
@@ -1996,5 +2240,7 @@ export function getArticlePlainText(insight: Insight) {
     ? `${insight.outcome.value} ${insight.outcome.label}. ${insight.outcome.detail}`
     : ""
 
-  return [insight.summary, outcomeText, ...insight.takeaways, sectionText].filter(Boolean).join(" ")
+  return [insight.summary, answerBoxText, outcomeText, ...insight.takeaways, sectionText, insight.editorialNote]
+    .filter(Boolean)
+    .join(" ")
 }

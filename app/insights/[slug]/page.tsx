@@ -133,6 +133,30 @@ export default async function InsightArticlePage({ params }: PageProps) {
               {insight.summary}
             </p>
 
+            {insight.answerBox && (
+              <div className="mt-8 max-w-3xl border border-foreground/10 bg-foreground/[0.035] p-5">
+                <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">Quick answer</p>
+                <h2 className="mt-3 text-2xl font-light leading-tight tracking-normal">{insight.answerBox.heading}</h2>
+                <div className="mt-4 space-y-3">
+                  {insight.answerBox.paragraphs.map((paragraph) => (
+                    <p key={paragraph} className="text-sm leading-6 text-foreground/72">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+                {insight.answerBox.bullets && (
+                  <div className="mt-5 grid gap-2">
+                    {insight.answerBox.bullets.map((bullet) => (
+                      <div key={bullet} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1275d8]" />
+                        <p className="text-sm leading-6 text-foreground/70">{bullet}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {insight.outcome && (
               <div className="mt-8 max-w-3xl border border-foreground/10 bg-foreground/[0.035] p-5">
                 <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">
@@ -218,6 +242,13 @@ export default async function InsightArticlePage({ params }: PageProps) {
                 <p className="mt-2 text-sm leading-6 text-foreground/70">
                   Map one recurring workflow, test it with real inputs, then build the control layer around AI output.
                 </p>
+                {insight.editorialNote && (
+                  <>
+                    <div className="my-5 h-px bg-foreground/10" />
+                    <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">Editorial review</p>
+                    <p className="mt-2 text-sm leading-6 text-foreground/70">{insight.editorialNote}</p>
+                  </>
+                )}
                 <Link
                   href="/#contact"
                   className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-transform hover:scale-[1.02]"
@@ -333,6 +364,13 @@ function buildArticleJsonLd(insight: Insight, articleUrl: string) {
     publisher: {
       "@id": `${siteConfig.url}/#organization`,
     },
+    reviewedBy: insight.editorialNote
+      ? {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        }
+      : undefined,
     about: insight.targetQuery,
     inLanguage: "en-GB",
   }
