@@ -106,6 +106,18 @@ const sharedSources = {
     title: "Microsoft: intelligent document processing",
     url: "https://adoption.microsoft.com/en-us/intelligent-document-processing/",
   },
+  ibmAiConsulting: {
+    title: "IBM: artificial intelligence services and consulting",
+    url: "https://www.ibm.com/consulting/artificial-intelligence",
+  },
+  mckinseyStateAi2025: {
+    title: "McKinsey: The State of AI, Global Survey 2025",
+    url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+  },
+  atlassianWorkflowSoftware: {
+    title: "Atlassian: workflow automation software options",
+    url: "https://www.atlassian.com/agile/project-management/workflow-automation-software",
+  },
 }
 
 export const insights: Insight[] = [
@@ -308,9 +320,9 @@ export const insights: Insight[] = [
       sharedSources.factChecking,
     ],
     related: [
+      "ai-automation-consulting-tool-or-custom-workflow",
       "how-to-know-if-a-workflow-is-worth-automating",
       "review-intelligence-automation",
-      "product-data-cleanup-automation",
     ],
   },
   {
@@ -408,7 +420,11 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.mckinseyRetailEurope, sharedSources.googleCommerce, sharedSources.googleDataQuality],
-    related: ["ai-workflow-automation-examples", "how-to-know-if-a-workflow-is-worth-automating", "review-intelligence-automation"],
+    related: [
+      "ai-workflow-automation-examples",
+      "ai-automation-consulting-tool-or-custom-workflow",
+      "how-to-know-if-a-workflow-is-worth-automating",
+    ],
   },
   {
     slug: "how-to-know-if-a-workflow-is-worth-automating",
@@ -616,7 +632,218 @@ export const insights: Insight[] = [
       sharedSources.factChecking,
       sharedSources.shopifyMagic,
     ],
-    related: ["ai-workflow-automation-examples", "what-is-ai-workflow-automation", "product-data-cleanup-automation"],
+    related: [
+      "ai-automation-consulting-tool-or-custom-workflow",
+      "ai-workflow-automation-examples",
+      "what-is-ai-workflow-automation",
+    ],
+  },
+  {
+    slug: "ai-automation-consulting-tool-or-custom-workflow",
+    title: "AI Automation Consulting: When To Use a Consultant, a Tool, or a Custom Workflow",
+    seoTitle: "AI Automation Consulting vs Tools vs Custom Workflows",
+    description:
+      "A commercial guide for deciding when an AI automation tool is enough, when to bring in a consultant, and when a custom workflow makes sense.",
+    seoDescription:
+      "Compare AI automation consulting, off-the-shelf tools, and custom AI workflows so operations teams can choose the right path before implementation.",
+    category: "Guide",
+    readingTime: "11 min read",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    targetQuery: "AI automation consulting",
+    searchIntent: "Commercial Investigation",
+    keywords: [
+      "AI automation consulting",
+      "AI automation consultant",
+      "AI consulting services",
+      "AI workflow automation consulting",
+      "workflow automation consultant",
+      "custom AI workflow",
+      "AI automation tools",
+      "AI workflow consulting",
+      "AI implementation consultant",
+    ],
+    summary:
+      "AI automation consulting is most useful when a team needs to choose, design, or govern a workflow that cannot be solved safely by a single off-the-shelf tool.",
+    takeaways: [
+      "Use a tool when the workflow is standard, low-risk, and already fits the tool's data model.",
+      "Use a consultant when the workflow is valuable but unclear, cross-functional, sensitive, or difficult to scope internally.",
+      "Use a custom workflow when the process needs multiple data sources, business rules, review paths, auditability, or system integration.",
+      "The strongest commercial decision starts with workflow evidence, not a vendor shortlist or a broad AI transformation theme.",
+    ],
+    sections: [
+      {
+        heading: "AI Automation Consulting: Tool, Consultant, or Custom Workflow?",
+        paragraphs: [
+          "AI automation consulting helps teams decide what should be automated, how the workflow should operate, which controls are needed, and whether the right answer is a tool, a custom workflow, or a simpler process change.",
+          "The commercial risk is not only choosing the wrong vendor. It is building around the wrong workflow. A polished AI tool can still fail if the inputs are messy, the output is not reviewable, or the business process has no clear owner.",
+        ],
+        table: {
+          columns: ["Path", "Best fit", "Main risk"],
+          rows: [
+            ["AI automation tool", "A standard task with known inputs, low operational risk, and a workflow that already matches the product.", "The team adapts the process to the tool and loses important edge cases."],
+            ["AI automation consultant", "A valuable workflow where scope, ownership, data readiness, controls, or implementation path is unclear.", "The work stays at slide-deck level unless it connects to a testable workflow."],
+            ["Custom AI workflow", "A recurring process that needs business rules, multiple sources, review queues, evidence, and integration with existing systems.", "The build becomes too broad if the first workflow is not tightly defined."],
+          ],
+        },
+      },
+      {
+        heading: "Start With the Workflow Decision",
+        paragraphs: [
+          "Before comparing AI tools or consulting partners, define the operational decision you need to make. Are you trying to reduce manual review, improve data quality, standardise reporting, classify feedback, check content claims, or monitor market signals?",
+          "This matters because different problems need different buying paths. A narrow, standard task may need a tool. A messy operating loop may need diagnostic work. A workflow that touches several systems may need a custom layer that keeps AI output controlled and reviewable.",
+        ],
+        bullets: [
+          "Name the workflow trigger, such as a weekly export, new support ticket, product update, document batch, or reporting cycle.",
+          "Identify the source material the workflow is allowed to use.",
+          "Define the output format and who approves it.",
+          "List the exceptions, sensitive cases, and failure modes that need human review.",
+          "Decide what must improve: cycle time, coverage, consistency, quality, or decision readiness.",
+        ],
+      },
+      {
+        heading: "When an AI Automation Tool Is Enough",
+        paragraphs: [
+          "An off-the-shelf AI automation tool is often enough when the workflow is common, self-contained, and close to the way the tool already works. Examples include simple ticket routing, meeting summaries, basic document extraction, CRM field updates, or standard reporting inside one platform.",
+          "Tools work best when the team can accept the product's workflow assumptions. If the source systems, approval rules, taxonomy, or evidence requirements are unusual, the tool may still be useful, but it should be tested against real operational examples before becoming the centre of the process.",
+        ],
+        table: {
+          columns: ["Good tool signal", "What it means"],
+          rows: [
+            ["Standard workflow", "The task resembles a common use case the product already supports."],
+            ["Single source system", "Most inputs live in one platform or integration path."],
+            ["Low-risk output", "The output can be corrected easily and does not create major customer, compliance, or operational exposure."],
+            ["Simple ownership", "One team owns the process and can change how it works."],
+            ["Built-in review", "The tool provides approval, history, versioning, or exception handling where needed."],
+          ],
+        },
+      },
+      {
+        heading: "When To Use an AI Automation Consultant",
+        paragraphs: [
+          "Use an AI automation consultant when the team needs a clearer operating model before choosing technology. This is common when the workflow crosses teams, depends on messy inputs, has unclear acceptance criteria, or needs human review in the right places.",
+          "A useful consultant should not only recommend AI. They should help define the workflow boundary, assess input readiness, map risk, design review paths, and identify the smallest production test that can prove whether the workflow is worth building.",
+        ],
+        bullets: [
+          "The team has several possible automation ideas but no clear first workflow.",
+          "A tool demo looked promising, but real data, exceptions, or ownership questions remain unresolved.",
+          "The workflow affects product data, customer communication, reporting, compliance, or operational decisions.",
+          "The business needs an implementation path that combines process design, AI tasks, rules, and human review.",
+          "Internal teams need a neutral assessment before committing engineering, operations, or leadership time.",
+        ],
+      },
+      {
+        heading: "When a Custom AI Workflow Makes Sense",
+        paragraphs: [
+          "A custom AI workflow makes sense when the business process is repeatable but does not fit neatly inside one product. The workflow may need to read from several sources, apply company-specific rules, create evidence-linked outputs, and route exceptions to different owners.",
+          "Custom does not have to mean large. The best first custom workflow is usually narrow: one use case, one source policy, one output, one review path, and a clear monitoring loop. That keeps the build practical and gives the team evidence before expanding.",
+        ],
+        table: {
+          columns: ["Custom workflow signal", "Example"],
+          rows: [
+            ["Multiple input sources", "Reviews, tickets, spreadsheets, product records, images, and approved webpages need to be combined."],
+            ["Company-specific taxonomy", "The workflow needs internal categories, field rules, product attributes, issue labels, or editorial policies."],
+            ["Evidence requirement", "Reviewers need source links, extracted snippets, confidence notes, image references, or record IDs."],
+            ["Human approval path", "Certain cases must be approved, corrected, escalated, or sampled before the output is used."],
+            ["System handoff", "The output needs to become a queue, import file, dashboard, ticket, CMS update, or decision brief."],
+          ],
+        },
+      },
+      {
+        heading: "Tool vs Consultant vs Custom Workflow Decision Matrix",
+        paragraphs: [
+          "The right path becomes clearer when the team scores the workflow instead of debating AI in general. Use the matrix below as a commercial filter before starting vendor selection or implementation planning.",
+        ],
+        table: {
+          columns: ["Question", "Tool", "Consultant", "Custom workflow"],
+          rows: [
+            ["Is the workflow standard?", "Yes, the product already supports it.", "Partly, but process design is unclear.", "No, the process has business-specific rules."],
+            ["Are inputs clean and accessible?", "Mostly yes.", "Unknown or uneven.", "Accessible but spread across systems."],
+            ["Is the output easy to review?", "Yes, within the tool.", "Needs definition.", "Needs a designed review queue or evidence layer."],
+            ["Does the workflow cross teams?", "Rarely.", "Often.", "Often, with handoffs into systems or reports."],
+            ["What should happen first?", "Pilot the tool on real examples.", "Run a workflow assessment.", "Build a narrow controlled workflow test."],
+          ],
+        },
+      },
+      {
+        heading: "What Good AI Automation Consulting Should Produce",
+        paragraphs: [
+          "Good consulting output should be usable by operators, leaders, and builders. It should not stop at a strategy narrative. The team needs a clear workflow decision, a testable scope, and enough operational detail to move into implementation.",
+          "For SmartCore-style work, the most valuable deliverable is often a controlled workflow specification: source boundaries, AI task, business rules, output format, review path, exception handling, and success measures.",
+        ],
+        bullets: [
+          "Workflow map: trigger, inputs, owners, manual steps, outputs, and downstream users.",
+          "Automation recommendation: tool, custom workflow, redesign first, clean data first, or keep manual for now.",
+          "Control design: review rules, confidence thresholds, escalation paths, evidence capture, and audit trail requirements.",
+          "Pilot scope: a narrow test with representative examples and measurable acceptance criteria.",
+          "Implementation plan: integration points, operating cadence, monitoring metrics, and ownership after launch.",
+        ],
+      },
+      {
+        heading: "How To Avoid Buying the Wrong Thing",
+        paragraphs: [
+          "AI buying decisions go wrong when the team evaluates features before workflow fit. A tool can have strong AI capabilities and still be the wrong operational choice if reviewers cannot trust the output or if the workflow depends on sources the tool cannot handle.",
+          "A safer approach is to test one workflow with real examples. If a standard tool can handle the inputs, rules, review, and output, use it. If the workflow needs diagnosis, bring in consulting. If the process is important and specific to how the company operates, consider a custom workflow.",
+        ],
+        bullets: [
+          "Do not judge the path from a clean demo dataset.",
+          "Check whether the workflow can show its sources and uncertainty.",
+          "Ask who owns corrections, exceptions, and monitoring after launch.",
+          "Avoid fully autonomous decisions until review quality and controls are proven.",
+          "Prefer one production-quality workflow over several disconnected AI experiments.",
+        ],
+      },
+      {
+        heading: "Recommended Path for Operations Teams",
+        paragraphs: [
+          "For operations teams, the strongest path is usually diagnostic first, implementation second. Choose one recurring workflow, gather real examples, score readiness, and decide whether the workflow belongs in a tool, a custom system, or a process redesign.",
+          "This keeps the decision commercially grounded. The team is not buying AI activity. It is improving a specific operating loop with enough control for people to trust the result.",
+        ],
+        table: {
+          columns: ["Stage", "Decision"],
+          rows: [
+            ["Assess", "Is this workflow frequent, reviewable, input-ready, and valuable enough to test?"],
+            ["Choose", "Does the workflow fit a tool, need consulting, or require a custom control layer?"],
+            ["Test", "Can the workflow handle real examples, edge cases, and reviewer corrections?"],
+            ["Launch", "Who owns monitoring, exceptions, updates, and continuous improvement?"],
+          ],
+        },
+      },
+    ],
+    faq: [
+      {
+        question: "What does an AI automation consultant do?",
+        answer:
+          "An AI automation consultant helps identify suitable workflows, assess data readiness, design review and control paths, choose between tools and custom workflows, and define a practical implementation scope.",
+      },
+      {
+        question: "When should a company use an AI automation tool instead of a consultant?",
+        answer:
+          "Use a tool when the workflow is standard, low-risk, mostly contained in one system, and already matches the tool's capabilities. A consultant is more useful when the workflow, ownership, controls, or implementation path is unclear.",
+      },
+      {
+        question: "When is a custom AI workflow better than an off-the-shelf tool?",
+        answer:
+          "A custom workflow is better when the process needs multiple data sources, company-specific rules, evidence capture, review queues, auditability, or handoff into existing systems.",
+      },
+      {
+        question: "Should AI automation consulting start with a strategy or a pilot?",
+        answer:
+          "It should start with workflow assessment. The result may be a pilot, a tool test, a custom workflow, data cleanup, or process redesign, depending on what the evidence shows.",
+      },
+    ],
+    sources: [
+      sharedSources.ibmAiConsulting,
+      sharedSources.mckinseyStateAi2025,
+      sharedSources.atlassianAiWorkflow,
+      sharedSources.atlassianWorkflowSoftware,
+      sharedSources.ibmBusinessProcessAutomation,
+    ],
+    related: [
+      "how-to-know-if-a-workflow-is-worth-automating",
+      "ai-workflow-automation-examples",
+      "reporting-coordination-automation",
+    ],
   },
   {
     slug: "image-qa-compliance-automation",
