@@ -364,13 +364,23 @@ function buildArticleJsonLd(insight: Insight, articleUrl: string) {
     publisher: {
       "@id": `${siteConfig.url}/#organization`,
     },
-    reviewedBy: insight.editorialNote
+    reviewedBy: insight.reviewer
       ? {
-          "@type": "Organization",
-          name: siteConfig.name,
-          url: siteConfig.url,
+          "@type": "Person",
+          name: insight.reviewer.name,
+          affiliation: {
+            "@type": "Organization",
+            name: insight.reviewer.affiliation,
+            url: siteConfig.url,
+          },
         }
-      : undefined,
+      : insight.editorialNote
+        ? {
+            "@type": "Organization",
+            name: siteConfig.name,
+            url: siteConfig.url,
+          }
+        : undefined,
     about: insight.targetQuery,
     inLanguage: "en-GB",
   }

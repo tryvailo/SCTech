@@ -37,6 +37,11 @@ export interface InsightAnswerBox {
   bullets?: string[]
 }
 
+export interface InsightReviewer {
+  name: string
+  affiliation: string
+}
+
 export interface Insight {
   slug: string
   title: string
@@ -52,6 +57,7 @@ export interface Insight {
   keywords: string[]
   summary: string
   answerBox?: InsightAnswerBox
+  reviewer?: InsightReviewer
   editorialNote?: string
   outcome?: InsightOutcome
   takeaways: string[]
@@ -156,6 +162,11 @@ const sharedSources = {
   },
 }
 
+const alexTryvailoReviewer: InsightReviewer = {
+  name: "Alex Tryvailo, PhD",
+  affiliation: "SmartCore Technologies",
+}
+
 export const insights: Insight[] = [
   {
     slug: "ai-workflow-automation-examples",
@@ -193,8 +204,9 @@ export const insights: Insight[] = [
         "Avoid first: rare, subjective, high-risk decisions that cannot be reviewed before use.",
       ],
     },
+    reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by SmartCore Technologies as a workflow-design guide for operations, product, content, and reporting teams.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a workflow-design guide for operations, product, content, and reporting teams.",
     takeaways: [
       "Start with workflows that are frequent, measurable, and reviewable before moving into high-risk automation.",
       "A useful AI workflow has inputs, rules, model tasks, review points, outputs, and monitoring, not just a chatbot or prompt library.",
@@ -553,8 +565,9 @@ export const insights: Insight[] = [
         "A high score supports a pilot; a low score points to cleanup or redesign first.",
       ],
     },
+    reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by SmartCore Technologies as an implementation checklist for workflow diagnostics and AI readiness decisions.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an implementation checklist for workflow diagnostics and AI readiness decisions.",
     takeaways: [
       "Assess one workflow at a time; broad AI readiness work is less useful when the operational loop is still undefined.",
       "Strong candidates have repeatable inputs, clear outputs, visible drag, and errors that can be reviewed before they matter.",
@@ -800,8 +813,9 @@ export const insights: Insight[] = [
         "Best tool fit: known task, clean source, simple owner, and built-in approval path.",
       ],
     },
+    reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by SmartCore Technologies as a commercial guide for operations teams comparing consulting, tools, and controlled workflow builds.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a commercial guide for operations teams comparing consulting, tools, and controlled workflow builds.",
     takeaways: [
       "Use a tool when the workflow is standard, low-risk, and already fits the tool's data model.",
       "Use a consultant when the workflow is valuable but unclear, cross-functional, sensitive, or difficult to scope internally.",
@@ -1037,8 +1051,9 @@ export const insights: Insight[] = [
         "Production requirement: confidence, source evidence, validation rules, and an exception queue.",
       ],
     },
+    reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by SmartCore Technologies as a workflow guide for document extraction, validation, and reviewable operations.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a workflow guide for document extraction, validation, and reviewable operations.",
     takeaways: [
       "The workflow should classify the document, extract fields, validate the result, and route exceptions instead of only running OCR.",
       "Good first candidates have repeated document types, clear target fields, known downstream systems, and reviewers who can verify errors.",
@@ -1379,8 +1394,9 @@ export const insights: Insight[] = [
         "Production requirement: source evidence, allowed values, exception reasons, and approval history.",
       ],
     },
+    reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by SmartCore Technologies as an ecommerce operations guide for PIM data quality, enrichment, and reviewable catalogue updates.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an ecommerce operations guide for PIM data quality, enrichment, and reviewable catalogue updates.",
     takeaways: [
       "Start with one catalogue segment or attribute family so source rules, accepted values, and reviewer decisions are easy to validate.",
       "AI product data cleanup should create evidence-linked suggestions and exception queues, not silent PIM rewrites.",
@@ -1961,8 +1977,9 @@ export const insights: Insight[] = [
         "Production requirement: evidence links, source snapshots, confidence labels, and escalation rules.",
       ],
     },
+    reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by SmartCore Technologies as a market-intelligence workflow guide for public-source monitoring and decision-ready competitor briefs.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a market-intelligence workflow guide for public-source monitoring and decision-ready competitor briefs.",
     outcome: {
       value: "Weekly",
       label: "decision-ready monitoring cadence",
