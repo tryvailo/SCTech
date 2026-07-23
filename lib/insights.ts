@@ -106,6 +106,14 @@ const sharedSources = {
     title: "Microsoft: intelligent document processing",
     url: "https://adoption.microsoft.com/en-us/intelligent-document-processing/",
   },
+  azureDocumentIntelligence: {
+    title: "Microsoft Azure: Document Intelligence",
+    url: "https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/overview",
+  },
+  awsTextract: {
+    title: "AWS: Amazon Textract",
+    url: "https://aws.amazon.com/textract/",
+  },
   ibmAiConsulting: {
     title: "IBM: artificial intelligence services and consulting",
     url: "https://www.ibm.com/consulting/artificial-intelligence",
@@ -322,7 +330,7 @@ export const insights: Insight[] = [
     related: [
       "ai-automation-consulting-tool-or-custom-workflow",
       "how-to-know-if-a-workflow-is-worth-automating",
-      "review-intelligence-automation",
+      "document-processing-data-extraction-automation",
     ],
   },
   {
@@ -842,7 +850,206 @@ export const insights: Insight[] = [
     related: [
       "how-to-know-if-a-workflow-is-worth-automating",
       "ai-workflow-automation-examples",
-      "reporting-coordination-automation",
+      "document-processing-data-extraction-automation",
+    ],
+  },
+  {
+    slug: "document-processing-data-extraction-automation",
+    title: "Document Processing and Data Extraction Automation",
+    seoTitle: "AI Document Processing and Data Extraction Automation",
+    description:
+      "How AI document processing workflows extract fields, classify files, validate results, and route exceptions from PDFs, forms, invoices, and business documents.",
+    seoDescription:
+      "Learn how AI document processing and data extraction automation turns PDFs, forms, invoices, and business documents into reviewable structured data.",
+    category: "Automation Example",
+    readingTime: "10 min read",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    targetQuery: "document processing automation",
+    searchIntent: "Commercial Investigation",
+    keywords: [
+      "document processing automation",
+      "AI document processing",
+      "document data extraction",
+      "automated document processing",
+      "data extraction automation",
+      "AI data extraction from documents",
+      "intelligent document processing",
+      "document extraction automation",
+      "PDF data extraction automation",
+    ],
+    summary:
+      "Document processing automation turns PDFs, forms, invoices, certificates, and document packs into structured records with source evidence, validation rules, and human review where accuracy matters.",
+    takeaways: [
+      "The workflow should classify the document, extract fields, validate the result, and route exceptions instead of only running OCR.",
+      "Good first candidates have repeated document types, clear target fields, known downstream systems, and reviewers who can verify errors.",
+      "AI extraction needs source evidence, confidence notes, field rules, and audit trails before it becomes operational data.",
+      "The safest first build is a reviewable extraction queue or import file, not silent document-to-system updates.",
+    ],
+    sections: [
+      {
+        heading: "What Is Document Processing Automation?",
+        paragraphs: [
+          "Document processing automation is a workflow that reads business documents, extracts useful data, checks the output against rules, and turns the result into a structured record a team can review or use downstream.",
+          "Modern document workflows go beyond basic OCR. They can classify document types, split document packets, extract fields and tables, preserve source evidence, flag low-confidence values, and send exceptions to people before the data becomes operational truth.",
+        ],
+        table: {
+          columns: ["Layer", "What it handles"],
+          rows: [
+            ["Capture", "PDFs, scans, forms, emails, invoices, certificates, contracts, images, and uploaded document packs."],
+            ["Classify", "Document type, page boundaries, sender, business process, risk level, and routing path."],
+            ["Extract", "Names, dates, addresses, invoice lines, totals, identifiers, clauses, table rows, checkboxes, and key-value pairs."],
+            ["Validate", "Required fields, allowed values, totals, duplicates, date ranges, source conflicts, and confidence thresholds."],
+            ["Route", "Approval queue, exception list, import file, ticket, case record, dashboard, or API-ready payload."],
+          ],
+        },
+      },
+      {
+        heading: "Why Manual Document Extraction Breaks",
+        paragraphs: [
+          "Manual document work looks simple until volume, format variety, and exception handling collide. Teams copy values from PDFs into spreadsheets, check forms against policy, rename files, reconcile totals, and chase missing information across emails or portals.",
+          "The issue is rarely one field. It is the full operating loop: documents arrive in different formats, important values sit in tables or scans, reviewers need context, and downstream systems expect clean structured data.",
+        ],
+        bullets: [
+          "Document formats vary across suppliers, customers, teams, and regions.",
+          "Important values can appear in scanned text, handwriting, tables, attachments, stamps, or page footers.",
+          "Simple OCR can produce text without knowing which value belongs to which field.",
+          "Manual review slows down when documents require cross-checking against records or policies.",
+          "Errors become harder to unwind when extracted data flows into finance, compliance, onboarding, reporting, or customer operations.",
+        ],
+      },
+      {
+        heading: "How AI Document Data Extraction Works",
+        paragraphs: [
+          "A controlled AI document workflow starts by defining the document types, fields, source systems, and acceptance criteria. The automation then collects files, classifies them, extracts structured values, validates the output, and sends uncertain cases to review.",
+          "Google Document AI, Azure Document Intelligence, and Amazon Textract all point to the same core pattern: use AI to move from unstructured or semi-structured documents into text, fields, tables, and other structured outputs. The production question is how those outputs are governed inside the business workflow.",
+        ],
+        table: {
+          columns: ["Step", "Operational output"],
+          rows: [
+            ["Receive", "Document batch with source, sender, timestamp, business process, and file history."],
+            ["Classify", "Document type, packet split, page grouping, and routing category."],
+            ["Extract", "Field values, table rows, checkboxes, signatures, reference numbers, and visible evidence."],
+            ["Validate", "Missing fields, mismatched totals, invalid formats, duplicate records, and confidence flags."],
+            ["Review", "Queue of exceptions with source snippets, page references, confidence notes, and reviewer actions."],
+            ["Export", "Approved structured data for CRM, ERP, case management, PIM, finance, compliance, or reporting systems."],
+          ],
+        },
+      },
+      {
+        heading: "Best First Use Cases",
+        paragraphs: [
+          "The strongest first document automation use cases are frequent, structured enough to describe, and important enough to improve. They should also have a clear reviewer who knows what a correct extraction looks like.",
+          "Start with one document family before trying to automate every document the business receives. A narrow scope makes it easier to collect examples, measure quality, and design the right review path.",
+        ],
+        table: {
+          columns: ["Use case", "What the workflow extracts"],
+          rows: [
+            ["Supplier onboarding", "Company details, certificates, expiry dates, insurance fields, compliance evidence, and missing documents."],
+            ["Invoice processing", "Supplier name, invoice number, line items, tax, totals, payment terms, purchase order references, and anomalies."],
+            ["Customer forms", "Identity fields, selected options, signatures, uploaded evidence, consent status, and missing sections."],
+            ["Contract review support", "Parties, dates, renewal terms, obligations, clauses, thresholds, and exceptions for legal review."],
+            ["Operational case intake", "Case type, attachments, priority signals, required follow-up, and next-step recommendations."],
+          ],
+        },
+      },
+      {
+        heading: "What To Extract Before You Automate",
+        paragraphs: [
+          "A document extraction workflow is easier to trust when the field list is defined before testing. If the team keeps adding fields during review, the real problem may be unclear process ownership rather than AI capability.",
+          "For each field, define the source evidence, accepted format, validation rule, destination system, and review requirement. That makes the automation measurable and prevents extracted data from becoming another messy dataset.",
+        ],
+        bullets: [
+          "Required fields: values the workflow must capture before a document can move forward.",
+          "Optional fields: useful values that should not block the process if missing.",
+          "Derived fields: classifications, risk flags, summaries, or scores created from source evidence.",
+          "Evidence fields: page number, snippet, bounding region, source file, or document version.",
+          "Review fields: confidence, reviewer decision, correction reason, and final approval status.",
+        ],
+      },
+      {
+        heading: "Controls for AI Document Processing",
+        paragraphs: [
+          "Document processing often touches sensitive operational data, so the control layer matters as much as the extraction model. The workflow should make uncertainty visible and keep people in the loop for high-impact values.",
+          "A practical control design separates low-risk automation from decisions that need approval. The system can prepare structured data quickly while still asking a person to resolve missing evidence, ambiguous fields, conflicts, or policy-sensitive cases.",
+        ],
+        table: {
+          columns: ["Control", "Why it matters"],
+          rows: [
+            ["Source boundary", "Prevents the workflow from filling gaps with unsupported assumptions."],
+            ["Confidence threshold", "Routes uncertain fields to a reviewer before export."],
+            ["Validation rules", "Checks formats, totals, required fields, duplicates, and allowed values."],
+            ["Evidence capture", "Shows reviewers where each extracted value came from."],
+            ["Audit trail", "Records source file, extraction result, reviewer correction, and final status."],
+            ["Exception queue", "Keeps unusual documents visible instead of forcing automation through bad inputs."],
+          ],
+        },
+      },
+      {
+        heading: "When Document Automation Is a Good Fit",
+        paragraphs: [
+          "Document processing automation is a good fit when the team handles repeated document types, knows which fields matter, and already spends time checking, rekeying, or routing the same information.",
+          "It is less suitable as a first project when the document type is rare, the desired fields keep changing, the source quality is extremely poor, or nobody owns the downstream process after extraction.",
+        ],
+        bullets: [
+          "Good fit: repeated document families with clear fields and a known reviewer.",
+          "Good fit: documents that slow onboarding, finance, compliance, product data, or case operations.",
+          "Needs cleanup first: inconsistent file naming, missing source ownership, or unclear taxonomy.",
+          "Needs redesign first: documents move through too many handoffs and no team owns the final output.",
+          "Keep manual for now: rare, high-risk judgement documents where errors cannot be reviewed before they matter.",
+        ],
+      },
+      {
+        heading: "What To Measure Before Production",
+        paragraphs: [
+          "A document extraction workflow should be measured on operational quality, not only extraction speed. Fast output is not useful if reviewers cannot see evidence, if corrections are hard to feed back, or if downstream systems reject the data.",
+          "Use real document batches for testing, including messy scans, missing fields, unusual layouts, duplicate attachments, and known failure cases. The pilot should show both what can be automated and what still needs human judgement.",
+        ],
+        table: {
+          columns: ["Metric", "What it tells the team"],
+          rows: [
+            ["Field accuracy", "Whether extracted values match reviewer-approved values."],
+            ["Review rate", "How often the workflow needs human intervention."],
+            ["Exception reason", "Whether failures come from source quality, model output, rules, or process gaps."],
+            ["Cycle time", "How long it takes from document receipt to approved structured output."],
+            ["Downstream acceptance", "Whether CRM, ERP, finance, case, or reporting systems can use the output cleanly."],
+          ],
+        },
+      },
+    ],
+    faq: [
+      {
+        question: "What is document processing automation?",
+        answer:
+          "Document processing automation uses AI and workflow rules to classify documents, extract fields and tables, validate the results, and route exceptions for human review before structured data is used downstream.",
+      },
+      {
+        question: "Is document processing automation the same as OCR?",
+        answer:
+          "No. OCR reads text from images or scans. Document processing automation also classifies documents, extracts specific fields, validates values, captures evidence, and moves approved data into a workflow or system.",
+      },
+      {
+        question: "Which documents are best for AI data extraction?",
+        answer:
+          "Good candidates include invoices, forms, certificates, onboarding packs, contracts, compliance documents, and recurring PDFs where the target fields and review rules can be clearly defined.",
+      },
+      {
+        question: "Should AI extracted data go directly into business systems?",
+        answer:
+          "Early workflows should usually create a reviewable queue or import file first. Direct system updates are safer after the team has validated field accuracy, exception handling, audit trails, and reviewer ownership.",
+      },
+    ],
+    sources: [
+      sharedSources.googleDocumentAi,
+      sharedSources.azureDocumentIntelligence,
+      sharedSources.microsoftDocumentProcessing,
+      sharedSources.awsTextract,
+      sharedSources.ibmBusinessProcessAutomation,
+    ],
+    related: [
+      "ai-workflow-automation-examples",
+      "how-to-know-if-a-workflow-is-worth-automating",
+      "ai-automation-consulting-tool-or-custom-workflow",
     ],
   },
   {
