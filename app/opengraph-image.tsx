@@ -75,11 +75,11 @@ export default function Image() {
         </div>
 
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
-          <div style={{ maxWidth: 870, fontSize: 82, lineHeight: 0.96, letterSpacing: -3 }}>
-            Reliable AI Workflows for Complex Operations
+          <div style={{ maxWidth: 940, fontSize: 68, lineHeight: 0.98, letterSpacing: -2 }}>
+            Turn Repetitive Operational Work into Reliable AI Workflows
           </div>
           <div style={{ marginTop: 28, maxWidth: 760, fontSize: 30, lineHeight: 1.35, color: "rgba(248,250,252,0.82)" }}>
-            Workflow diagnostics, operational intelligence, and controlled AI-enabled systems.
+            Map one process, test it on real data, and build controlled automation around the work.
           </div>
         </div>
       </div>

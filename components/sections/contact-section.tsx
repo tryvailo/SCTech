@@ -46,12 +46,12 @@ export function ContactSection() {
               }`}
             >
               <h2 className="mb-1 font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-8xl">
-                Bring One
+                Bring One Manual
                 <br />
                 Workflow
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / Tell us what your team should not be doing by hand
+                / Show us the process your team should not be doing by hand
               </p>
             </div>
 
@@ -143,7 +143,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
-                  placeholder="Tell us what goes in, how often it happens, where it breaks, and what output you need..."
+                  placeholder="What goes in? How often does it happen? Where does it break? What output would be useful?"
                 />
               </div>
 
@@ -159,7 +159,7 @@ export function ContactSection() {
                   className="w-full disabled:opacity-50"
                   onClick={isSubmitting ? undefined : undefined}
                 >
-                  {isSubmitting ? "Sending..." : "Request Diagnostic"}
+                  {isSubmitting ? "Sending..." : "Assess One Workflow"}
                 </MagneticButton>
                 {submitSuccess && (
                   <p className="mt-2 text-center font-mono text-xs text-foreground/80 md:mt-3 md:text-sm">

@@ -27,10 +27,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
 
         <div className="grid gap-5 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {[
-            { value: "Clarity", label: "A sharper view of the workflow, the data, the owner, and the smallest useful next step", direction: "top" },
-            { value: "Control", label: "Rules, source boundaries, review points, and audit trails around AI-assisted work", direction: "right" },
-            { value: "Coverage", label: "More records, reviews, images, documents, or reports processed without relying on tiny samples", direction: "left" },
-            { value: "Scale", label: "Systems and routines that grow with operational complexity instead of adding manual layers", direction: "bottom" },
+            { value: "Clarity", label: "Know what is worth automating before building anything", direction: "top" },
+            { value: "Control", label: "Keep AI output bounded by rules, sources, review points, and audit trails", direction: "right" },
+            { value: "Coverage", label: "Process more reviews, records, images, documents, and reports without relying on small samples", direction: "left" },
+            { value: "Scale", label: "Grow operational capacity without adding another manual layer", direction: "bottom" },
           ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) return "translate-y-6 opacity-0"
@@ -61,7 +61,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "600ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Request a Diagnostic
+            Assess One Workflow
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" className="hidden sm:inline-flex" onClick={() => scrollToSection?.(1)}>
             View Approach

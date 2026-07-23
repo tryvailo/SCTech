@@ -52,10 +52,10 @@ export function ServicesSection() {
               direction: "left",
             },
             {
-              title: "Decision & Process Support",
+              title: "Internal Workflow Support",
               description:
-                "Clarify ambiguous workflows, define quality gates, and create systems that make the next operational step easier to see.",
-              metric: "Ambiguity -> Action",
+                "Clarify messy internal processes, define quality gates, and create tools that turn scattered input into a usable next step.",
+              metric: "Scattered -> Usable",
               direction: "bottom",
             },
           ].map((service, i) => (

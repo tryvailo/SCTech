@@ -268,7 +268,7 @@ export default function Home() {
         </div>
 
         <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Request Diagnostic
+          Assess One Workflow
         </MagneticButton>
       </nav>
 
@@ -299,12 +299,12 @@ export default function Home() {
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Reliable AI Workflows for Complex Operations</span>
+              <span className="text-balance">Turn Repetitive Operational Work into Reliable AI Workflows</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                We help organisations turn repetitive work across feedback, product data, content, reporting, and
-                decision flows into controlled systems with clear outputs and human review where it matters.
+                SmartCore helps teams map one recurring process, test it on real data, and build controlled automation
+                around feedback, product data, content, reporting, and internal decisions.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
@@ -312,7 +312,7 @@ export default function Home() {
                 Explore Approach
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
-                Request a Diagnostic
+                Assess One Workflow
               </MagneticButton>
             </div>
           </div>
