@@ -74,6 +74,14 @@ const sharedSources = {
     title: "Shopify Help Center: automatically generating product descriptions",
     url: "https://help.shopify.com/en/manual/products/details/product-descriptions/shopify-magic",
   },
+  shopifyCategoryMetafields: {
+    title: "Shopify Help Center: category metafields and product attributes",
+    url: "https://help.shopify.com/en/manual/custom-data/metafields/category-metafields",
+  },
+  gs1QualityData: {
+    title: "GS1: quality data for complete, consistent, compliant product information",
+    url: "https://www.gs1.org/public-policy/priorities/quality-data",
+  },
   atlassianReleaseNotes: {
     title: "Atlassian Support: create release notes",
     url: "https://support.atlassian.com/jira-cloud-administration/docs/create-release-notes/",
@@ -1158,60 +1166,128 @@ export const insights: Insight[] = [
   {
     slug: "product-data-cleanup-automation",
     title: "Product Data Cleanup Automation for PIM and Catalogue Teams",
-    seoTitle: "AI Product Data Cleanup Automation for PIM Teams",
+    seoTitle: "AI Product Data Cleanup Automation for PIM and Ecommerce Teams",
     description:
-      "How AI workflows can extract missing product attributes, standardise messy inputs, and prepare reviewable catalogue data.",
+      "How AI workflows clean, enrich, validate, and prepare product catalogue data for PIM, ecommerce, merchandising, and search teams.",
     seoDescription:
-      "Learn how AI product data cleanup workflows extract missing attributes, standardise catalogue records, and prepare reviewable PIM import files.",
+      "Learn how AI product data cleanup automation enriches attributes, standardises catalogue records, validates fields, and prepares reviewable PIM imports.",
     category: "Automation Example",
-    readingTime: "8 min read",
+    readingTime: "11 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
-    targetQuery: "AI product data cleanup automation PIM",
+    targetQuery: "AI product data cleanup automation",
     searchIntent: "Commercial Investigation",
     keywords: [
       "AI product data cleanup",
+      "AI product data cleanup automation",
       "PIM data automation",
+      "PIM data quality automation",
       "catalogue data enrichment",
+      "catalog data enrichment",
+      "product data enrichment automation",
+      "ecommerce product data enrichment",
       "product attribute extraction",
       "product data quality automation",
+      "product information management automation",
       "AI catalogue cleanup",
     ],
     summary:
-      "Product data cleanup automation uses AI to read supplier pages, spreadsheets, product copy, and images, then prepares structured values for human review and PIM import.",
+      "Product data cleanup automation uses AI to enrich missing attributes, normalise messy catalogue records, validate field quality, and prepare reviewable updates before they enter a PIM, ecommerce platform, or merchandising workflow.",
     takeaways: [
-      "Attribute extraction is strongest when the target fields and accepted values are defined in advance.",
-      "The workflow should produce confidence notes and exceptions, not only final values.",
-      "Catalogue data quality supports search, recommendations, filters, merchandising, and customer confidence.",
-      "AI can enrich product data, but teams still need governance over attribute names, source priority, and import rules.",
+      "Start with one catalogue segment or attribute family so source rules, accepted values, and reviewer decisions are easy to validate.",
+      "AI product data cleanup should create evidence-linked suggestions and exception queues, not silent PIM rewrites.",
+      "The strongest workflows combine supplier data, current catalogue records, product copy, images, taxonomy rules, and human approval.",
+      "Product data quality supports search, filters, recommendations, merchandising, marketplace feeds, and customer confidence.",
     ],
     sections: [
       {
+        heading: "What Is Product Data Cleanup Automation?",
+        paragraphs: [
+          "Product data cleanup automation is a controlled workflow for improving catalogue records: missing attributes, inconsistent units, weak categorisation, duplicate values, conflicting supplier fields, and messy descriptions are turned into structured updates a team can review.",
+          "The goal is not to let AI rewrite the catalogue on its own. The goal is to create cleaner product records with source evidence, confidence notes, validation rules, and a clear approval path before data reaches a PIM, ecommerce platform, marketplace feed, or search index.",
+        ],
+        table: {
+          columns: ["Workflow layer", "What it handles"],
+          rows: [
+            ["Source collection", "Supplier sheets, product pages, packaging images, current PIM exports, CMS copy, marketplace feeds, and internal reference data."],
+            ["Attribute extraction", "Dimensions, materials, compatibility, ingredients, certifications, colour, size, model numbers, features, and product identifiers."],
+            ["Normalisation", "Units, naming conventions, controlled values, category-specific attributes, field formats, and taxonomy mapping."],
+            ["Validation", "Required fields, duplicate values, source conflicts, suspicious values, missing evidence, and import readiness."],
+            ["Review and export", "Human-approved suggestions, exception queues, import files, tickets, or API-ready updates."],
+          ],
+        },
+      },
+      {
         heading: "Why Product Catalogue Data Breaks",
         paragraphs: [
-          "Product data often arrives from different suppliers, files, websites, and internal systems. Some attributes are missing, some are named inconsistently, and some are visible only in images or packaging.",
-          "The result is operational drag: filters do not work cleanly, product pages need manual edits, recommendations have weaker signals, and merchandising teams lose time resolving exceptions.",
+          "Product data breaks because it is assembled from many places: supplier spreadsheets, product pages, packaging, image assets, legacy systems, marketplace requirements, and manual edits. Each source may use different field names, units, category logic, and levels of completeness.",
+          "The result is operational drag. Filters do not work cleanly, product pages need repeated edits, recommendations have weaker signals, marketplace feeds need rework, and merchandising teams lose time resolving the same exceptions again and again.",
+        ],
+        bullets: [
+          "Missing attributes: key fields such as material, dimensions, compatibility, variant data, or certifications are absent.",
+          "Inconsistent values: the same attribute appears as cotton, Cotton, 100 percent cotton, or cotton blend without a controlled standard.",
+          "Conflicting sources: supplier data, product copy, packaging images, and existing PIM values disagree.",
+          "Weak taxonomy: products sit in broad or incorrect categories, so the wrong attributes are requested or displayed.",
+          "No review history: teams cannot see why a value was changed, who approved it, or which source supported it.",
         ],
       },
       {
         heading: "How AI Product Data Cleanup Works",
         paragraphs: [
-          "A product data workflow starts by choosing one attribute family or catalogue segment. The system then collects source material, extracts candidate values, normalises formats, adds confidence notes, and routes the output for review before import.",
+          "A product data cleanup workflow starts by choosing one catalogue segment or attribute family. The system then collects source material, extracts candidate values, normalises formats, checks the output against rules, and routes suggestions for review before import.",
+          "This is where AI is useful: product information is often semi-structured or visible only inside copy, supplier PDFs, tables, images, or inconsistent spreadsheets. AI can prepare candidate values, but the workflow still needs taxonomy rules, source priority, confidence notes, and human approval.",
         ],
         table: {
           columns: ["Input", "AI task", "Review output"],
           rows: [
-            ["Supplier page", "Extract specifications and map them to target fields", "Candidate attributes with source URL"],
-            ["Product image", "Read visible labels, compatibility notes, or packaging details", "Field value with image evidence"],
-            ["Spreadsheet", "Standardise inconsistent naming and units", "Clean import-ready rows"],
-            ["Existing product copy", "Identify missing or contradictory attributes", "Exception list for catalogue owners"],
+            ["Supplier page", "Extract specifications and map them to target fields", "Candidate attributes with source URL and confidence note"],
+            ["Product image", "Read visible labels, compatibility notes, packaging details, and warnings", "Field value with image evidence and reviewer flag"],
+            ["Spreadsheet", "Standardise inconsistent naming, units, delimiters, and field formats", "Clean import-ready rows with exception reasons"],
+            ["Existing product copy", "Identify missing, contradictory, duplicated, or unsupported attributes", "Prioritised cleanup list for catalogue owners"],
+            ["Taxonomy rule", "Match category-specific fields and allowed values", "Suggested category and attribute set for approval"],
+          ],
+        },
+      },
+      {
+        heading: "Best First Cleanup Workflows",
+        paragraphs: [
+          "The best first workflow is narrow enough to measure but useful enough to matter. A team should avoid starting with every product, every attribute, and every supplier at once. Choose one segment where field quality clearly affects search, filters, compliance, merchandising, or customer decisions.",
+          "The practical focus should be concrete enrichment work: product attribute extraction, ecommerce product data enrichment, category cleanup, and supplier feed standardisation rather than a broad data-quality programme with no first workflow.",
+        ],
+        table: {
+          columns: ["Workflow", "What AI prepares"],
+          rows: [
+            ["Missing attribute enrichment", "Candidate values for dimensions, material, colour, compatibility, ingredients, features, or certifications."],
+            ["Unit and format normalisation", "Standard units, casing, separators, measurement formats, and consistent naming."],
+            ["Category cleanup", "Suggested category, product type, attribute set, and taxonomy alignment."],
+            ["Supplier feed standardisation", "Mapped supplier fields, duplicates, suspicious values, and records below completeness thresholds."],
+            ["Variant cleanup", "Parent-child relationships, colour and size variants, duplicate SKUs, and inconsistent option names."],
+            ["Image-assisted enrichment", "Visible package details, claims, compatibility notes, labels, and mismatch flags."],
+          ],
+        },
+      },
+      {
+        heading: "What To Define Before Extraction",
+        paragraphs: [
+          "Attribute extraction is strongest when the target fields and accepted values are defined before the model runs. Without that structure, AI may create plausible values that do not fit the PIM, category taxonomy, or merchandising rules.",
+          "For each attribute, define what the field means, which sources are allowed, how conflicts should be resolved, and whether the value can be imported automatically after review.",
+        ],
+        table: {
+          columns: ["Decision", "Example"],
+          rows: [
+            ["Source priority", "Packaging image overrides marketing copy for size, while internal compliance data overrides supplier text for certifications."],
+            ["Accepted values", "Material must map to a controlled list, not free-form supplier language."],
+            ["Unit rules", "Dimensions should use one measurement system and one field format."],
+            ["Evidence requirement", "Each suggested value should include source URL, image reference, row ID, or text snippet."],
+            ["Review rule", "Low-confidence, conflicting, or commercially visible fields need approval before import."],
           ],
         },
       },
       {
         heading: "PIM Data Governance for AI Cleanup",
         paragraphs: [
-          "Google Cloud's commerce documentation highlights how product attributes and data quality can affect search and recommendations. For an internal automation workflow, that means the data model deserves as much attention as the AI prompt.",
+          "Google Cloud's commerce documentation highlights how product attributes and data quality can affect search and recommendations. Shopify's category metafields also show the same operating idea: product attributes become more useful when they map to category-specific structure instead of living as loose text.",
+          "For an internal automation workflow, that means the data model deserves as much attention as the AI prompt. AI can suggest values, but governance decides which values are allowed, where they came from, who approves them, and how they are monitored after import.",
         ],
         bullets: [
           "Define source priority when supplier data conflicts with internal data.",
@@ -1219,14 +1295,76 @@ export const insights: Insight[] = [
           "Separate high-confidence updates from exceptions.",
           "Keep a review step before publishing or importing at scale.",
           "Track coverage improvements by category and field.",
+          "Keep a correction history so repeated reviewer edits become future validation rules.",
         ],
+      },
+      {
+        heading: "Controls for Product Data Automation",
+        paragraphs: [
+          "Product data cleanup can touch search, product pages, compliance fields, marketplace feeds, and customer-facing details, so the workflow should make risk visible. A good system separates routine cleanup from values that need human judgement.",
+          "The control layer should also prevent the most common failure mode: clean-looking data that cannot be trusted because nobody can see the source or reason for each suggested change.",
+        ],
+        table: {
+          columns: ["Control", "Why it matters"],
+          rows: [
+            ["Field-level confidence", "Lets reviewers focus on uncertain values instead of checking every clean suggestion at the same depth."],
+            ["Source evidence", "Shows where each value came from, such as supplier page, packaging image, PIM export, or product copy."],
+            ["Validation rules", "Catches impossible dimensions, unsupported values, missing identifiers, duplicate SKUs, and import format issues."],
+            ["Exception queue", "Keeps conflicts, low-confidence suggestions, and missing source evidence visible."],
+            ["Approval trail", "Records reviewer decision, correction reason, and final status before data is published or imported."],
+            ["Rollback path", "Makes it possible to reverse a batch or field update if downstream teams spot a problem."],
+          ],
+        },
+      },
+      {
+        heading: "What the Output Should Look Like",
+        paragraphs: [
+          "The output should be designed for the people who own the catalogue. A spreadsheet of AI guesses is not enough. The reviewer needs a clean queue that shows product ID, current value, suggested value, source evidence, confidence, issue type, and action.",
+          "For PIM and ecommerce teams, the safest first output is often an import-ready file split into approved updates and exceptions. That lets the team improve data quality without giving up control of publishing rules.",
+        ],
+        table: {
+          columns: ["Output field", "Purpose"],
+          rows: [
+            ["Product ID or SKU", "Keeps every suggestion tied to the correct record."],
+            ["Attribute name", "Shows which field will change in the PIM or ecommerce platform."],
+            ["Current value", "Helps reviewers see whether the issue is missing, stale, duplicate, or inconsistent."],
+            ["Suggested value", "Provides the cleaned or enriched field value."],
+            ["Evidence", "Links the suggestion to source text, image, supplier row, or approved reference."],
+            ["Review action", "Approve, reject, edit, escalate, or hold for source cleanup."],
+          ],
+        },
       },
       {
         heading: "When Product Data Cleanup Automation Is a Good Fit",
         paragraphs: [
-          "This is a good fit when catalogue teams repeatedly fix the same fields, when missing attributes reduce search quality, or when product information is visible in sources that are painful to process manually.",
-          "It is not a shortcut around ownership. Someone still needs to decide which attributes matter and what source of truth the business trusts.",
+          "This workflow is a good fit when catalogue teams repeatedly fix the same fields, when missing attributes reduce search quality, or when useful product information is visible in sources that are painful to process manually.",
+          "It is not a shortcut around ownership. Someone still needs to decide which attributes matter, what source of truth the business trusts, and which fields are safe to publish after review.",
         ],
+        bullets: [
+          "Good fit: the same attributes are missing across many products in a category.",
+          "Good fit: product filters, search, recommendations, or marketplace feeds depend on cleaner fields.",
+          "Good fit: supplier pages, documents, images, or spreadsheets contain useful data that is slow to extract manually.",
+          "Needs cleanup first: the taxonomy, field definitions, or source ownership are not clear.",
+          "Keep manual for now: the product set is small, highly bespoke, or dependent on expert judgement that cannot be reviewed efficiently.",
+        ],
+      },
+      {
+        heading: "What To Measure Before Production",
+        paragraphs: [
+          "A product data cleanup pilot should prove that the workflow improves catalogue quality without creating new review burden. Measure both field quality and operational adoption, because clean-looking data has little value if teams do not trust or use it.",
+          "The right metrics depend on the workflow, but they should always show coverage, correction patterns, exception reasons, and downstream acceptance after import.",
+        ],
+        table: {
+          columns: ["Metric", "What it shows"],
+          rows: [
+            ["Attribute coverage", "How many products now have the required fields for a category."],
+            ["Approval rate", "How often reviewers accept AI-suggested values without editing."],
+            ["Correction pattern", "Which fields, sources, or suppliers create repeated reviewer changes."],
+            ["Exception rate", "How often the workflow finds conflicts, missing evidence, duplicates, or invalid values."],
+            ["Import acceptance", "Whether the PIM, ecommerce platform, or feed accepts the approved output cleanly."],
+            ["Downstream signal", "Whether search, filters, recommendations, merchandising, or marketplace readiness improve after cleanup."],
+          ],
+        },
       },
     ],
     faq: [
@@ -1243,11 +1381,30 @@ export const insights: Insight[] = [
       {
         question: "Which attribute should be automated first?",
         answer:
-          "Start with an attribute that is common, commercially useful, painful to maintain, and easy for a reviewer to verify.",
+          "Start with an attribute that is common, useful for product discovery or operations, painful to maintain manually, and easy for a reviewer to verify from approved sources.",
+      },
+      {
+        question: "What is the difference between product data cleanup and enrichment?",
+        answer:
+          "Cleanup fixes existing catalogue issues such as inconsistent units, duplicates, invalid values, and missing evidence. Enrichment adds useful fields that were absent or incomplete, such as attributes, taxonomy, compatibility, or packaging details.",
+      },
+      {
+        question: "How should AI product data suggestions be reviewed?",
+        answer:
+          "Reviewers should see product ID, current value, suggested value, source evidence, confidence, issue type, and action. Low-confidence or conflicting values should stay in an exception queue until approved or corrected.",
       },
     ],
-    sources: [sharedSources.googleCommerce, sharedSources.googleDataQuality],
-    related: ["ai-workflow-automation-examples", "image-qa-compliance-automation", "how-to-know-if-a-workflow-is-worth-automating"],
+    sources: [
+      sharedSources.googleCommerce,
+      sharedSources.googleDataQuality,
+      sharedSources.shopifyCategoryMetafields,
+      sharedSources.gs1QualityData,
+    ],
+    related: [
+      "image-qa-compliance-automation",
+      "document-processing-data-extraction-automation",
+      "how-to-know-if-a-workflow-is-worth-automating",
+    ],
   },
   {
     slug: "review-intelligence-automation",
