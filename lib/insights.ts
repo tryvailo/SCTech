@@ -25,6 +25,12 @@ export interface InsightSection {
   }
 }
 
+export interface InsightOutcome {
+  value: string
+  label: string
+  detail: string
+}
+
 export interface Insight {
   slug: string
   title: string
@@ -39,6 +45,7 @@ export interface Insight {
   searchIntent: "Informational" | "Commercial Investigation" | "Implementation"
   keywords: string[]
   summary: string
+  outcome?: InsightOutcome
   takeaways: string[]
   sections: InsightSection[]
   faq: InsightFaq[]
@@ -303,6 +310,12 @@ export const insights: Insight[] = [
     ],
     summary:
       "Image QA automation uses multimodal AI to inspect catalogue assets, classify visual issues, and route only the uncertain or sensitive cases to human reviewers.",
+    outcome: {
+      value: "2.1M+",
+      label: "catalogue images processed",
+      detail:
+        "A prior controlled QA workflow processed more than 2.1 million product images and converted visual inspection into reviewable exception queues.",
+    },
     takeaways: [
       "The workflow works best when issue categories are explicit and review queues are easy to inspect.",
       "AI should flag exceptions, not silently replace merchandising or brand approval.",
@@ -322,6 +335,7 @@ export const insights: Insight[] = [
         paragraphs: [
           "A practical image QA workflow collects assets from catalogue or image-management systems, runs multimodal checks against a defined taxonomy, then routes flags into cleanup, replacement, or human-review queues.",
           "The key is to keep the AI output inspectable. Each flag should include the asset, product identifier, issue category, confidence, and recommended next action.",
+          "In one representative build, the workflow handled more than 2.1 million catalogue images and turned broad manual inspection into a structured queue of visible exceptions.",
         ],
         table: {
           columns: ["Workflow step", "Operational output"],
@@ -493,6 +507,12 @@ export const insights: Insight[] = [
     ],
     summary:
       "Review intelligence automation turns unstructured customer feedback into structured themes, sentiment, evidence, trends, and decision-ready summaries.",
+    outcome: {
+      value: "95%",
+      label: "shorter review cycle time",
+      detail:
+        "A prior review-intelligence workflow reduced cycle time from 3.5 days to 4 hours while increasing throughput from 16 to 597 reviews per hour.",
+    },
     takeaways: [
       "The goal is not just sentiment scoring. Teams need themes, evidence, changes over time, and operational ownership.",
       "Useful workflows deduplicate reviews, classify topics, surface emerging issues, and preserve source examples.",
@@ -511,6 +531,7 @@ export const insights: Insight[] = [
         heading: "How Review Intelligence Automation Works",
         paragraphs: [
           "A review intelligence workflow collects reviews from selected sources, removes duplicates, classifies each review into a taxonomy, extracts evidence snippets, summarises patterns, and publishes dashboards or reports for product and operations teams.",
+          "In a prior workflow, processing increased from 16 to 597 reviews per hour and the end-to-end review cycle moved from 3.5 days to 4 hours. That is roughly a 95% shorter cycle time, before any business-specific interpretation is applied.",
         ],
         table: {
           columns: ["Layer", "What it produces"],
@@ -588,6 +609,12 @@ export const insights: Insight[] = [
     ],
     summary:
       "Content fact-checking automation helps editorial teams separate fluent writing from verified claims by extracting statements, checking approved sources, and producing reviewable evidence.",
+    outcome: {
+      value: "100+",
+      label: "articles/day verification capacity",
+      detail:
+        "A prior source-grounded content workflow supported verification capacity above 100 articles per day with claim-level evidence and editorial review.",
+    },
     takeaways: [
       "AI-generated or supplier-written content should be checked before publication, especially when it makes factual claims.",
       "The workflow should preserve the exact claim, evidence, source, confidence, and reviewer decision.",
@@ -606,6 +633,7 @@ export const insights: Insight[] = [
         heading: "How AI Content Fact-Checking Automation Works",
         paragraphs: [
           "A fact-checking workflow extracts factual claims from draft content, checks those claims against approved sources, classifies each claim, and returns an evidence report for editors.",
+          "A representative source-grounded workflow supported more than 100 articles per day of verification capacity by separating claim extraction, evidence retrieval, verdict labels, and editorial approval.",
         ],
         table: {
           columns: ["Step", "Output"],
@@ -683,6 +711,12 @@ export const insights: Insight[] = [
     ],
     summary:
       "Reporting automation turns fragmented operational inputs into structured summaries, updates, release notes, and decision briefs with human approval before publishing.",
+    outcome: {
+      value: "200-800",
+      label: "hours/year modelled effort reduction",
+      detail:
+        "A prior release-reporting workflow modelled 200-800 hours of annual effort reduction, depending on release cadence and number of teams involved.",
+    },
     takeaways: [
       "The value is consistency: fewer missed updates, clearer summaries, and less manual assembly work.",
       "Inputs often come from Jira, docs, spreadsheets, Slack, deployment notes, and internal knowledge bases.",
@@ -702,6 +736,7 @@ export const insights: Insight[] = [
         paragraphs: [
           "A reporting workflow collects source updates, groups them into themes, rewrites them for the target audience, adds missing context, and sends a draft for approval.",
           "Atlassian's release-note guidance and Rovo examples show the same operating pattern: source work items, select fields, draft or summarise, adjust for audience, then review before publishing.",
+          "For one release-reporting workflow, the modelled annual effort reduction was 200-800 hours, depending on deployment frequency, team count, and review requirements.",
         ],
         table: {
           columns: ["Input", "Output"],
@@ -779,6 +814,12 @@ export const insights: Insight[] = [
     ],
     summary:
       "Market monitoring automation collects recurring signals, classifies what changed, preserves evidence, and produces summaries that help teams decide what needs attention.",
+    outcome: {
+      value: "Weekly",
+      label: "decision-ready monitoring cadence",
+      detail:
+        "Most first market-monitoring workflows work best as a weekly evidence brief, with faster escalation only for high-impact changes.",
+    },
     takeaways: [
       "The best monitoring workflows have a clear watchlist, cadence, source policy, and escalation rule.",
       "AI is useful for summarising changes, clustering themes, and spotting signals across many sources.",
@@ -875,5 +916,9 @@ export function getArticlePlainText(insight: Insight) {
     })
     .join(" ")
 
-  return [insight.summary, ...insight.takeaways, sectionText].join(" ")
+  const outcomeText = insight.outcome
+    ? `${insight.outcome.value} ${insight.outcome.label}. ${insight.outcome.detail}`
+    : ""
+
+  return [insight.summary, outcomeText, ...insight.takeaways, sectionText].filter(Boolean).join(" ")
 }

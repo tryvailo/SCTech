@@ -40,6 +40,29 @@ export const metadata: Metadata = {
 
 const categoryOrder = ["Guide", "Operating Model", "Automation Example"]
 
+const representativeOutcomes = [
+  {
+    value: "95%",
+    label: "shorter review cycle time",
+    detail: "3.5 days to 4 hours in a prior review-intelligence workflow",
+  },
+  {
+    value: "2.1M+",
+    label: "images processed",
+    detail: "catalogue image QA converted into reviewable exception queues",
+  },
+  {
+    value: "100+",
+    label: "articles/day",
+    detail: "source-grounded verification capacity with editorial review",
+  },
+  {
+    value: "Up to 96%",
+    label: "lower image-production overhead",
+    detail: "per-item visual workflow optimisation without exposing commercial terms",
+  },
+]
+
 export default function InsightsPage() {
   const featured = insights[0]
   const groupedInsights = categoryOrder.map((category) => ({
@@ -129,7 +152,7 @@ export default function InsightsPage() {
       </section>
 
       <section className="px-5 py-10 md:px-8 md:py-14">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-7xl space-y-6">
           <Link
             href={`/insights/${featured.slug}`}
             className="group grid gap-8 border border-foreground/12 bg-foreground/[0.035] p-6 transition-colors hover:border-foreground/28 md:grid-cols-[0.9fr_1.1fr] md:p-8"
@@ -165,6 +188,21 @@ export default function InsightsPage() {
               </div>
             </div>
           </Link>
+
+          <div className="grid gap-3 md:grid-cols-4">
+            {representativeOutcomes.map((outcome) => (
+              <div key={outcome.label} className="border border-foreground/10 bg-foreground/[0.025] p-4">
+                <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">
+                  Representative outcome
+                </p>
+                <strong className="mt-3 block text-2xl font-light leading-none tracking-normal text-foreground">
+                  {outcome.value}
+                </strong>
+                <p className="mt-2 text-sm leading-5 text-foreground/72">{outcome.label}</p>
+                <p className="mt-3 text-xs leading-5 text-foreground/48">{outcome.detail}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -190,6 +228,11 @@ export default function InsightsPage() {
                       </div>
                       <h3 className="text-2xl font-light leading-tight tracking-normal">{insight.title}</h3>
                       <p className="mt-4 text-sm leading-6 text-foreground/65">{insight.seoDescription}</p>
+                      {insight.outcome && (
+                        <p className="mt-5 border-l border-foreground/15 pl-3 font-mono text-[11px] leading-5 text-foreground/55">
+                          {insight.outcome.value} {insight.outcome.label}
+                        </p>
+                      )}
                     </div>
                     <div className="mt-8 flex items-center justify-between gap-4">
                       <span className="font-mono text-[11px] text-foreground/45">{insight.searchIntent}</span>

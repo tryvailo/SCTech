@@ -133,6 +133,21 @@ export default async function InsightArticlePage({ params }: PageProps) {
               {insight.summary}
             </p>
 
+            {insight.outcome && (
+              <div className="mt-8 max-w-3xl border border-foreground/10 bg-foreground/[0.035] p-5">
+                <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">
+                  Representative outcome
+                </p>
+                <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-end sm:gap-4">
+                  <strong className="font-sans text-3xl font-light leading-none tracking-normal text-foreground md:text-5xl">
+                    {insight.outcome.value}
+                  </strong>
+                  <p className="max-w-xl text-sm leading-6 text-foreground/72">{insight.outcome.label}</p>
+                </div>
+                <p className="mt-4 text-xs leading-5 text-foreground/55">{insight.outcome.detail}</p>
+              </div>
+            )}
+
             <div className="mt-10 grid gap-4 border border-foreground/10 bg-foreground/[0.025] p-5 md:grid-cols-2">
               {insight.takeaways.map((takeaway) => (
                 <div key={takeaway} className="flex gap-3">
@@ -189,6 +204,15 @@ export default async function InsightArticlePage({ params }: PageProps) {
                 <div className="my-5 h-px bg-foreground/10" />
                 <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">Search intent</p>
                 <p className="mt-2 text-sm leading-6 text-foreground/70">{insight.searchIntent}</p>
+                {insight.outcome && (
+                  <>
+                    <div className="my-5 h-px bg-foreground/10" />
+                    <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">Outcome signal</p>
+                    <p className="mt-2 text-sm leading-6 text-foreground/70">
+                      {insight.outcome.value} {insight.outcome.label}
+                    </p>
+                  </>
+                )}
                 <div className="my-5 h-px bg-foreground/10" />
                 <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">SmartCore angle</p>
                 <p className="mt-2 text-sm leading-6 text-foreground/70">
