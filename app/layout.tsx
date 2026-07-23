@@ -88,7 +88,7 @@ const jsonLd = {
           itemOffered: {
             "@type": "Service",
             name: "AI automation consulting",
-            description: "Advisory and delivery support for practical AI-enabled workflow automation.",
+            description: "Workflow diagnostics and delivery support for practical AI-enabled automation.",
           },
         },
         {
@@ -96,7 +96,7 @@ const jsonLd = {
           itemOffered: {
             "@type": "Service",
             name: "Operational intelligence",
-            description: "Process mapping, intelligence layers, and systems delivery for complex operations.",
+            description: "Process mapping, controlled intelligence layers, and systems delivery for complex operations.",
           },
         },
       ],

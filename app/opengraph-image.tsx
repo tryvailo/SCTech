@@ -76,10 +76,10 @@ export default function Image() {
 
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
           <div style={{ maxWidth: 870, fontSize: 82, lineHeight: 0.96, letterSpacing: -3 }}>
-            AI Automation Consulting for Complex Work
+            Reliable AI Workflows for Complex Operations
           </div>
           <div style={{ marginTop: 28, maxWidth: 760, fontSize: 30, lineHeight: 1.35, color: "rgba(248,250,252,0.82)" }}>
-            Strategic advisory, operational intelligence, and practical AI-enabled systems.
+            Workflow diagnostics, operational intelligence, and controlled AI-enabled systems.
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export function WorkSection() {
             Our Approach
           </h2>
           <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Advisory, automation, and systems delivery for complex work
+            / Diagnose one workflow, prove it on real data, build only when it works
           </p>
         </div>
 
@@ -28,30 +28,30 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "Strategic Advisory",
+              title: "Workflow Diagnostic",
               description:
-                "Clarify priorities, map operational challenges, and identify where technology or process change can create meaningful leverage",
+                "Map the inputs, current effort, failure points, required outputs, and quality constraints around one recurring workflow",
               direction: "left",
             },
             {
               number: "02",
-              title: "Process Intelligence",
+              title: "Structured Proof",
               description:
-                "Turn fragmented workflows, data points, and decision paths into operating models that are easier to understand and improve",
+                "Test the workflow on representative data before recommending automation, integration, or a wider operating change",
               direction: "right",
             },
             {
               number: "03",
-              title: "AI-Enabled Automation",
+              title: "Controlled Automation",
               description:
-                "Design practical automation layers that reduce manual effort while keeping human judgement in the right places",
+                "Combine rules, AI, source boundaries, review queues, and audit trails so the system reduces effort without hiding accountability",
               direction: "left",
             },
             {
               number: "04",
-              title: "Systems Delivery",
+              title: "Production Support",
               description:
-                "Support the move from discovery to prototypes, internal tools, workflow redesign, and implementation",
+                "Move validated workflows into the tools and routines your team already uses, with documentation and sensible ownership",
               direction: "right",
             },
           ].map((capability, i) => (

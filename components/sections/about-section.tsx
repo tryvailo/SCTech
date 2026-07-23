@@ -21,16 +21,16 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
             Practical Outcomes
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
-            / Clearer work without narrowing the operating context
+            / Clear outputs, controlled workflows, and less repetitive work
           </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {[
-            { value: "Clarity", label: "Sharper understanding of where change will create the most value", direction: "top" },
-            { value: "Automation", label: "Repeatable workflows supported by practical AI-enabled systems", direction: "right" },
-            { value: "Flow", label: "Information structured around the moments where teams need to act", direction: "left" },
-            { value: "Scale", label: "Tools and processes designed to grow with operational complexity", direction: "bottom" },
+            { value: "Clarity", label: "A sharper view of the workflow, the data, the owner, and the smallest useful next step", direction: "top" },
+            { value: "Control", label: "Rules, source boundaries, review points, and audit trails around AI-assisted work", direction: "right" },
+            { value: "Coverage", label: "More records, reviews, images, documents, or reports processed without relying on tiny samples", direction: "left" },
+            { value: "Scale", label: "Systems and routines that grow with operational complexity instead of adding manual layers", direction: "bottom" },
           ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) return "translate-y-6 opacity-0"
@@ -61,7 +61,7 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "600ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(4)}>
-            Discuss a Project
+            Request a Diagnostic
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" className="hidden sm:inline-flex" onClick={() => scrollToSection?.(1)}>
             View Approach

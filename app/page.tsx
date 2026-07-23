@@ -249,7 +249,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {["Home", "Approach", "Capabilities", "Outcomes", "Contact"].map((item, index) => (
+          {["Home", "Approach", "Workflows", "Outcomes", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -268,7 +268,7 @@ export default function Home() {
         </div>
 
         <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Contact Us
+          Request Diagnostic
         </MagneticButton>
       </nav>
 
@@ -289,22 +289,22 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="mb-4 flex flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 md:mb-6">
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Strategic Advisory</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Workflow Diagnostics</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">AI-Enabled Automation</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">AI Workflow Automation</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
                 <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Operational Intelligence</p>
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Practical Intelligence for Complex Work</span>
+              <span className="text-balance">Reliable AI Workflows for Complex Operations</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                We help organisations make sense of complex operations, improve decision flows, and build AI-enabled
-                systems that support better work at scale.
+                We help organisations turn repetitive work across feedback, product data, content, reporting, and
+                decision flows into controlled systems with clear outputs and human review where it matters.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
@@ -312,7 +312,7 @@ export default function Home() {
                 Explore Approach
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
-                Discuss a Project
+                Request a Diagnostic
               </MagneticButton>
             </div>
           </div>

@@ -17,45 +17,45 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-xl font-light tracking-tight text-foreground md:text-2xl lg:text-4xl">
-            Capabilities in Practice
+            Workflow Areas
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            From ambiguous operations to usable systems
+            From scattered inputs to usable operational output
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-            Complex work rarely needs technology first. It needs structure: a clearer view of the problem, the workflow,
-            the data, and the points where automation can make work easier to run.
+            SmartCore works where teams repeatedly collect, classify, check, route, and report information by hand.
+            The work may look different across organisations; the operating pattern is often the same.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:gap-x-16 lg:gap-y-6">
           {[
             {
-              title: "Process Mapping",
+              title: "Customer & Market Intelligence",
               description:
-                "Map how people, tools, data, and decisions move through the organisation before choosing what to change.",
-              metric: "Discovery -> Direction",
+                "Turn reviews, market signals, customer feedback, and approved exports into recurring insight for product, CX, and leadership teams.",
+              metric: "Feedback -> Findings",
               direction: "top",
             },
             {
-              title: "Automation Design",
+              title: "Product & Data Operations",
               description:
-                "Shape practical workflows where AI and automation reduce repeated effort without hiding accountability.",
-              metric: "Manual -> Assisted",
+                "Structure product data, catalog checks, image QA, supplier inputs, and exception lists into reviewable outputs.",
+              metric: "Records -> Queues",
               direction: "right",
             },
             {
-              title: "Intelligence Layers",
+              title: "Content & Reporting Automation",
               description:
-                "Connect scattered information into clearer views that help teams see patterns, risks, and next steps.",
-              metric: "Fragmented -> Structured",
+                "Generate evidence-linked drafts, recurring reports, summaries, and updates from defined sources and templates.",
+              metric: "Sources -> Reports",
               direction: "left",
             },
             {
-              title: "Delivery Support",
+              title: "Decision & Process Support",
               description:
-                "Move from strategy into working prototypes, internal tools, and systems that fit the operating reality.",
-              metric: "Idea -> Capability",
+                "Clarify ambiguous workflows, define quality gates, and create systems that make the next operational step easier to see.",
+              metric: "Ambiguity -> Action",
               direction: "bottom",
             },
           ].map((service, i) => (
@@ -70,7 +70,7 @@ export function ServicesSection() {
           style={{ transitionDelay: "600ms" }}
         >
           <p className="text-xs italic text-foreground/90 md:text-sm lg:text-lg">
-            When work is complex, the right system should make the next step clearer.
+            A useful workflow does not just automate a task. It makes the output easier to trust.
           </p>
         </div>
       </div>
