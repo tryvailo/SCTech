@@ -86,9 +86,233 @@ const sharedSources = {
     title: "Show Me the Work: Fact-Checkers' Requirements for Explainable Automated Fact-Checking",
     url: "https://arxiv.org/html/2502.09083v1",
   },
+  atlassianAiWorkflow: {
+    title: "Atlassian: what is AI workflow automation?",
+    url: "https://www.atlassian.com/agile/project-management/ai-workflow-automation",
+  },
+  ibmWorkflowAutomation: {
+    title: "IBM: what is workflow automation?",
+    url: "https://www.ibm.com/think/topics/workflow-automation",
+  },
+  ibmBusinessProcessAutomation: {
+    title: "IBM: what is business process automation?",
+    url: "https://www.ibm.com/think/topics/business-process-automation",
+  },
+  googleDocumentAi: {
+    title: "Google Cloud: Document AI",
+    url: "https://cloud.google.com/document-ai",
+  },
+  microsoftDocumentProcessing: {
+    title: "Microsoft: intelligent document processing",
+    url: "https://adoption.microsoft.com/en-us/intelligent-document-processing/",
+  },
 }
 
 export const insights: Insight[] = [
+  {
+    slug: "ai-workflow-automation-examples",
+    title: "AI Workflow Automation Examples for Operations Teams",
+    seoTitle: "AI Workflow Automation Examples for Operations Teams",
+    description:
+      "Practical AI workflow automation examples for teams that need to turn repetitive operational work into controlled, reviewable systems.",
+    seoDescription:
+      "Explore practical AI workflow automation examples for operations teams, including feedback analysis, product data enrichment, document processing, reporting, and market monitoring.",
+    category: "Guide",
+    readingTime: "11 min read",
+    publishedAt: "2026-07-23",
+    updatedAt: "2026-07-23",
+    targetQuery: "AI workflow automation examples",
+    searchIntent: "Informational",
+    keywords: [
+      "AI workflow automation examples",
+      "AI workflow automation",
+      "AI automation examples",
+      "business process automation examples",
+      "AI automation use cases",
+      "operations automation AI",
+      "controlled AI workflows",
+      "AI workflow automation for operations teams",
+    ],
+    summary:
+      "The best AI workflow automation examples are not one-off prompts. They are repeatable operating systems that collect inputs, apply AI to a defined task, route exceptions to people, and produce an output the business can trust.",
+    takeaways: [
+      "Start with workflows that are frequent, measurable, and reviewable before moving into high-risk automation.",
+      "A useful AI workflow has inputs, rules, model tasks, review points, outputs, and monitoring, not just a chatbot or prompt library.",
+      "Operations teams usually see the strongest fit in feedback analysis, product data, document processing, reporting, content checks, and market monitoring.",
+      "The safest first build is often a decision-support workflow that prepares evidence and exceptions for human review.",
+    ],
+    sections: [
+      {
+        heading: "What Counts as an AI Workflow Automation Example?",
+        paragraphs: [
+          "An AI workflow automation example is a recurring process where AI performs a defined operational task inside a controlled sequence. The AI may classify feedback, extract fields, compare images, draft a summary, check claims, or flag exceptions, but the workflow still needs rules, review paths, and an accountable output.",
+          "That distinction matters. A prompt can help one person work faster for a moment. A workflow helps a team produce the same type of output again and again, with enough structure for other people to inspect, improve, and trust it.",
+        ],
+        table: {
+          columns: ["Element", "What it means in practice"],
+          rows: [
+            ["Input", "The workflow has defined sources such as tickets, reviews, images, PDFs, spreadsheets, product records, or approved webpages."],
+            ["AI task", "The model performs a narrow job such as extraction, classification, summarisation, comparison, drafting, or recommendation."],
+            ["Rules", "The system knows allowed sources, output format, confidence thresholds, escalation triggers, and quality criteria."],
+            ["Review", "Uncertain, sensitive, or externally visible outputs go to a person before they become operational truth."],
+            ["Output", "The workflow creates a report, queue, dataset, ticket, update, dashboard, or decision pack."],
+            ["Monitoring", "The team tracks correction patterns, exceptions, drift, cycle time, and whether the output is actually used."],
+          ],
+        },
+      },
+      {
+        heading: "Example 1: Customer Feedback and Review Intelligence",
+        paragraphs: [
+          "Customer feedback is often rich but operationally awkward. Reviews, support notes, survey comments, call summaries, and chat transcripts contain product signals, delivery issues, competitor mentions, service problems, and repeated objections. Manually reading a small sample can miss the pattern.",
+          "An AI review-intelligence workflow can classify each item by theme, sentiment, urgency, product line, market, and evidence. The useful output is not a colourful word cloud. It is a reviewable findings queue and a recurring decision summary for product, CX, and leadership teams.",
+        ],
+        bullets: [
+          "Input: reviews, support exports, survey comments, NPS verbatims, and approved CRM notes.",
+          "AI task: classify themes, extract evidence, group similar complaints, and identify emerging patterns.",
+          "Review point: route sensitive, low-confidence, or high-impact findings to a human owner.",
+          "Output: weekly insight digest, issue backlog, product feedback map, or account-level risk view.",
+          "Best first metric: shorter time from raw feedback to a usable decision or prioritised issue list.",
+        ],
+      },
+      {
+        heading: "Example 2: Product Data Enrichment and Catalogue Cleanup",
+        paragraphs: [
+          "Product and catalogue teams often manage messy information from supplier feeds, spreadsheets, packaging, internal systems, and ecommerce pages. The work is repetitive, but quality still matters because inaccurate attributes affect search, merchandising, compliance, and customer trust.",
+          "An AI product-data workflow can extract attributes, normalise field values, detect missing information, suggest categories, and flag records that need review. The automation should not silently rewrite a catalogue. It should create structured suggestions and exception queues that product owners can approve.",
+        ],
+        table: {
+          columns: ["Workflow stage", "Operational use"],
+          rows: [
+            ["Collect", "Pull supplier sheets, current catalogue exports, product pages, packaging images, or PIM records."],
+            ["Extract", "Identify dimensions, materials, compatibility, ingredients, features, categories, and missing fields."],
+            ["Normalise", "Map values to approved taxonomy, units, naming rules, and field formats."],
+            ["Validate", "Flag conflicts between sources, suspicious values, duplicates, and records below completeness thresholds."],
+            ["Approve", "Send changes into a review queue before updates are published or synced downstream."],
+          ],
+        },
+      },
+      {
+        heading: "Example 3: Image QA and Visual Compliance Review",
+        paragraphs: [
+          "Image QA is a strong AI automation candidate because the team is usually looking for repeatable visual issues: watermarks, old packaging, wrong product shots, supplier overlays, duplicates, missing angles, poor backgrounds, or policy-sensitive claims.",
+          "A controlled image workflow can scan assets, classify issue types, compare images against product data, and create an exception queue. People still handle judgement calls, but they do not need to manually inspect every image at the same depth.",
+        ],
+        bullets: [
+          "Input: catalogue images, image URLs, product IDs, supplier references, and image rules.",
+          "AI task: detect visible problems, compare image/product fit, and group likely duplicates.",
+          "Review point: send exceptions to merchandising, compliance, or supplier operations.",
+          "Output: approved assets, rejected assets, remediation queues, or supplier feedback lists.",
+        ],
+      },
+      {
+        heading: "Example 4: Document Processing and Data Extraction",
+        paragraphs: [
+          "Document processing is one of the clearest examples of AI workflow automation because many business documents contain valuable information trapped in inconsistent layouts. Invoices, forms, contracts, PDFs, certificates, policy documents, and onboarding packs often need classification, extraction, validation, and routing.",
+          "The workflow should define exactly which fields matter, where the extracted data can go, and when a human must review the result. For many teams, the real value is not only extraction. It is turning unstructured documents into structured, searchable, auditable operational records.",
+        ],
+        table: {
+          columns: ["Use case", "What AI can prepare"],
+          rows: [
+            ["Supplier onboarding", "Company details, certificates, expiry dates, compliance flags, and missing evidence."],
+            ["Finance operations", "Invoice fields, purchase order matches, anomaly flags, and approval queues."],
+            ["Legal operations", "Clause summaries, key dates, parties, obligations, and exceptions for review."],
+            ["Service operations", "Forms, attachments, identity documents, case categories, and next-step recommendations."],
+          ],
+        },
+      },
+      {
+        heading: "Example 5: Reporting and Coordination Automation",
+        paragraphs: [
+          "Many internal reports are assembled by copying updates from tickets, spreadsheets, meetings, dashboards, and chat threads. The process is slow because the work is scattered, not because the final report is intellectually complex.",
+          "An AI reporting workflow can collect approved inputs, summarise changes, separate facts from interpretation, draft audience-specific updates, and highlight missing information. This works especially well for release notes, status reports, project summaries, operational reviews, and leadership briefings.",
+        ],
+        bullets: [
+          "Input: Jira tickets, project notes, release logs, dashboards, task lists, and approved source documents.",
+          "AI task: summarise changes, group updates by audience, identify gaps, and draft a clean report.",
+          "Review point: keep owners accountable for approving facts before distribution.",
+          "Output: release notes, weekly summaries, board packs, customer updates, or internal decision notes.",
+        ],
+      },
+      {
+        heading: "Example 6: Content Checks and Source-Grounded Drafting",
+        paragraphs: [
+          "AI-assisted content can create a new quality-control problem: teams produce more drafts, but still need to know whether claims, references, figures, and product statements are allowed. A content-checking workflow keeps generation separate from verification.",
+          "The workflow can compare draft claims against approved source material, flag unsupported statements, identify risky wording, and prepare an evidence-linked review note for editors. This is especially useful where content volume is high but trust cannot be delegated to a model.",
+        ],
+        bullets: [
+          "Input: draft content, approved product pages, policy documents, source notes, and claim libraries.",
+          "AI task: extract claims, check source alignment, flag unsupported statements, and suggest safer wording.",
+          "Review point: editors decide what to publish and whether the evidence is sufficient.",
+          "Output: annotated drafts, claim-check reports, approval queues, and source-grounded summaries.",
+        ],
+      },
+      {
+        heading: "Example 7: Market and Competitor Monitoring",
+        paragraphs: [
+          "Market monitoring becomes painful when the team repeatedly checks the same public sources, extracts signals, compares changes, and writes summaries. AI can help by turning observable information into structured monitoring output.",
+          "A good competitor-monitoring workflow does not pretend to know a competitor's private strategy. It separates evidence from interpretation: what changed, where it appeared, why it might matter, and what the team should review next.",
+        ],
+        table: {
+          columns: ["Signal type", "Workflow output"],
+          rows: [
+            ["Website changes", "New pages, offer changes, messaging shifts, feature language, and market positioning notes."],
+            ["Review movement", "Repeated complaints, praised features, delivery problems, and sentiment shifts."],
+            ["Content and announcements", "Product updates, hiring themes, event activity, and public roadmap hints."],
+            ["Search and category signals", "Topic movement, emerging keywords, ranking competitors, and content gaps."],
+          ],
+        },
+      },
+      {
+        heading: "How To Choose the Right First AI Workflow",
+        paragraphs: [
+          "The best first AI workflow is usually boring in the right way. It happens often, uses available inputs, has a clear output, and lets a person review mistakes before they matter. That makes the workflow easier to test, easier to trust, and easier to improve.",
+          "Avoid starting with a broad transformation programme or a fully autonomous decision system. Start with one operational loop where the current manual work is visible and the quality bar can be described in plain language.",
+        ],
+        bullets: [
+          "Choose a workflow that happens at least weekly and has enough examples to test.",
+          "Prefer internal or reviewable outputs before customer-facing automation.",
+          "Make the acceptance criteria explicit before selecting tools or models.",
+          "Measure cycle time, exception rate, correction rate, and whether the team uses the output.",
+          "Keep human judgement where accuracy, accountability, or customer trust depends on it.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "What are the best AI workflow automation examples for a first project?",
+        answer:
+          "Good first examples include customer feedback analysis, product data enrichment, document extraction, image QA, recurring reporting, and content checks. They are frequent, reviewable, and produce outputs the team can inspect.",
+      },
+      {
+        question: "Is AI workflow automation the same as using an AI tool?",
+        answer:
+          "No. An AI tool can help with a task, but an AI workflow defines inputs, rules, review steps, outputs, ownership, and monitoring so the result can be used repeatedly by a team.",
+      },
+      {
+        question: "Which workflows should not be automated first?",
+        answer:
+          "Avoid rare, ambiguous, high-risk, or poorly owned workflows as a first project. If the team cannot describe a good output or review mistakes, the process needs diagnostic work before automation.",
+      },
+      {
+        question: "How should operations teams measure AI automation success?",
+        answer:
+          "Measure cycle time, coverage, correction rate, exception rate, reviewer effort, output adoption, and whether the workflow creates clearer decisions. Avoid measuring only the number of AI-generated outputs.",
+      },
+    ],
+    sources: [
+      sharedSources.atlassianAiWorkflow,
+      sharedSources.ibmWorkflowAutomation,
+      sharedSources.ibmBusinessProcessAutomation,
+      sharedSources.googleDocumentAi,
+      sharedSources.microsoftDocumentProcessing,
+      sharedSources.factChecking,
+    ],
+    related: [
+      "how-to-know-if-a-workflow-is-worth-automating",
+      "review-intelligence-automation",
+      "product-data-cleanup-automation",
+    ],
+  },
   {
     slug: "what-is-ai-workflow-automation",
     title: "What Is AI Workflow Automation?",
@@ -184,7 +408,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.mckinseyRetailEurope, sharedSources.googleCommerce, sharedSources.googleDataQuality],
-    related: ["how-to-know-if-a-workflow-is-worth-automating", "review-intelligence-automation", "product-data-cleanup-automation"],
+    related: ["ai-workflow-automation-examples", "how-to-know-if-a-workflow-is-worth-automating", "review-intelligence-automation"],
   },
   {
     slug: "how-to-know-if-a-workflow-is-worth-automating",
@@ -284,7 +508,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.mckinseyRetailEurope, sharedSources.googleDataQuality, sharedSources.shopifyMagic],
-    related: ["what-is-ai-workflow-automation", "image-qa-compliance-automation", "reporting-coordination-automation"],
+    related: ["ai-workflow-automation-examples", "what-is-ai-workflow-automation", "reporting-coordination-automation"],
   },
   {
     slug: "image-qa-compliance-automation",
@@ -387,7 +611,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.googleCommerce, sharedSources.googleDataQuality],
-    related: ["product-data-cleanup-automation", "how-to-know-if-a-workflow-is-worth-automating", "what-is-ai-workflow-automation"],
+    related: ["ai-workflow-automation-examples", "product-data-cleanup-automation", "how-to-know-if-a-workflow-is-worth-automating"],
   },
   {
     slug: "product-data-cleanup-automation",
@@ -481,7 +705,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.googleCommerce, sharedSources.googleDataQuality],
-    related: ["image-qa-compliance-automation", "what-is-ai-workflow-automation", "how-to-know-if-a-workflow-is-worth-automating"],
+    related: ["ai-workflow-automation-examples", "image-qa-compliance-automation", "how-to-know-if-a-workflow-is-worth-automating"],
   },
   {
     slug: "review-intelligence-automation",
@@ -583,7 +807,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.googleSentiment, sharedSources.mckinseyRetailEurope],
-    related: ["what-is-ai-workflow-automation", "content-fact-checking-automation", "market-competitor-monitoring-automation"],
+    related: ["ai-workflow-automation-examples", "content-fact-checking-automation", "market-competitor-monitoring-automation"],
   },
   {
     slug: "content-fact-checking-automation",
@@ -685,7 +909,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.shopifyMagic, sharedSources.factChecking],
-    related: ["review-intelligence-automation", "reporting-coordination-automation", "what-is-ai-workflow-automation"],
+    related: ["ai-workflow-automation-examples", "review-intelligence-automation", "reporting-coordination-automation"],
   },
   {
     slug: "reporting-coordination-automation",
@@ -788,7 +1012,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.atlassianReleaseNotes, sharedSources.atlassianRovo],
-    related: ["how-to-know-if-a-workflow-is-worth-automating", "content-fact-checking-automation", "market-competitor-monitoring-automation"],
+    related: ["ai-workflow-automation-examples", "how-to-know-if-a-workflow-is-worth-automating", "market-competitor-monitoring-automation"],
   },
   {
     slug: "market-competitor-monitoring-automation",
@@ -889,7 +1113,7 @@ export const insights: Insight[] = [
       },
     ],
     sources: [sharedSources.mckinseyRetailEurope, sharedSources.googleSentiment],
-    related: ["review-intelligence-automation", "reporting-coordination-automation", "what-is-ai-workflow-automation"],
+    related: ["ai-workflow-automation-examples", "review-intelligence-automation", "reporting-coordination-automation"],
   },
 ]
 

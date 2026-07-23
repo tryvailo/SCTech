@@ -103,7 +103,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
           </Link>
           <Link
             href="/#contact"
-            className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-transform hover:scale-[1.02]"
+            className="whitespace-nowrap rounded-full bg-foreground px-3 py-2 text-xs font-medium text-background transition-transform hover:scale-[1.02] sm:px-4 sm:text-sm"
           >
             Assess One Workflow
           </Link>
