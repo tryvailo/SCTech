@@ -281,7 +281,7 @@ export default function Home() {
           >
             Insights
           </a>
-          <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
+          <MagneticButton className="hidden min-[360px]:inline-flex" variant="secondary" onClick={() => scrollToSection(4)}>
             Assess One Workflow
           </MagneticButton>
         </div>
@@ -300,9 +300,9 @@ export default function Home() {
           paddingBottom: `calc(var(--footer-height, 0px) + env(safe-area-inset-bottom))`,
         }}
       >
-        <section className="flex h-full w-screen shrink-0 flex-col justify-center overflow-y-auto px-6 py-6 md:px-12 md:py-14">
+        <section className="flex h-full w-screen shrink-0 flex-col justify-start overflow-y-auto px-6 pb-8 pt-6 md:justify-center md:px-12 md:py-14">
           <div className="max-w-4xl">
-            <div className="mb-4 flex flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 md:mb-6">
+            <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
                 <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Workflow Diagnostics</p>
               </span>
