@@ -412,103 +412,211 @@ export const insights: Insight[] = [
   },
   {
     slug: "how-to-know-if-a-workflow-is-worth-automating",
-    title: "How To Know If a Workflow Is Worth Automating",
-    seoTitle: "How To Choose AI Workflow Automation Candidates",
+    title: "AI Automation Assessment Checklist: How To Choose the Right Workflow",
+    seoTitle: "AI Automation Assessment Checklist for Choosing the Right Workflow",
     description:
-      "A practical checklist for choosing AI automation candidates before investing in a pilot or production workflow.",
+      "A practical assessment checklist for choosing which workflow to automate with AI before investing in a pilot or production build.",
     seoDescription:
-      "Use this AI workflow automation checklist to identify repeatable, measurable, reviewable processes that are worth testing before a production build.",
-    category: "Operating Model",
-    readingTime: "8 min read",
+      "Use this AI automation assessment checklist to score workflow fit, input readiness, reviewability, risk, and production value before building.",
+    category: "Guide",
+    readingTime: "12 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
-    targetQuery: "how to choose AI workflow automation candidates",
+    targetQuery: "AI automation assessment checklist",
     searchIntent: "Implementation",
     keywords: [
-      "AI workflow automation candidates",
-      "workflow automation checklist",
       "AI automation assessment",
+      "AI automation assessment checklist",
+      "AI readiness assessment",
+      "AI readiness checklist",
+      "workflow automation checklist",
+      "automation feasibility checklist",
       "process automation candidates",
       "AI workflow audit",
-      "automation feasibility checklist",
+      "how to automate business processes",
     ],
     summary:
-      "A workflow is worth automating when it is repeated often, uses available inputs, produces a clear output, has measurable quality criteria, and creates visible operational drag today.",
+      "An AI automation assessment helps a team choose one workflow that is frequent, measurable, input-ready, reviewable, and valuable enough to test before a production build.",
     takeaways: [
-      "Start with workflow evidence: frequency, volume, handoffs, rework, and downstream impact.",
-      "Do not automate a broken process before naming the rules and exceptions.",
-      "Reviewability matters: the team must be able to inspect why the system produced an output.",
-      "A small diagnostic can reduce wasted effort by testing the workflow on real data first.",
+      "Assess one workflow at a time; broad AI readiness work is less useful when the operational loop is still undefined.",
+      "Strong candidates have repeatable inputs, clear outputs, visible drag, and errors that can be reviewed before they matter.",
+      "A workflow should score well on frequency, input quality, decision clarity, reviewability, risk control, and measurable value.",
+      "The right recommendation may be automate, redesign, clean the data first, or leave the workflow manual for now.",
     ],
     sections: [
       {
-        heading: "How To Choose AI Automation Candidates",
+        heading: "AI Automation Assessment Checklist",
         paragraphs: [
-          "Before building an AI workflow, score the candidate process across frequency, input quality, decision clarity, reviewability, and business impact. A workflow that scores well across all five is usually a better first candidate than a glamorous but ambiguous AI idea.",
+          "An AI automation assessment checklist is a structured way to decide whether a workflow is ready for AI, rule-based automation, process redesign, or no build. It should focus on one recurring workflow, not a broad AI idea or a vague transformation theme.",
+          "The checklist works best when it is used with real workflow evidence: examples of inputs, current outputs, handoffs, rework, exceptions, quality rules, and the people who approve the final result.",
         ],
         table: {
-          columns: ["Fit signal", "What to look for"],
+          columns: ["Checklist area", "What to confirm"],
           rows: [
-            ["Frequency", "The task happens daily, weekly, or at enough volume to justify standardisation."],
-            ["Input quality", "The required data exists in files, tools, tickets, reviews, images, or internal systems."],
-            ["Decision clarity", "A trained person can explain what a good output looks like."],
-            ["Reviewability", "Errors can be spotted and corrected before they cause harm."],
-            ["Impact", "The current workflow delays decisions, creates rework, or consumes scarce expert time."],
+            ["Workflow boundary", "The team can name where the workflow starts, where it ends, and who owns the output."],
+            ["Input readiness", "The required data exists in accessible systems, files, tickets, images, messages, documents, or exports."],
+            ["Output clarity", "A trained person can describe what a good result looks like and what would make it unacceptable."],
+            ["Review path", "Errors, low-confidence outputs, and sensitive cases can be checked before they affect customers or decisions."],
+            ["Operational value", "The current workflow creates delay, rework, missed coverage, inconsistent quality, or pressure on scarce expertise."],
           ],
         },
       },
       {
-        heading: "Best AI Workflow Automation Candidates",
+        heading: "Step 1: Define the Workflow, Not the AI Idea",
         paragraphs: [
-          "Strong candidates often sit in the gap between operational knowledge and repetitive data handling. People already know what should happen, but the volume or fragmentation makes the work slow.",
+          "A weak assessment starts with a technology idea: use AI for support, content, reporting, or operations. A strong assessment starts with a workflow: classify customer feedback every week, enrich missing product attributes, check catalogue images, prepare release notes, or extract fields from supplier documents.",
+          "The workflow definition should be narrow enough to test with real examples. If the team cannot collect representative inputs, describe the desired output, and identify the current owner, the workflow is not ready for automation planning yet.",
+        ],
+        table: {
+          columns: ["Question", "Good answer"],
+          rows: [
+            ["What triggers the workflow?", "A new export, ticket, review batch, document, image set, reporting cycle, or decision deadline."],
+            ["What is the current manual step?", "Reading, classifying, extracting, checking, drafting, comparing, routing, or reporting."],
+            ["Who uses the output?", "A named team such as product, operations, CX, merchandising, content, finance, or leadership."],
+            ["What happens next?", "The output updates a queue, report, dashboard, ticketing system, CMS, PIM, knowledge base, or decision pack."],
+          ],
+        },
+      },
+      {
+        heading: "Step 2: Score Frequency, Drag, and Decision Value",
+        paragraphs: [
+          "AI automation is easier to justify when the workflow happens often enough to standardise and creates enough drag to matter. Drag can mean slow cycle time, repetitive checking, missed coverage, inconsistent outputs, delayed decisions, or expert time spent on low-judgement work.",
+          "A workflow does not need huge volume to be worth testing. Some workflows are worth assessing because they unlock a weekly decision, reduce rework, or help a small expert team review more cases without lowering control.",
+        ],
+        table: {
+          columns: ["Score", "Frequency and value signal"],
+          rows: [
+            ["0", "The task is rare, ad hoc, or mostly strategic judgement with little repeatable structure."],
+            ["1", "The task repeats, but the volume, delay, or business value is still unclear."],
+            ["2", "The task repeats often, creates visible operational drag, and has a clear downstream user or decision."],
+          ],
+        },
+      },
+      {
+        heading: "Step 3: Check Input Readiness",
+        paragraphs: [
+          "Input readiness is where many automation ideas become practical or stall. The workflow may be conceptually clear, but AI cannot help reliably if the required source material is unavailable, inconsistent, poorly labelled, locked in systems nobody can export, or mixed with information the workflow should not use.",
+          "For SmartCore-style work, the most useful assessment question is not whether the company is generally AI-ready. It is whether this one workflow has enough accessible, representative input to test the task honestly.",
         ],
         bullets: [
-          "Reading thousands of customer reviews to find product, delivery, and service patterns",
-          "Checking catalogue images for watermarks, old packaging, wrong labels, or visual defects",
-          "Extracting product attributes from supplier pages, packaging images, and spreadsheets",
-          "Turning Jira tickets, release notes, and internal updates into audience-specific summaries",
-          "Checking AI-generated or supplier-written content against approved source material",
+          "List every allowed source the workflow can use, such as tickets, reviews, images, documents, spreadsheets, product records, or approved webpages.",
+          "Collect representative examples, including normal cases, edge cases, known failures, duplicates, missing fields, and ambiguous inputs.",
+          "Identify source boundaries so the workflow does not invent answers from unsupported context.",
+          "Check whether the data contains sensitive, regulated, customer-identifiable, or commercially restricted information.",
+          "Decide whether the first useful step is automation or cleanup of the source data and taxonomy.",
         ],
       },
       {
-        heading: "When Not To Automate a Workflow",
+        heading: "Step 4: Define the Output and Review Standard",
         paragraphs: [
-          "Weak candidates usually have low repeatability or unclear judgement standards. If two experienced people disagree about the correct output, an AI system will need deeper design work before it can help safely.",
+          "A workflow is ready for AI only when the output can be inspected. If a trained person cannot explain what a good answer looks like, the system cannot be evaluated beyond a vague feeling of usefulness.",
+          "The output standard should define format, acceptance criteria, evidence requirements, confidence thresholds, and what happens when the system is uncertain. This protects the workflow from becoming an impressive demo that nobody trusts in production.",
         ],
-        bullets: [
-          "One-off strategic decisions with no repeatable input pattern",
-          "Workflows where the source data is unavailable or unreliable",
-          "Tasks where the acceptable error rate is effectively zero but review is impossible",
-          "Processes owned by nobody, with no clear approval path",
-        ],
+        table: {
+          columns: ["Output question", "Assessment standard"],
+          rows: [
+            ["What is produced?", "A structured record, exception queue, draft, summary, score, label, recommendation, or report."],
+            ["What evidence is needed?", "Source links, extracted fields, quoted snippets, image references, record IDs, or version history."],
+            ["What is good enough?", "Clear acceptance criteria for accuracy, completeness, tone, formatting, and allowed uncertainty."],
+            ["Who reviews it?", "A workflow owner or reviewer who can approve, reject, correct, or escalate the output."],
+            ["Where does it go?", "A tool, dashboard, spreadsheet, ticketing system, CMS, PIM, knowledge base, or decision pack."],
+          ],
+        },
       },
       {
-        heading: "AI Workflow Automation Assessment Checklist",
+        heading: "Step 5: Map Risk, Controls, and Human Review",
         paragraphs: [
-          "A useful diagnostic maps one workflow end to end, samples real inputs, defines success criteria, tests likely failure modes, and recommends either automation, process cleanup, or no build.",
-          "This is deliberately narrower than a transformation roadmap. It gives the team evidence about one operational workflow before larger commitments are made.",
+          "The more visible or consequential the output, the more control the workflow needs. Review does not mean every case must be manual forever. It means the system must know when confidence is low, when evidence is missing, and when a human decision protects quality or accountability.",
+          "A practical AI assessment should separate low-risk preparation work from high-risk decision work. Preparing evidence, grouping cases, drafting summaries, and flagging exceptions are often better first projects than approving outcomes automatically.",
+        ],
+        table: {
+          columns: ["Risk level", "Control pattern"],
+          rows: [
+            ["Low", "The workflow prepares internal drafts, tags, summaries, or suggestions that are easy to correct."],
+            ["Medium", "The workflow affects reporting, customer-facing content, product records, or operational priorities and needs sampling or approval."],
+            ["High", "The workflow affects compliance, finance, legal, customer commitments, or sensitive decisions and needs strict review, audit trails, and clear ownership."],
+          ],
+        },
+      },
+      {
+        heading: "Step 6: Use a Simple Workflow Scorecard",
+        paragraphs: [
+          "A scorecard turns the assessment from opinion into a decision. Score each area from zero to two. The goal is not to create false precision; it is to make trade-offs visible before the team chooses a pilot.",
+          "A workflow that scores high across frequency, inputs, output clarity, reviewability, risk control, and value is a good automation candidate. A workflow with one or two weak areas may still be worth testing after a focused cleanup step.",
+        ],
+        table: {
+          columns: ["Criterion", "0", "1", "2"],
+          rows: [
+            ["Frequency", "Rare or ad hoc", "Repeats but unevenly", "Regular and visible"],
+            ["Input readiness", "Sources missing", "Sources exist but need cleanup", "Representative inputs are accessible"],
+            ["Output clarity", "Subjective or vague", "Partly defined", "Clear format and acceptance criteria"],
+            ["Reviewability", "Errors hard to see", "Some cases reviewable", "Outputs can be checked before use"],
+            ["Risk control", "High impact with weak controls", "Controls need design", "Boundaries, escalation, and ownership are clear"],
+            ["Value", "Limited operational effect", "Potential value but unmeasured", "Clear drag, delay, rework, or decision impact"],
+          ],
+        },
+      },
+      {
+        heading: "Step 7: Choose Automate, Redesign, Clean Up, or Wait",
+        paragraphs: [
+          "The best assessment does not force every workflow toward an AI build. Sometimes the right answer is to simplify the process, standardise the taxonomy, improve source data, or document ownership before automation.",
+          "This is where a workflow-level assessment is more useful than a general AI roadmap. It gives the team a concrete next step for one operational loop, based on evidence from real work.",
+        ],
+        table: {
+          columns: ["Recommendation", "When it fits"],
+          rows: [
+            ["Automate", "The workflow is frequent, input-ready, reviewable, and has a clear operational output."],
+            ["Redesign first", "The workflow is valuable, but ownership, handoffs, or decision rules are unclear."],
+            ["Clean data first", "The workflow is promising, but source quality, labels, or taxonomy would make automation unreliable."],
+            ["Keep manual for now", "The task is rare, high-risk, poorly defined, or dependent on judgement that cannot be reviewed safely."],
+          ],
+        },
+      },
+      {
+        heading: "What To Test Before Production",
+        paragraphs: [
+          "A production workflow should not be judged by a polished demo. It should be tested on representative examples, including messy cases that normally create rework. The test should show how the system behaves when inputs are incomplete, conflicting, low quality, or outside the expected pattern.",
+          "Before production, measure whether the workflow creates a better operating rhythm: fewer unresolved exceptions, faster review, clearer ownership, better coverage, or more reliable output. The point is not more AI activity. The point is a workflow the team can trust.",
+        ],
+        bullets: [
+          "Run the workflow on real examples from the current process, not only clean sample data.",
+          "Track false positives, false negatives, uncertain cases, and reviewer corrections.",
+          "Check whether evidence and source boundaries are visible enough for reviewers.",
+          "Confirm who owns failures, updates prompts or rules, and monitors drift after launch.",
+          "Decide the minimum performance and control standard before calling the workflow production-ready.",
         ],
       },
     ],
     faq: [
       {
-        question: "How much data is needed to test an AI workflow?",
+        question: "What is an AI automation assessment?",
         answer:
-          "Enough to include normal cases, edge cases, and known failures. A representative sample is more useful than a large dataset that only contains easy examples.",
+          "An AI automation assessment is a structured review of one workflow's frequency, inputs, outputs, review path, risk, and operational value. It helps decide whether to automate, redesign, clean the data, or leave the workflow manual.",
       },
       {
-        question: "Should the first AI workflow be customer-facing?",
+        question: "What is the best workflow to automate first with AI?",
         answer:
-          "Usually no. Internal or reviewable workflows are better first candidates because the team can test quality, controls, and adoption before exposing outputs directly to customers.",
+          "The best first workflow is frequent, measurable, input-ready, reviewable, and valuable. Good examples include feedback classification, product data enrichment, image QA, document extraction, content checks, and recurring reports.",
       },
       {
-        question: "What should be measured in a pilot?",
+        question: "How much data is needed for an AI automation assessment?",
         answer:
-          "Measure output accuracy, review time, exception rate, cycle time, rework, and whether the workflow gives the team a clearer decision or deliverable.",
+          "You need enough representative examples to include normal cases, edge cases, and known failures. A smaller realistic sample is more useful than a large dataset that only contains easy cases.",
+      },
+      {
+        question: "When should a workflow not be automated?",
+        answer:
+          "Do not automate first when the task is rare, poorly owned, highly subjective, missing source data, impossible to review, or risky enough that mistakes cannot be caught before they matter.",
       },
     ],
-    sources: [sharedSources.mckinseyRetailEurope, sharedSources.googleDataQuality, sharedSources.shopifyMagic],
-    related: ["ai-workflow-automation-examples", "what-is-ai-workflow-automation", "reporting-coordination-automation"],
+    sources: [
+      sharedSources.atlassianAiWorkflow,
+      sharedSources.ibmBusinessProcessAutomation,
+      sharedSources.googleDataQuality,
+      sharedSources.factChecking,
+      sharedSources.shopifyMagic,
+    ],
+    related: ["ai-workflow-automation-examples", "what-is-ai-workflow-automation", "product-data-cleanup-automation"],
   },
   {
     slug: "image-qa-compliance-automation",

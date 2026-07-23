@@ -161,7 +161,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
 
         <div className="px-5 py-12 md:px-8 md:py-16">
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-[minmax(0,1fr)_260px]">
-            <div className="space-y-14">
+            <div className="min-w-0 space-y-14">
               {insight.sections.map((section) => (
                 <ArticleSection key={section.heading} section={section} />
               ))}

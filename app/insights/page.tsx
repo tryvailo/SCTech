@@ -65,10 +65,12 @@ const representativeOutcomes = [
 
 export default function InsightsPage() {
   const featured = insights[0]
-  const groupedInsights = categoryOrder.map((category) => ({
-    category,
-    items: insights.filter((insight) => insight.category === category),
-  }))
+  const groupedInsights = categoryOrder
+    .map((category) => ({
+      category,
+      items: insights.filter((insight) => insight.category === category),
+    }))
+    .filter(({ items }) => items.length > 0)
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
