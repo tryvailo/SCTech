@@ -160,7 +160,7 @@ export const insights: Insight[] = [
   {
     slug: "ai-workflow-automation-examples",
     title: "AI Workflow Automation Examples for Operations Teams",
-    seoTitle: "AI Workflow Automation Examples for Operations Teams",
+    seoTitle: "AI Workflow Automation Examples",
     description:
       "Practical AI workflow automation examples for teams that need to turn repetitive operational work into controlled, reviewable systems.",
     seoDescription:
@@ -519,7 +519,7 @@ export const insights: Insight[] = [
   {
     slug: "how-to-know-if-a-workflow-is-worth-automating",
     title: "AI Automation Assessment Checklist: How To Choose the Right Workflow",
-    seoTitle: "AI Automation Assessment Checklist for Workflows",
+    seoTitle: "AI Automation Assessment Checklist",
     description:
       "A practical assessment checklist for choosing which workflow to automate with AI before investing in a pilot or production build.",
     seoDescription:
@@ -764,7 +764,7 @@ export const insights: Insight[] = [
   {
     slug: "ai-automation-consulting-tool-or-custom-workflow",
     title: "AI Automation Consulting: When To Use a Consultant, a Tool, or a Custom Workflow",
-    seoTitle: "AI Automation Consulting vs Tools vs Custom Workflows",
+    seoTitle: "AI Automation Consulting Guide",
     description:
       "A commercial guide for deciding when an AI automation tool is enough, when to bring in a consultant, and when a custom workflow makes sense.",
     seoDescription:
@@ -1001,7 +1001,7 @@ export const insights: Insight[] = [
   {
     slug: "document-processing-data-extraction-automation",
     title: "Document Processing and Data Extraction Automation",
-    seoTitle: "Intelligent Document Processing and Data Extraction",
+    seoTitle: "Intelligent Document Processing",
     description:
       "How AI document processing workflows extract fields, classify files, validate results, and route exceptions from PDFs, forms, invoices, and business documents.",
     seoDescription:
@@ -1339,7 +1339,7 @@ export const insights: Insight[] = [
   {
     slug: "product-data-cleanup-automation",
     title: "Product Data Cleanup Automation for PIM and Catalogue Teams",
-    seoTitle: "AI Product Data Cleanup Automation for Ecommerce",
+    seoTitle: "Product Data Cleanup Automation",
     description:
       "How AI workflows clean, enrich, validate, and prepare product catalogue data for PIM, ecommerce, merchandising, and search teams.",
     seoDescription:
@@ -1925,7 +1925,7 @@ export const insights: Insight[] = [
   {
     slug: "market-competitor-monitoring-automation",
     title: "Market and Competitor Monitoring Automation",
-    seoTitle: "AI Competitor Monitoring Automation for Teams",
+    seoTitle: "Competitor Monitoring Automation",
     description:
       "How AI workflows can track approved public sources, classify competitor changes, preserve evidence, and turn market signals into reviewable decision briefs.",
     seoDescription:
