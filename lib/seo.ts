@@ -4,9 +4,9 @@ export const siteConfig = {
   name: "SmartCore Technologies Ltd",
   shortName: "SmartCore Technologies",
   url: siteUrl,
-  title: "SmartCore Technologies Ltd - AI Workflow Automation for Operational Work",
+  title: "AI Workflow Automation Consulting | SmartCore",
   description:
-    "SmartCore Technologies helps teams map repetitive operational work, test it on real data, and build controlled AI workflows for feedback, product data, content, reporting, and internal decisions.",
+    "SmartCore maps repetitive operational work and builds controlled AI workflows for feedback, product data, content, reporting, and internal decisions.",
   email: "partnerships@smartcoretech.co.uk",
   address: {
     streetAddress: "Office 15055, 182-184 High Street North",
@@ -18,8 +18,11 @@ export const siteConfig = {
   keywords: [
     "AI automation consulting",
     "AI workflow automation",
+    "AI workflow automation consulting",
+    "operational workflow automation",
     "operational intelligence",
     "process intelligence",
+    "workflow diagnostics",
     "strategic advisory",
     "systems delivery",
     "workflow automation",
@@ -28,5 +31,12 @@ export const siteConfig = {
     "workflow diagnostic",
     "content automation",
     "reporting automation",
+    "product data automation",
+    "product data cleanup automation",
+    "catalog image QA automation",
+    "review intelligence automation",
+    "content fact checking automation",
+    "market monitoring automation",
+    "internal workflow automation",
   ],
 }

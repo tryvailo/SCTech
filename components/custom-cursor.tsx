@@ -11,6 +11,7 @@ export function CustomCursor() {
 
   useEffect(() => {
     let animationFrameId: number
+    document.body.classList.add("has-custom-cursor")
 
     const lerp = (start: number, end: number, factor: number) => {
       return start + (end - start) * factor
@@ -45,6 +46,7 @@ export function CustomCursor() {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
       cancelAnimationFrame(animationFrameId)
+      document.body.classList.remove("has-custom-cursor")
     }
   }, [])
 

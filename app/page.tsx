@@ -17,7 +17,7 @@ export default function Home() {
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
-  const scrollThrottleRef = useRef<number>()
+  const scrollThrottleRef = useRef<number | null>(null)
 
   useEffect(() => {
     const checkShaderReady = () => {
@@ -155,7 +155,7 @@ export default function Home() {
 
       scrollThrottleRef.current = requestAnimationFrame(() => {
         if (!scrollContainerRef.current) {
-          scrollThrottleRef.current = undefined
+          scrollThrottleRef.current = null
           return
         }
 
@@ -167,7 +167,7 @@ export default function Home() {
           setCurrentSection(newSection)
         }
 
-        scrollThrottleRef.current = undefined
+        scrollThrottleRef.current = null
       })
     }
 
@@ -265,11 +265,26 @@ export default function Home() {
               />
             </button>
           ))}
+          <a
+            href="/insights"
+            className="group relative font-sans text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+          >
+            Insights
+            <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
+          </a>
         </div>
 
-        <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
-          Assess One Workflow
-        </MagneticButton>
+        <div className="flex items-center gap-3">
+          <a
+            href="/insights"
+            className="hidden rounded-full border border-foreground/10 bg-foreground/5 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-xl transition-colors hover:bg-foreground/10 sm:inline-flex lg:hidden"
+          >
+            Insights
+          </a>
+          <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
+            Assess One Workflow
+          </MagneticButton>
+        </div>
       </nav>
 
       <div

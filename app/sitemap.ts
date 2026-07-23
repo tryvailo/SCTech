@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { insights, getInsightUrl } from "@/lib/insights"
 import { siteConfig } from "@/lib/seo"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +10,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${siteConfig.url}/insights`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    ...insights.map((insight) => ({
+      url: getInsightUrl(insight.slug),
+      lastModified: new Date(`${insight.updatedAt}T00:00:00Z`),
+      changeFrequency: "monthly" as const,
+      priority: insight.category === "Guide" ? 0.75 : 0.7,
+    })),
   ]
 }
-

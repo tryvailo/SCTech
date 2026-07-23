@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "SmartCore Technologies - AI automation consulting and operational intelligence",
+        alt: "SmartCore Technologies - AI workflow automation consulting",
       },
     ],
   },
@@ -70,9 +70,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "ProfessionalService"],
       "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.name,
+      legalName: siteConfig.name,
+      alternateName: siteConfig.shortName,
       url: siteConfig.url,
       email: siteConfig.email,
       description: siteConfig.description,
@@ -80,26 +82,57 @@ const jsonLd = {
         "@type": "PostalAddress",
         ...siteConfig.address,
       },
-      areaServed: ["GB", "Europe"],
-      knowsAbout: siteConfig.keywords,
-      makesOffer: [
+      contactPoint: {
+        "@type": "ContactPoint",
+        email: siteConfig.email,
+        contactType: "business enquiries",
+        areaServed: ["GB", "Europe"],
+        availableLanguage: ["en"],
+      },
+      areaServed: [
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "AI automation consulting",
-            description: "Workflow diagnostics and delivery support for practical AI-enabled automation.",
-          },
+          "@type": "Country",
+          name: "United Kingdom",
         },
         {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "Operational intelligence",
-            description: "Process mapping, controlled intelligence layers, and systems delivery for complex operations.",
-          },
+          "@type": "Place",
+          name: "Europe",
         },
       ],
+      knowsAbout: siteConfig.keywords,
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "AI workflow automation consulting services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Workflow diagnostics",
+              serviceType: "Workflow diagnostic",
+              description: "Mapping repetitive operational work, inputs, failure points, outputs, quality constraints, and automation potential.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Controlled AI workflow automation",
+              serviceType: "AI workflow automation",
+              description: "Designing AI-enabled workflows with source boundaries, rules, review points, audit trails, and human approval where needed.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Operational intelligence systems",
+              serviceType: "Operational intelligence",
+              description: "Turning feedback, product data, content, reporting, and internal decision flows into clearer operational outputs.",
+            },
+          },
+        ],
+      },
     },
     {
       "@type": "WebSite",
@@ -111,6 +144,39 @@ const jsonLd = {
         "@id": `${siteConfig.url}/#organization`,
       },
       inLanguage: "en-GB",
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}/#webpage`,
+      url: siteConfig.url,
+      name: siteConfig.title,
+      description: siteConfig.description,
+      isPartOf: {
+        "@id": `${siteConfig.url}/#website`,
+      },
+      about: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/opengraph-image`,
+      },
+      inLanguage: "en-GB",
+    },
+    {
+      "@type": "Service",
+      "@id": `${siteConfig.url}/#ai-workflow-automation-service`,
+      name: "AI workflow automation consulting",
+      serviceType: "AI workflow automation consulting",
+      description: siteConfig.description,
+      provider: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
+      areaServed: ["GB", "Europe"],
+      audience: {
+        "@type": "BusinessAudience",
+        audienceType: "Operations, product, content, reporting, and leadership teams",
+      },
     },
   ],
 }

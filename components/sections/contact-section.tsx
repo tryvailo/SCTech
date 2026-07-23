@@ -34,6 +34,7 @@ export function ContactSection() {
 
   return (
     <section
+      id="contact"
       ref={ref}
       className="flex h-full w-screen shrink-0 snap-start items-center overflow-y-auto px-4 py-6 md:px-12 md:py-14 lg:px-16"
     >
