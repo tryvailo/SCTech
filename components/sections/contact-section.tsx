@@ -10,6 +10,7 @@ export function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -20,16 +21,32 @@ export function ContactSection() {
     }
 
     setIsSubmitting(true)
+    setSubmitSuccess(false)
+    setSubmitError("")
 
-    // Simulate form submission (replace with actual API call later)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
+      if (!response.ok) {
+        throw new Error("Contact request failed")
+      }
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
+      setSubmitSuccess(true)
+      setFormData({ name: "", email: "", message: "" })
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000)
+    } catch {
+      setSubmitError("Something went wrong. Please email us directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -155,16 +172,25 @@ export function ContactSection() {
                 style={{ transitionDelay: "650ms" }}
               >
                 <MagneticButton
+                  type="submit"
                   variant="primary"
                   size="lg"
                   className="w-full disabled:opacity-50"
-                  onClick={isSubmitting ? undefined : undefined}
+                  disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Assess One Workflow"}
                 </MagneticButton>
                 {submitSuccess && (
                   <p className="mt-2 text-center font-mono text-xs text-foreground/80 md:mt-3 md:text-sm">
                     Thanks — we'll be in touch soon.
+                  </p>
+                )}
+                {submitError && (
+                  <p className="mt-2 text-center font-mono text-xs text-foreground/70 md:mt-3 md:text-sm">
+                    {submitError}{" "}
+                    <a href="mailto:partnerships@smartcoretech.co.uk" className="underline underline-offset-4">
+                      partnerships@smartcoretech.co.uk
+                    </a>
                   </p>
                 )}
               </div>
