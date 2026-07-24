@@ -39,20 +39,24 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "A valid email address is required." }, { status: 400 })
   }
 
+  const payload = {
+    source: "smartcoretech.co.uk",
+    form: "contact",
+    submittedAt: new Date().toISOString(),
+    name,
+    email,
+    message,
+  }
+
   try {
-    const webhookResponse = await fetch(webhookUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        source: "smartcoretech.co.uk",
-        form: "contact",
-        submittedAt: new Date().toISOString(),
-        name,
-        email,
-        message,
-      }),
+    const webhookRequestUrl = new URL(webhookUrl)
+
+    Object.entries(payload).forEach(([key, value]) => {
+      webhookRequestUrl.searchParams.set(key, value)
+    })
+
+    const webhookResponse = await fetch(webhookRequestUrl, {
+      method: "GET",
     })
 
     if (!webhookResponse.ok) {
