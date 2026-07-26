@@ -4,6 +4,13 @@ interface ContactRequest {
   name?: string
   email?: string
   message?: string
+  pageUrl?: string
+  referrer?: string
+  utmSource?: string
+  utmMedium?: string
+  utmCampaign?: string
+  utmTerm?: string
+  utmContent?: string
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -30,6 +37,13 @@ export async function POST(request: Request) {
   const name = cleanValue(body.name)
   const email = cleanValue(body.email)
   const message = cleanValue(body.message)
+  const pageUrl = cleanValue(body.pageUrl)
+  const referrer = cleanValue(body.referrer)
+  const utmSource = cleanValue(body.utmSource)
+  const utmMedium = cleanValue(body.utmMedium)
+  const utmCampaign = cleanValue(body.utmCampaign)
+  const utmTerm = cleanValue(body.utmTerm)
+  const utmContent = cleanValue(body.utmContent)
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Name, email, and message are required." }, { status: 400 })
@@ -46,6 +60,13 @@ export async function POST(request: Request) {
     name,
     email,
     message,
+    pageUrl,
+    referrer,
+    utmSource,
+    utmMedium,
+    utmCampaign,
+    utmTerm,
+    utmContent,
   }
 
   try {

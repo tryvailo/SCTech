@@ -25,12 +25,25 @@ export function ContactSection() {
     setSubmitError("")
 
     try {
+      const currentUrl = typeof window !== "undefined" ? window.location.href : ""
+      const referrer = typeof document !== "undefined" ? document.referrer : ""
+      const searchParams = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null
+
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          pageUrl: currentUrl,
+          referrer,
+          utmSource: searchParams?.get("utm_source") || "",
+          utmMedium: searchParams?.get("utm_medium") || "",
+          utmCampaign: searchParams?.get("utm_campaign") || "",
+          utmTerm: searchParams?.get("utm_term") || "",
+          utmContent: searchParams?.get("utm_content") || "",
+        }),
       })
 
       if (!response.ok) {
@@ -69,17 +82,32 @@ export function ContactSection() {
                 Workflow
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / Show us the process your team should not be doing by hand
+                / Remote workflow assessment for US and UK operations teams
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4 lg:space-y-8">
               <a
+                href="/insights/how-to-know-if-a-workflow-is-worth-automating"
+                className={`group block transition-all duration-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                }`}
+                style={{ transitionDelay: "150ms" }}
+              >
+                <div className="mb-0.5 flex items-center gap-2 md:mb-1">
+                  <span className="font-mono text-[10px] text-foreground/60 md:text-xs">Checklist</span>
+                </div>
+                <p className="max-w-md text-sm leading-relaxed text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-lg">
+                  Use the AI automation assessment checklist before choosing a tool, consultant, or custom workflow.
+                </p>
+              </a>
+
+              <a
                 href="mailto:partnerships@smartcoretech.co.uk"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
-                style={{ transitionDelay: "200ms" }}
+                style={{ transitionDelay: "250ms" }}
               >
                 <div className="mb-0.5 flex items-center gap-2 md:mb-1">
                   <Mail className="h-3 w-3 text-foreground/60" />
@@ -101,7 +129,8 @@ export function ContactSection() {
                   <span className="font-mono text-[10px] text-foreground/60 md:text-xs">Location</span>
                 </div>
                 <p className="max-w-md text-sm leading-relaxed text-foreground md:text-base lg:text-lg">
-                  Office 15055, 182-184 High Street North, East Ham, London E6 2JA
+                  London-based, working remotely with US and UK teams. Office 15055, 182-184 High Street North, East Ham,
+                  London E6 2JA.
                 </p>
               </div>
             </div>

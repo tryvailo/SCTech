@@ -5,7 +5,7 @@ import { insights } from "@/lib/insights"
 import { siteConfig } from "@/lib/seo"
 
 const pageDescription =
-  "Practical guides and automation examples for AI workflows in operations, product data, content, reporting, and market intelligence."
+  "Practical guides, buying questions, and automation examples for US and UK teams evaluating AI workflow automation."
 
 export const metadata: Metadata = {
   title: "Insights on AI Workflow Automation",
@@ -141,13 +141,13 @@ export default function InsightsPage() {
               AI workflow automation research
             </div>
             <h1 className="max-w-4xl font-sans text-4xl font-light leading-tight tracking-normal md:text-6xl">
-              Practical insights for turning repetitive work into controlled AI workflows.
+              Practical insights for choosing and building controlled AI workflows.
             </h1>
           </div>
           <div className="max-w-2xl text-base leading-7 text-foreground/72 md:text-lg md:leading-8">
             <p>
-              Guides, operating models, and automation examples for teams working with product data, customer feedback,
-              content, reporting, market intelligence, and internal decision support.
+              Guides, operating models, and buying questions for US and UK teams working with product data, customer
+              feedback, content, reporting, market intelligence, and internal decision support.
             </p>
           </div>
         </div>

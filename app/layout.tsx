@@ -86,17 +86,17 @@ const jsonLd = {
         "@type": "ContactPoint",
         email: siteConfig.email,
         contactType: "business enquiries",
-        areaServed: ["GB", "Europe"],
+        areaServed: ["US", "GB"],
         availableLanguage: ["en"],
       },
       areaServed: [
         {
           "@type": "Country",
-          name: "United Kingdom",
+          name: "United States",
         },
         {
-          "@type": "Place",
-          name: "Europe",
+          "@type": "Country",
+          name: "United Kingdom",
         },
       ],
       knowsAbout: siteConfig.keywords,
@@ -172,10 +172,10 @@ const jsonLd = {
       provider: {
         "@id": `${siteConfig.url}/#organization`,
       },
-      areaServed: ["GB", "Europe"],
+      areaServed: ["US", "GB"],
       audience: {
         "@type": "BusinessAudience",
-        audienceType: "Operations, product, content, reporting, and leadership teams",
+        audienceType: "US and UK operations, product, content, reporting, and leadership teams",
       },
     },
   ],
