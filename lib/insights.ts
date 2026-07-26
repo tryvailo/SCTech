@@ -215,6 +215,10 @@ export const insights: Insight[] = [
       "AI workflow automation",
       "AI automation examples",
       "business process automation examples",
+      "process automation examples",
+      "workflow automation examples",
+      "business automation examples",
+      "business process automation use cases",
       "AI automation use cases",
       "operations automation AI",
       "controlled AI workflows",
@@ -257,6 +261,21 @@ export const insights: Insight[] = [
             ["Review", "Uncertain, sensitive, or externally visible outputs go to a person before they become operational truth."],
             ["Output", "The workflow creates a report, queue, dataset, ticket, update, dashboard, or decision pack."],
             ["Monitoring", "The team tracks correction patterns, exceptions, drift, cycle time, and whether the output is actually used."],
+          ],
+        },
+      },
+      {
+        heading: "Business Process Automation Examples vs AI Workflow Automation Examples",
+        paragraphs: [
+          "Business process automation examples usually focus on making a repeatable process run with less manual coordination. AI workflow automation examples are a subset of that category where AI handles a narrow judgement step such as classification, extraction, summarisation, matching, drafting, or exception detection.",
+          "That means many process automation examples can start without AI. If the work is deterministic, rules and integrations may be enough. AI becomes useful when the workflow has messy inputs, unstructured text, images, documents, ambiguous categories, or summaries that need evidence and review.",
+        ],
+        table: {
+          columns: ["Example type", "Typical automation", "When AI adds value"],
+          rows: [
+            ["Business process automation examples", "Approvals, notifications, task routing, record updates, handoffs, and recurring reports.", "When the process needs to interpret messy inputs before the next action."],
+            ["Process automation examples", "Moving work through a defined sequence with owners, status, and rules.", "When the process needs extraction, classification, summarisation, or exception detection."],
+            ["AI workflow automation examples", "A controlled workflow where AI prepares a reviewable output inside the process.", "When human reviewers need evidence, confidence labels, and a faster path from raw input to decision."],
           ],
         },
       },
@@ -429,6 +448,16 @@ export const insights: Insight[] = [
         question: "Is AI workflow automation the same as using an AI tool?",
         answer:
           "No. An AI tool can help with a task, but an AI workflow defines inputs, rules, review steps, outputs, ownership, and monitoring so the result can be used repeatedly by a team.",
+      },
+      {
+        question: "Are AI workflow automation examples the same as business process automation examples?",
+        answer:
+          "AI workflow automation examples are a subset of business process automation examples. The broader category includes rule-based approvals, routing, updates, and reports; AI is useful when the workflow needs to interpret unstructured inputs or prepare reviewable judgement-based outputs.",
+      },
+      {
+        question: "Which process automation examples work well without AI?",
+        answer:
+          "Rule-based approvals, scheduled notifications, simple record updates, status routing, and standard handoffs often work well without AI. Add AI when the workflow needs classification, extraction, summarisation, matching, or exception detection.",
       },
       {
         question: "Which workflows should not be automated first?",
@@ -2014,28 +2043,32 @@ export const insights: Insight[] = [
   },
   {
     slug: "product-data-cleanup-automation",
-    title: "Product Data Cleanup Automation for PIM and Catalogue Teams",
-    seoTitle: "Product Data Cleanup Automation",
+    title: "Product Data Cleanup and Enrichment Automation for PIM Teams",
+    seoTitle: "Product Data Enrichment",
     description:
-      "How AI workflows clean, enrich, validate, and prepare product catalogue data for PIM, ecommerce, merchandising, and search teams.",
+      "How AI workflows enrich, clean, validate, and prepare product catalogue data for PIM, ecommerce, merchandising, and search teams.",
     seoDescription:
-      "Learn how AI product data cleanup automation enriches attributes, standardises catalogue records, validates fields, and prepares reviewable PIM imports.",
+      "Learn how AI product data enrichment adds attributes, cleans catalogue records, validates fields, and prepares reviewable PIM imports.",
     category: "Automation Example",
     readingTime: "12 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
-    targetQuery: "AI product data cleanup automation",
+    targetQuery: "product data enrichment automation",
     searchIntent: "Commercial Investigation",
     keywords: [
       "AI product data cleanup",
       "AI product data cleanup automation",
+      "product data enrichment",
+      "product data enrichment automation",
+      "product data enrichment services",
+      "AI product data enrichment",
+      "catalogue data enrichment automation",
       "PIM data automation",
       "PIM data cleansing",
       "PIM data quality automation",
       "product data quality",
       "catalogue data enrichment",
       "catalog data enrichment",
-      "product data enrichment automation",
       "ecommerce product data enrichment",
       "ecommerce PIM automation",
       "product attribute extraction",
@@ -2044,7 +2077,7 @@ export const insights: Insight[] = [
       "AI catalogue cleanup",
     ],
     summary:
-      "Product data cleanup automation uses AI to enrich missing attributes, normalise messy catalogue records, validate field quality, and prepare reviewable updates before they enter a PIM, ecommerce platform, or merchandising workflow.",
+      "Product data enrichment automation uses AI to add missing attributes, normalise messy catalogue records, validate field quality, and prepare reviewable updates before they enter a PIM, ecommerce platform, or merchandising workflow.",
     answerBox: {
       heading: "AI product data cleanup should improve PIM data quality without silent catalogue rewrites.",
       paragraphs: [
@@ -2079,6 +2112,21 @@ export const insights: Insight[] = [
             ["Normalisation", "Units, naming conventions, controlled values, category-specific attributes, field formats, and taxonomy mapping."],
             ["Validation", "Required fields, duplicate values, source conflicts, suspicious values, missing evidence, and import readiness."],
             ["Review and export", "Human-approved suggestions, exception queues, import files, tickets, or API-ready updates."],
+          ],
+        },
+      },
+      {
+        heading: "Product Data Enrichment vs Product Data Cleanup",
+        paragraphs: [
+          "Product data enrichment adds useful information that is missing or incomplete, such as attributes, taxonomy, compatibility, packaging details, certifications, feature tags, and merchandising fields. Product data cleanup fixes information that already exists but is inconsistent, duplicated, invalid, unsupported, or hard to import.",
+          "For SEO and ecommerce operations, enrichment is often the stronger first keyword and the stronger business case because missing product attributes affect filters, internal search, marketplace feeds, recommendations, and customer comparison. Cleanup still matters, but enrichment explains the positive outcome more clearly.",
+        ],
+        table: {
+          columns: ["Work type", "What changes", "Workflow output"],
+          rows: [
+            ["Product data enrichment", "Adds missing attributes, category-specific fields, compatibility notes, taxonomy values, and merchandising tags.", "Suggested enriched values with source evidence and reviewer status."],
+            ["Product data cleanup", "Fixes duplicates, inconsistent units, invalid values, broken formats, and unsupported claims.", "Correction queue, clean import file, or exception list."],
+            ["Product data governance", "Defines source priority, allowed values, approval rules, and correction history.", "Rules and review decisions that make enrichment safe to repeat."],
           ],
         },
       },
@@ -2268,6 +2316,16 @@ export const insights: Insight[] = [
         question: "What is the difference between product data cleanup and enrichment?",
         answer:
           "Cleanup fixes existing catalogue issues such as inconsistent units, duplicates, invalid values, and missing evidence. Enrichment adds useful fields that were absent or incomplete, such as attributes, taxonomy, compatibility, or packaging details.",
+      },
+      {
+        question: "What is product data enrichment automation?",
+        answer:
+          "Product data enrichment automation uses AI and workflow rules to add missing product attributes, taxonomy values, compatibility notes, packaging details, and merchandising fields, then routes suggestions for review before PIM or ecommerce import.",
+      },
+      {
+        question: "Why is product data enrichment important for ecommerce?",
+        answer:
+          "Product data enrichment improves the fields that power filters, internal search, recommendations, marketplace feeds, product comparison, merchandising, and customer confidence. It is most useful when missing attributes affect discovery or buying decisions.",
       },
       {
         question: "How should AI product data suggestions be reviewed?",
@@ -2602,11 +2660,11 @@ export const insights: Insight[] = [
   {
     slug: "market-competitor-monitoring-automation",
     title: "Market and Competitor Monitoring Automation",
-    seoTitle: "Competitor Monitoring Automation",
+    seoTitle: "Competitor Monitoring Tools",
     description:
       "How AI workflows can track approved public sources, classify competitor changes, preserve evidence, and turn market signals into reviewable decision briefs.",
     seoDescription:
-      "Learn how AI competitor monitoring automation tracks public signals, filters noise, preserves source evidence, and prepares decision-ready market briefs.",
+      "Compare competitor monitoring tools, price monitoring workflows, public signal tracking, evidence capture, and decision-ready market briefs.",
     category: "Automation Example",
     readingTime: "12 min read",
     publishedAt: "2026-07-23",
@@ -2616,6 +2674,10 @@ export const insights: Insight[] = [
     keywords: [
       "AI competitor monitoring",
       "competitor monitoring tools",
+      "competitor price monitoring tool",
+      "competitor price monitoring",
+      "competitor price tracking tool",
+      "price monitoring automation",
       "competitor monitoring automation",
       "market monitoring automation",
       "AI competitive intelligence",
@@ -2787,6 +2849,38 @@ export const insights: Insight[] = [
         },
       },
       {
+        heading: "Competitor Monitoring Tools: What To Compare",
+        paragraphs: [
+          "Competitor monitoring tools are useful when teams need a repeatable way to track public pages, search movement, reviews, announcements, content, product pages, or category changes. The right tool should reduce scanning work while preserving enough evidence for a reviewer to trust the signal.",
+          "For SmartCore-style workflows, the question is not only which tool sends alerts. The stronger question is whether the tool can support the source policy, signal taxonomy, review path, and decision brief the business actually needs.",
+        ],
+        table: {
+          columns: ["Comparison area", "What to check"],
+          rows: [
+            ["Source coverage", "Which websites, review sources, search signals, marketplaces, public documentation, or feeds can be monitored."],
+            ["Change detection", "Whether the tool distinguishes meaningful updates from layout noise, duplicate alerts, or minor copy edits."],
+            ["Evidence capture", "Whether alerts include source links, timestamps, snapshots, prior comparison, and enough context for review."],
+            ["Signal taxonomy", "Whether changes can be labelled by product, sales, marketing, content, support, or leadership relevance."],
+            ["Workflow handoff", "Whether useful signals can become a ticket, report, briefing note, spreadsheet row, or internal notification."],
+          ],
+        },
+      },
+      {
+        heading: "Competitor Price Monitoring Tool vs Broader Competitor Monitoring",
+        paragraphs: [
+          "A competitor price monitoring tool focuses on product or offer changes where the monitored value is structured enough to compare over time. Broader competitor monitoring tracks positioning, messaging, product launches, content, reviews, category movement, and public announcements.",
+          "Price monitoring is useful when the team has a clear product match, approved public source, stable collection method, and a decision owner. Without those controls, price alerts can become noisy because changes may reflect bundles, stock status, promotions, regional availability, or page formatting rather than a clean comparable signal.",
+        ],
+        table: {
+          columns: ["Monitoring type", "Best use", "Control needed"],
+          rows: [
+            ["Competitor price monitoring tool", "Tracking comparable product, offer, or package changes from approved public sources.", "Product matching, source snapshots, timestamped evidence, and rules for ambiguous values."],
+            ["Competitor monitoring tools", "Tracking wider public signals such as pages, reviews, content, launches, search movement, and positioning.", "Signal taxonomy, prioritisation, deduplication, and reviewer ownership."],
+            ["Custom monitoring workflow", "Turning price, product, content, and market signals into role-specific decision briefs.", "Approved source policy, confidence labels, escalation rules, and human review."],
+          ],
+        },
+      },
+      {
         heading: "Competitor Monitoring Tools vs Custom Workflow",
         paragraphs: [
           "Competitor monitoring tools are useful when the team needs alerts from common public channels and can work inside the tool's source model. A custom workflow is more useful when the monitoring process needs internal source rules, business-specific signal categories, evidence capture, or routing into existing operating rhythms.",
@@ -2865,6 +2959,16 @@ export const insights: Insight[] = [
         question: "Should teams use competitor monitoring tools or build a custom workflow?",
         answer:
           "Use a tool when standard alerts and dashboards are enough. Use a custom workflow when the team needs approved sources, evidence snapshots, company-specific signal labels, review ownership, and decision-ready briefs.",
+      },
+      {
+        question: "What should teams compare in competitor monitoring tools?",
+        answer:
+          "Compare source coverage, change detection quality, evidence capture, signal labels, alert controls, integration options, and whether the output can become a decision brief rather than a noisy feed.",
+      },
+      {
+        question: "When should a team use a competitor price monitoring tool?",
+        answer:
+          "Use a competitor price monitoring tool when products or offers are comparable, public sources are approved, values can be captured consistently, and someone owns the decision that follows from a confirmed change.",
       },
     ],
     sources: [
