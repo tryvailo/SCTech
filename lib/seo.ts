@@ -8,12 +8,17 @@ export const siteConfig = {
   description:
     "SmartCore helps US and UK teams map repetitive work and build controlled AI workflows for documents, product data, monitoring, reporting, and decisions.",
   email: "partnerships@smartcoretech.co.uk",
+  privacyUpdatedAt: "2026-07-30",
   address: {
     streetAddress: "Office 15055, 182-184 High Street North",
     addressLocality: "East Ham",
     addressRegion: "London",
     postalCode: "E6 2JA",
     addressCountry: "GB",
+  },
+  indexing: {
+    sitemapUrl: `${siteUrl}/sitemap.xml`,
+    robotsUrl: `${siteUrl}/robots.txt`,
   },
   keywords: [
     "AI automation consulting",

@@ -209,6 +209,13 @@ export function ContactSection() {
                 >
                   {isSubmitting ? "Sending..." : "Assess One Workflow"}
                 </MagneticButton>
+                <p className="mt-3 text-center text-[11px] leading-relaxed text-foreground/55 md:text-xs">
+                  By sending this form, you acknowledge that we process your enquiry data to respond to your request. See{" "}
+                  <a href="/privacy" className="underline underline-offset-4 transition-colors hover:text-foreground">
+                    Privacy Notice
+                  </a>
+                  .
+                </p>
                 {submitSuccess && (
                   <p className="mt-2 text-center font-mono text-xs text-foreground/80 md:mt-3 md:text-sm">
                     Thanks — we'll be in touch soon.

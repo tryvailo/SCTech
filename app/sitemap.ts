@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${siteConfig.url}/privacy`,
+      lastModified: new Date(`${siteConfig.privacyUpdatedAt}T00:00:00Z`),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
     ...insights.map((insight) => ({
       url: getInsightUrl(insight.slug),
       lastModified: new Date(`${insight.updatedAt}T00:00:00Z`),
