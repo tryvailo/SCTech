@@ -2542,16 +2542,16 @@ export const insights: Insight[] = [
   },
   {
     slug: "review-intelligence-automation",
-    title: "Review Intelligence Automation: Turning Customer Feedback into Decisions",
-    seoTitle: "Review Intelligence Automation",
+    title: "From Review Monitoring to Market Signals: A Production LLM Case Study",
+    seoTitle: "From Review Monitoring to Market Signals",
     description:
-      "How AI workflows can collect, deduplicate, classify, and summarise customer reviews into product, CX, and market intelligence.",
+      "What 300 hand-labeled reviews taught us about production LLM monitoring, drift, and turning customer feedback into usable market intelligence.",
     seoDescription:
-      "See how review intelligence automation turns customer feedback into themes, sentiment, evidence, trends, and decision-ready product insights.",
+      "A production LLM case study on review monitoring, hand-labeled evaluation, model drift, and turning customer feedback into reliable market signals.",
     category: "Automation Example",
     readingTime: "10 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-27",
+    updatedAt: "2026-08-04",
     targetQuery: "AI review intelligence automation",
     searchIntent: "Commercial Investigation",
     keywords: [
@@ -2566,7 +2566,7 @@ export const insights: Insight[] = [
       "review anomaly detection",
     ],
     summary:
-      "Review intelligence automation turns unstructured customer feedback into structured themes, sentiment, evidence, trends, and decision-ready summaries.",
+      "A production review-monitoring workflow showed how customer feedback can become structured market signals when classification, confidence, evidence, and human review work together.",
     outcome: {
       value: "95%",
       label: "shorter review cycle time",
@@ -2582,10 +2582,10 @@ export const insights: Insight[] = [
     ],
     sections: [
       {
-        heading: "Why Manual Review Analysis Misses Signals",
+        heading: "The Review Collapse We Mistook for a Data Pipeline Bug",
         paragraphs: [
-          "Teams often read customer reviews in small samples. That creates a visibility gap: repeated delivery issues, product defects, confusing content, competitor weaknesses, or emerging demand patterns can stay hidden until they are expensive to fix.",
-          "Sentiment analysis is only one part of the workflow. A useful system connects sentiment to topics, products, markets, time periods, source examples, and recommended follow-up.",
+          "The first warning looked like a data problem. Review counts dropped, category coverage looked uneven, and the dashboard started showing weaker signals than expected.",
+          "Hand-labeled evaluation changed the diagnosis. The issue was not only collection quality. The workflow needed better confidence labels, anomaly checks, and clearer separation between model output and decision-ready market signals.",
         ],
       },
       {
