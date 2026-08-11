@@ -65,7 +65,9 @@ const representativeOutcomes = [
 ]
 
 const salesConversationResources = [
+  "ai-workflow-automation-services",
   "ai-automation-consulting-tool-or-custom-workflow",
+  "zapier-make-n8n-vs-custom-ai-automation",
   "ai-automation-agency-vs-consultant",
   "ai-workflow-automation-tools",
   "review-intelligence-automation",
