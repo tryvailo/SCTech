@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
@@ -265,22 +266,22 @@ export default function Home() {
               />
             </button>
           ))}
-          <a
+          <Link
             href="/insights"
             className="group relative font-sans text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
           >
             Insights
             <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
-          </a>
+          </Link>
         </div>
 
         <div className="flex items-center gap-3">
-          <a
+          <Link
             href="/insights"
             className="hidden rounded-full border border-foreground/10 bg-foreground/5 px-4 py-2 text-sm font-medium text-foreground backdrop-blur-xl transition-colors hover:bg-foreground/10 sm:inline-flex lg:hidden"
           >
             Insights
-          </a>
+          </Link>
           <MagneticButton className="hidden min-[360px]:inline-flex" variant="secondary" onClick={() => scrollToSection(4)}>
             Assess One Workflow
           </MagneticButton>

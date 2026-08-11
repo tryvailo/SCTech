@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Mail, MapPin } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
 import { useState, type FormEvent } from "react"
@@ -87,7 +88,7 @@ export function ContactSection() {
             </div>
 
             <div className="space-y-3 md:space-y-4 lg:space-y-8">
-              <a
+              <Link
                 href="/insights/how-to-know-if-a-workflow-is-worth-automating"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
@@ -100,7 +101,7 @@ export function ContactSection() {
                 <p className="max-w-md text-sm leading-relaxed text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-lg">
                   Use the AI automation assessment checklist before choosing a tool, consultant, or custom workflow.
                 </p>
-              </a>
+              </Link>
 
               <a
                 href="mailto:partnerships@smartcoretech.co.uk"
@@ -218,7 +219,7 @@ export function ContactSection() {
                 </p>
                 {submitSuccess && (
                   <p className="mt-2 text-center font-mono text-xs text-foreground/80 md:mt-3 md:text-sm">
-                    Thanks — we'll be in touch soon.
+                    Thanks — we&apos;ll be in touch soon.
                   </p>
                 )}
                 {submitError && (
