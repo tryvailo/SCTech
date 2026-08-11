@@ -9,6 +9,21 @@ export const siteConfig = {
     "SmartCore helps US and UK teams map repetitive work and build controlled AI workflows for documents, product data, monitoring, reporting, and decisions.",
   email: "partnerships@smartcoretech.co.uk",
   privacyUpdatedAt: "2026-07-30",
+  experts: {
+    alexTryvailo: {
+      name: "Alex Tryvailo, PhD",
+      role: "AI workflow automation and LLM evaluation reviewer",
+      url: `${siteUrl}/about/alex-tryvailo`,
+      sameAs: ["https://www.linkedin.com/in/alex-tryvailo/"],
+      expertise: [
+        "AI workflow automation",
+        "LLM evaluation",
+        "data quality",
+        "market intelligence automation",
+        "workflow diagnostics",
+      ],
+    },
+  },
   address: {
     streetAddress: "Office 15055, 182-184 High Street North",
     addressLocality: "East Ham",

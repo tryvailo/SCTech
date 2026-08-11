@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Clock, Search } from "lucide-react"
 import { insights } from "@/lib/insights"
+import { insightTopics } from "@/lib/insight-topics"
 import { siteConfig } from "@/lib/seo"
 
 const pageDescription =
@@ -63,6 +64,15 @@ const representativeOutcomes = [
   },
 ]
 
+const salesConversationResources = [
+  "ai-automation-consulting-tool-or-custom-workflow",
+  "ai-automation-agency-vs-consultant",
+  "ai-workflow-automation-tools",
+  "review-intelligence-automation",
+  "invoice-processing-automation",
+  "market-competitor-monitoring-automation",
+]
+
 export default function InsightsPage() {
   const featured = insights[0]
   const groupedInsights = categoryOrder
@@ -71,6 +81,9 @@ export default function InsightsPage() {
       items: insights.filter((insight) => insight.category === category),
     }))
     .filter(({ items }) => items.length > 0)
+  const salesResources = salesConversationResources
+    .map((slug) => insights.find((insight) => insight.slug === slug))
+    .filter((insight): insight is (typeof insights)[number] => Boolean(insight))
 
   const collectionJsonLd = {
     "@context": "https://schema.org",
@@ -86,12 +99,25 @@ export default function InsightsPage() {
       "@id": `${siteConfig.url}/#organization`,
     },
     inLanguage: "en-GB",
-    mainEntity: insights.map((insight, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `${siteConfig.url}/insights/${insight.slug}`,
-      name: insight.title,
-    })),
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: [
+        ...insightTopics.map((topic, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${siteConfig.url}/insights/${topic.slug}`,
+          name: topic.title,
+          description: topic.seoDescription,
+        })),
+        ...insights.map((insight, index) => ({
+          "@type": "ListItem",
+          position: insightTopics.length + index + 1,
+          url: `${siteConfig.url}/insights/${insight.slug}`,
+          name: insight.title,
+          description: insight.seoDescription,
+        })),
+      ],
+    },
   }
 
   return (
@@ -203,6 +229,64 @@ export default function InsightsPage() {
                 <p className="mt-2 text-sm leading-5 text-foreground/72">{outcome.label}</p>
                 <p className="mt-3 text-xs leading-5 text-foreground/48">{outcome.detail}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-foreground/10 px-5 py-10 md:px-8 md:py-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-5 flex items-center justify-between gap-4 border-b border-foreground/10 pb-3">
+            <h2 className="font-mono text-xs uppercase tracking-normal text-foreground/55">Explore by topic</h2>
+            <span className="text-xs text-foreground/45">{insightTopics.length} topic hubs</span>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {insightTopics.map((topic) => (
+              <Link
+                key={topic.slug}
+                href={`/insights/${topic.slug}`}
+                className="group flex min-h-64 flex-col justify-between border border-foreground/10 bg-foreground/[0.025] p-5 transition-colors hover:border-foreground/25"
+              >
+                <div>
+                  <p className="font-mono text-[11px] text-foreground/45">{topic.targetQuery}</p>
+                  <h3 className="mt-3 text-2xl font-light leading-tight tracking-normal">{topic.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-foreground/65">{topic.description}</p>
+                </div>
+                <span className="mt-8 inline-flex items-center gap-2 text-sm text-foreground/75">
+                  Open hub
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-10 md:px-8 md:py-14">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-5 flex items-center justify-between gap-4 border-b border-foreground/10 pb-3">
+            <h2 className="font-mono text-xs uppercase tracking-normal text-foreground/55">
+              Most useful for sales conversations
+            </h2>
+            <span className="text-xs text-foreground/45">{salesResources.length} resources</span>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {salesResources.map((insight) => (
+              <Link
+                key={insight.slug}
+                href={`/insights/${insight.slug}`}
+                className="group flex min-h-56 flex-col justify-between border border-foreground/10 bg-foreground/[0.025] p-5 transition-colors hover:border-foreground/25"
+              >
+                <div>
+                  <p className="font-mono text-[11px] text-foreground/45">{insight.searchIntent}</p>
+                  <h3 className="mt-3 text-xl font-light leading-tight tracking-normal">{insight.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-foreground/65">{insight.seoDescription}</p>
+                </div>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm text-foreground/75">
+                  Use in follow-up
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>

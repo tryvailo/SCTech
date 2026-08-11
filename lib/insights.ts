@@ -500,6 +500,9 @@ export const insights: Insight[] = [
     readingTime: "7 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
+    reviewer: alexTryvailoReviewer,
+    editorialNote:
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an AI workflow automation definition guide for operations teams.",
     targetQuery: "what is AI workflow automation",
     searchIntent: "Informational",
     keywords: [
@@ -2140,6 +2143,9 @@ export const insights: Insight[] = [
     readingTime: "9 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
+    reviewer: alexTryvailoReviewer,
+    editorialNote:
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an automation example for catalogue image QA and compliance workflows.",
     targetQuery: "AI image QA compliance automation product catalogues",
     searchIntent: "Commercial Investigation",
     keywords: [
@@ -2552,6 +2558,9 @@ export const insights: Insight[] = [
     readingTime: "10 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-08-04",
+    reviewer: alexTryvailoReviewer,
+    editorialNote:
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a production LLM case study for review monitoring, market signals, and workflow evaluation.",
     targetQuery: "AI review intelligence automation",
     searchIntent: "Commercial Investigation",
     keywords: [
@@ -2680,6 +2689,9 @@ export const insights: Insight[] = [
     readingTime: "9 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
+    reviewer: alexTryvailoReviewer,
+    editorialNote:
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an implementation guide for source-grounded content verification workflows.",
     targetQuery: "AI content fact checking automation workflow",
     searchIntent: "Implementation",
     keywords: [
@@ -2782,6 +2794,9 @@ export const insights: Insight[] = [
     readingTime: "8 min read",
     publishedAt: "2026-07-23",
     updatedAt: "2026-07-23",
+    reviewer: alexTryvailoReviewer,
+    editorialNote:
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an automation example for internal reporting and coordination workflows.",
     targetQuery: "AI reporting automation internal teams",
     searchIntent: "Commercial Investigation",
     keywords: [

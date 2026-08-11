@@ -1,10 +1,15 @@
 import { NextResponse } from "next/server"
 import { insights, getInsightUrl } from "@/lib/insights"
+import { insightTopics, getInsightTopicUrl } from "@/lib/insight-topics"
 import { siteConfig } from "@/lib/seo"
 
 export const dynamic = "force-static"
 
 export function GET() {
+  const topicHubs = insightTopics
+    .map((topic) => `- [${topic.title}](${getInsightTopicUrl(topic.slug)}): ${topic.description}`)
+    .join("\n")
+
   const priorityInsights = insights
     .filter((insight) =>
       [
@@ -35,6 +40,12 @@ SmartCore Technologies helps US and UK operations teams diagnose recurring workf
 - [Insights](${siteConfig.url}/insights): Practical guides for workflow automation, AI automation consulting, document processing, product data enrichment, and market monitoring.
 - [Contact](${siteConfig.url}/#contact): Request a workflow assessment.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.
+- [Alex Tryvailo, PhD](${siteConfig.experts.alexTryvailo.url}): SmartCore reviewer for AI workflow automation, LLM evaluation, data quality, and market intelligence automation.
+- [RSS Feed](${siteConfig.url}/feed.xml): Latest SmartCore insights.
+
+## Topic Hubs
+
+${topicHubs}
 
 ## Priority Resources
 
