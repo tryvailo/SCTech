@@ -15,6 +15,8 @@ export function GET() {
       [
         "ai-workflow-automation-examples",
         "ai-workflow-automation-tools",
+        "zapier-make-n8n-vs-custom-ai-automation",
+        "ai-workflow-automation-services",
         "ai-automation-agency-vs-consultant",
         "ai-automation-consultant-us-uk-operations-teams",
         "invoice-processing-automation",
