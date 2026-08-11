@@ -72,10 +72,15 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^16.5.0",
-    "postcss": "^8.5",
+    "postcss": "^8.5.26",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5",
     "typescript-eslint": "^8.66.0"
+  },
+  "overrides": {
+    "lodash": "^4.18.1",
+    "nanoid": "^3.3.18",
+    "postcss": "^8.5.26"
   }
 }
