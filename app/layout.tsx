@@ -116,7 +116,7 @@ const jsonLd = {
       knowsAbout: siteConfig.keywords,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI workflow automation consulting services",
+        name: "AI automation services and workflow automation services",
         itemListElement: [
           {
             "@type": "Offer",
@@ -132,7 +132,7 @@ const jsonLd = {
             itemOffered: {
               "@type": "Service",
               name: "Controlled AI workflow automation",
-              serviceType: "AI workflow automation",
+              serviceType: "AI automation services",
               description: "Designing AI-enabled workflows with source boundaries, rules, review points, audit trails, and human approval where needed.",
             },
           },
@@ -180,8 +180,8 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${siteConfig.url}/#ai-workflow-automation-service`,
-      name: "AI workflow automation consulting",
-      serviceType: "AI workflow automation consulting",
+      name: "AI automation services",
+      serviceType: "AI automation services and workflow automation services",
       description: siteConfig.description,
       provider: {
         "@id": `${siteConfig.url}/#organization`,

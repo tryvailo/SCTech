@@ -6,13 +6,16 @@ import { insightTopics } from "@/lib/insight-topics"
 import { siteConfig } from "@/lib/seo"
 
 const pageDescription =
-  "Practical guides, buying questions, and automation examples for US and UK teams evaluating AI workflow automation."
+  "Practical guides, buying questions, and automation examples for US and UK teams evaluating AI automation services and workflow automation."
 
 export const metadata: Metadata = {
   title: "Insights on AI Workflow Automation",
   description: pageDescription,
   keywords: [
     "AI workflow automation",
+    "AI automation services",
+    "workflow automation tools",
+    "workflow automation services",
     "AI automation consulting",
     "operational workflow automation",
     "product data automation",

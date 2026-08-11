@@ -31,7 +31,7 @@ export const insightTopics: InsightTopic[] = [
     description:
       "Guides, examples, buying questions, and implementation controls for teams evaluating AI workflow automation.",
     seoDescription:
-      "Explore AI workflow automation examples, tools, consulting options, assessment checklists, and implementation controls for operations teams.",
+      "Explore AI automation services, workflow automation tools, examples, consulting options, assessment checklists, and implementation controls for operations teams.",
     eyebrow: "Topic hub",
     targetQuery: "AI workflow automation",
     updatedAt: "2026-08-11",
@@ -39,7 +39,7 @@ export const insightTopics: InsightTopic[] = [
     primaryCta: "Assess One Workflow",
     intro: [
       "AI workflow automation is strongest when a team starts with one recurring operational loop, not a broad AI transformation idea.",
-      "Use this hub to compare examples, tools, consultants, custom workflows, review controls, and first-pilot criteria before choosing a build path.",
+      "Use this hub to compare AI automation services, workflow automation tools, consultants, custom workflows, review controls, and first-pilot criteria before choosing a build path.",
     ],
     fit: [
       "Operations teams with repeated document, data, reporting, feedback, or monitoring work.",
@@ -94,7 +94,7 @@ export const insightTopics: InsightTopic[] = [
     seoDescription:
       "Compare document processing automation, invoice extraction, validation workflows, review queues, and production controls for operations teams.",
     eyebrow: "Topic hub",
-    targetQuery: "document processing automation",
+    targetQuery: "intelligent document processing",
     updatedAt: "2026-08-11",
     category: "Topic Hub",
     primaryCta: "Assess One Document Workflow",
@@ -144,9 +144,9 @@ export const insightTopics: InsightTopic[] = [
     description:
       "Guides for product data cleanup, enrichment, PIM workflows, catalogue image QA, attributes, validation, and reviewable imports.",
     seoDescription:
-      "Explore product data enrichment automation, PIM cleanup, catalogue image QA, attribute validation, and review workflows for ecommerce teams.",
+      "Explore product data enrichment, PIM cleanup, catalogue image QA, attribute validation, and review workflows for ecommerce teams.",
     eyebrow: "Topic hub",
-    targetQuery: "product data enrichment automation",
+    targetQuery: "product data enrichment",
     updatedAt: "2026-08-11",
     category: "Topic Hub",
     primaryCta: "Assess One Product Data Workflow",
@@ -232,7 +232,7 @@ export const insightTopics: InsightTopic[] = [
       },
       {
         label: "Compare monitoring tools",
-        detail: "Separate standard competitor monitoring tools from custom decision workflows.",
+        detail: "Separate competitor monitoring tools from custom decision workflows.",
         href: "/insights/market-competitor-monitoring-automation",
       },
       {

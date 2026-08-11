@@ -4,9 +4,9 @@ export const siteConfig = {
   name: "SmartCore Technologies Ltd",
   shortName: "SmartCore Technologies",
   url: siteUrl,
-  title: "AI Automation Consulting for US and UK Teams | SmartCore",
+  title: "AI Automation Services for US and UK Teams | SmartCore",
   description:
-    "SmartCore helps US and UK teams map repetitive work and build controlled AI workflows for documents, product data, monitoring, reporting, and decisions.",
+    "SmartCore provides AI automation services and workflow automation services for US and UK teams working with documents, product data, monitoring, reporting, and decisions.",
   email: "partnerships@smartcoretech.co.uk",
   privacyUpdatedAt: "2026-07-30",
   experts: {
@@ -37,6 +37,9 @@ export const siteConfig = {
   },
   keywords: [
     "AI automation consulting",
+    "AI automation services",
+    "workflow automation services",
+    "business process automation services",
     "AI automation consultant",
     "AI automation partner",
     "AI workflow automation",

@@ -507,7 +507,7 @@ export const insights: Insight[] = [
     category: "Guide",
     readingTime: "7 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
+    updatedAt: "2026-08-11",
     reviewer: alexTryvailoReviewer,
     editorialNote:
       "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an AI workflow automation definition guide for operations teams.",
@@ -523,6 +523,16 @@ export const insights: Insight[] = [
     ],
     summary:
       "AI workflow automation turns a recurring manual process into a controlled sequence of data collection, AI analysis, rule-based checks, human review, and structured output.",
+    answerBox: {
+      heading: "AI workflow automation is a controlled process, not a standalone AI tool.",
+      paragraphs: [
+        "It combines defined inputs, model-based tasks, business rules, human review, and structured outputs so a team can repeat the same workflow safely across documents, product data, reporting, monitoring, or customer feedback.",
+      ],
+      bullets: [
+        "Best first fit: frequent work with clear inputs, outputs, and review criteria.",
+        "Production requirement: source boundaries, approval rules, correction capture, and monitoring.",
+      ],
+    },
     takeaways: [
       "Useful AI automation starts with one repeatable workflow, not a broad transformation programme.",
       "The production pattern is usually a controlled pipeline: inputs, rules, model calls, review points, and outputs.",
@@ -1090,17 +1100,17 @@ export const insights: Insight[] = [
   },
   {
     slug: "ai-workflow-automation-tools",
-    title: "AI Workflow Automation Tools: How To Choose the Right Stack for Operations Teams",
-    seoTitle: "AI Workflow Automation Tools",
+    title: "Workflow Automation Tools and AI Automation Tools: How To Choose the Right Stack",
+    seoTitle: "Workflow Automation Tools and AI Automation Tools",
     description:
-      "A practical guide to choosing AI workflow automation tools, orchestration layers, review paths, and custom workflows for operations teams.",
+      "A practical guide to choosing workflow automation tools, AI automation tools, orchestration layers, review paths, and custom workflows.",
     seoDescription:
-      "Compare AI workflow automation tools, agents, integrations, review controls, and custom workflow options before choosing a stack.",
+      "Compare workflow automation tools, AI automation tools, agents, integrations, review controls, and custom workflow options before choosing a stack.",
     category: "Guide",
     readingTime: "12 min read",
     publishedAt: "2026-07-26",
-    updatedAt: "2026-07-26",
-    targetQuery: "AI workflow automation tools",
+    updatedAt: "2026-08-11",
+    targetQuery: "workflow automation tools",
     searchIntent: "Commercial Investigation",
     keywords: [
       "AI workflow automation tools",
@@ -1117,11 +1127,11 @@ export const insights: Insight[] = [
       "human in the loop automation",
     ],
     summary:
-      "AI workflow automation tools are useful when they connect real inputs, model tasks, business rules, review steps, and operational outputs. The best stack is the one that fits the workflow's source data, risk level, ownership, and review requirements.",
+      "Workflow automation tools are useful when they connect real inputs, rules, AI tasks, review steps, and operational outputs. The best stack is the one that fits the workflow's source data, risk level, ownership, and review requirements.",
     answerBox: {
-      heading: "Choose AI workflow automation tools by workflow fit, not feature count.",
+      heading: "Choose workflow automation tools by workflow fit, not feature count.",
       paragraphs: [
-        "A strong automation stack should capture inputs, run AI or rule-based steps, preserve evidence, route exceptions, and produce an output the team can use. If a tool cannot support the review path or source rules, a custom workflow layer may be safer than forcing the process into the product.",
+        "A strong workflow automation stack should capture inputs, run rule-based or AI steps, preserve evidence, route exceptions, and produce an output the team can use. If a tool cannot support the review path or source rules, a custom workflow layer may be safer than forcing the process into the product.",
       ],
       bullets: [
         "Best first fit: repeatable work with clear sources, predictable output, and reviewable exceptions.",
@@ -1132,17 +1142,17 @@ export const insights: Insight[] = [
     editorialNote:
       "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a tool-selection guide for operations teams evaluating AI workflow automation stacks.",
     takeaways: [
-      "Start by mapping one workflow before comparing AI workflow automation tools.",
+      "Start by mapping one workflow before comparing workflow automation tools or AI automation tools.",
       "Tool categories matter: integration automation, AI agents, RPA, document processing, and workflow orchestration solve different parts of the operating loop.",
       "Human review, evidence capture, permissions, and monitoring are selection criteria, not implementation details to solve later.",
       "A custom workflow layer is useful when the work spans several systems, requires company-specific rules, or needs reviewable outputs.",
     ],
     sections: [
       {
-        heading: "What Are AI Workflow Automation Tools?",
+        heading: "What Are Workflow Automation Tools?",
         paragraphs: [
-          "AI workflow automation tools help teams connect inputs, AI tasks, rules, actions, approvals, and outputs inside a repeatable process. They can summarise data, classify records, extract fields, draft content, route exceptions, update systems, or prepare decision briefs.",
-          "The important distinction is control. A useful tool is not just a chatbot or agent. It should help the team define triggers, sources, business rules, review paths, and monitoring so the workflow can run repeatedly without becoming opaque.",
+          "Workflow automation tools help teams connect inputs, rules, actions, approvals, and outputs inside a repeatable process. AI automation tools add model-based steps that can summarise data, classify records, extract fields, draft content, route exceptions, update systems, or prepare decision briefs.",
+          "The important distinction is control. A useful automation tool is not just a chatbot or agent. It should help the team define triggers, sources, business rules, review paths, and monitoring so the workflow can run repeatedly without becoming opaque.",
         ],
         table: {
           columns: ["Tool capability", "What it should do in production"],
@@ -1168,6 +1178,23 @@ export const insights: Insight[] = [
             ["Workflow automation tools", "Route tasks, move data, update records, and notify teams based on predefined rules.", "Clear ownership, integration permissions, status tracking, and failure handling."],
             ["AI workflow automation tools", "Read unstructured inputs, extract meaning, draft outputs, classify items, and flag exceptions.", "Source evidence, confidence checks, human review, correction capture, and model monitoring."],
             ["Hybrid automation stack", "Use workflow software for orchestration and AI for the narrow judgement step.", "Defined handoff between deterministic rules, AI output, and human approval."],
+          ],
+        },
+      },
+      {
+        heading: "Best Workflow Automation Tools: Selection Criteria for AI Workflows",
+        paragraphs: [
+          "The best workflow automation tools for AI-assisted operations are not always the tools with the most connectors. They are the tools that can make each step of the operating loop visible: trigger, source, AI task, rule, review, output, and monitoring.",
+          "For a simple SaaS handoff, the best tool may be a no-code automation platform. For a document, product data, or market-intelligence workflow, the best stack may combine an automation tool with a custom evidence and review layer.",
+        ],
+        table: {
+          columns: ["Selection criterion", "Why it matters"],
+          rows: [
+            ["Connector fit", "The tool can access the source systems and output destinations without manual copying."],
+            ["Review controls", "People can approve, reject, correct, or escalate uncertain outputs before they are used."],
+            ["Evidence handling", "Reviewers can see source links, field evidence, snapshots, or record IDs."],
+            ["Rule flexibility", "Operators can change thresholds, labels, and routing logic as the workflow improves."],
+            ["Monitoring", "The team can see failed runs, correction patterns, exception rates, and adoption."],
           ],
         },
       },
@@ -1268,14 +1295,14 @@ export const insights: Insight[] = [
     ],
     faq: [
       {
-        question: "What are AI workflow automation tools?",
+        question: "What are workflow automation tools?",
         answer:
-          "AI workflow automation tools connect triggers, integrations, AI tasks, business rules, review steps, and outputs so a recurring process can run with less manual work and more consistent control.",
+          "Workflow automation tools connect triggers, integrations, business rules, review steps, and outputs so a recurring process can run with less manual work and more consistent control. AI automation tools add tasks such as classification, extraction, summarisation, and drafting.",
       },
       {
-        question: "What is the best AI workflow automation tool?",
+        question: "What is the best workflow automation tool for AI automation?",
         answer:
-          "The best tool depends on the workflow. Integration tools fit simple SaaS automation, document AI fits extraction workflows, RPA fits legacy systems, and custom workflow layers fit processes that need company-specific rules and review.",
+          "The best workflow automation tool depends on the process. Integration tools fit simple SaaS automation, document AI fits extraction workflows, RPA fits legacy systems, and custom workflow layers fit processes that need company-specific rules and review.",
       },
       {
         question: "What is the difference between workflow automation tools and AI workflow automation tools?",
@@ -1526,7 +1553,7 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "10 min read",
     publishedAt: "2026-07-26",
-    updatedAt: "2026-07-26",
+    updatedAt: "2026-08-11",
     targetQuery: "invoice processing automation",
     searchIntent: "Commercial Investigation",
     keywords: [
@@ -1538,9 +1565,12 @@ export const insights: Insight[] = [
       "invoice automation",
       "accounts payable automation",
       "AP automation software",
+      "AP invoice processing automation",
       "AI invoice processing",
       "invoice data extraction",
       "invoice validation automation",
+      "benefits of automated invoice processing",
+      "automated invoice processing benefits",
     ],
     summary:
       "Invoice processing automation turns incoming invoices into structured, validated records with exception routing and human review where finance accuracy matters.",
@@ -1647,6 +1677,23 @@ export const insights: Insight[] = [
         },
       },
       {
+        heading: "Benefits of Automated Invoice Processing",
+        paragraphs: [
+          "The benefits of automated invoice processing come from the full workflow, not only from faster OCR. Finance teams usually need fewer manual rekeying steps, more consistent validation, clearer exception ownership, and a better audit trail before invoices move downstream.",
+          "For operations leaders, the strongest benefit is control: the automated invoice processing system can show which invoices are ready, which ones are blocked, why they are blocked, and who needs to review them.",
+        ],
+        table: {
+          columns: ["Benefit", "What improves"],
+          rows: [
+            ["Shorter cycle time", "Invoices move from receipt to review-ready records with fewer manual handoffs."],
+            ["Higher coverage", "More invoice formats can be processed consistently instead of sampled manually."],
+            ["Cleaner AP handoff", "Approved records arrive with required fields, source evidence, and validation status."],
+            ["Lower rework", "Duplicates, mismatches, missing references, and low-confidence fields are caught earlier."],
+            ["Better auditability", "Review decisions, corrections, source documents, and export status stay traceable."],
+          ],
+        },
+      },
+      {
         heading: "Human Review and Exception Routing",
         paragraphs: [
           "Human review should not recreate the manual process. It should concentrate reviewer attention on the small set of records that need judgment, correction, or approval.",
@@ -1696,6 +1743,16 @@ export const insights: Insight[] = [
         question: "What is automated invoice processing software?",
         answer:
           "Automated invoice processing software captures invoices, extracts fields, checks required values, routes exceptions, and prepares approved invoice data for finance or accounts payable systems.",
+      },
+      {
+        question: "What are the benefits of automated invoice processing?",
+        answer:
+          "Automated invoice processing can reduce manual rekeying, shorten review cycles, improve field consistency, catch duplicates and mismatches earlier, and give finance teams a clearer audit trail for approved and exception invoices.",
+      },
+      {
+        question: "What is an automated invoice processing system?",
+        answer:
+          "An automated invoice processing system captures invoices, extracts invoice data, validates fields, routes exceptions, records reviewer decisions, and sends approved outputs into finance, ERP, AP, or reporting workflows.",
       },
       {
         question: "How is invoice processing automation different from accounts payable automation?",
@@ -1911,17 +1968,17 @@ export const insights: Insight[] = [
   },
   {
     slug: "document-processing-data-extraction-automation",
-    title: "Document Processing and Data Extraction Automation",
-    seoTitle: "Intelligent Document Processing",
+    title: "Intelligent Document Processing and Data Extraction Automation",
+    seoTitle: "Intelligent Document Processing Guide",
     description:
       "How AI document processing workflows extract fields, classify files, validate results, and route exceptions from PDFs, forms, invoices, and business documents.",
     seoDescription:
-      "Learn how AI document processing and data extraction automation turns PDFs, forms, invoices, and business documents into reviewable structured data.",
+      "Learn how intelligent document processing, document automation, and data extraction workflows turn PDFs, forms, and invoices into reviewable structured data.",
     category: "Automation Example",
     readingTime: "10 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
-    targetQuery: "document processing automation",
+    updatedAt: "2026-08-11",
+    targetQuery: "intelligent document processing",
     searchIntent: "Commercial Investigation",
     keywords: [
       "document processing automation",
@@ -1937,7 +1994,7 @@ export const insights: Insight[] = [
       "OCR vs intelligent document processing",
     ],
     summary:
-      "Document processing automation turns PDFs, forms, invoices, certificates, and document packs into structured records with source evidence, validation rules, and human review where accuracy matters.",
+      "Intelligent document processing turns PDFs, forms, invoices, certificates, and document packs into structured records with source evidence, validation rules, and human review where accuracy matters.",
     answerBox: {
       heading: "Intelligent document processing is more than OCR.",
       paragraphs: [
@@ -2106,9 +2163,9 @@ export const insights: Insight[] = [
     ],
     faq: [
       {
-        question: "What is document processing automation?",
+        question: "What is intelligent document processing?",
         answer:
-          "Document processing automation uses AI and workflow rules to classify documents, extract fields and tables, validate the results, and route exceptions for human review before structured data is used downstream.",
+          "Intelligent document processing uses AI and workflow rules to classify documents, extract fields and tables, validate the results, and route exceptions for human review before structured data is used downstream.",
       },
       {
         question: "Is document processing automation the same as OCR?",
@@ -2156,7 +2213,7 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "9 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
+    updatedAt: "2026-08-11",
     reviewer: alexTryvailoReviewer,
     editorialNote:
       "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an automation example for catalogue image QA and compliance workflows.",
@@ -2172,6 +2229,16 @@ export const insights: Insight[] = [
     ],
     summary:
       "Image QA automation uses multimodal AI to inspect catalogue assets, classify visual issues, and route only the uncertain or sensitive cases to human reviewers.",
+    answerBox: {
+      heading: "Image QA automation should flag reviewable exceptions, not silently approve visual assets.",
+      paragraphs: [
+        "A practical workflow checks product images against a fixed issue taxonomy, attaches product IDs and confidence notes, and routes uncertain or sensitive flags to catalogue, merchandising, supplier, or compliance owners.",
+      ],
+      bullets: [
+        "Best first fit: large catalogues with recurring visual rules and known cleanup owners.",
+        "Production requirement: issue category, evidence, confidence, reviewer action, and downstream handoff.",
+      ],
+    },
     outcome: {
       value: "2.1M+",
       label: "catalogue images processed",
@@ -2253,7 +2320,7 @@ export const insights: Insight[] = [
   },
   {
     slug: "product-data-cleanup-automation",
-    title: "Product Data Cleanup and Enrichment Automation for PIM Teams",
+    title: "Product Data Enrichment and Cleanup Automation for PIM Teams",
     seoTitle: "Product Data Enrichment",
     description:
       "How AI workflows enrich, clean, validate, and prepare product catalogue data for PIM, ecommerce, merchandising, and search teams.",
@@ -2262,8 +2329,8 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "12 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
-    targetQuery: "product data enrichment automation",
+    updatedAt: "2026-08-11",
+    targetQuery: "product data enrichment",
     searchIntent: "Commercial Investigation",
     keywords: [
       "AI product data cleanup",
@@ -2287,9 +2354,9 @@ export const insights: Insight[] = [
       "AI catalogue cleanup",
     ],
     summary:
-      "Product data enrichment automation uses AI to add missing attributes, normalise messy catalogue records, validate field quality, and prepare reviewable updates before they enter a PIM, ecommerce platform, or merchandising workflow.",
+      "Product data enrichment uses AI workflow automation to add missing attributes, normalise messy catalogue records, validate field quality, and prepare reviewable updates before they enter a PIM, ecommerce platform, or merchandising workflow.",
     answerBox: {
-      heading: "AI product data cleanup should improve PIM data quality without silent catalogue rewrites.",
+      heading: "Product data enrichment should improve PIM data quality without silent catalogue rewrites.",
       paragraphs: [
         "The workflow should extract attributes, standardise values, find conflicts, and prepare evidence-linked suggestions. Catalogue owners still approve changes before they affect PIM records, ecommerce pages, search filters, or marketplace feeds.",
       ],
@@ -2571,7 +2638,7 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "10 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-08-04",
+    updatedAt: "2026-08-11",
     reviewer: alexTryvailoReviewer,
     editorialNote:
       "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a production LLM case study for review monitoring, market signals, and workflow evaluation.",
@@ -2590,6 +2657,16 @@ export const insights: Insight[] = [
     ],
     summary:
       "A production review-monitoring workflow showed how customer feedback can become structured market signals when classification, confidence, evidence, and human review work together.",
+    answerBox: {
+      heading: "Review intelligence turns customer feedback into decision-ready market signals.",
+      paragraphs: [
+        "A mature workflow does more than score sentiment. It classifies themes, preserves source evidence, tracks confidence, highlights anomalies, and routes findings to product, CX, marketing, operations, or leadership teams.",
+      ],
+      bullets: [
+        "Best first fit: repeated review or feedback sources with a useful taxonomy.",
+        "Production requirement: hand-labeled evaluation, confidence bands, anomaly checks, and source drill-down.",
+      ],
+    },
     outcome: {
       value: "95%",
       label: "shorter review cycle time",
@@ -2702,7 +2779,7 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "9 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
+    updatedAt: "2026-08-11",
     reviewer: alexTryvailoReviewer,
     editorialNote:
       "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an implementation guide for source-grounded content verification workflows.",
@@ -2718,6 +2795,16 @@ export const insights: Insight[] = [
     ],
     summary:
       "Content fact-checking automation helps editorial teams separate fluent writing from verified claims by extracting statements, checking approved sources, and producing reviewable evidence.",
+    answerBox: {
+      heading: "Content fact-checking automation prepares evidence; editors still make final publishing decisions.",
+      paragraphs: [
+        "The workflow extracts factual claims, checks them against approved sources, classifies support or conflict, and returns an evidence report with confidence and reviewer actions.",
+      ],
+      bullets: [
+        "Best first fit: product pages, guides, supplier claims, and AI-assisted drafts with known source boundaries.",
+        "Production requirement: exact claim, source evidence, verdict, caveat, and editorial approval.",
+      ],
+    },
     outcome: {
       value: "100+",
       label: "articles/day verification capacity",
@@ -2807,7 +2894,7 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "8 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-23",
+    updatedAt: "2026-08-11",
     reviewer: alexTryvailoReviewer,
     editorialNote:
       "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as an automation example for internal reporting and coordination workflows.",
@@ -2823,6 +2910,16 @@ export const insights: Insight[] = [
     ],
     summary:
       "Reporting automation turns fragmented operational inputs into structured summaries, updates, release notes, and decision briefs with human approval before publishing.",
+    answerBox: {
+      heading: "Reporting automation is strongest when it standardises inputs before drafting summaries.",
+      paragraphs: [
+        "A reliable workflow collects approved updates, groups them by audience and purpose, identifies missing context, drafts a report, and sends it to the owner for approval before distribution.",
+      ],
+      bullets: [
+        "Best first fit: recurring reports, release notes, status updates, and leadership briefs.",
+        "Production requirement: approved sources, audience-specific templates, missing-context flags, and human sign-off.",
+      ],
+    },
     outcome: {
       value: "200-800",
       label: "hours/year modelled effort reduction",
@@ -2904,7 +3001,7 @@ export const insights: Insight[] = [
   },
   {
     slug: "market-competitor-monitoring-automation",
-    title: "Market and Competitor Monitoring Automation",
+    title: "Competitor Monitoring Tools and Market Monitoring Automation",
     seoTitle: "Competitor Monitoring Tools",
     description:
       "How AI workflows can track approved public sources, classify competitor changes, preserve evidence, and turn market signals into reviewable decision briefs.",
@@ -2913,8 +3010,8 @@ export const insights: Insight[] = [
     category: "Automation Example",
     readingTime: "14 min read",
     publishedAt: "2026-07-23",
-    updatedAt: "2026-07-27",
-    targetQuery: "competitor monitoring tools and automation",
+    updatedAt: "2026-08-11",
+    targetQuery: "competitor monitoring tools",
     searchIntent: "Commercial Investigation",
     keywords: [
       "AI competitor monitoring",
@@ -3276,22 +3373,22 @@ export const insights: Insight[] = [
   },
   {
     slug: "ai-workflow-automation-services",
-    title: "AI Workflow Automation Services: What To Expect Before You Buy",
-    seoTitle: "AI Workflow Automation Services",
+    title: "AI Automation Services and Workflow Automation Services: What To Expect",
+    seoTitle: "AI Automation Services and Workflow Automation Services",
     description:
-      "A buyer-focused guide to AI workflow automation services, deliverables, controls, pilot scope, and how to compare service providers.",
+      "A buyer-focused guide to AI automation services, workflow automation services, deliverables, controls, pilot scope, and provider selection.",
     seoDescription:
-      "Compare AI workflow automation services, consulting, tools, and custom workflow delivery before choosing an implementation partner.",
+      "Compare AI automation services, workflow automation services, consulting, tools, and custom workflow delivery before choosing an implementation partner.",
     category: "Guide",
     readingTime: "10 min read",
     publishedAt: "2026-08-11",
     updatedAt: "2026-08-11",
-    targetQuery: "AI workflow automation services",
+    targetQuery: "AI automation services",
     searchIntent: "Commercial Investigation",
     keywords: [
-      "AI workflow automation services",
       "AI automation services",
       "workflow automation services",
+      "AI workflow automation services",
       "business process automation services",
       "AI business process automation services",
       "custom AI automation services",
@@ -3300,11 +3397,11 @@ export const insights: Insight[] = [
       "AI automation services for operations teams",
     ],
     summary:
-      "AI workflow automation services should help a team choose one recurring workflow, design the control layer, test real inputs, and ship a reviewable production workflow instead of a disconnected AI demo.",
+      "AI automation services should help a team choose one recurring workflow, design the control layer, test real inputs, and ship a reviewable production workflow instead of a disconnected AI demo.",
     answerBox: {
-      heading: "Buy AI workflow automation services when the workflow needs diagnosis, controls, and implementation together.",
+      heading: "Buy AI automation services when the workflow needs diagnosis, controls, and implementation together.",
       paragraphs: [
-        "A good service engagement should produce a workflow map, source policy, AI task design, review model, pilot build, success metrics, and a maintenance path. If the workflow is simple and standard, an off-the-shelf tool may be enough.",
+        "A good AI automation services engagement should produce a workflow map, source policy, AI task design, review model, pilot build, success metrics, and a maintenance path. If the workflow is simple and standard, an off-the-shelf tool may be enough.",
       ],
       bullets: [
         "Best first engagement: one workflow, real examples, clear output, defined review, and measurable operational value.",
@@ -3313,7 +3410,7 @@ export const insights: Insight[] = [
     },
     reviewer: alexTryvailoReviewer,
     editorialNote:
-      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a buyer guide for teams evaluating AI workflow automation services.",
+      "Reviewed by Alex Tryvailo, PhD, for SmartCore Technologies as a buyer guide for teams evaluating AI automation services and workflow automation services.",
     takeaways: [
       "The strongest AI automation services combine workflow assessment, implementation, review design, and production monitoring.",
       "A service provider should ask for real examples before recommending tools, agents, or custom development.",
@@ -3322,10 +3419,10 @@ export const insights: Insight[] = [
     ],
     sections: [
       {
-        heading: "What Are AI Workflow Automation Services?",
+        heading: "What Are AI Automation Services?",
         paragraphs: [
-          "AI workflow automation services help teams turn recurring manual work into controlled systems that use AI for a narrow task inside a larger process. That may include classification, extraction, summarisation, matching, drafting, monitoring, or exception detection.",
-          "The service should not start and end with a model call. Production work needs source boundaries, integration design, review queues, evidence capture, approval rules, output contracts, and monitoring after launch.",
+          "AI automation services help teams turn recurring manual work into controlled systems that use AI for a narrow task inside a larger process. That may include classification, extraction, summarisation, matching, drafting, monitoring, or exception detection.",
+          "Workflow automation services are the broader category: they connect triggers, systems, rules, owners, approvals, and outputs. AI automation services add model-based judgement steps where the workflow needs to interpret documents, messages, product data, reviews, images, or public sources.",
         ],
         table: {
           columns: ["Service layer", "Useful deliverable"],
@@ -3335,6 +3432,22 @@ export const insights: Insight[] = [
             ["Pilot build", "A narrow workflow tested on representative examples, including edge cases."],
             ["Production controls", "Evidence, confidence labels, approvals, audit history, and failure handling."],
             ["Operating model", "Ownership for monitoring, corrections, updates, and expansion decisions."],
+          ],
+        },
+      },
+      {
+        heading: "AI Automation Services vs Workflow Automation Services",
+        paragraphs: [
+          "The two terms overlap, but they do not mean the same thing. Workflow automation services can automate deterministic handoffs, approvals, notifications, record updates, and recurring reports without AI. AI automation services are useful when the workflow needs to understand messy or unstructured inputs before the next action.",
+          "This distinction makes the buying conversation more mature. A team may need business process automation services for a rules-based operating loop, AI automation services for classification or extraction, or a custom workflow when both layers need to work together with human review.",
+        ],
+        table: {
+          columns: ["Service type", "Best fit", "Example"],
+          rows: [
+            ["Workflow automation services", "Known triggers, rules, approvals, and system updates.", "Route a form submission, create a ticket, update a CRM field, and notify an owner."],
+            ["Business process automation services", "A wider operating process with handoffs, owners, controls, and measurable outcomes.", "Standardise invoice intake, supplier onboarding, reporting, or product data review."],
+            ["AI automation services", "Unstructured text, documents, images, reviews, or public sources that need interpretation.", "Extract invoice fields, classify customer feedback, enrich product attributes, or summarise competitor changes."],
+            ["Custom AI automation services", "Company-specific rules, source policies, review queues, and output contracts.", "Build a reviewable workflow that combines tools, AI steps, evidence, approvals, and downstream export."],
           ],
         },
       },
@@ -3351,6 +3464,23 @@ export const insights: Insight[] = [
           "Reviewers need source links, confidence notes, and correction capture.",
           "The team is choosing between a tool, custom workflow, internal build, or cleanup first.",
         ],
+      },
+      {
+        heading: "Which AI Automation Services Fit Operations Teams?",
+        paragraphs: [
+          "For operations teams, the strongest service fit is usually a concrete workflow rather than a generic AI capability. The provider should be able to explain which part of the process is rule-based, which part needs AI, and which decisions stay with people.",
+          "Customer service automation can be a useful category, but it should not be treated as the only AI automation use case. Many teams see better first traction in document processing, product data enrichment, review intelligence, reporting, market monitoring, or internal workflow triage.",
+        ],
+        table: {
+          columns: ["Workflow", "AI task", "Reviewable output"],
+          rows: [
+            ["Document and invoice processing", "Classify documents and extract fields.", "Validated records, exceptions, and finance-ready handoff."],
+            ["Product data enrichment", "Extract attributes, normalise values, and flag conflicts.", "PIM-ready suggestions with source evidence."],
+            ["Customer feedback analysis", "Group themes, sentiment, urgency, and evidence.", "Issue queue and weekly decision brief."],
+            ["Market monitoring", "Compare public sources and classify changes.", "Evidence-backed competitor or market brief."],
+            ["Reporting coordination", "Summarise approved inputs and identify missing context.", "Reviewable leadership, release, or operations update."],
+          ],
+        },
       },
       {
         heading: "What the First Engagement Should Include",
@@ -3380,7 +3510,7 @@ export const insights: Insight[] = [
             ["Automation tool", "The workflow is standard, low-risk, and fits a product pattern.", "Weak fit for company-specific rules or review-heavy outputs."],
             ["AI automation consultant", "The workflow, risks, tool fit, or first pilot is unclear.", "Advice should lead to a testable workflow, not only strategy."],
             ["AI automation agency", "The scope is clear and the main need is delivery capacity.", "Fast delivery can miss controls if the workflow is poorly defined."],
-            ["AI workflow automation services", "The team needs assessment, build, controls, and operating model in one path.", "Scope must stay narrow enough to prove value in production."],
+            ["AI automation services", "The team needs assessment, build, controls, and operating model in one path.", "Scope must stay narrow enough to prove value in production."],
           ],
         },
       },
@@ -3408,9 +3538,14 @@ export const insights: Insight[] = [
     ],
     faq: [
       {
-        question: "What are AI workflow automation services?",
+        question: "What are AI automation services?",
         answer:
-          "AI workflow automation services help teams assess, design, build, and operate workflows where AI performs tasks such as extraction, classification, summarisation, drafting, or exception detection inside a controlled process.",
+          "AI automation services help teams assess, design, build, and operate workflows where AI performs tasks such as extraction, classification, summarisation, drafting, or exception detection inside a controlled process.",
+      },
+      {
+        question: "What is the difference between AI automation services and workflow automation services?",
+        answer:
+          "Workflow automation services automate triggers, rules, handoffs, approvals, and system updates. AI automation services add model-based tasks such as document extraction, feedback classification, summarisation, matching, and exception detection.",
       },
       {
         question: "When should a company buy AI automation services instead of an AI tool?",
@@ -3418,7 +3553,7 @@ export const insights: Insight[] = [
           "Buy services when the workflow has messy inputs, cross-team ownership, review requirements, custom rules, or unclear tool fit. Use a tool alone when the process is standard, low-risk, and already matches the product.",
       },
       {
-        question: "What should an AI workflow automation service deliver first?",
+        question: "What should an AI automation service deliver first?",
         answer:
           "The first deliverable should usually be a workflow assessment or narrow pilot: source map, output definition, review path, success metrics, and a recommendation for tool, custom workflow, cleanup, or redesign.",
       },
