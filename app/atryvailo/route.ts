@@ -16,9 +16,7 @@ function absoluteAssetUrls(html: string) {
 }
 
 export async function GET() {
-  const response = await fetch(`${SOURCE_ORIGIN}${SOURCE_PATH}`, {
-    next: { revalidate: 300 },
-  })
+  const response = await fetch(`${SOURCE_ORIGIN}${SOURCE_PATH}`, { cache: "no-store" })
 
   if (!response.ok) {
     return new Response("Unable to load profile page.", { status: 502 })
