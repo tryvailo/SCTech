@@ -1,0 +1,1576 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A discussion deck for a practical five-month AI Enablement programme at WA.Technology.">
+  <title>AI Enablement at WA.Technology | Discussion Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+  <style>
+    :root {
+      --ink: #142126;
+      --ink-soft: #425157;
+      --paper: #f7faf8;
+      --white: #ffffff;
+      --green: #0f8b67;
+      --green-dark: #09654c;
+      --green-pale: #dff4ea;
+      --lime: #b7ea47;
+      --amber: #edaa3a;
+      --line: #cad7d1;
+      --muted: #e9efec;
+      --shadow: 0 18px 48px rgba(20, 33, 38, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      background: var(--paper);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.5;
+    }
+
+    a { color: inherit; }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    button:focus-visible, a:focus-visible {
+      outline: 3px solid var(--amber);
+      outline-offset: 3px;
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 20;
+      inset: 0 0 auto 0;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 34px;
+      color: var(--white);
+      background: rgba(20, 33, 38, 0.96);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 148px;
+      height: 35px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .brand-divider {
+      width: 1px;
+      height: 26px;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .brand-context {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .slide-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .slide-nav a {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: none;
+      transition: 160ms ease;
+    }
+
+    .slide-nav a:hover,
+    .slide-nav a.active {
+      color: var(--ink);
+      border-color: var(--lime);
+      background: var(--lime);
+    }
+
+    .slide-nav span {
+      width: 58px;
+      text-align: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.66);
+      white-space: nowrap;
+    }
+
+    .slide {
+      min-height: 100svh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      padding: 102px 6vw 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide-inner {
+      width: min(1220px, 100%);
+      min-height: calc(100svh - 144px);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 850px;
+      margin-bottom: 23px;
+      font-size: 68px;
+      line-height: 1.05;
+      font-weight: 800;
+    }
+
+    h2 {
+      max-width: 850px;
+      margin-bottom: 28px;
+      font-size: 46px;
+      line-height: 1.12;
+      font-weight: 800;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 22px;
+      line-height: 1.58;
+    }
+
+    .hero {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 72px 0 0 auto;
+      width: 41%;
+      background:
+        linear-gradient(rgba(20, 33, 38, 0.08), rgba(20, 33, 38, 0.26)),
+        url("https://cdn.prod.website-files.com/646be1f8e402385c9bb4ea5e/64831446f12000a18e95a767_managed_services-mockup.png") center / cover no-repeat;
+      opacity: 0.92;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 72px 38% 0 0;
+      background: linear-gradient(90deg, var(--ink) 58%, rgba(20, 33, 38, 0));
+      pointer-events: none;
+    }
+
+    .hero .slide-inner { position: relative; z-index: 2; }
+    .hero .eyebrow { color: var(--lime); }
+    .hero .lead { color: rgba(255, 255, 255, 0.74); }
+
+    .hero-copy { width: 66%; }
+
+    .accent-line {
+      width: 74px;
+      height: 5px;
+      margin: 29px 0;
+      background: var(--lime);
+    }
+
+    .outcome-strip {
+      width: min(840px, 78%);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .outcome {
+      min-height: 100px;
+      padding: 22px 22px 18px 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .outcome + .outcome { padding-left: 22px; }
+    .outcome:last-child { border-right: 0; }
+
+    .outcome strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--lime);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 15px;
+    }
+
+    .outcome span {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .source-note {
+      width: 66%;
+      margin-top: 23px;
+      padding-left: 16px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 15px;
+      border-left: 4px solid var(--lime);
+    }
+
+    .source-note strong { color: var(--lime); }
+
+    .roadmap-slide { background: var(--white); }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 38px;
+    }
+
+    .section-head h2 { margin-bottom: 0; }
+
+    .section-summary {
+      max-width: 340px;
+      margin-bottom: 5px;
+      color: var(--ink-soft);
+      font-size: 16px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 2px solid var(--ink);
+    }
+
+    .phase {
+      min-height: 255px;
+      padding: 28px 23px 22px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .phase + .phase { padding-left: 23px; }
+    .phase:last-child { border-right: 0; }
+
+    .phase-number {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      color: var(--white);
+      background: var(--green);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .phase h3 { font-size: 19px; }
+
+    .phase-kicker {
+      margin-bottom: 14px;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .phase p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .programme-footer {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 46px;
+      align-items: start;
+      margin-top: 35px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+    }
+
+    .principle {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .principle i { color: var(--green); }
+
+    .principle strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .principle span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .success-measures {
+      padding: 20px 23px;
+      color: var(--white);
+      background: var(--ink);
+      border-left: 5px solid var(--lime);
+    }
+
+    .success-measures strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--lime);
+      font-size: 15px;
+    }
+
+    .success-measures p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .proof-slide {
+      padding: 90px 5vw 28px;
+      background: var(--white);
+    }
+
+    .proof-slide .slide-inner {
+      width: min(1296px, 100%);
+      min-height: calc(100svh - 118px);
+    }
+
+    .proof-slide .section-head {
+      align-items: center;
+      margin-bottom: 27px;
+    }
+
+    .proof-slide .section-head h2 {
+      max-width: 820px;
+      font-size: 45px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .proof-grid.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .proof-card {
+      min-width: 0;
+      min-height: 398px;
+      display: flex;
+      flex-direction: column;
+      padding: 25px 27px 23px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-top: 6px solid var(--green);
+      border-radius: 6px;
+      box-shadow: 0 12px 30px rgba(20, 33, 38, 0.07);
+    }
+
+    .proof-card.governance { border-top-color: var(--amber); }
+    .proof-card.delivery { color: var(--white); background: var(--ink); border-color: var(--ink); border-top-color: var(--lime); }
+    .proof-card.compact { min-height: 330px; padding: 23px 23px 21px; }
+
+    .proof-metric {
+      margin-bottom: 7px;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 46px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .proof-card.compact .proof-metric { font-size: 38px; }
+    .governance .proof-metric { color: #a46610; }
+    .delivery .proof-metric { color: var(--lime); }
+
+    .proof-card h3 {
+      margin-bottom: 10px;
+      font-size: 24px;
+    }
+
+    .delivery h3 { color: var(--white); }
+
+    .proof-summary {
+      min-height: 50px;
+      margin-bottom: 18px;
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .proof-card.compact .proof-summary { min-height: 76px; }
+
+    .delivery .proof-summary { color: rgba(255, 255, 255, 0.70); }
+
+    .proof-card ul {
+      margin: auto 0 0;
+      padding: 17px 0 0 20px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.48;
+      border-top: 1px solid var(--line);
+    }
+
+    .delivery ul { color: rgba(255, 255, 255, 0.78); border-color: rgba(255, 255, 255, 0.18); }
+    .proof-card li { margin-bottom: 7px; }
+    .proof-card li:last-child { margin-bottom: 0; }
+    .proof-card li::marker { color: var(--green); }
+    .governance li::marker { color: var(--amber); }
+    .delivery li::marker { color: var(--lime); }
+
+    .proof-footer {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 34px;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+    }
+
+    .proof-positioning {
+      margin-bottom: 0;
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .proof-positioning strong { color: var(--green-dark); }
+
+    .proof-credentials {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .usecase-slide {
+      padding: 88px 5vw 28px;
+      background: var(--paper);
+    }
+
+    .usecase-slide.alt { background: var(--white); }
+
+    .usecase-slide .slide-inner {
+      width: min(1296px, 100%);
+      min-height: calc(100svh - 116px);
+    }
+
+    .usecase-slide .section-head {
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .usecase-slide .section-head h2 {
+      max-width: 900px;
+      font-size: 40px;
+    }
+
+    .hiring-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .hiring-card {
+      min-height: 205px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 21px 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--green);
+      border-radius: 6px;
+      box-shadow: 0 9px 24px rgba(20, 33, 38, 0.06);
+    }
+
+    .hiring-card:nth-child(2n) { border-top-color: var(--lime); }
+    .hiring-card:nth-child(3n) { border-top-color: var(--amber); }
+
+    .hiring-card .card-number {
+      margin-bottom: 15px;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .hiring-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+      line-height: 1.18;
+    }
+
+    .hiring-card p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .operating-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .operating-card {
+      min-height: 355px;
+      padding: 25px 26px 23px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--green);
+      border-radius: 6px;
+      box-shadow: 0 9px 24px rgba(20, 33, 38, 0.06);
+    }
+
+    .operating-card:nth-child(2) { border-top-color: var(--lime); }
+    .operating-card:nth-child(3) { border-top-color: var(--amber); }
+
+    .operating-card .step {
+      margin-bottom: 18px;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .operating-card h3 { font-size: 27px; }
+
+    .operating-card p {
+      color: var(--ink-soft);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .operating-card ul {
+      margin: 19px 0 0;
+      padding: 17px 0 0 20px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.5;
+      border-top: 1px solid var(--line);
+    }
+
+    .operating-card li { margin-bottom: 6px; }
+    .operating-card li::marker { color: var(--green); }
+
+    .demo-layout {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .demo-panel {
+      min-height: 410px;
+      padding: 29px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 12px 30px rgba(20, 33, 38, 0.07);
+    }
+
+    .demo-panel.dark {
+      color: var(--white);
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .demo-panel.dark h3 { color: var(--white); font-size: 31px; }
+    .demo-panel.dark p { color: rgba(255, 255, 255, 0.72); }
+
+    .demo-flow {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 6px;
+    }
+
+    .flow-step i { width: 22px; color: var(--lime); }
+    .flow-step strong { display: block; color: var(--lime); font-size: 15px; }
+    .flow-step span { display: block; color: rgba(255, 255, 255, 0.76); font-size: 14px; }
+
+    .demo-panel ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink-soft);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .demo-panel li { margin-bottom: 8px; }
+    .demo-panel li::marker { color: var(--green); }
+
+    .mini-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .mini-metric {
+      min-height: 92px;
+      padding: 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .mini-metric strong {
+      display: block;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 18px;
+    }
+
+    .mini-metric span {
+      display: block;
+      margin-top: 6px;
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .adoption-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .adoption-card {
+      padding: 27px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      box-shadow: 0 9px 24px rgba(20, 33, 38, 0.06);
+    }
+
+    .adoption-card h3 { font-size: 27px; }
+
+    .adoption-list {
+      list-style: none;
+      margin: 19px 0 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .adoption-list li {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 12px;
+      padding: 11px 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .adoption-list i { width: 19px; color: var(--green-dark); }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .risk {
+      min-height: 112px;
+      padding: 15px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+    }
+
+    .risk.warn { border-left-color: var(--amber); }
+    .risk strong { display: block; margin-bottom: 6px; font-size: 15px; }
+    .risk span { color: var(--ink-soft); font-size: 13px; line-height: 1.4; }
+
+    .part-marker {
+      flex: 0 0 auto;
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .case-grid.three { grid-template-columns: repeat(3, 1fr); }
+
+    .case-card {
+      min-width: 0;
+      padding: 20px 23px 19px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 5px solid var(--green);
+      border-radius: 6px;
+      box-shadow: 0 9px 24px rgba(20, 33, 38, 0.06);
+    }
+
+    .alt .case-card { background: var(--paper); }
+    .case-card.compliance { border-top-color: var(--amber); }
+
+    .case-card header {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 13px;
+    }
+
+    .case-card header i {
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      color: var(--green-dark);
+      background: var(--green-pale);
+      border-radius: 6px;
+    }
+
+    .case-card.compliance header i {
+      color: #87550e;
+      background: #fff0d5;
+    }
+
+    .case-card h3 {
+      margin-bottom: 3px;
+      font-size: 21px;
+    }
+
+    .case-tag {
+      color: var(--green-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .case-card.compliance .case-tag { color: #87550e; }
+
+    .case-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .case-card li { margin-bottom: 4px; }
+    .case-card li:last-child { margin-bottom: 0; }
+    .case-card li::marker { color: var(--green); }
+    .case-card.compliance li::marker { color: var(--amber); }
+
+    .guardrail-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 17px;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .guardrail-note i {
+      width: 21px;
+      flex: 0 0 auto;
+      color: var(--green-dark);
+    }
+
+    .delivery-slide {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .delivery-slide .eyebrow { color: var(--lime); }
+
+    .delivery-layout {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .delivery-intro h2 {
+      margin-bottom: 24px;
+      color: var(--white);
+      font-size: 48px;
+    }
+
+    .delivery-intro .lead {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 19px;
+    }
+
+    .ownership-list {
+      list-style: none;
+      margin: 30px 0 0;
+      padding: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .ownership-list li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .ownership-list i { width: 20px; color: var(--lime); }
+
+    .specialist-bench { margin-bottom: 21px; }
+    .specialist-bench .eyebrow { margin-bottom: 10px; }
+
+    .specialist-bench h3 {
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: 28px;
+    }
+
+    .specialist-bench p:last-child {
+      max-width: 610px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 15px;
+    }
+
+    .capability-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .capability {
+      min-height: 172px;
+      padding: 22px 26px 20px 0;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .capability:nth-child(even) {
+      padding-left: 26px;
+      border-right: 0;
+    }
+
+    .capability i {
+      width: 31px;
+      height: 31px;
+      margin-bottom: 12px;
+      color: var(--lime);
+    }
+
+    .capability h3 {
+      margin-bottom: 8px;
+      color: var(--white);
+      font-size: 21px;
+    }
+
+    .capability p {
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 15px;
+      line-height: 1.52;
+    }
+
+    .engagement-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.22);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .engagement-strip div {
+      padding: 15px 18px 15px 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14px;
+      border-right: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .engagement-strip div + div { padding-left: 18px; }
+    .engagement-strip div:last-child { border-right: 0; }
+    .engagement-strip strong { display: block; color: var(--lime); font-size: 15px; }
+
+    .discussion-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 16px;
+      padding-top: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    .discussion-bar p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .discussion-bar strong { color: var(--ink); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 500ms ease, transform 500ms ease;
+    }
+
+    .slide.visible .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .slide.visible .reveal:nth-child(2) { transition-delay: 80ms; }
+    .slide.visible .reveal:nth-child(3) { transition-delay: 150ms; }
+    .slide.visible .reveal:nth-child(4) { transition-delay: 220ms; }
+
+    @media (max-width: 980px) {
+      html { scroll-snap-type: none; }
+      .topbar { padding: 0 18px; }
+      .brand-context, .brand-divider { display: none; }
+      .brand-logo { width: 115px; }
+      .slide { min-height: auto; padding: 96px 22px 50px; overflow: visible; }
+      .slide-inner { min-height: auto; }
+      h1 { font-size: 42px; }
+      h2 { font-size: 32px; }
+      .hero::before { width: 100%; opacity: 0.22; }
+      .hero::after { inset: 72px 0 0; background: rgba(20, 33, 38, 0.76); }
+      .hero-copy, .outcome-strip { width: 100%; }
+      .source-note { width: 100%; }
+      .outcome-strip { grid-template-columns: 1fr 1fr; }
+      .outcome:nth-child(2) { border-right: 0; }
+      .outcome:nth-child(-n+2) { border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+      .timeline { grid-template-columns: 1fr; }
+      .phase, .phase + .phase { min-height: auto; padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .programme-footer, .delivery-layout { grid-template-columns: 1fr; }
+      .proof-grid, .proof-footer { grid-template-columns: 1fr; }
+      .proof-grid.four, .operating-grid, .hiring-grid, .demo-layout, .adoption-layout, .risk-grid, .mini-metrics { grid-template-columns: 1fr; }
+      .proof-slide { padding: 96px 22px 50px; }
+      .proof-slide .slide-inner { min-height: auto; }
+      .proof-card { min-height: auto; }
+      .operating-card, .demo-panel { min-height: auto; }
+      .proof-credentials { text-align: left; }
+      .principles { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-summary { margin-top: 15px; }
+      .usecase-slide { padding: 96px 22px 50px; }
+      .usecase-slide .slide-inner { min-height: auto; }
+      .usecase-slide .section-head h2 { font-size: 32px; }
+      .hiring-card { min-height: auto; }
+      .case-grid, .case-grid.three { grid-template-columns: 1fr; }
+      .case-card ul { font-size: 16px; }
+      .part-marker { display: block; margin-top: 12px; }
+      .delivery-layout { gap: 42px; }
+      .capability-grid { grid-template-columns: 1fr; }
+      .capability, .capability:nth-child(even) { min-height: auto; padding: 24px 0; border-right: 0; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media (max-width: 620px) {
+      .slide-nav a:first-child, .slide-nav a:last-child { display: none; }
+      .slide-nav span { width: 58px; }
+      h1 { font-size: 34px; }
+      h2 { font-size: 28px; }
+      .lead { font-size: 17px; }
+      .outcome-strip { grid-template-columns: 1fr; }
+      .outcome, .outcome + .outcome { padding: 18px 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+      .case-card { padding: 20px; }
+      .case-card h3 { font-size: 20px; }
+      .delivery-intro h2 { font-size: 34px; }
+      .engagement-strip { grid-template-columns: 1fr; }
+      .engagement-strip div, .engagement-strip div + div { padding: 15px 0; border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.18); }
+      .discussion-bar { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media print {
+      @page { size: landscape; margin: 0; }
+      .topbar { position: absolute; }
+      .slide { min-height: 100vh; page-break-after: always; }
+      .slide:last-child { page-break-after: auto; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-lockup">
+      <img class="brand-logo" src="https://cdn.prod.website-files.com/646be1f8e402385c9bb4ea5e/652f8471ae3c0fa424609434_WATG_Logo_MainWhite-p-500.png" alt="WA.Technology">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-context">Alexander · SmartCore Technologies · Candidate discussion</span>
+    </div>
+    <nav class="slide-nav" aria-label="Slide navigation">
+      <a href="#slide-1" class="prev" title="Previous slide" aria-label="Previous slide"><i data-lucide="arrow-up"></i></a>
+      <span id="slide-counter">01 / 08</span>
+      <a href="#slide-2" class="next" title="Next slide" aria-label="Next slide"><i data-lucide="arrow-down"></i></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="slide hero visible" id="slide-1" data-slide="1">
+      <div class="slide-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Head of AI Enablement · 30-minute discussion</p>
+          <h1>I help teams adopt AI safely, practically and measurably.</h1>
+          <div class="accent-line" aria-hidden="true"></div>
+          <p class="lead">For WA.Technology: turn scattered AI experimentation into governed workflows, confident champions and a small number of measurable pilots within five months.</p>
+        </div>
+
+        <p class="source-note reveal"><strong>Scope for today:</strong> this deck stays short; the broader portfolio page is available separately if deeper proof is useful.</p>
+      </div>
+    </section>
+
+    <section class="slide usecase-slide alt" id="slide-2" data-slide="2">
+      <div class="slide-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">What WA is hiring for</p>
+            <h2>This role is about adoption becoming operating practice.</h2>
+          </div>
+          <p class="section-summary">The ask is not AI inspiration. It is confident usage, safe boundaries, internal champions and measurable workflow change.</p>
+        </div>
+
+        <div class="hiring-grid reveal">
+          <article class="hiring-card">
+            <p class="card-number">01</p>
+            <h3>AI adoption</h3>
+            <p>Not strategy on paper; everyday team usage with visible behaviour change.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">02</p>
+            <h3>Internal AI voice</h3>
+            <p>Trusted guidance on where AI helps, where it stops and what risks matter.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">03</p>
+            <h3>Champion network</h3>
+            <p>Find star performers and turn their patterns into shared practice.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">04</p>
+            <h3>Usage guidelines</h3>
+            <p>Practical rules for privacy, IP, confidentiality and approved tools.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">05</p>
+            <h3>Hands-on LLMs</h3>
+            <p>Claude, Codex, Copilot-style workflows, prompts, APIs and SDLC use cases.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">06</p>
+            <h3>Internal AI tools</h3>
+            <p>Work with teams on requirements, testing and usable workflow pilots.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">07</p>
+            <h3>Measured impact</h3>
+            <p>Show value inside a 4-5 month mandate: time, quality, adoption and risk.</p>
+          </article>
+          <article class="hiring-card">
+            <p class="card-number">08</p>
+            <h3>Distributed trust</h3>
+            <p>Build confidence across remote teams and office visits.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide proof-slide" id="slide-3" data-slide="3">
+      <div class="slide-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Relevant proof</p>
+            <h2>The mandate matches work I have already done.</h2>
+          </div>
+          <p class="section-summary">The useful mix here is scale, governance, hands-on tooling and measurable workflow impact.</p>
+        </div>
+
+        <div class="proof-grid four reveal">
+          <article class="proof-card compact">
+            <p class="proof-metric">200+</p>
+            <h3>Leadership at scale</h3>
+            <p class="proof-summary">Built an engineering branch from zero to more than 200 people.</p>
+            <ul>
+              <li>Distributed technical leadership</li>
+              <li>Operating practices and local leaders</li>
+              <li>R&amp;D leadership in scaling SaaS</li>
+            </ul>
+          </article>
+
+          <article class="proof-card compact governance">
+            <p class="proof-metric">6,000</p>
+            <h3>Governance in practice</h3>
+            <p class="proof-summary">AI and innovation work inside a large enterprise context.</p>
+            <ul>
+              <li>Co-authored enterprise AI policy</li>
+              <li>Contributed to AI Committee models</li>
+              <li>Privacy, IP and human review</li>
+            </ul>
+          </article>
+
+          <article class="proof-card compact">
+            <p class="proof-metric">22</p>
+            <h3>AI shipped at scale</h3>
+            <p class="proof-summary">AI assistants live across 22 markets and exposed to 30M customers.</p>
+            <ul>
+              <li>Product direction and adoption</li>
+              <li>Human ownership around trust</li>
+              <li>Customer-facing AI experience</li>
+            </ul>
+          </article>
+
+          <article class="proof-card compact delivery">
+            <p class="proof-metric">37×</p>
+            <h3>Automation proof</h3>
+            <p class="proof-summary">Reduced a review-intelligence workflow from 3.5 days to 4 hours.</p>
+            <ul>
+              <li>~350 hours per year saved</li>
+              <li>700K records and 2.1M+ images</li>
+              <li>Dashboards and decision feeds</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="proof-footer reveal">
+          <p class="proof-positioning"><strong>Positioning:</strong> not a training-only consultant; an accountable lead who can shape adoption and validate working tools.</p>
+          <p class="proof-credentials">Ph.D. · UK-based · Full UK work authorisation · Travel where useful</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide usecase-slide alt" id="slide-4" data-slide="4">
+      <div class="slide-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Operating model</p>
+            <h2>I would build the operating layer around AI.</h2>
+          </div>
+          <p class="section-summary">Start with real work, make safe use easy, and convert early wins into repeatable practice.</p>
+        </div>
+
+        <div class="operating-grid reveal">
+          <article class="operating-card">
+            <p class="step">01 · Assess and focus</p>
+            <h3>Find useful work, not AI theatre.</h3>
+            <p>Map workflows, current AI usage, star performers, source-of-truth data, data risk and adoption barriers.</p>
+            <ul>
+              <li>Prioritised opportunity map</li>
+              <li>15-25 assessed use cases</li>
+              <li>Clear pilot selection criteria</li>
+            </ul>
+          </article>
+
+          <article class="operating-card">
+            <p class="step">02 · Enable and embed</p>
+            <h3>Turn power users into champions.</h3>
+            <p>Create practical training for beginners, power users and technical teams; support real use cases in the flow of work.</p>
+            <ul>
+              <li>Champion network</li>
+              <li>Role-based prompt patterns</li>
+              <li>Office hours and team rituals</li>
+            </ul>
+          </article>
+
+          <article class="operating-card">
+            <p class="step">03 · Govern and improve</p>
+            <h3>Make safe use the default.</h3>
+            <p>Translate policy into everyday rules for data, IP, third-party tools, hallucination risk, bias and human review.</p>
+            <ul>
+              <li>Usage guidelines</li>
+              <li>Risk tiers and escalation paths</li>
+              <li>Measurement and feedback loops</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide roadmap-slide" id="slide-5" data-slide="5">
+      <div class="slide-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Five-month programme</p>
+            <h2>Focused enough to ship, structured enough to last.</h2>
+          </div>
+          <p class="section-summary">A short mandate needs visible progress by month two and durable handover by month five.</p>
+        </div>
+
+        <div class="timeline reveal">
+          <article class="phase">
+            <span class="phase-number">01</span>
+            <p class="phase-kicker">Weeks 1-2</p>
+            <h3>Baseline & opportunities</h3>
+            <p>Interview teams, map current AI usage, identify friction and score use cases by value, feasibility, risk and ownership.</p>
+          </article>
+          <article class="phase">
+            <span class="phase-number">02</span>
+            <p class="phase-kicker">Weeks 2-4</p>
+            <h3>Guardrails & champions</h3>
+            <p>Publish practical usage guidance, train the first champion cohort and agree what AI can and cannot touch.</p>
+          </article>
+          <article class="phase">
+            <span class="phase-number">03</span>
+            <p class="phase-kicker">Month 2</p>
+            <h3>First pilot live</h3>
+            <p>Build or configure one high-frequency internal workflow and measure baseline versus assisted performance with users.</p>
+          </article>
+          <article class="phase">
+            <span class="phase-number">04</span>
+            <p class="phase-kicker">Months 3-4</p>
+            <h3>Scale by function</h3>
+            <p>Roll out role-based playbooks, a second workflow and targeted workshops across offices and disciplines.</p>
+          </article>
+          <article class="phase">
+            <span class="phase-number">05</span>
+            <p class="phase-kicker">Month 5</p>
+            <h3>Transfer capability</h3>
+            <p>Hand over ownership, metrics, support model, training assets and a prioritised twelve-month backlog.</p>
+          </article>
+        </div>
+
+        <div class="programme-footer reveal">
+          <div class="principles">
+            <div class="principle"><i data-lucide="shield-check"></i><div><strong>Responsible by design</strong><span>Risk-tiered, with human accountability.</span></div></div>
+            <div class="principle"><i data-lucide="users"></i><div><strong>Co-built with teams</strong><span>Champions shape and test each workflow.</span></div></div>
+            <div class="principle"><i data-lucide="chart-no-axes-combined"></i><div><strong>Measured in operations</strong><span>Time, quality, adoption and incidents.</span></div></div>
+          </div>
+          <div class="success-measures">
+            <strong>Suggested end-state</strong>
+            <p>Usage guidelines · champion network · 2-3 working workflows · adoption dashboard · handover playbook · twelve-month backlog</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide usecase-slide" id="slide-6" data-slide="6">
+      <div class="slide-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Potential automation portfolio</p>
+            <h2>Internal operations: reduce friction, preserve control.</h2>
+          </div>
+          <span class="part-marker">USE CASES · 01 / 02</span>
+        </div>
+
+        <div class="case-grid reveal">
+          <article class="case-card">
+            <header>
+              <i data-lucide="headphones"></i>
+              <div><h3>Support & incident copilot</h3><span class="case-tag">Strong first pilot</span></div>
+            </header>
+            <ul>
+              <li>Classify and route incoming operator requests</li>
+              <li>Detect urgency, affected product and market</li>
+              <li>Summarise long conversations and technical context</li>
+              <li>Retrieve similar incidents and resolved cases</li>
+              <li>Draft multilingual replies for agent approval</li>
+              <li>Surface recurring issues to Product and Engineering</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <header>
+              <i data-lucide="book-open-check"></i>
+              <div><h3>Trusted knowledge assistant</h3><span class="case-tag">Foundation capability</span></div>
+            </header>
+            <ul>
+              <li>Search platform, product and API documentation</li>
+              <li>Answer with citations to approved source material</li>
+              <li>Respect team, client and document permissions</li>
+              <li>Reuse knowledge from resolved support cases</li>
+              <li>Support English, Spanish and Portuguese workflows</li>
+              <li>Identify missing or outdated documentation</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <header>
+              <i data-lucide="rocket"></i>
+              <div><h3>Operator launch orchestration</h3><span class="case-tag">High operational leverage</span></div>
+            </header>
+            <ul>
+              <li>Extract requirements from client documents</li>
+              <li>Generate market-specific launch checklists</li>
+              <li>Validate whether required information is complete</li>
+              <li>Create and assign cross-functional delivery tasks</li>
+              <li>Track dependencies, blockers and overdue actions</li>
+              <li>Draft weekly launch status reports automatically</li>
+            </ul>
+          </article>
+
+          <article class="case-card compliance">
+            <header>
+              <i data-lucide="scale"></i>
+              <div><h3>Regulatory intelligence workflow</h3><span class="case-tag">Human legal approval</span></div>
+            </header>
+            <ul>
+              <li>Monitor selected jurisdictions and regulators</li>
+              <li>Compare new and previous regulatory language</li>
+              <li>Draft impact summaries for specialist review</li>
+              <li>Maintain an auditable obligations matrix</li>
+              <li>Assign owners, evidence and remediation dates</li>
+              <li>Prepare structured materials for audits</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="guardrail-note reveal"><i data-lucide="shield-check"></i><span>AI assists with retrieval, triage and preparation. Legal, player-impacting and financial decisions remain with authorised people.</span></p>
+      </div>
+    </section>
+
+    <section class="slide usecase-slide alt" id="slide-7" data-slide="7">
+      <div class="slide-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Potential automation portfolio</p>
+            <h2>Commercial and product: turn operational data into action.</h2>
+          </div>
+          <span class="part-marker">USE CASES · 02 / 02</span>
+        </div>
+
+        <div class="case-grid three reveal">
+          <article class="case-card compliance">
+            <header>
+              <i data-lucide="scan-search"></i>
+              <div><h3>Affiliate operations & compliance</h3><span class="case-tag">Potential product feature</span></div>
+            </header>
+            <ul>
+              <li>Monitor affiliate pages, placements and creatives</li>
+              <li>Flag missing disclaimers or material conditions</li>
+              <li>Detect prohibited or high-risk marketing claims</li>
+              <li>Identify traffic and conversion anomalies</li>
+              <li>Reconcile commissions, terms and payout data</li>
+              <li>Create an evidence log for human investigation</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <header>
+              <i data-lucide="handshake"></i>
+              <div><h3>Client & account intelligence</h3><span class="case-tag">Growth and retention</span></div>
+            </header>
+            <ul>
+              <li>Combine usage, incidents and delivery status</li>
+              <li>Generate a consistent account health summary</li>
+              <li>Draft QBR narratives from trusted metrics</li>
+              <li>Highlight unresolved risks and commitments</li>
+              <li>Suggest next-best actions for account managers</li>
+              <li>Aggregate repeated requests into product signals</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <header>
+              <i data-lucide="code-xml"></i>
+              <div><h3>Engineering enablement</h3><span class="case-tag">Safe SDLC acceleration</span></div>
+            </header>
+            <ul>
+              <li>Define approved coding-assistant workflows</li>
+              <li>Generate tests and technical documentation</li>
+              <li>Prepare PR summaries and review checklists</li>
+              <li>Assist log investigation and incident analysis</li>
+              <li>Draft consistent post-incident reviews</li>
+              <li>Provide secure codebase retrieval with access control</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="discussion-bar reveal">
+          <p><strong>Selection rule:</strong> prioritise frequency, available data, clear ownership, measurable value and acceptable risk.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide delivery-slide" id="slide-8" data-slide="8">
+      <div class="slide-inner">
+        <div class="delivery-layout">
+          <div class="delivery-intro reveal">
+            <p class="eyebrow">End-state after five months</p>
+            <h2>WA gets a working AI enablement system.</h2>
+            <p class="lead">Not a one-off training deck: a measured adoption engine with clear ownership, working examples and practical governance.</p>
+
+            <ul class="ownership-list">
+              <li><i data-lucide="shield-check"></i><span>Approved AI usage guidelines and risk tiers</span></li>
+              <li><i data-lucide="users"></i><span>Active champion network and role-based training assets</span></li>
+              <li><i data-lucide="blocks"></i><span>Two or three working workflows tested with users</span></li>
+              <li><i data-lucide="chart-no-axes-combined"></i><span>Adoption dashboard: use, time saved, quality and risk</span></li>
+              <li><i data-lucide="map"></i><span>Prioritised twelve-month backlog and handover model</span></li>
+            </ul>
+          </div>
+
+          <div class="reveal">
+            <div class="specialist-bench">
+              <p class="eyebrow">How I would operate</p>
+              <h3>One accountable lead, hands-on enough to de-risk ambiguity.</h3>
+              <p>I remain the embedded point of contact across discovery, governance, champion activation, pilot delivery, measurement and handover. The broader public profile is there only if the panel wants deeper examples.</p>
+            </div>
+
+            <div class="capability-grid" aria-label="Available specialist capabilities">
+              <article class="capability">
+                <i data-lucide="compass"></i>
+                <h3>Diagnose</h3>
+                <p>Workflow discovery, AI usage baseline, star performers, data risk and prioritisation.</p>
+              </article>
+              <article class="capability">
+                <i data-lucide="workflow"></i>
+                <h3>Enable</h3>
+                <p>Champions, role-based training, prompt patterns, team rituals and hands-on support.</p>
+              </article>
+              <article class="capability">
+                <i data-lucide="shield-check"></i>
+                <h3>Govern</h3>
+                <p>Usage rules, approved tools, human review, escalation paths, evaluation and controls.</p>
+              </article>
+              <article class="capability">
+                <i data-lucide="rocket"></i>
+                <h3>Deliver</h3>
+                <p>Pilots, internal tools, adoption metrics, handover documentation and next backlog.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="engagement-strip reveal">
+          <div><strong>30-minute flow</strong>Thesis, WA ask, proof, method, programme, use cases, end-state.</div>
+          <div><strong>Optional deeper proof</strong>Open the portfolio page only if useful in Q&amp;A.</div>
+          <div><strong>Candidate promise</strong>Clear ownership from strategy to working adoption.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) window.lucide.createIcons({ "stroke-width": 1.8 });
+
+      const slides = [...document.querySelectorAll(".slide")];
+      const counter = document.getElementById("slide-counter");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+      let current = 0;
+
+      const setCurrent = (index) => {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        counter.textContent = `${String(current + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+        prev.href = `#slide-${Math.max(1, current)}`;
+        next.href = `#slide-${Math.min(slides.length, current + 2)}`;
+        document.querySelectorAll(".slide-nav a").forEach((link) => link.classList.remove("active"));
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            setCurrent(Number(entry.target.dataset.slide) - 1);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      slides.forEach((slide) => observer.observe(slide));
+      slides[0].classList.add("visible");
+
+      document.addEventListener("keydown", (event) => {
+        if (["ArrowDown", "PageDown", " "].includes(event.key)) {
+          event.preventDefault();
+          slides[Math.min(current + 1, slides.length - 1)].scrollIntoView();
+        }
+        if (["ArrowUp", "PageUp"].includes(event.key)) {
+          event.preventDefault();
+          slides[Math.max(current - 1, 0)].scrollIntoView();
+        }
+        if (event.key === "Home") slides[0].scrollIntoView();
+        if (event.key === "End") slides[slides.length - 1].scrollIntoView();
+      });
+    });
+  </script>
+</body>
+</html>
