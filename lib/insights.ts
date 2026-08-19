@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/seo"
+import { aiEnablementInsights } from "@/lib/ai-enablement-insights"
 
 export type InsightCategory =
   | "Guide"
@@ -204,6 +205,7 @@ const alexTryvailoReviewer: InsightReviewer = {
 }
 
 export const insights: Insight[] = [
+  ...aiEnablementInsights,
   {
     slug: "ai-workflow-automation-examples",
     title: "AI Workflow Automation Examples for Operations Teams",

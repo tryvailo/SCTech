@@ -140,6 +140,15 @@ const jsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
+              name: "AI enablement programme",
+              serviceType: "AI enablement and adoption consulting",
+              description: "A 12-20 week programme covering AI maturity assessment, use-case prioritisation, practical governance, internal champions, workflow pilots, adoption measurement, and handover.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
               name: "Operational intelligence systems",
               serviceType: "Operational intelligence",
               description: "Turning feedback, product data, content, reporting, and internal decision flows into clearer operational outputs.",

@@ -9,6 +9,7 @@ export interface InsightTopic {
   seoDescription: string
   eyebrow: string
   targetQuery: string
+  keywords?: string[]
   updatedAt: string
   category: "Topic Hub"
   primaryCta: string
@@ -24,6 +25,72 @@ export interface InsightTopic {
 }
 
 export const insightTopics: InsightTopic[] = [
+  {
+    slug: "ai-enablement",
+    title: "AI Enablement",
+    seoTitle: "AI Enablement: Adoption, Governance and Delivery",
+    description:
+      "Practical guidance for moving from scattered AI experiments to prioritised use cases, proportionate governance, adoption, and measurable delivery.",
+    seoDescription:
+      "Explore AI enablement, readiness assessment, adoption strategy, governance frameworks, operating models, and delivery controls for US and UK organisations.",
+    eyebrow: "Topic hub",
+    targetQuery: "AI enablement",
+    keywords: [
+      "AI readiness assessment",
+      "AI adoption strategy",
+      "AI governance framework",
+      "AI implementation consulting",
+      "AI operating model",
+      "enterprise AI adoption",
+    ],
+    updatedAt: "2026-08-19",
+    category: "Topic Hub",
+    primaryCta: "Discuss an Enablement Programme",
+    intro: [
+      "AI enablement is the operating capability that turns AI interest into repeatable business outcomes. It connects strategy, use-case selection, governance, delivery, adoption, and measurement rather than treating each pilot as an isolated technology project.",
+      "Use this hub to assess readiness, create practical guardrails, choose a first portfolio of use cases, and decide what the organisation should own after an initial enablement programme.",
+    ],
+    fit: [
+      "Organisations with several AI experiments but no shared intake, prioritisation, governance, or measurement model.",
+      "Business and operations leaders who need usable workflows, not a research-heavy machine-learning programme.",
+      "Teams that need an interim enablement lead plus access to automation, product, data, and change-delivery capability.",
+    ],
+    decisionQuestions: [
+      "Which business problems are valuable, feasible, and safe enough to address first?",
+      "What minimum guardrails let teams move quickly without creating unmanaged data, legal, or operational risk?",
+      "Who owns use-case intake, delivery, adoption, measurement, and continuous improvement after the first programme?",
+    ],
+    articleSlugs: [
+      "what-is-ai-enablement",
+      "ai-readiness-assessment",
+      "ai-governance-framework-for-adoption",
+      "ai-workflow-automation-examples",
+      "how-to-know-if-a-workflow-is-worth-automating",
+      "ai-automation-consulting-tool-or-custom-workflow",
+    ],
+    nextSteps: [
+      {
+        label: "Understand the operating model",
+        detail: "Separate AI enablement from training, strategy-only consulting, and standalone implementation.",
+        href: "/insights/what-is-ai-enablement",
+      },
+      {
+        label: "Assess readiness",
+        detail: "Score business value, data, workflow, risk, ownership, skills, and adoption before funding pilots.",
+        href: "/insights/ai-readiness-assessment",
+      },
+      {
+        label: "Design practical guardrails",
+        detail: "Create tiered governance that matches controls to the consequence of each use case.",
+        href: "/insights/ai-governance-framework-for-adoption",
+      },
+      {
+        label: "Choose the first workflow",
+        detail: "Turn the programme into a bounded delivery plan with evidence, review, and measurable outcomes.",
+        href: "/insights/how-to-know-if-a-workflow-is-worth-automating",
+      },
+    ],
+  },
   {
     slug: "ai-workflow-automation",
     title: "AI Workflow Automation",

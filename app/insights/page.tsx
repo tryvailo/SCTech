@@ -6,13 +6,17 @@ import { insightTopics } from "@/lib/insight-topics"
 import { siteConfig } from "@/lib/seo"
 
 const pageDescription =
-  "Practical guides, buying questions, and automation examples for US and UK teams evaluating AI automation services and workflow automation."
+  "Practical guides on AI enablement, adoption, governance, and workflow automation for US and UK operations teams."
 
 export const metadata: Metadata = {
-  title: "Insights on AI Workflow Automation",
+  title: "AI Enablement and Workflow Automation Insights",
   description: pageDescription,
   keywords: [
     "AI workflow automation",
+    "AI enablement",
+    "AI readiness assessment",
+    "AI governance framework",
+    "AI adoption strategy",
     "AI automation services",
     "workflow automation tools",
     "workflow automation services",
@@ -29,14 +33,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/insights",
-    title: "Insights on AI Workflow Automation | SmartCore",
+    title: "AI Enablement and Workflow Automation Insights | SmartCore",
     description: pageDescription,
     siteName: siteConfig.name,
     locale: "en_GB",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Insights on AI Workflow Automation | SmartCore",
+    title: "AI Enablement and Workflow Automation Insights | SmartCore",
     description: pageDescription,
     images: ["/twitter-image"],
   },
@@ -68,6 +72,9 @@ const representativeOutcomes = [
 ]
 
 const salesConversationResources = [
+  "what-is-ai-enablement",
+  "ai-readiness-assessment",
+  "ai-governance-framework-for-adoption",
   "ai-workflow-automation-services",
   "ai-automation-consulting-tool-or-custom-workflow",
   "zapier-make-n8n-vs-custom-ai-automation",
@@ -169,16 +176,16 @@ export default function InsightsPage() {
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/5 px-3 py-1 text-xs text-foreground/70">
               <Search className="h-3.5 w-3.5" aria-hidden="true" />
-              AI workflow automation research
+              AI enablement and workflow automation
             </div>
             <h1 className="max-w-4xl font-sans text-4xl font-light leading-tight tracking-normal md:text-6xl">
-              Practical insights for choosing and building controlled AI workflows.
+              Practical guidance for moving AI from interest to controlled delivery.
             </h1>
           </div>
           <div className="max-w-2xl text-base leading-7 text-foreground/72 md:text-lg md:leading-8">
             <p>
-              Guides, operating models, and buying questions for US and UK teams working with product data, customer
-              feedback, content, reporting, market intelligence, and internal decision support.
+              Readiness assessments, adoption models, governance frameworks, and implementation guides for US and UK
+              teams turning useful AI ideas into owned, measurable operating workflows.
             </p>
           </div>
         </div>
@@ -245,7 +252,7 @@ export default function InsightsPage() {
             <h2 className="font-mono text-xs uppercase tracking-normal text-foreground/55">Explore by topic</h2>
             <span className="text-xs text-foreground/45">{insightTopics.length} topic hubs</span>
           </div>
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {insightTopics.map((topic) => (
               <Link
                 key={topic.slug}

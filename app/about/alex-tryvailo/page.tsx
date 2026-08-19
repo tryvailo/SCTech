@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, ExternalLink, Linkedin } from "lucide-react"
 import { insights } from "@/lib/insights"
 import { siteConfig } from "@/lib/seo"
 
@@ -9,7 +9,7 @@ const alex = siteConfig.experts.alexTryvailo
 export const metadata: Metadata = {
   title: "Alex Tryvailo, PhD",
   description:
-    "Alex Tryvailo, PhD reviews SmartCore guidance on AI workflow automation, LLM evaluation, data quality, and market intelligence automation.",
+    "Alex Tryvailo, PhD writes and reviews SmartCore guidance on AI enablement, adoption, governance, workflow automation, and LLM evaluation.",
   alternates: {
     canonical: "/about/alex-tryvailo",
   },
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/about/alex-tryvailo",
     title: "Alex Tryvailo, PhD | SmartCore Technologies",
     description:
-      "Reviewer for SmartCore guidance on AI workflow automation, LLM evaluation, data quality, and market intelligence automation.",
+      "Author and AI Enablement Lead at SmartCore Technologies, covering adoption, governance, workflow automation, and LLM evaluation.",
     siteName: siteConfig.name,
     locale: "en_GB",
   },
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alex Tryvailo, PhD | SmartCore Technologies",
     description:
-      "Reviewer for SmartCore guidance on AI workflow automation, LLM evaluation, data quality, and market intelligence automation.",
+      "Author and AI Enablement Lead at SmartCore Technologies, covering adoption, governance, workflow automation, and LLM evaluation.",
     images: ["/twitter-image"],
   },
 }
 
-const reviewedInsights = insights.filter((insight) => insight.reviewer?.name === alex.name)
+const authoredInsights = insights
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -40,7 +40,7 @@ const jsonLd = {
   url: alex.url,
   name: alex.name,
   description:
-    "Reviewer for SmartCore guidance on AI workflow automation, LLM evaluation, data quality, and market intelligence automation.",
+    alex.bio,
   about: {
     "@type": "Person",
     "@id": `${alex.url}#person`,
@@ -89,11 +89,10 @@ export default function AlexTryvailoPage() {
 
       <section className="border-b border-foreground/10 px-5 py-14 md:px-8 md:py-20">
         <div className="mx-auto max-w-5xl">
-          <p className="mb-5 font-mono text-xs uppercase tracking-normal text-foreground/50">Editorial reviewer</p>
+          <p className="mb-5 font-mono text-xs uppercase tracking-normal text-foreground/50">Author and practitioner</p>
           <h1 className="max-w-4xl text-4xl font-light leading-tight tracking-normal md:text-6xl">{alex.name}</h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-foreground/72 md:text-xl md:leading-9">
-            Alex reviews SmartCore guidance on AI workflow automation, LLM evaluation, data quality, market intelligence
-            automation, and workflow diagnostics for operations teams.
+            {alex.bio}
           </p>
         </div>
       </section>
@@ -112,12 +111,22 @@ export default function AlexTryvailoPage() {
             <div className="my-5 h-px bg-foreground/10" />
             <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">Affiliation</p>
             <p className="mt-2 text-sm leading-6 text-foreground/72">{siteConfig.shortName}</p>
+            <a
+              href={alex.linkedin}
+              target="_blank"
+              rel="me noreferrer"
+              className="mt-5 inline-flex items-center gap-2 border border-foreground/12 px-3 py-2 text-sm text-foreground/75 transition-colors hover:border-foreground/30 hover:text-foreground"
+            >
+              <Linkedin className="h-4 w-4" aria-hidden="true" />
+              LinkedIn profile
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
           </aside>
 
           <div>
-            <h2 className="text-3xl font-light tracking-normal">Reviewed SmartCore insights</h2>
+            <h2 className="text-3xl font-light tracking-normal">SmartCore articles by Alex</h2>
             <div className="mt-6 grid gap-4">
-              {reviewedInsights.map((insight) => (
+              {authoredInsights.map((insight) => (
                 <Link
                   key={insight.slug}
                   href={`/insights/${insight.slug}`}

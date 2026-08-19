@@ -13,6 +13,9 @@ export function GET() {
   const priorityInsights = insights
     .filter((insight) =>
       [
+        "what-is-ai-enablement",
+        "ai-readiness-assessment",
+        "ai-governance-framework-for-adoption",
         "ai-workflow-automation-examples",
         "ai-workflow-automation-tools",
         "zapier-make-n8n-vs-custom-ai-automation",
@@ -34,15 +37,15 @@ export function GET() {
 
 ${siteConfig.description}
 
-SmartCore Technologies helps US and UK operations teams diagnose recurring workflows and build controlled AI automation around documents, product data, competitor monitoring, reporting, content operations, and internal decisions.
+SmartCore Technologies helps US and UK operations teams diagnose recurring workflows and build controlled AI automation around documents, product data, competitor monitoring, reporting, content operations, and internal decisions. SmartCore also runs 12-20 week AI enablement programmes covering use-case prioritisation, practical governance, internal champions, workflow pilots, adoption measurement, and handover.
 
 ## Core Pages
 
-- [Home](${siteConfig.url}/): AI workflow automation consulting for US and UK teams.
-- [Insights](${siteConfig.url}/insights): Practical guides for workflow automation, AI automation consulting, document processing, product data enrichment, and market monitoring.
+- [Home](${siteConfig.url}/): AI workflow automation and AI enablement programmes for US and UK teams.
+- [Insights](${siteConfig.url}/insights): Practical guides for AI enablement, readiness, adoption, governance, workflow automation, document processing, product data enrichment, and market monitoring.
 - [Contact](${siteConfig.url}/#contact): Request a workflow assessment.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.
-- [Alex Tryvailo, PhD](${siteConfig.experts.alexTryvailo.url}): SmartCore reviewer for AI workflow automation, LLM evaluation, data quality, and market intelligence automation.
+- [Alex Tryvailo, PhD](${siteConfig.experts.alexTryvailo.url}): SmartCore author and AI Enablement Lead for AI adoption, governance, workflow automation, LLM evaluation, and data quality. LinkedIn: ${siteConfig.experts.alexTryvailo.linkedin}
 - [RSS Feed](${siteConfig.url}/feed.xml): Latest SmartCore insights.
 
 ## Topic Hubs

@@ -30,6 +30,7 @@ export function GET() {
   <guid isPermaLink="true">${url}</guid>
   <description>${escapeXml(insight.seoDescription)}</description>
   <category>${escapeXml(insight.category)}</category>
+  <dc:creator>${escapeXml(siteConfig.experts.alexTryvailo.name)}</dc:creator>
   <pubDate>${new Date(`${insight.publishedAt}T00:00:00Z`).toUTCString()}</pubDate>
   <lastBuildDate>${new Date(`${insight.updatedAt}T00:00:00Z`).toUTCString()}</lastBuildDate>
 </item>`
@@ -37,7 +38,7 @@ export function GET() {
     .join("\n")
 
   const content = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
   <title>${escapeXml(siteConfig.shortName)} Insights</title>
   <link>${siteConfig.url}/insights</link>

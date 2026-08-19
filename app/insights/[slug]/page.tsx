@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, ArrowRight, CalendarDays, Clock, ExternalLink } from "lucide-react"
+import { ArrowLeft, ArrowRight, CalendarDays, Clock, ExternalLink, Linkedin } from "lucide-react"
 import {
   getArticlePlainText,
   getInsight,
@@ -53,6 +53,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: topic.seoDescription,
       keywords: [
         topic.targetQuery,
+        ...(topic.keywords ?? []),
         "AI workflow automation",
         "workflow automation consulting",
         "AI automation consulting",
@@ -82,10 +83,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {}
   }
 
+  const author = siteConfig.experts.alexTryvailo
+
   return {
     title: insight.seoTitle,
     description: insight.seoDescription,
     keywords: insight.keywords,
+    authors: [{ name: author.name, url: author.url }],
+    creator: author.name,
     alternates: {
       canonical: `/insights/${insight.slug}`,
     },
@@ -98,7 +103,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       locale: "en_GB",
       publishedTime: insight.publishedAt,
       modifiedTime: insight.updatedAt,
-      authors: [siteConfig.name],
+      authors: [author.url],
     },
     twitter: {
       card: "summary_large_image",
@@ -178,7 +183,13 @@ export default async function InsightArticlePage({ params }: PageProps) {
                 <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
                 Updated {formatDate(insight.updatedAt)}
               </span>
-              <span>SmartCore Technologies</span>
+              <Link
+                href="/about/alex-tryvailo"
+                rel="author"
+                className="transition-colors hover:text-foreground"
+              >
+                By {siteConfig.experts.alexTryvailo.name}
+              </Link>
             </div>
 
             <h1 className="max-w-4xl text-4xl font-light leading-tight tracking-normal md:text-6xl">
@@ -254,6 +265,39 @@ export default async function InsightArticlePage({ params }: PageProps) {
                       <p className="mt-2 text-sm leading-6 text-foreground/68">{item.answer}</p>
                     </div>
                   ))}
+                </div>
+              </section>
+
+              <section className="border-t border-foreground/10 pt-10">
+                <p className="font-mono text-[11px] uppercase tracking-normal text-foreground/45">About the author</p>
+                <div className="mt-4 border border-foreground/10 bg-foreground/[0.025] p-5 md:p-6">
+                  <div className="flex flex-col justify-between gap-5 md:flex-row md:items-start">
+                    <div className="max-w-2xl">
+                      <Link
+                        href="/about/alex-tryvailo"
+                        rel="author"
+                        className="text-2xl font-light leading-tight tracking-normal underline-offset-4 hover:underline"
+                      >
+                        {siteConfig.experts.alexTryvailo.name}
+                      </Link>
+                      <p className="mt-2 text-sm font-medium text-foreground/72">
+                        {siteConfig.experts.alexTryvailo.role} at {siteConfig.shortName}
+                      </p>
+                      <p className="mt-4 text-sm leading-6 text-foreground/65">
+                        {siteConfig.experts.alexTryvailo.bio}
+                      </p>
+                    </div>
+                    <a
+                      href={siteConfig.experts.alexTryvailo.linkedin}
+                      target="_blank"
+                      rel="author me noreferrer"
+                      className="inline-flex shrink-0 items-center gap-2 border border-foreground/12 px-3 py-2 text-sm text-foreground/75 transition-colors hover:border-foreground/30 hover:text-foreground"
+                    >
+                      <Linkedin className="h-4 w-4" aria-hidden="true" />
+                      LinkedIn
+                      <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                    </a>
+                  </div>
                 </div>
               </section>
 
@@ -577,9 +621,17 @@ function buildArticleJsonLd(insight: Insight, articleUrl: string) {
     dateModified: insight.updatedAt,
     mainEntityOfPage: articleUrl,
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.url,
+      "@type": "Person",
+      "@id": `${siteConfig.experts.alexTryvailo.url}#person`,
+      name: siteConfig.experts.alexTryvailo.name,
+      jobTitle: siteConfig.experts.alexTryvailo.role,
+      description: siteConfig.experts.alexTryvailo.bio,
+      url: siteConfig.experts.alexTryvailo.url,
+      sameAs: siteConfig.experts.alexTryvailo.sameAs,
+      knowsAbout: siteConfig.experts.alexTryvailo.expertise,
+      affiliation: {
+        "@id": `${siteConfig.url}/#organization`,
+      },
     },
     publisher: {
       "@id": `${siteConfig.url}/#organization`,
