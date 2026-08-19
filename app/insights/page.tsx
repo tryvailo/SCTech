@@ -73,8 +73,10 @@ const representativeOutcomes = [
 
 const salesConversationResources = [
   "what-is-ai-enablement",
+  "fractional-ai-officer-vs-interim-head-of-ai",
   "ai-readiness-assessment",
   "ai-governance-framework-for-adoption",
+  "customer-service-automation-with-ai",
   "ai-workflow-automation-services",
   "ai-automation-consulting-tool-or-custom-workflow",
   "zapier-make-n8n-vs-custom-ai-automation",

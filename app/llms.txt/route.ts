@@ -14,8 +14,10 @@ export function GET() {
     .filter((insight) =>
       [
         "what-is-ai-enablement",
+        "fractional-ai-officer-vs-interim-head-of-ai",
         "ai-readiness-assessment",
         "ai-governance-framework-for-adoption",
+        "customer-service-automation-with-ai",
         "ai-workflow-automation-examples",
         "ai-workflow-automation-tools",
         "zapier-make-n8n-vs-custom-ai-automation",
@@ -37,11 +39,11 @@ export function GET() {
 
 ${siteConfig.description}
 
-SmartCore Technologies helps US and UK operations teams diagnose recurring workflows and build controlled AI automation around documents, product data, competitor monitoring, reporting, content operations, and internal decisions. SmartCore also runs 12-20 week AI enablement programmes covering use-case prioritisation, practical governance, internal champions, workflow pilots, adoption measurement, and handover.
+SmartCore Technologies provides fractional and interim AI enablement leadership backed by workflow delivery for US and UK mid-market teams. Engagements connect use-case prioritisation, practical governance, customer-service and operations automation, adoption measurement, and handover under one accountable delivery model.
 
 ## Core Pages
 
-- [Home](${siteConfig.url}/): AI workflow automation and AI enablement programmes for US and UK teams.
+- [Home](${siteConfig.url}/): Fractional AI enablement leadership and controlled workflow delivery for US and UK teams.
 - [Insights](${siteConfig.url}/insights): Practical guides for AI enablement, readiness, adoption, governance, workflow automation, document processing, product data enrichment, and market monitoring.
 - [Contact](${siteConfig.url}/#contact): Request a workflow assessment.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.

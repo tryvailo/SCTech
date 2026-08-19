@@ -17,45 +17,45 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-xl font-light tracking-tight text-foreground md:text-2xl lg:text-4xl">
-            Workflow Areas
+            AI Workflow Automation Services
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            From scattered inputs to usable operational output
+            Priority workflows where value can be measured
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-            SmartCore works where teams repeatedly collect, classify, check, route, and report information by hand.
-            The work may look different across organisations; the operating pattern is often the same.
+            We begin with workflows that have visible volume, delay, quality, or capacity constraints. Each pilot keeps
+            source evidence, exception handling, human review, and operational ownership explicit.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:gap-x-16 lg:gap-y-6">
           {[
             {
-              title: "Customer & Market Intelligence",
+              title: "Customer Support & Voice of Customer",
               description:
-                "Turn reviews, market signals, customer feedback, and approved exports into recurring insight for product, CX, and leadership teams.",
-              metric: "Feedback -> Findings",
+                "Classify tickets, review conversations, identify recurring issues and knowledge gaps, route risk, and combine support data with reviews and surveys.",
+              metric: "Tickets + Reviews -> Action",
               direction: "top",
             },
             {
-              title: "Product & Data Operations",
+              title: "Document & Back-office Operations",
               description:
-                "Structure product data, catalog checks, image QA, supplier inputs, and exception lists into reviewable outputs.",
-              metric: "Records -> Queues",
+                "Turn inboxes, PDFs, orders, quotes, invoices, and supplier documents into validated records and reviewable exception queues.",
+              metric: "Documents -> Decisions",
               direction: "right",
             },
             {
-              title: "Content & Reporting Automation",
+              title: "Product & Catalogue Operations",
               description:
-                "Generate evidence-linked drafts, recurring reports, summaries, and updates from defined sources and templates.",
-              metric: "Sources -> Reports",
+                "Clean supplier feeds, enrich attributes, check catalogue images, flag compliance issues, and prepare approved updates for PIM or ecommerce systems.",
+              metric: "Inputs -> Approved Data",
               direction: "left",
             },
             {
-              title: "Internal Workflow Support",
+              title: "Reporting & Decision Support",
               description:
-                "Clarify messy internal processes, define quality gates, and create tools that turn scattered input into a usable next step.",
-              metric: "Scattered -> Usable",
+                "Create evidence-linked recurring reports, market monitoring, operational summaries, and controlled internal decision support.",
+              metric: "Sources -> Decisions",
               direction: "bottom",
             },
           ].map((service, i) => (
@@ -70,7 +70,7 @@ export function ServicesSection() {
           style={{ transitionDelay: "600ms" }}
         >
           <p className="text-xs italic text-foreground/90 md:text-sm lg:text-lg">
-            A useful workflow does not just automate a task. It makes the output easier to trust.
+            The first workflow should prove value within weeks and leave a reusable pattern behind.
           </p>
         </div>
       </div>

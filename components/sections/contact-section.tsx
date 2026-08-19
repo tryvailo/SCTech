@@ -78,18 +78,18 @@ export function ContactSection() {
               }`}
             >
               <h2 className="mb-1 font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-8xl">
-                Bring One Manual
-                <br />
-                Workflow
+                Bring an AI Mandate
+                <br />{" "}
+                or One Workflow
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / Remote workflow assessment for US and UK operations teams
+                / Fractional enablement, bounded pilots, and workflow delivery for US and UK teams
               </p>
             </div>
 
             <div className="space-y-3 md:space-y-4 lg:space-y-8">
               <Link
-                href="/insights/how-to-know-if-a-workflow-is-worth-automating"
+                href="/insights/ai-readiness-assessment"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
@@ -99,7 +99,7 @@ export function ContactSection() {
                   <span className="font-mono text-[10px] text-foreground/60 md:text-xs">Checklist</span>
                 </div>
                 <p className="max-w-md text-sm leading-relaxed text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-lg">
-                  Use the AI automation assessment checklist before choosing a tool, consultant, or custom workflow.
+                  Use the AI readiness assessment before choosing a permanent hire, consultant, tool, or first workflow.
                 </p>
               </Link>
 
@@ -191,7 +191,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
-                  placeholder="What goes in? How often does it happen? Where does it break? What output would be useful?"
+                  placeholder="What AI mandate or workflow are you trying to move forward? What is blocked today?"
                 />
               </div>
 
@@ -208,7 +208,7 @@ export function ContactSection() {
                   className="w-full disabled:opacity-50"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Assess One Workflow"}
+                  {isSubmitting ? "Sending..." : "Discuss Your AI Programme"}
                 </MagneticButton>
                 <p className="mt-3 text-center text-[11px] leading-relaxed text-foreground/55 md:text-xs">
                   By sending this form, you acknowledge that we process your enquiry data to respond to your request. See{" "}

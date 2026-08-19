@@ -62,13 +62,20 @@ export const insightTopics: InsightTopic[] = [
     ],
     articleSlugs: [
       "what-is-ai-enablement",
+      "fractional-ai-officer-vs-interim-head-of-ai",
       "ai-readiness-assessment",
       "ai-governance-framework-for-adoption",
+      "customer-service-automation-with-ai",
       "ai-workflow-automation-examples",
       "how-to-know-if-a-workflow-is-worth-automating",
       "ai-automation-consulting-tool-or-custom-workflow",
     ],
     nextSteps: [
+      {
+        label: "Choose the engagement model",
+        detail: "Compare fractional leadership, an interim appointment, a permanent hire, and a defined consultancy mandate.",
+        href: "/insights/fractional-ai-officer-vs-interim-head-of-ai",
+      },
       {
         label: "Understand the operating model",
         detail: "Separate AI enablement from training, strategy-only consulting, and standalone implementation.",
@@ -120,6 +127,7 @@ export const insightTopics: InsightTopic[] = [
     ],
     articleSlugs: [
       "ai-workflow-automation-examples",
+      "customer-service-automation-with-ai",
       "what-is-ai-workflow-automation",
       "how-to-know-if-a-workflow-is-worth-automating",
       "ai-workflow-automation-tools",

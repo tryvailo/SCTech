@@ -18,19 +18,19 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           }`}
         >
           <h2 className="mb-2 font-sans text-4xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Practical Outcomes
+            Delivery Evidence
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
-            / Clear outputs, controlled workflows, and less repetitive work
+            / Representative outcomes from production automation and AI-assisted operations
           </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 md:gap-12 lg:grid-cols-4">
           {[
-            { value: "Clarity", label: "Know what is worth automating before building anything", direction: "top" },
-            { value: "Control", label: "Keep AI output bounded by rules, sources, review points, and audit trails", direction: "right" },
-            { value: "Coverage", label: "Process more reviews, records, images, documents, and reports without relying on small samples", direction: "left" },
-            { value: "Scale", label: "Grow operational capacity without adding another manual layer", direction: "bottom" },
+            { value: "95%", label: "shorter review cycle in a production review-intelligence workflow: 3.5 days to 4 hours", direction: "top" },
+            { value: "2.1M+", label: "catalogue images processed through automated QA and reviewable exception handling", direction: "right" },
+            { value: "100+", label: "articles per day supported by source-grounded verification with editorial review", direction: "left" },
+            { value: "Up to 96%", label: "lower per-item image-production overhead in a controlled visual workflow", direction: "bottom" },
           ].map((stat, i) => {
               const getRevealClass = () => {
                 if (!isVisible) return "translate-y-6 opacity-0"
@@ -61,10 +61,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "600ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(5)}>
-            Assess One Workflow
+            Discuss AI Delivery
           </MagneticButton>
           <MagneticButton size="lg" variant="secondary" className="hidden sm:inline-flex" onClick={() => scrollToSection?.(1)}>
-            View Approach
+            View Ways to Work
           </MagneticButton>
         </div>
       </div>

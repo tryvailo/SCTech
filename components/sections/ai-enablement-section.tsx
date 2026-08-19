@@ -61,9 +61,9 @@ export function AiEnablementSection({ scrollToSection }: { scrollToSection: (ind
               Turn scattered AI experiments into an operating capability.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/85 md:mt-6 md:text-base lg:text-lg">
-              SmartCore provides a temporary enablement function: one accountable programme lead, supported by product,
-              automation, and implementation specialists. We prioritise the right use cases, establish practical
-              guardrails, deliver the first workflows, and leave your team able to continue.
+              SmartCore provides a fractional or interim enablement function: one accountable programme lead, supported
+              by product, automation, and implementation specialists. We prioritise the right use cases, establish
+              practical guardrails, deliver the first workflows, and leave your team able to continue.
             </p>
             <div className="mt-6 md:mt-8">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(5)}>
@@ -71,7 +71,7 @@ export function AiEnablementSection({ scrollToSection }: { scrollToSection: (ind
               </MagneticButton>
             </div>
             <p className="mt-3 max-w-xl font-mono text-[10px] leading-relaxed text-foreground/60 md:text-xs">
-              Best for organisations with 150-3,000 employees, active AI initiatives, and a need for adoption,
+              Best for organisations with 200-2,000 employees, active AI initiatives, and a need for adoption,
               governance, and delivery to move together.
             </p>
           </div>

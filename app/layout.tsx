@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: siteConfig.keywords,
-  authors: [{ name: siteConfig.name }],
+  authors: [{ name: siteConfig.experts.alexTryvailo.name, url: siteConfig.experts.alexTryvailo.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
   alternates: {
@@ -116,8 +116,17 @@ const jsonLd = {
       knowsAbout: siteConfig.keywords,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI automation services and workflow automation services",
+        name: "AI enablement and workflow delivery services",
         itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Fractional AI enablement leadership",
+              serviceType: "Fractional and interim AI enablement",
+              description: "A named accountable lead for AI strategy, use-case prioritisation, practical governance, adoption, delivery cadence, and capability transfer.",
+            },
+          },
           {
             "@type": "Offer",
             itemOffered: {
@@ -188,9 +197,9 @@ const jsonLd = {
     },
     {
       "@type": "Service",
-      "@id": `${siteConfig.url}/#ai-workflow-automation-service`,
-      name: "AI automation services",
-      serviceType: "AI automation services and workflow automation services",
+      "@id": `${siteConfig.url}/#ai-enablement-workflow-delivery-service`,
+      name: "AI enablement and workflow delivery",
+      serviceType: "Fractional AI enablement leadership and controlled workflow delivery",
       description: siteConfig.description,
       provider: {
         "@id": `${siteConfig.url}/#organization`,
@@ -198,7 +207,7 @@ const jsonLd = {
       areaServed: ["US", "GB"],
       audience: {
         "@type": "BusinessAudience",
-        audienceType: "US and UK operations, product, content, reporting, and leadership teams",
+        audienceType: "US and UK mid-market leadership, operations, customer support, product, and transformation teams",
       },
     },
   ],

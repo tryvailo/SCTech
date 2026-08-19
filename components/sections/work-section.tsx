@@ -17,10 +17,10 @@ export function WorkSection() {
           }`}
         >
           <h2 className="mb-1 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl lg:text-6xl">
-            Our Approach
+            Ways to Work
           </h2>
           <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Diagnose one workflow, prove it on real data, build only when it works
+            / Start with the smallest engagement that can produce credible evidence
           </p>
         </div>
 
@@ -28,30 +28,30 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "Workflow Diagnostic",
+              title: "Opportunity & Readiness Sprint",
               description:
-                "Map the inputs, current effort, failure points, required outputs, and quality constraints around one recurring workflow",
+                "2–3 weeks to map current AI use, prioritise business use cases, identify blockers, and agree a 90-day delivery plan",
               direction: "left",
             },
             {
               number: "02",
-              title: "Structured Proof",
+              title: "Fractional Enablement Lead",
               description:
-                "Test the workflow on representative data before recommending automation, integration, or a wider operating change",
+                "A senior accountable lead for strategy, governance, adoption, vendor decisions, and programme cadence without a permanent hire",
               direction: "right",
             },
             {
               number: "03",
-              title: "Controlled Automation",
+              title: "Workflow Pilot",
               description:
-                "Combine rules, AI, source boundaries, review queues, and audit trails so the system reduces effort without hiding accountability",
+                "A bounded 6–10 week implementation using real inputs, acceptance criteria, human review, and measurable operational outcomes",
               direction: "left",
             },
             {
               number: "04",
-              title: "Production Support",
+              title: "Enablement Delivery Pod",
               description:
-                "Move validated workflows into the tools and routines your team already uses, with documentation and sensible ownership",
+                "One named lead with flexible product, automation, data, and implementation capacity under a single delivery plan and SOW",
               direction: "right",
             },
           ].map((capability, i) => (

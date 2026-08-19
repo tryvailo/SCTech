@@ -33,6 +33,26 @@ const sources = {
     title: "ICO: Artificial intelligence and data protection guidance",
     url: "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/",
   },
+  iim2026: {
+    title: "Institute of Interim Management: Interim Management Survey 2026",
+    url: "https://iim.org.uk/wp-content/uploads/_pda/2026/06/IIM-Interim-Management-Survey-Report-2026_v17.0.pdf",
+  },
+  itJobsWatchHeadAi: {
+    title: "IT Jobs Watch: UK Head of AI contract rates",
+    url: "https://www.itjobswatch.co.uk/contracts/uk/head%20of%20ai.do",
+  },
+  nberSupport: {
+    title: "NBER: Generative AI at Work",
+    url: "https://www.nber.org/papers/w31161",
+  },
+  mckinseyStateAi: {
+    title: "McKinsey: The State of AI, Global Survey 2025",
+    url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai/",
+  },
+  ukAdoptionResearch: {
+    title: "UK Government: AI Adoption Research 2026",
+    url: "https://www.gov.uk/government/publications/ai-adoption-research/ai-adoption-research",
+  },
 }
 
 export const aiEnablementInsights: Insight[] = [
@@ -508,6 +528,291 @@ export const aiEnablementInsights: Insight[] = [
       "ai-readiness-assessment",
       "content-fact-checking-automation",
       "how-to-know-if-a-workflow-is-worth-automating",
+    ],
+  },
+  {
+    slug: "fractional-ai-officer-vs-interim-head-of-ai",
+    title: "Fractional AI Officer vs Interim Head of AI vs Full-Time Hire",
+    seoTitle: "Fractional AI Officer vs Interim Head of AI",
+    description:
+      "A practical comparison of fractional AI leadership, interim appointments, full-time hiring, and consultancy delivery for mid-market organisations.",
+    seoDescription:
+      "Compare a fractional AI officer, interim Head of AI, full-time hire, and AI consultancy by mandate, cost shape, accountability, delivery capacity, and handover.",
+    category: "Guide",
+    readingTime: "10 min read",
+    publishedAt: "2026-08-19",
+    updatedAt: "2026-08-19",
+    targetQuery: "fractional AI officer",
+    searchIntent: "Commercial Investigation",
+    keywords: [
+      "fractional AI officer",
+      "fractional chief AI officer",
+      "interim head of AI",
+      "AI enablement consultant",
+      "AI transformation lead",
+      "head of AI contract",
+    ],
+    summary:
+      "Choose a fractional AI officer when the organisation needs recurring senior judgement but not a full-time executive. Choose an interim Head of AI for a time-bound leadership mandate, a full-time hire for permanent organisational ownership, and a consultancy for a defined work package with multidisciplinary delivery.",
+    answerBox: {
+      heading: "Which AI leadership model should you choose?",
+      paragraphs: [
+        "The decision depends on the shape of the mandate. A fractional leader provides part-time continuity; an interim leader fills a defined leadership gap; a full-time Head of AI owns a permanent function; a consultancy owns specified deliverables and commercial risk under a Statement of Work.",
+      ],
+      bullets: [
+        "Fractional: recurring senior guidance, usually one or two days per week.",
+        "Interim: embedded leadership for a defined period or transformation.",
+        "Full-time: permanent authority, team building, and long-term accountability.",
+        "Consultancy: milestones, specialist capacity, quality obligations, and handover under one supplier agreement.",
+      ],
+    },
+    takeaways: [
+      "Do not select the model by title; select it by mandate, decision rights, capacity, and duration.",
+      "One individual rarely covers strategy, governance, product, automation, change, and implementation equally well.",
+      "A company-led service is strongest when deliverables and acceptance criteria are explicit.",
+      "A fractional or interim engagement should leave assets and ownership behind, not create permanent dependency.",
+    ],
+    sections: [
+      {
+        heading: "The four models solve different problems",
+        paragraphs: [
+          "AI leadership is often described as one role even when the brief combines executive alignment, governance, use-case discovery, workflow redesign, technical delivery, training, and benefits measurement. The right commercial model depends on which of those responsibilities are genuinely required now.",
+        ],
+        table: {
+          columns: ["Model", "Best fit", "Main limitation"],
+          rows: [
+            ["Fractional AI officer", "Recurring executive judgement and roadmap ownership without a full-time function", "Limited weekly capacity; delivery needs internal or partner support"],
+            ["Interim Head of AI", "A 3–9 month leadership gap, transformation, or fast start", "Can become expensive staff augmentation if the mandate is not bounded"],
+            ["Full-time Head of AI", "Permanent team, portfolio, budget, and organisational authority", "Long hiring cycle and premature fixed cost if the operating model is still unclear"],
+            ["AI consultancy", "Defined assessment, workstream, implementation, or capability transfer", "Needs disciplined scope and an internal sponsor"],
+          ],
+        },
+      },
+      {
+        heading: "What current market signals show",
+        paragraphs: [
+          "The UK contract market is real but still specialised. IT Jobs Watch reported a £750 median daily rate for Head of AI contract vacancies in the six months to 31 July 2026, with the upper quartile above £1,100. The Institute of Interim Management reported a £907 average across the wider interim market in 2026, with private-sector rates above £1,000 for the first time.",
+          "These figures are market signals rather than a guaranteed rate for a particular consultant. Sector knowledge, executive credibility, delivery evidence, onsite requirements, IR35 status, and the ability to own outcomes materially affect price.",
+        ],
+      },
+      {
+        heading: "When a company-led enablement pod is better",
+        paragraphs: [
+          "A pod is useful when the brief is team-shaped: one senior person must align leaders and own the programme, while product, automation, data, or implementation specialists are needed intermittently. The client receives one accountable lead and one delivery plan rather than recruiting several disconnected contractors.",
+          "The pod should not be marketed as several people for the price of one employee. It should be sold as a defined service with named responsibilities, capacity boundaries, milestones, acceptance criteria, change control, and handover.",
+        ],
+      },
+      {
+        heading: "A practical decision checklist",
+        paragraphs: [
+          "Use the following questions before opening a permanent role or signing a consultancy engagement.",
+        ],
+        bullets: [
+          "Is the mandate permanent, or does the organisation first need a 90–180 day operating model and evidence base?",
+          "Does the leader need formal authority five days per week, or senior judgement at defined decision points?",
+          "Is implementation capacity already available internally?",
+          "Can the required outcomes and acceptance criteria be described in a Statement of Work?",
+          "Who will inherit the roadmap, governance cadence, workflows, and supplier relationships?",
+          "What would cause the organisation to extend, convert, or end the engagement?",
+        ],
+      },
+      {
+        heading: "How to structure the first 12–20 weeks",
+        paragraphs: [
+          "A useful first mandate connects leadership to delivery. It should assess readiness, prioritise a small portfolio, establish proportionate guardrails, deliver one or two representative workflows, measure adoption and quality, and transfer ownership.",
+        ],
+        table: {
+          columns: ["Phase", "Decision or output", "Client owner"],
+          rows: [
+            ["Assess", "Current-state baseline, workflow inventory, constraints", "Executive sponsor"],
+            ["Prioritise", "Fund, prepare, park, or reject each use case", "Portfolio owner"],
+            ["Enable", "Guardrails, intake, champions, and approved pathways", "Risk and adoption owners"],
+            ["Deliver", "Working pilots with evaluation and review controls", "Business workflow owners"],
+            ["Transfer", "Runbooks, metrics, backlog, and operating cadence", "Permanent internal owner"],
+          ],
+        },
+      },
+    ],
+    faq: [
+      {
+        question: "Is a fractional AI officer the same as an AI consultant?",
+        answer:
+          "Not exactly. A fractional officer normally holds recurring decision responsibility inside the leadership cadence. A consultant may advise or own a defined project without acting as an embedded executive. Some engagements combine both models explicitly.",
+      },
+      {
+        question: "When should a company hire a full-time Head of AI?",
+        answer:
+          "A full-time hire makes sense when AI has a durable portfolio, budget, team, executive mandate, and enough ongoing decisions to require permanent authority. Earlier-stage organisations may first need a bounded enablement programme to define that function.",
+      },
+      {
+        question: "Can an interim AI lead use a supporting delivery team?",
+        answer:
+          "Yes, when the client contracts transparently with a consultancy and the Statement of Work defines the accountable lead, supporting roles, deliverables, quality responsibility, information access, and change control.",
+      },
+      {
+        question: "How should an AI enablement engagement be priced?",
+        answer:
+          "Advisory and fractional leadership often use monthly retainers. Interim appointments may use day rates. Assessments and workflow pilots are usually clearer as fixed-scope projects. Delivery pods need an agreed capacity and change-control mechanism.",
+      },
+    ],
+    sources: [sources.iim2026, sources.itJobsWatchHeadAi, sources.ukAdoptionResearch, sources.microsoftPlan],
+    related: [
+      "what-is-ai-enablement",
+      "ai-readiness-assessment",
+      "ai-governance-framework-for-adoption",
+      "customer-service-automation-with-ai",
+    ],
+  },
+  {
+    slug: "customer-service-automation-with-ai",
+    title: "Customer Service Automation With AI: Start Beyond the Chatbot",
+    seoTitle: "Customer Service Automation With AI",
+    description:
+      "A practical guide to customer-service automation across ticket triage, agent assistance, QA, knowledge gaps, escalation, and Voice of Customer intelligence.",
+    seoDescription:
+      "Learn how to automate customer service beyond chatbots using ticket classification, agent assistance, QA, knowledge-gap detection, escalation, and Voice of Customer analytics.",
+    category: "Guide",
+    readingTime: "12 min read",
+    publishedAt: "2026-08-19",
+    updatedAt: "2026-08-19",
+    targetQuery: "customer service automation",
+    searchIntent: "Commercial Investigation",
+    keywords: [
+      "customer service automation",
+      "automated customer service",
+      "customer support automation",
+      "AI customer service automation",
+      "contact center automation",
+      "customer experience automation",
+      "voice of customer analytics",
+      "support QA automation",
+    ],
+    summary:
+      "The strongest customer-service automation programmes do not begin with full autonomous resolution. They begin with measurable support workflows such as classification, routing, agent assistance, QA coverage, knowledge-gap detection, escalation, and evidence-backed Voice of Customer analysis.",
+    answerBox: {
+      heading: "What should customer service automation include?",
+      paragraphs: [
+        "Customer service automation should reduce repetitive handling while preserving context, evidence, escalation, and human accountability. A practical system connects ticket intake, classification, response support, QA, knowledge management, and customer insight rather than deploying an isolated chatbot.",
+      ],
+      bullets: [
+        "Classify intent, urgency, topic, language, and risk.",
+        "Route work and surface the correct knowledge to agents.",
+        "Draft responses with citations and explicit approval rules.",
+        "Expand QA from small samples to risk-based coverage.",
+        "Detect recurring product issues, knowledge gaps, and escalation patterns.",
+        "Combine tickets, chats, reviews, surveys, and calls into Voice of Customer evidence.",
+      ],
+    },
+    takeaways: [
+      "Start with agent-assist and operational intelligence before autonomous customer decisions.",
+      "Support automation is attractive because volume, response time, quality, and repeat contact are measurable.",
+      "Reviews are more valuable when analysed together with tickets, conversations, and survey feedback.",
+      "The first pilot needs a representative evaluation set and a clear manual fallback.",
+    ],
+    sections: [
+      {
+        heading: "Why customer service is a strong first workflow",
+        paragraphs: [
+          "Customer support produces repeated, text-rich work with visible queues, service levels, rework, and escalation. That makes it easier to build a baseline and test whether AI improves an operational outcome.",
+          "In an NBER field study involving 5,179 customer-support agents, access to a generative AI assistant increased productivity by nearly 14 percent on average, with larger gains among less experienced workers. This is evidence for agent assistance in a specific environment, not a universal promise for every contact centre.",
+          "McKinsey's 2025 global survey also identified contact-centre and customer-service automation among commonly reported AI use cases, while noting that scaling from pilots to material value remains difficult for most organisations.",
+        ],
+      },
+      {
+        heading: "The automation ladder",
+        paragraphs: [
+          "Move from low-consequence support to higher-consequence actions only when evidence and operating controls justify it.",
+        ],
+        table: {
+          columns: ["Level", "Workflow", "Control requirement"],
+          rows: [
+            ["1. Observe", "Topic, intent, sentiment, risk, and trend classification", "Sample QA, taxonomy ownership, source retention"],
+            ["2. Assist", "Summaries, knowledge retrieval, response drafts, next-best action", "Agent approval, citations, prohibited-action rules"],
+            ["3. Route", "Queue assignment, priority, escalation, and follow-up triggers", "Confidence thresholds, exception queue, audit trail"],
+            ["4. Resolve", "Automated responses or account actions", "Strict scope, identity checks, monitoring, fallback, incident process"],
+          ],
+        },
+      },
+      {
+        heading: "Six practical use cases beyond a chatbot",
+        paragraphs: [
+          "A first programme should select one or two workflows with enough volume and a clear owner rather than attempting an end-to-end autonomous service operation.",
+        ],
+        bullets: [
+          "Ticket triage: classify intent, product, language, urgency, vulnerability, and escalation risk.",
+          "Agent assistance: summarise history, retrieve approved knowledge, and prepare evidence-linked drafts.",
+          "Quality assurance: score more interactions against a defined rubric and route uncertain cases to reviewers.",
+          "Knowledge-gap detection: identify repeated questions that produce low-confidence or inconsistent answers.",
+          "Escalation intelligence: detect complaint, churn, regulatory, safeguarding, or reputational signals earlier.",
+          "Voice of Customer: combine support conversations with reviews, surveys, and public feedback into traceable themes.",
+        ],
+      },
+      {
+        heading: "How to choose the first pilot",
+        paragraphs: [
+          "Choose a workflow with sufficient volume, accessible historical examples, a known reviewer, a manual fallback, and a business metric that can change within six to ten weeks.",
+        ],
+        table: {
+          columns: ["Check", "Good signal", "Warning"],
+          rows: [
+            ["Volume", "Thousands of comparable interactions", "Rare or highly bespoke cases"],
+            ["Ground truth", "Resolved tickets, QA decisions, escalation history", "No agreement on what good looks like"],
+            ["Risk", "Internal assistance or reversible routing", "Irreversible customer or financial action"],
+            ["Ownership", "Named support operations and QA owners", "Only an innovation team is involved"],
+            ["Measurement", "Baseline for time, quality, repeat contact, or escalation", "Success defined as number of AI outputs"],
+          ],
+        },
+      },
+      {
+        heading: "Metrics that prevent false success",
+        paragraphs: [
+          "Measure operational value and quality together. Faster responses are not useful if they create repeat contacts, incorrect actions, or customer distrust.",
+        ],
+        bullets: [
+          "First response and resolution time by contact type.",
+          "Agent handling time and issues resolved per hour.",
+          "QA acceptance, correction, and escalation rates.",
+          "Repeat contact, reopen, transfer, and complaint rates.",
+          "Knowledge retrieval success and missing-article patterns.",
+          "Customer satisfaction and outcome quality for eligible interactions.",
+        ],
+      },
+      {
+        heading: "Where Review Intelligence fits",
+        paragraphs: [
+          "Public reviews are a useful customer signal but rarely the whole operational picture. Their value increases when themes can be compared with ticket reasons, chat transcripts, surveys, product releases, and escalation history.",
+          "A broader Voice of Customer workflow can preserve the original evidence, classify themes consistently, flag sample limitations, and route findings to CX, product, support, and leadership owners. This turns review automation from a reporting exercise into part of an operating system.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "What customer service tasks should be automated first?",
+        answer:
+          "Start with classification, summarisation, knowledge retrieval, QA assistance, and routing. These tasks are frequent, measurable, and easier to review than autonomous customer decisions or account actions.",
+      },
+      {
+        question: "Is customer service automation the same as a chatbot?",
+        answer:
+          "No. Chatbots are one customer-facing interface. Customer service automation also includes agent assistance, ticket operations, QA, knowledge management, escalation, reporting, and Voice of Customer analysis.",
+      },
+      {
+        question: "How should AI customer-service quality be evaluated?",
+        answer:
+          "Use a representative set of real interactions with accepted outcomes, edge cases, escalation examples, and reviewer decisions. Track both operational measures and errors such as unsupported answers, incorrect routing, and missed risk signals.",
+      },
+      {
+        question: "Can Trustpilot reviews be combined with customer-support data?",
+        answer:
+          "Yes. Reviews, tickets, chats, calls, and surveys can be normalised into a shared taxonomy while retaining source links and confidence. Access rights, retention, personal data, and platform terms must be handled appropriately.",
+      },
+    ],
+    sources: [sources.nberSupport, sources.mckinseyStateAi, sources.ukAdoptionResearch, sources.icoAi],
+    related: [
+      "review-intelligence-automation",
+      "ai-workflow-automation-examples",
+      "how-to-know-if-a-workflow-is-worth-automating",
+      "what-is-ai-enablement",
     ],
   },
 ]
