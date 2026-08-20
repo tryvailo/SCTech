@@ -317,9 +317,9 @@ export default function Home() {
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                SmartCore gives mid-market teams one accountable AI enablement lead, supported by product, automation,
-                and implementation specialists. We prioritise use cases, establish practical guardrails, deliver the
-                first workflows, and transfer ownership to your team.
+                Turn AI ambition into a focused delivery programme and working business workflows. SmartCore helps
+                your leadership team choose where AI can create value, implement the highest-priority opportunities,
+                and build the operating capability to scale what works.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
