@@ -78,12 +78,12 @@ export function ContactSection() {
               }`}
             >
               <h2 className="mb-1 font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-8xl">
-                Bring an AI Mandate
+                Start with a Business Problem
                 <br />{" "}
                 or One Workflow
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / Fractional enablement, bounded pilots, and workflow delivery for US and UK teams
+                / Tell us where work is slow, expensive, inconsistent, or difficult to scale
               </p>
             </div>
 
@@ -99,7 +99,7 @@ export function ContactSection() {
                   <span className="font-mono text-[10px] text-foreground/60 md:text-xs">Checklist</span>
                 </div>
                 <p className="max-w-md text-sm leading-relaxed text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-lg">
-                  Use the AI readiness assessment before choosing a permanent hire, consultant, tool, or first workflow.
+                  Use the AI readiness assessment to evaluate business value, data, risk, ownership, and delivery fit.
                 </p>
               </Link>
 
@@ -191,7 +191,7 @@ export function ContactSection() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   className="w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
-                  placeholder="What AI mandate or workflow are you trying to move forward? What is blocked today?"
+                  placeholder="Which process is slow, expensive, inconsistent, or difficult to scale? What is blocked today?"
                 />
               </div>
 
@@ -208,7 +208,7 @@ export function ContactSection() {
                   className="w-full disabled:opacity-50"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Discuss Your AI Programme"}
+                  {isSubmitting ? "Sending..." : "Discuss the Opportunity"}
                 </MagneticButton>
                 <p className="mt-3 text-center text-[11px] leading-relaxed text-foreground/55 md:text-xs">
                   By sending this form, you acknowledge that we process your enquiry data to respond to your request. See{" "}

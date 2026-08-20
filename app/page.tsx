@@ -245,7 +245,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {["Home", "Ways to Work", "Workflows", "AI Enablement", "Evidence", "Contact"].map((item, index) => (
+          {["Home", "Business Value", "Delivery", "Evidence", "Ways to Work", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -278,7 +278,7 @@ export default function Home() {
             Insights
           </Link>
           <MagneticButton className="hidden min-[360px]:inline-flex" variant="secondary" onClick={() => scrollToSection(5)}>
-            Discuss AI Delivery
+            Discuss a Workflow
           </MagneticButton>
         </div>
       </nav>
@@ -300,34 +300,34 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Interim AI Enablement</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Operational Efficiency</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Workflow Delivery</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Service Quality</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Governance + Adoption</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Measurable Outcomes</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
                 <p className="font-mono text-[10px] text-foreground/90 md:text-xs">US + UK Teams</p>
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">AI Enablement Leadership, Backed by Workflow Delivery</span>
+              <span className="text-balance">Turn AI Priorities into Working Business Systems</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                Turn AI ambition into a focused delivery programme and working business workflows. SmartCore helps
-                your leadership team choose where AI can create value, implement the highest-priority opportunities,
-                and build the operating capability to scale what works.
+                Improve speed, quality, and capacity in the workflows that matter. SmartCore identifies where AI can
+                create measurable value, implements the right automation, and leaves your team with a reliable system
+                they can own and improve.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(1)}>
-                Explore Ways to Work
+                See Where We Create Value
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(5)}>
-                Discuss Your AI Programme
+                Discuss a Workflow
               </MagneticButton>
             </div>
           </div>
@@ -342,10 +342,10 @@ export default function Home() {
           </div>
         </section>
 
-        <WorkSection />
         <ServicesSection />
         <AiEnablementSection scrollToSection={scrollToSection} />
         <AboutSection scrollToSection={scrollToSection} />
+        <WorkSection />
         <ContactSection />
       </div>
 

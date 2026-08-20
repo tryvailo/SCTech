@@ -61,9 +61,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: (index: nu
           style={{ transitionDelay: "600ms" }}
         >
           <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection?.(5)}>
-            Discuss AI Delivery
+            Discuss a Workflow
           </MagneticButton>
-          <MagneticButton size="lg" variant="secondary" className="hidden sm:inline-flex" onClick={() => scrollToSection?.(1)}>
+          <MagneticButton size="lg" variant="secondary" className="hidden sm:inline-flex" onClick={() => scrollToSection?.(4)}>
             View Ways to Work
           </MagneticButton>
         </div>

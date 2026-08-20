@@ -20,7 +20,7 @@ export function ServicesSection() {
             AI Workflow Automation Services
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            Priority workflows where value can be measured
+            Improve speed, quality, and capacity in high-volume work
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
             We begin with workflows that have visible volume, delay, quality, or capacity constraints. Each pilot keeps
@@ -33,29 +33,29 @@ export function ServicesSection() {
             {
               title: "Customer Support & Voice of Customer",
               description:
-                "Classify tickets, review conversations, identify recurring issues and knowledge gaps, route risk, and combine support data with reviews and surveys.",
-              metric: "Tickets + Reviews -> Action",
+                "Reduce handling time, extend QA coverage, surface recurring issues earlier, and turn tickets, reviews, and surveys into action for support and product teams.",
+              metric: "Faster handling · Broader QA",
               direction: "top",
             },
             {
               title: "Document & Back-office Operations",
               description:
-                "Turn inboxes, PDFs, orders, quotes, invoices, and supplier documents into validated records and reviewable exception queues.",
-              metric: "Documents -> Decisions",
+                "Shorten processing cycles and reduce rekeying by turning inboxes, PDFs, orders, quotes, invoices, and supplier documents into validated records.",
+              metric: "Less rework · Faster decisions",
               direction: "right",
             },
             {
               title: "Product & Catalogue Operations",
               description:
-                "Clean supplier feeds, enrich attributes, check catalogue images, flag compliance issues, and prepare approved updates for PIM or ecommerce systems.",
-              metric: "Inputs -> Approved Data",
+                "Publish cleaner product data faster by enriching attributes, checking catalogue images, flagging issues, and preparing approved updates for PIM or ecommerce systems.",
+              metric: "Fewer errors · Faster publishing",
               direction: "left",
             },
             {
               title: "Reporting & Decision Support",
               description:
-                "Create evidence-linked recurring reports, market monitoring, operational summaries, and controlled internal decision support.",
-              metric: "Sources -> Decisions",
+                "Cut preparation time and improve consistency with evidence-linked reports, market monitoring, operational summaries, and controlled decision support.",
+              metric: "Less preparation · Clearer decisions",
               direction: "bottom",
             },
           ].map((service, i) => (

@@ -35,7 +35,7 @@ export function WorkSection() {
             },
             {
               number: "02",
-              title: "Fractional Enablement Lead",
+              title: "Fractional / Interim AI Lead",
               description:
                 "A senior accountable lead for strategy, governance, adoption, vendor decisions, and programme cadence without a permanent hire",
               direction: "right",
