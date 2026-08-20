@@ -77,10 +77,8 @@ export function ContactSection() {
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
             >
-              <h2 className="mb-1 font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-8xl">
-                Start with a Business Problem
-                <br />{" "}
-                or One Workflow
+              <h2 className="mb-1 max-w-3xl font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-6xl xl:text-7xl">
+                Start with a Business Problem or One Workflow
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
                 / Tell us where work is slow, expensive, inconsistent, or difficult to scale
