@@ -17,15 +17,15 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-xl font-light tracking-tight text-foreground md:text-2xl lg:text-4xl">
-            AI Automation Services for Operational Workflows
+            Where AI and Automation Create Operational Value
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            Improve speed, quality, and capacity where manual work repeats
+            Senior ownership when priorities are unclear. Delivery capacity when the workflow is ready.
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-            We start with one workflow that has visible volume, delay, rework, or quality risk. Each pilot keeps source
-            evidence, exception handling, human review, and ownership explicit so the result can move into daily
-            operations.
+            We work across consulting, interim or fractional AI leadership, and automation delivery. The common thread is
+            practical value: visible workflow friction, clear owners, controlled implementation, and systems that can move
+            into daily operations.
           </p>
         </div>
 

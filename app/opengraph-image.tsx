@@ -72,14 +72,15 @@ export default function Image() {
             S
           </div>
           <div style={{ fontSize: 30, fontWeight: 600 }}>{siteConfig.name}</div>
-        </div>
+          </div>
 
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
           <div style={{ maxWidth: 940, fontSize: 68, lineHeight: 0.98, letterSpacing: -2 }}>
-            Turn Repetitive Operational Work into Reliable AI Workflows
+            AI Leadership and Workflow Automation for Operational Teams
           </div>
           <div style={{ marginTop: 28, maxWidth: 760, fontSize: 30, lineHeight: 1.35, color: "rgba(248,250,252,0.82)" }}>
-            Map one process, test it on real data, and build controlled automation around the work.
+            Fractional or interim ownership when you need direction. Delivery capacity when the workflow is ready to
+            build.
           </div>
         </div>
       </div>

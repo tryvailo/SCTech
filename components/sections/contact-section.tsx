@@ -78,10 +78,10 @@ export function ContactSection() {
               }`}
             >
               <h2 className="mb-1 max-w-3xl font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-6xl xl:text-7xl">
-                Start with One Workflow
+                Start with a Role or One Workflow
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / Tell us where work is slow, expensive, inconsistent, or difficult to scale
+                / Tell us whether you need senior AI ownership, delivery capacity, or a specific process automated
               </p>
             </div>
 
@@ -98,7 +98,7 @@ export function ContactSection() {
                 </div>
                 <p className="max-w-md text-sm leading-relaxed text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-lg">
                   Use the assessment checklist to evaluate business value, data, risk, ownership, and delivery fit before
-                  choosing a workflow.
+                  choosing a role, roadmap, or workflow.
                 </p>
               </Link>
 
@@ -207,7 +207,7 @@ export function ContactSection() {
                   className="w-full disabled:opacity-50"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Discuss the Workflow"}
+                  {isSubmitting ? "Sending..." : "Discuss the Fit"}
                 </MagneticButton>
                 <p className="mt-3 text-center text-[11px] leading-relaxed text-foreground/55 md:text-xs">
                   By sending this form, you acknowledge that we process your enquiry data to respond to your request. See{" "}

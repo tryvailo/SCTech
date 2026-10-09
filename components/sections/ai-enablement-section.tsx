@@ -10,28 +10,28 @@ const phases = [
     timing: "Weeks 1-3",
     title: "Assess and prioritise",
     description:
-      "Map workflow friction, source systems, risks, and owners. Rank opportunities by business value, feasibility, and reviewability.",
+      "Map AI priorities, workflow friction, source systems, risks, and owners. Rank opportunities by business value, feasibility, and reviewability.",
   },
   {
     number: "02",
     timing: "Weeks 4-10",
-    title: "Pilot a controlled workflow",
+    title: "Lead and pilot",
     description:
-      "Define source rules, acceptance criteria, and the review path. Validate a representative workflow on real operating data before scaling.",
+      "Provide fractional or interim ownership where useful, align stakeholders, define controls, and validate a representative workflow on real operating data.",
   },
   {
     number: "03",
     timing: "Weeks 11-20",
-    title: "Integrate and hand over",
+    title: "Build and hand over",
     description:
-      "Measure cycle time and quality, connect outputs to existing tools, document ownership, and transfer the operating cadence to your team.",
+      "Implement the automation or integration, measure cycle time and quality, connect outputs to existing tools, and transfer the operating cadence to your team.",
   },
 ]
 
 const outcomes = [
-  "Clear first workflow",
+  "Clear AI and automation priorities",
+  "Fractional ownership when needed",
   "Working controlled automation",
-  "Measured operational value",
   "Internal ownership after handover",
 ]
 
@@ -54,25 +54,25 @@ export function AiEnablementSection({ scrollToSection }: { scrollToSection: (ind
             <div className="mb-3 flex items-center gap-2 md:mb-5">
               <BrainCircuit className="h-4 w-4 text-foreground/70" />
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70 md:text-xs">
-                From Workflow to Production
+                From Strategy to Production
               </p>
             </div>
             <h2 className="max-w-2xl font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Turn one proven workflow into a repeatable operating pattern.
+              Lead the AI agenda, then turn the right workflows into systems.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/85 md:mt-6 md:text-base lg:text-lg">
-              A focused delivery path connects workflow selection, system integration, review controls, implementation,
-              and adoption. The result is a smaller set of automation initiatives, working systems with clear owners,
-              and an operating model your team can continue after handover.
+              Some organisations need senior AI and automation ownership before they need a build team. Others already
+              know the workflow and need delivery capacity. We connect both: advisory direction, practical controls,
+              implementation, adoption, and handover.
             </p>
             <div className="mt-6 md:mt-8">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
-                Discuss a Workflow
+                Discuss a Role or Workflow
               </MagneticButton>
             </div>
             <p className="mt-3 max-w-xl font-mono text-[10px] leading-relaxed text-foreground/60 md:text-xs">
-              Best for organisations with repeated manual work, integration gaps, or AI experiments that need a clearer
-              path into daily operations.
+              Best for organisations that need senior ownership for AI and automation, a practical delivery route, or
+              both.
             </p>
           </div>
 

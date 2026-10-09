@@ -299,33 +299,33 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Operational Efficiency</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Fractional AI Leadership</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Service Quality</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Workflow Automation</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Measurable Outcomes</p>
+                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Integration Delivery</p>
               </span>
               <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
                 <p className="font-mono text-[10px] text-foreground/90 md:text-xs">US + UK Teams</p>
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Turn Repetitive Operations into Reliable Automated Workflows</span>
+              <span className="text-balance">AI Leadership and Workflow Automation for Operational Teams</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                SmartCore helps US and UK teams identify the workflows worth automating, connect the right systems, and
-                move from manual work to controlled AI-assisted operations your team can own and improve.
+                SmartCore helps US and UK teams decide where AI should create value, lead the work when interim or
+                fractional ownership is needed, and build controlled automations and integrations your team can own.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(1)}>
-                See Where Automation Creates Value
+                See Where We Help
               </MagneticButton>
               <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
-                Discuss a Workflow
+                Discuss a Role or Workflow
               </MagneticButton>
             </div>
           </div>

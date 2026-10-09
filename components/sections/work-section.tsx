@@ -20,7 +20,7 @@ export function WorkSection() {
             Ways to Work
           </h2>
           <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Start with the smallest engagement that can produce a working automation
+            / Choose advisory leadership, delivery capacity, or a small first step
           </p>
         </div>
 
@@ -28,16 +28,16 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "Workflow Opportunity Sprint",
+              title: "Opportunity & Readiness Sprint",
               description:
-                "2-3 weeks to map candidate workflows, source systems, manual effort, risks, owners, and the first automation path",
+                "2-3 weeks to map AI and automation opportunities, source systems, blockers, owners, and the first delivery path",
               direction: "left",
             },
             {
               number: "02",
-              title: "Automation Stack & Integration Plan",
+              title: "Fractional / Interim AI & Automation Lead",
               description:
-                "Choose the practical stack, source rules, review points, and handoffs before committing to a build",
+                "Senior accountable ownership for AI priorities, governance, vendor decisions, adoption, and delivery cadence without a permanent hire",
               direction: "right",
             },
             {
@@ -49,9 +49,9 @@ export function WorkSection() {
             },
             {
               number: "04",
-              title: "Production Handover & Support",
+              title: "Automation Delivery Pod",
               description:
-                "Stabilise the workflow, document ownership, monitor exceptions, and support the team as it moves into daily use",
+                "A focused team for integrations, data flows, AI-assisted processing, monitoring, and production handover under one plan",
               direction: "right",
             },
           ].map((capability, i) => (
