@@ -17,35 +17,36 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-xl font-light tracking-tight text-foreground md:text-2xl lg:text-4xl">
-            AI Workflow Automation Services
+            AI Automation Services for Operational Workflows
           </h2>
           <p className="mb-1 text-sm text-foreground/90 md:text-base lg:text-xl">
-            Improve speed, quality, and capacity in high-volume work
+            Improve speed, quality, and capacity where manual work repeats
           </p>
           <p className="max-w-3xl text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-            We begin with workflows that have visible volume, delay, quality, or capacity constraints. Each pilot keeps
-            source evidence, exception handling, human review, and operational ownership explicit.
+            We start with one workflow that has visible volume, delay, rework, or quality risk. Each pilot keeps source
+            evidence, exception handling, human review, and ownership explicit so the result can move into daily
+            operations.
           </p>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 md:gap-x-8 md:gap-y-4 lg:gap-x-16 lg:gap-y-6">
           {[
             {
-              title: "Customer Support & Voice of Customer",
+              title: "Customer Support & Feedback Operations",
               description:
                 "Reduce handling time, extend QA coverage, surface recurring issues earlier, and turn tickets, reviews, and surveys into action for support and product teams.",
               metric: "Faster handling · Broader QA",
               direction: "top",
             },
             {
-              title: "Document & Back-office Operations",
+              title: "Document & Back-Office Operations",
               description:
                 "Shorten processing cycles and reduce rekeying by turning inboxes, PDFs, orders, quotes, invoices, and supplier documents into validated records.",
               metric: "Less rework · Faster decisions",
               direction: "right",
             },
             {
-              title: "Product & Catalogue Operations",
+              title: "Product Data & Catalogue Operations",
               description:
                 "Publish cleaner product data faster by enriching attributes, checking catalogue images, flagging issues, and preparing approved updates for PIM or ecommerce systems.",
               metric: "Fewer errors · Faster publishing",
@@ -70,7 +71,7 @@ export function ServicesSection() {
           style={{ transitionDelay: "600ms" }}
         >
           <p className="text-xs italic text-foreground/90 md:text-sm lg:text-lg">
-            The first workflow should prove value within weeks and leave a reusable pattern behind.
+            The first workflow should prove value within weeks and create a pattern your team can reuse.
           </p>
         </div>
       </div>

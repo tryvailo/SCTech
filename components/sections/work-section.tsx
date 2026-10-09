@@ -20,7 +20,7 @@ export function WorkSection() {
             Ways to Work
           </h2>
           <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Start with the smallest engagement that can produce credible evidence
+            / Start with the smallest engagement that can produce a working automation
           </p>
         </div>
 
@@ -28,30 +28,30 @@ export function WorkSection() {
           {[
             {
               number: "01",
-              title: "Opportunity & Readiness Sprint",
+              title: "Workflow Opportunity Sprint",
               description:
-                "2–3 weeks to map current AI use, prioritise business use cases, identify blockers, and agree a 90-day delivery plan",
+                "2-3 weeks to map candidate workflows, source systems, manual effort, risks, owners, and the first automation path",
               direction: "left",
             },
             {
               number: "02",
-              title: "Fractional / Interim AI Lead",
+              title: "Automation Stack & Integration Plan",
               description:
-                "A senior accountable lead for strategy, governance, adoption, vendor decisions, and programme cadence without a permanent hire",
+                "Choose the practical stack, source rules, review points, and handoffs before committing to a build",
               direction: "right",
             },
             {
               number: "03",
-              title: "Workflow Pilot",
+              title: "Controlled Workflow Pilot",
               description:
                 "A bounded 6–10 week implementation using real inputs, acceptance criteria, human review, and measurable operational outcomes",
               direction: "left",
             },
             {
               number: "04",
-              title: "Enablement Delivery Pod",
+              title: "Production Handover & Support",
               description:
-                "One named lead with flexible product, automation, data, and implementation capacity under a single delivery plan and SOW",
+                "Stabilise the workflow, document ownership, monitor exceptions, and support the team as it moves into daily use",
               direction: "right",
             },
           ].map((capability, i) => (

@@ -6,7 +6,6 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { WorkSection } from "@/components/sections/work-section"
 import { ServicesSection } from "@/components/sections/services-section"
-import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { AiEnablementSection } from "@/components/sections/ai-enablement-section"
 import { MagneticButton } from "@/components/magnetic-button"
@@ -95,7 +94,7 @@ export default function Home() {
       const deltaX = touchStartX.current - touchEndX
 
       if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaY) > 50 && !canScrollSection(e.target, deltaY)) {
-        if (deltaY > 0 && currentSection < 5) {
+        if (deltaY > 0 && currentSection < 4) {
           scrollToSection(currentSection + 1)
         } else if (deltaY < 0 && currentSection > 0) {
           scrollToSection(currentSection - 1)
@@ -165,7 +164,7 @@ export default function Home() {
         const scrollLeft = scrollContainerRef.current.scrollLeft
         const newSection = Math.round(scrollLeft / sectionWidth)
 
-        if (newSection !== currentSection && newSection >= 0 && newSection <= 5) {
+        if (newSection !== currentSection && newSection >= 0 && newSection <= 4) {
           setCurrentSection(newSection)
         }
 
@@ -245,7 +244,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {["Home", "Business Value", "Delivery", "Evidence", "Ways to Work", "Contact"].map((item, index) => (
+          {["Home", "Business Value", "Delivery", "Ways to Work", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -277,7 +276,7 @@ export default function Home() {
           >
             Insights
           </Link>
-          <MagneticButton className="hidden min-[360px]:inline-flex" variant="secondary" onClick={() => scrollToSection(5)}>
+          <MagneticButton className="hidden min-[360px]:inline-flex" variant="secondary" onClick={() => scrollToSection(4)}>
             Discuss a Workflow
           </MagneticButton>
         </div>
@@ -313,20 +312,19 @@ export default function Home() {
               </span>
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Turn AI Priorities into Working Business Systems</span>
+              <span className="text-balance">Turn Repetitive Operations into Reliable Automated Workflows</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                Improve speed, quality, and capacity in the workflows that matter. SmartCore identifies where AI can
-                create measurable value, implements the right automation, and leaves your team with a reliable system
-                they can own and improve.
+                SmartCore helps US and UK teams identify the workflows worth automating, connect the right systems, and
+                move from manual work to controlled AI-assisted operations your team can own and improve.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(1)}>
-                See Where We Create Value
+                See Where Automation Creates Value
               </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(5)}>
+              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
                 Discuss a Workflow
               </MagneticButton>
             </div>
@@ -344,7 +342,6 @@ export default function Home() {
 
         <ServicesSection />
         <AiEnablementSection scrollToSection={scrollToSection} />
-        <AboutSection scrollToSection={scrollToSection} />
         <WorkSection />
         <ContactSection />
       </div>

@@ -10,27 +10,27 @@ const phases = [
     timing: "Weeks 1-3",
     title: "Assess and prioritise",
     description:
-      "Map current AI usage, workflow friction, risks, and sponsors. Rank opportunities by business value, feasibility, and adoption readiness.",
+      "Map workflow friction, source systems, risks, and owners. Rank opportunities by business value, feasibility, and reviewability.",
   },
   {
     number: "02",
     timing: "Weeks 4-10",
-    title: "Enable and pilot",
+    title: "Pilot a controlled workflow",
     description:
-      "Create practical guardrails, develop internal champions, run role-based workshops, and validate one or two representative workflows on real operating data.",
+      "Define source rules, acceptance criteria, and the review path. Validate a representative workflow on real operating data before scaling.",
   },
   {
     number: "03",
     timing: "Weeks 11-20",
-    title: "Scale and hand over",
+    title: "Integrate and hand over",
     description:
-      "Measure adoption and value, establish a repeatable delivery cadence, document ownership, and transfer the capability to your internal team.",
+      "Measure cycle time and quality, connect outputs to existing tools, document ownership, and transfer the operating cadence to your team.",
   },
 ]
 
 const outcomes = [
-  "Clear investment priorities",
-  "Faster, safer delivery",
+  "Clear first workflow",
+  "Working controlled automation",
   "Measured operational value",
   "Internal ownership after handover",
 ]
@@ -54,25 +54,25 @@ export function AiEnablementSection({ scrollToSection }: { scrollToSection: (ind
             <div className="mb-3 flex items-center gap-2 md:mb-5">
               <BrainCircuit className="h-4 w-4 text-foreground/70" />
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70 md:text-xs">
-                From Pilot to Scale
+                From Workflow to Production
               </p>
             </div>
             <h2 className="max-w-2xl font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Move from isolated pilots to repeatable business value.
+              Turn one proven workflow into a repeatable operating pattern.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/85 md:mt-6 md:text-base lg:text-lg">
-              A structured delivery programme connects business priorities, practical controls, implementation, and
-              adoption. The result is a smaller portfolio of worthwhile initiatives, working workflows with clear
-              owners, and an operating model your team can continue after handover.
+              A focused delivery path connects workflow selection, system integration, review controls, implementation,
+              and adoption. The result is a smaller set of automation initiatives, working systems with clear owners,
+              and an operating model your team can continue after handover.
             </p>
             <div className="mt-6 md:mt-8">
-              <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(5)}>
-                Discuss Your AI Priorities
+              <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
+                Discuss a Workflow
               </MagneticButton>
             </div>
             <p className="mt-3 max-w-xl font-mono text-[10px] leading-relaxed text-foreground/60 md:text-xs">
-              Best for organisations with active AI experiments but no shared priorities, delivery path, or ownership
-              model.
+              Best for organisations with repeated manual work, integration gaps, or AI experiments that need a clearer
+              path into daily operations.
             </p>
           </div>
 
