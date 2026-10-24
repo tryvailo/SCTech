@@ -39,13 +39,16 @@ export function GET() {
 
 ${siteConfig.description}
 
-SmartCore Technologies provides fractional and interim AI enablement leadership backed by workflow delivery for US and UK mid-market teams. Engagements connect use-case prioritisation, practical governance, customer-service and operations automation, adoption measurement, and handover under one accountable delivery model.
+SmartCore Technologies offers two services for UK and US teams, delivered remotely through a UK limited company:
+
+1. AI workflow automation: audit (1–2 weeks), pilot on real data with human review (3–6 weeks), then a monthly run-and-improve plan or handover. Areas: customer support and feedback, documents and back office, product data and catalogue, reporting and decision support. Built with n8n, LLMs and the client's systems via API.
+2. AI leads and engineers on B2B contracts: a fractional AI & automation lead (1–3 days a week), interim head of AI cover (3–12 months), or contract AI & automation engineers (from 2 days a week).
 
 ## Core Pages
 
-- [Home](${siteConfig.url}/): Fractional AI enablement leadership and controlled workflow delivery for US and UK teams.
+- [Home](${siteConfig.url}/): Two services — AI workflow automation (audit, pilot, run) and AI leads & engineers on B2B contracts (fractional, interim, contract).
 - [Insights](${siteConfig.url}/insights): Practical guides for AI enablement, readiness, adoption, governance, workflow automation, document processing, product data enrichment, and market monitoring.
-- [Contact](${siteConfig.url}/#contact): Request a workflow assessment.
+- [Contact](${siteConfig.url}/#contact): Discuss a workflow to automate or an AI lead or engineer role.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.
 - [Alex Tryvailo, PhD](${siteConfig.experts.alexTryvailo.url}): SmartCore author and AI Enablement Lead for AI adoption, governance, workflow automation, LLM evaluation, and data quality. LinkedIn: ${siteConfig.experts.alexTryvailo.linkedin}
 - [RSS Feed](${siteConfig.url}/feed.xml): Latest SmartCore insights.

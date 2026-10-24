@@ -1,14 +1,39 @@
 "use client"
 
-import Link from "next/link"
 import { Mail, MapPin } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
 import { useState, type FormEvent } from "react"
 import { MagneticButton } from "@/components/magnetic-button"
 
+const interests = [
+  {
+    value: "automation",
+    label: "Automate a workflow",
+    placeholder: "Which process is slow, manual or hard to scale? Rough volumes help.",
+  },
+  {
+    value: "people",
+    label: "AI lead or engineers",
+    placeholder: "What role, how many days a week, and from when?",
+  },
+  {
+    value: "unsure",
+    label: "Not sure yet",
+    placeholder: "What are you trying to improve?",
+  },
+] as const
+
+type Interest = (typeof interests)[number]["value"]
+
+const emptyForm = { name: "", email: "", company: "", message: "", interest: "automation" as Interest }
+
+const fieldClassName =
+  "w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
+
 export function ContactSection() {
   const { ref, isVisible } = useReveal(0.3)
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [formData, setFormData] = useState(emptyForm)
+  const activeInterest = interests.find((interest) => interest.value === formData.interest) ?? interests[0]
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [submitError, setSubmitError] = useState("")
@@ -52,7 +77,7 @@ export function ContactSection() {
       }
 
       setSubmitSuccess(true)
-      setFormData({ name: "", email: "", message: "" })
+      setFormData({ ...emptyForm, interest: formData.interest })
 
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000)
@@ -78,30 +103,15 @@ export function ContactSection() {
               }`}
             >
               <h2 className="mb-1 max-w-3xl font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:mb-2 md:text-5xl lg:mb-3 lg:text-6xl xl:text-7xl">
-                Start with a Role or One Workflow
+                Tell us what you need
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / Tell us whether you need senior AI ownership, delivery capacity, or a specific process automated
+                / A workflow to automate, an AI lead or engineers — or not sure yet
               </p>
+              <p className="mt-3 text-sm text-foreground/80 md:text-base">We reply within one working day.</p>
             </div>
 
             <div className="space-y-3 md:space-y-4 lg:space-y-8">
-              <Link
-                href="/insights/ai-readiness-assessment"
-                className={`group block transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-                }`}
-                style={{ transitionDelay: "150ms" }}
-              >
-                <div className="mb-0.5 flex items-center gap-2 md:mb-1">
-                  <span className="font-mono text-[10px] text-foreground/60 md:text-xs">Checklist</span>
-                </div>
-                <p className="max-w-md text-sm leading-relaxed text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-lg">
-                  Use the assessment checklist to evaluate business value, data, risk, ownership, and delivery fit before
-                  choosing a role, roadmap, or workflow.
-                </p>
-              </Link>
-
               <a
                 href="mailto:partnerships@smartcoretech.co.uk"
                 className={`group block transition-all duration-700 ${
@@ -139,6 +149,37 @@ export function ContactSection() {
           {/* Right side - Minimal form */}
           <div className="flex flex-col justify-center">
             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 lg:space-y-6">
+              <fieldset
+                className={`transition-all duration-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                }`}
+                style={{ transitionDelay: "100ms" }}
+              >
+                <legend className="mb-1.5 block font-mono text-[10px] text-foreground/60 md:mb-2 md:text-xs">
+                  What do you need?
+                </legend>
+                <div className="flex flex-wrap gap-2">
+                  {interests.map((interest) => {
+                    const isActive = formData.interest === interest.value
+                    return (
+                      <button
+                        key={interest.value}
+                        type="button"
+                        aria-pressed={isActive}
+                        onClick={() => setFormData({ ...formData, interest: interest.value })}
+                        className={`rounded-full border px-3 py-1 text-xs transition-colors md:text-sm ${
+                          isActive
+                            ? "border-foreground bg-foreground text-background"
+                            : "border-foreground/30 text-foreground/80 hover:border-foreground/60 hover:text-foreground"
+                        }`}
+                      >
+                        {interest.label}
+                      </button>
+                    )
+                  })}
+                </div>
+              </fieldset>
+
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
@@ -151,7 +192,7 @@ export function ContactSection() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
+                  className={fieldClassName}
                   placeholder="Your name"
                 />
               </div>
@@ -163,15 +204,33 @@ export function ContactSection() {
                 style={{ transitionDelay: "350ms" }}
               >
                 <label className="mb-0.5 block font-mono text-[10px] text-foreground/60 md:mb-1 md:text-xs">
-                  Email
+                  Work email
                 </label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
+                  className={fieldClassName}
                   placeholder="your@email.com"
+                />
+              </div>
+
+              <div
+                className={`transition-all duration-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                }`}
+                style={{ transitionDelay: "425ms" }}
+              >
+                <label className="mb-0.5 block font-mono text-[10px] text-foreground/60 md:mb-1 md:text-xs">
+                  Company (optional)
+                </label>
+                <input
+                  type="text"
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className={fieldClassName}
+                  placeholder="Company name"
                 />
               </div>
 
@@ -189,8 +248,8 @@ export function ContactSection() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1 text-xs text-foreground placeholder:text-foreground/40 focus:border-foreground/50 focus:outline-none md:py-1.5 md:text-sm lg:py-2 lg:text-base"
-                  placeholder="Which process is slow, expensive, inconsistent, or difficult to scale? What is blocked today?"
+                  className={fieldClassName}
+                  placeholder={activeInterest.placeholder}
                 />
               </div>
 
@@ -207,7 +266,7 @@ export function ContactSection() {
                   className="w-full disabled:opacity-50"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Discuss the Fit"}
+                  {isSubmitting ? "Sending..." : "Start the Conversation"}
                 </MagneticButton>
                 <p className="mt-3 text-center text-[11px] leading-relaxed text-foreground/55 md:text-xs">
                   By sending this form, you acknowledge that we process your enquiry data to respond to your request. See{" "}

@@ -76,11 +76,10 @@ export default function Image() {
 
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
           <div style={{ maxWidth: 940, fontSize: 68, lineHeight: 0.98, letterSpacing: -2 }}>
-            AI Leadership and Workflow Automation for Operational Teams
+            Automate the work — or bring in the people who will.
           </div>
           <div style={{ marginTop: 28, maxWidth: 760, fontSize: 30, lineHeight: 1.35, color: "rgba(248,250,252,0.82)" }}>
-            Fractional or interim ownership when you need direction. Delivery capacity when the workflow is ready to
-            build.
+            AI workflow automation and fractional, interim and contract AI engineers for UK and US teams.
           </div>
         </div>
       </div>
