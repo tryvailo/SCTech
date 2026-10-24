@@ -295,77 +295,94 @@ export default function Home() {
           paddingBottom: `calc(var(--footer-height, 0px) + env(safe-area-inset-bottom))`,
         }}
       >
-        <section className="flex h-full w-screen shrink-0 flex-col justify-start overflow-y-auto px-6 pb-8 pt-6 md:justify-center md:px-12 md:py-14">
-          <div className="max-w-5xl">
-            <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
-              {["AI Use-Case Discovery", "Workflow Automation", "Fractional & Interim AI Leadership"].map(
-                (tag) => (
+        <section className="flex h-full w-screen shrink-0 flex-col justify-start overflow-y-auto px-6 pb-8 pt-6 md:justify-center md:px-12 md:py-14 lg:px-16">
+          <div className="mx-auto grid w-full max-w-7xl items-center gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-12 xl:gap-20">
+            <div>
+              <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
+                {["AI Use-Case Discovery", "Workflow Automation", "Fractional & Interim AI Leadership"].map((tag) => (
                   <span
                     key={tag}
                     className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5"
                   >
                     <p className="font-mono text-[10px] text-foreground/90 md:text-xs">{tag}</p>
                   </span>
-                ),
-              )}
+                ))}
+              </div>
+              <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.08] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-[clamp(2.75rem,4.4vw,4.5rem)]">
+                <span className="text-balance lg:hidden">Find where AI pays off — then automate it or lead it.</span>
+                <span className="hidden whitespace-nowrap lg:block">Find where AI pays off —</span>
+                <span className="hidden whitespace-nowrap lg:block">then automate it</span>
+                <span className="hidden whitespace-nowrap lg:block">or lead it.</span>
+              </h1>
+              <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-lg xl:text-xl">
+                <span className="text-pretty">
+                  We help UK and US teams find the AI use cases worth paying for — then build the automation, or lead the
+                  work as your fractional or interim AI lead.
+                </span>
+              </p>
+              <div className="hidden animate-in fade-in duration-1000 delay-500 lg:block">
+                <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
+                  Book a 30-Minute Call
+                </MagneticButton>
+              </div>
             </div>
-            <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Find where AI pays off — then automate it or lead it.</span>
-            </h1>
-            <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
-              <span className="text-pretty">
-                SmartCore helps UK and US teams find the AI use cases worth paying for, then make them real: we build
-                controlled automations for operational workflows, or lead your AI programme and products as a fractional
-                or interim AI lead.
-              </span>
-            </p>
-            <div className="grid animate-in fade-in slide-in-from-bottom-4 gap-3 duration-1000 delay-300 sm:grid-cols-2 sm:gap-4">
-              {[
-                {
-                  label: "01 · Automation",
-                  title: "Automate a workflow",
-                  description:
-                    "Support, documents, product data and reporting — from audit to a running system in weeks.",
-                  cta: "See automation",
-                  target: 1,
-                },
-                {
-                  label: "02 · Leadership",
-                  title: "Bring in AI leadership",
-                  description:
-                    "A fractional or interim AI lead who picks the right use cases, steers automation and AI products, and gets them shipped.",
-                  cta: "See leadership",
-                  target: 2,
-                },
-              ].map((door) => (
+
+            <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
+              <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70 md:text-xs">
+                Choose where to start
+              </p>
+              <div className="grid gap-3 md:gap-4">
+                {[
+                  {
+                    label: "01 · Automation",
+                    title: "Automate a workflow",
+                    description:
+                      "Support, documents, product data and reporting — from audit to a running system in weeks.",
+                    target: 1,
+                  },
+                  {
+                    label: "02 · Leadership",
+                    title: "Bring in AI leadership",
+                    description:
+                      "A fractional or interim AI lead who picks the right use cases, steers automation and AI products, and gets them shipped.",
+                    target: 2,
+                  },
+                ].map((door) => (
+                  <button
+                    key={door.title}
+                    type="button"
+                    onClick={() => scrollToSection(door.target)}
+                    className="group flex items-start gap-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-4 text-left backdrop-blur-md transition-colors hover:border-foreground/40 hover:bg-foreground/15 md:p-6"
+                  >
+                    <span className="flex-1">
+                      <span className="font-mono text-[10px] text-foreground/70 md:text-xs">{door.label}</span>
+                      <span className="mt-1 block font-sans text-lg font-light text-foreground md:text-2xl">
+                        {door.title}
+                      </span>
+                      <span className="mt-1.5 block text-xs leading-relaxed text-foreground/80 md:text-sm">
+                        {door.description}
+                      </span>
+                    </span>
+                    <span
+                      aria-hidden="true"
+                      className="mt-5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-foreground/30 text-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:border-foreground/60"
+                    >
+                      →
+                    </span>
+                  </button>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-foreground/80 md:text-sm lg:hidden">
+                Not sure which you need?{" "}
                 <button
-                  key={door.title}
                   type="button"
-                  onClick={() => scrollToSection(door.target)}
-                  className="group rounded-2xl border border-foreground/20 bg-foreground/10 p-4 text-left backdrop-blur-md transition-colors hover:border-foreground/40 hover:bg-foreground/15 md:p-5"
+                  onClick={() => scrollToSection(4)}
+                  className="underline underline-offset-4 transition-colors hover:text-foreground"
                 >
-                  <span className="font-mono text-[10px] text-foreground/70 md:text-xs">{door.label}</span>
-                  <span className="mt-1 block font-sans text-lg font-light text-foreground md:text-2xl">{door.title}</span>
-                  <span className="mt-1.5 block text-xs leading-relaxed text-foreground/80 md:text-sm">
-                    {door.description}
-                  </span>
-                  <span className="mt-3 inline-flex items-center gap-1 font-mono text-[11px] text-foreground md:text-xs">
-                    {door.cta}
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-                  </span>
+                  Book a 30-minute call.
                 </button>
-              ))}
+              </p>
             </div>
-            <p className="mt-4 animate-in fade-in text-xs text-foreground/80 duration-1000 delay-500 md:text-sm">
-              Not sure which you need?{" "}
-              <button
-                type="button"
-                onClick={() => scrollToSection(4)}
-                className="underline underline-offset-4 transition-colors hover:text-foreground"
-              >
-                Start with a 30-minute call.
-              </button>
-            </p>
           </div>
 
           <div className="absolute bottom-20 left-1/2 hidden -translate-x-1/2 animate-in fade-in duration-1000 delay-500 md:bottom-8 2xl:block">
