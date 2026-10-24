@@ -5,7 +5,7 @@ import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { AutomationSection } from "@/components/sections/automation-section"
-import { PeopleSection } from "@/components/sections/people-section"
+import { LeadershipSection } from "@/components/sections/leadership-section"
 import { HowWeWorkSection } from "@/components/sections/how-we-work-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
@@ -244,7 +244,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {["Home", "Automation", "AI Leads & Engineers", "How We Work", "Contact"].map((item, index) => (
+          {["Home", "Automation", "AI Leadership", "How We Work", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -298,7 +298,7 @@ export default function Home() {
         <section className="flex h-full w-screen shrink-0 flex-col justify-start overflow-y-auto px-6 pb-8 pt-6 md:justify-center md:px-12 md:py-14">
           <div className="max-w-5xl">
             <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
-              {["AI Workflow Automation", "Fractional & Interim AI Leads", "Contract AI Engineers", "Remote · UK & US"].map(
+              {["AI Use-Case Discovery", "Workflow Automation", "Fractional & Interim AI Leadership"].map(
                 (tag) => (
                   <span
                     key={tag}
@@ -310,13 +310,13 @@ export default function Home() {
               )}
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">Automate the work — or bring in the people who will.</span>
+              <span className="text-balance">Find where AI pays off — then automate it or lead it.</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                SmartCore helps UK and US teams in two ways: we design and build controlled AI automations for
-                operational workflows, or we embed experienced AI and automation leads and engineers on flexible B2B
-                contracts.
+                SmartCore helps UK and US teams find the AI use cases worth paying for, then make them real: we build
+                controlled automations for operational workflows, or lead your AI programme and products as a fractional
+                or interim AI lead.
               </span>
             </p>
             <div className="grid animate-in fade-in slide-in-from-bottom-4 gap-3 duration-1000 delay-300 sm:grid-cols-2 sm:gap-4">
@@ -330,11 +330,11 @@ export default function Home() {
                   target: 1,
                 },
                 {
-                  label: "02 · People",
-                  title: "Bring in AI & automation people",
+                  label: "02 · Leadership",
+                  title: "Bring in AI leadership",
                   description:
-                    "A fractional or interim AI lead, or contract engineers who join your team — remote, through our UK company.",
-                  cta: "See roles",
+                    "A fractional or interim AI lead who picks the right use cases, steers automation and AI products, and gets them shipped.",
+                  cta: "See leadership",
                   target: 2,
                 },
               ].map((door) => (
@@ -379,7 +379,7 @@ export default function Home() {
         </section>
 
         <AutomationSection scrollToSection={scrollToSection} />
-        <PeopleSection scrollToSection={scrollToSection} />
+        <LeadershipSection scrollToSection={scrollToSection} />
         <HowWeWorkSection />
         <ContactSection />
       </div>

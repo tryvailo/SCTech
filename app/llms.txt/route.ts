@@ -39,16 +39,16 @@ export function GET() {
 
 ${siteConfig.description}
 
-SmartCore Technologies offers two services for UK and US teams, delivered remotely through a UK limited company:
+SmartCore Technologies helps UK and US teams find AI use cases that pay off, then make them real in one of two ways:
 
 1. AI workflow automation: audit (1–2 weeks), pilot on real data with human review (3–6 weeks), then a monthly run-and-improve plan or handover. Areas: customer support and feedback, documents and back office, product data and catalogue, reporting and decision support. Built with n8n, LLMs and the client's systems via API.
-2. AI leads and engineers on B2B contracts: a fractional AI & automation lead (1–3 days a week), interim head of AI cover (3–12 months), or contract AI & automation engineers (from 2 days a week).
+2. Fractional and interim AI leadership: a fractional AI lead (1–3 days a week) or interim head of AI cover (3–12 months) who ranks profitable use cases, owns the automation and AI product roadmap, makes build, buy and vendor decisions, and runs governance, adoption and handover.
 
 ## Core Pages
 
-- [Home](${siteConfig.url}/): Two services — AI workflow automation (audit, pilot, run) and AI leads & engineers on B2B contracts (fractional, interim, contract).
+- [Home](${siteConfig.url}/): Two services — AI workflow automation (audit, pilot, run) and fractional or interim AI leadership.
 - [Insights](${siteConfig.url}/insights): Practical guides for AI enablement, readiness, adoption, governance, workflow automation, document processing, product data enrichment, and market monitoring.
-- [Contact](${siteConfig.url}/#contact): Discuss a workflow to automate or an AI lead or engineer role.
+- [Contact](${siteConfig.url}/#contact): Discuss a workflow to automate or fractional or interim AI leadership.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.
 - [Alex Tryvailo, PhD](${siteConfig.experts.alexTryvailo.url}): SmartCore author and AI Enablement Lead for AI adoption, governance, workflow automation, LLM evaluation, and data quality. LinkedIn: ${siteConfig.experts.alexTryvailo.linkedin}
 - [RSS Feed](${siteConfig.url}/feed.xml): Latest SmartCore insights.

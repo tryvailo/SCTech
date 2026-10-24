@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, MapPin } from "lucide-react"
+import { MapPin } from "lucide-react"
 import { useReveal } from "@/hooks/use-reveal"
 import { useState, type FormEvent } from "react"
 import { MagneticButton } from "@/components/magnetic-button"
@@ -12,9 +12,9 @@ const interests = [
     placeholder: "Which process is slow, manual or hard to scale? Rough volumes help.",
   },
   {
-    value: "people",
-    label: "AI lead or engineers",
-    placeholder: "What role, how many days a week, and from when?",
+    value: "leadership",
+    label: "AI leadership",
+    placeholder: "What should the AI lead own, how many days a week, and from when?",
   },
   {
     value: "unsure",
@@ -82,7 +82,7 @@ export function ContactSection() {
       // Reset success message after 5 seconds
       setTimeout(() => setSubmitSuccess(false), 5000)
     } catch {
-      setSubmitError("Something went wrong. Please email us directly.")
+      setSubmitError("Something went wrong. Please try again in a few minutes.")
     } finally {
       setIsSubmitting(false)
     }
@@ -106,28 +106,12 @@ export function ContactSection() {
                 Tell us what you need
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / A workflow to automate, an AI lead or engineers — or not sure yet
+                / A workflow to automate, AI leadership — or not sure yet
               </p>
               <p className="mt-3 text-sm text-foreground/80 md:text-base">We reply within one working day.</p>
             </div>
 
             <div className="space-y-3 md:space-y-4 lg:space-y-8">
-              <a
-                href="mailto:partnerships@smartcoretech.co.uk"
-                className={`group block transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-                }`}
-                style={{ transitionDelay: "250ms" }}
-              >
-                <div className="mb-0.5 flex items-center gap-2 md:mb-1">
-                  <Mail className="h-3 w-3 text-foreground/60" />
-                  <span className="font-mono text-[10px] text-foreground/60 md:text-xs">Email</span>
-                </div>
-                <p className="text-sm text-foreground transition-colors group-hover:text-foreground/70 md:text-base lg:text-xl">
-                  partnerships@smartcoretech.co.uk
-                </p>
-              </a>
-
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
@@ -282,10 +266,7 @@ export function ContactSection() {
                 )}
                 {submitError && (
                   <p className="mt-2 text-center font-mono text-xs text-foreground/70 md:mt-3 md:text-sm">
-                    {submitError}{" "}
-                    <a href="mailto:partnerships@smartcoretech.co.uk" className="underline underline-offset-4">
-                      partnerships@smartcoretech.co.uk
-                    </a>
+                    {submitError}
                   </p>
                 )}
               </div>

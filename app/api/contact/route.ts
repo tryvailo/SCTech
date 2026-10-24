@@ -16,7 +16,7 @@ interface ContactRequest {
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-const allowedInterests = new Set(["automation", "people", "unsure"])
+const allowedInterests = new Set(["automation", "leadership", "unsure"])
 
 function cleanValue(value: unknown) {
   return typeof value === "string" ? value.trim() : ""
@@ -78,22 +78,29 @@ export async function POST(request: Request) {
   }
 
   try {
-    const webhookRequestUrl = new URL(webhookUrl)
-
-    Object.entries(payload).forEach(([key, value]) => {
-      webhookRequestUrl.searchParams.set(key, value)
-    })
-
-    const webhookResponse = await fetch(webhookRequestUrl, {
-      method: "GET",
+    // POST the enquiry as JSON so personal data stays out of URLs and request logs.
+    const webhookResponse = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      redirect: "follow",
     })
 
     if (!webhookResponse.ok) {
+      console.error(`Contact webhook responded with HTTP ${webhookResponse.status}`)
+      return NextResponse.json({ error: "Webhook delivery failed." }, { status: 502 })
+    }
+
+    // Apps Script web apps always answer 200, so also honour an explicit { ok: false } body.
+    const result = (await webhookResponse.json().catch(() => null)) as { ok?: boolean; error?: string } | null
+    if (result?.ok === false) {
+      console.error(`Contact webhook rejected the enquiry: ${result.error ?? "no reason given"}`)
       return NextResponse.json({ error: "Webhook delivery failed." }, { status: 502 })
     }
 
     return NextResponse.json({ ok: true })
-  } catch {
+  } catch (error) {
+    console.error("Contact webhook request failed:", error instanceof Error ? error.message : "unknown error")
     return NextResponse.json({ error: "Webhook delivery failed." }, { status: 502 })
   }
 }

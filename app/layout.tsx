@@ -116,7 +116,7 @@ const jsonLd = {
       knowsAbout: siteConfig.keywords,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI workflow automation and AI leads & engineers",
+        name: "AI workflow automation and fractional AI leadership",
         itemListElement: [
           {
             "@type": "Offer",
@@ -149,9 +149,9 @@ const jsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Fractional AI & automation lead",
+              name: "Fractional AI lead",
               serviceType: "Fractional AI leadership",
-              description: "A senior lead 1–3 days a week who owns AI priorities, governance, vendor choices and delivery cadence.",
+              description: "A senior AI lead 1–3 days a week who ranks profitable use cases and owns AI priorities, the automation and AI product roadmap, governance and delivery cadence.",
             },
           },
           {
@@ -162,16 +162,7 @@ const jsonLd = {
               serviceType: "Interim AI leadership",
               description: "Full-time cover for 3–12 months while a company hires, restructures or launches an AI programme.",
             },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: "Contract AI & automation engineers",
-              serviceType: "AI engineering contract",
-              description: "Engineers from 2 days a week for LLM applications, agents, integrations and workflow automation, contracted through a UK limited company.",
-            },
-          },
+          }
         ],
       },
     },
@@ -207,8 +198,8 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${siteConfig.url}/#ai-enablement-workflow-delivery-service`,
-      name: "AI workflow automation and AI leads & engineers",
-      serviceType: "AI workflow automation and fractional, interim and contract AI people",
+      name: "AI workflow automation and fractional AI leadership",
+      serviceType: "AI use-case discovery, workflow automation and fractional or interim AI leadership",
       description: siteConfig.description,
       provider: {
         "@id": `${siteConfig.url}/#organization`,

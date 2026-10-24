@@ -6,7 +6,7 @@ import { useReveal } from "@/hooks/use-reveal"
 const principles = [
   {
     title: "Start small",
-    description: "One workflow or one role, with a clear scope and a metric agreed up front.",
+    description: "One workflow or one leadership engagement, with a clear scope and a metric agreed up front.",
   },
   {
     title: "Controls before autonomy",
@@ -27,7 +27,7 @@ const principles = [
   {
     title: "Easy to combine",
     description:
-      "An engineer on contract can scope an automation project — and a project can continue with a fractional lead.",
+      "A fractional lead can scope and steer an automation project — and a project can continue under fractional leadership.",
   },
 ]
 
