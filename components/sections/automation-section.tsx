@@ -38,7 +38,7 @@ const steps = [
   {
     number: "03",
     title: "Run & improve",
-    description: "Monitoring, fixes and improvements on a monthly plan — or a full handover to your team.",
+    description: "Monitoring, fixes and improvements on a monthly plan, or a full handover to your team.",
     timing: "Ongoing",
   },
 ]
@@ -66,7 +66,7 @@ export function AutomationSection({ scrollToSection }: { scrollToSection: (index
               We automate operational workflows end to end
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/85 md:mt-6 md:text-base lg:text-lg">
-              You keep the process and the data. We design, build and run the automation — with human review where it
+              You keep the process and the data. We design, build and run the automation, with human review where it
               matters.
             </p>
 

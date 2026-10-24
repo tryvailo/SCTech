@@ -298,25 +298,15 @@ export default function Home() {
         <section className="flex h-full w-screen shrink-0 flex-col justify-start overflow-y-auto px-6 pb-8 pt-6 md:justify-center md:px-12 md:py-14 lg:px-16">
           <div className="mx-auto grid w-full max-w-7xl items-center gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-12 xl:gap-20">
             <div>
-              <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
-                {["AI Use-Case Discovery", "Workflow Automation", "Fractional & Interim AI Leadership"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5"
-                  >
-                    <p className="font-mono text-[10px] text-foreground/90 md:text-xs">{tag}</p>
-                  </span>
-                ))}
-              </div>
               <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.08] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-[clamp(2.75rem,4.4vw,4.5rem)]">
-                <span className="text-balance lg:hidden">Find where AI pays off — then automate it or lead it.</span>
-                <span className="hidden whitespace-nowrap lg:block">Find where AI pays off —</span>
-                <span className="hidden whitespace-nowrap lg:block">then automate it</span>
+                <span className="text-balance lg:hidden">Find where AI pays off. Then automate it or lead it.</span>
+                <span className="hidden whitespace-nowrap lg:block">Find where AI pays off.</span>
+                <span className="hidden whitespace-nowrap lg:block">Then automate it</span>
                 <span className="hidden whitespace-nowrap lg:block">or lead it.</span>
               </h1>
               <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-lg xl:text-xl">
                 <span className="text-pretty">
-                  We help UK and US teams find the AI use cases worth paying for — then build the automation, or lead the
+                  We help UK and US teams find the AI use cases worth paying for. Then we build the automation, or lead the
                   work as your fractional or interim AI lead.
                 </span>
               </p>
@@ -337,7 +327,7 @@ export default function Home() {
                     label: "01 · Automation",
                     title: "Automate a workflow",
                     description:
-                      "Support, documents, product data and reporting — from audit to a running system in weeks.",
+                      "Support, documents, product data and reporting, from audit to a running system in weeks.",
                     target: 1,
                   },
                   {

@@ -106,7 +106,7 @@ export function ContactSection() {
                 Tell us what you need
               </h2>
               <p className="font-mono text-[10px] text-foreground/60 md:text-xs lg:text-base">
-                / A workflow to automate, AI leadership — or not sure yet
+                / A workflow to automate, AI leadership, or not sure yet
               </p>
               <p className="mt-3 text-sm text-foreground/80 md:text-base">We reply within one working day.</p>
             </div>
@@ -261,7 +261,7 @@ export function ContactSection() {
                 </p>
                 {submitSuccess && (
                   <p className="mt-2 text-center font-mono text-xs text-foreground/80 md:mt-3 md:text-sm">
-                    Thanks — we&apos;ll be in touch soon.
+                    Thanks, we&apos;ll be in touch soon.
                   </p>
                 )}
                 {submitError && (

@@ -46,7 +46,7 @@ SmartCore Technologies helps UK and US teams find AI use cases that pay off, the
 
 ## Core Pages
 
-- [Home](${siteConfig.url}/): Two services — AI workflow automation (audit, pilot, run) and fractional or interim AI leadership.
+- [Home](${siteConfig.url}/): Two services: AI workflow automation (audit, pilot, run) and fractional or interim AI leadership.
 - [Insights](${siteConfig.url}/insights): Practical guides for AI enablement, readiness, adoption, governance, workflow automation, document processing, product data enrichment, and market monitoring.
 - [Contact](${siteConfig.url}/#contact): Discuss a workflow to automate or fractional or interim AI leadership.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.

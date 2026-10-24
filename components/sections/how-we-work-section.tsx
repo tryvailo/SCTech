@@ -27,7 +27,7 @@ const principles = [
   {
     title: "Easy to combine",
     description:
-      "A fractional lead can scope and steer an automation project — and a project can continue under fractional leadership.",
+      "A fractional lead can scope and steer an automation project, and a project can continue under fractional leadership.",
   },
 ]
 

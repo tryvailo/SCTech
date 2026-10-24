@@ -49,8 +49,8 @@ export function LeadershipSection({ scrollToSection }: { scrollToSection: (index
               Senior AI leadership, without a permanent hire
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-foreground/85 md:mt-6 md:text-base lg:text-lg">
-              When you need someone to own AI — decide where it pays off, steer automation and AI products, and get them
-              into production — we step in as your fractional or interim AI lead.
+              When you need someone to own AI, we step in as your fractional or interim AI lead. We decide where it pays
+              off, steer automation and AI products, and get them into production.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2 md:mt-8">

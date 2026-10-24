@@ -69,7 +69,7 @@ function sendNotification(data) {
     Session.getEffectiveUser().getEmail();
 
   var interestLabels = { automation: "Automate a workflow", leadership: "AI leadership", unsure: "Not sure yet" };
-  var subject = "New enquiry: " + (interestLabels[data.interest] || "Website") + " — " + (data.name || data.email);
+  var subject = "New enquiry: " + (interestLabels[data.interest] || "Website") + ", " + (data.name || data.email);
   var body = [
     "Interest: " + (interestLabels[data.interest] || data.interest || "-"),
     "Name: " + (data.name || "-"),
