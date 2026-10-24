@@ -116,51 +116,60 @@ const jsonLd = {
       knowsAbout: siteConfig.keywords,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI enablement and workflow delivery services",
+        name: "AI workflow automation and AI leads & engineers",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Fractional AI enablement leadership",
-              serviceType: "Fractional and interim AI enablement",
-              description: "A named accountable lead for AI strategy, use-case prioritisation, practical governance, adoption, delivery cadence, and capability transfer.",
+              name: "Workflow automation audit",
+              serviceType: "AI workflow automation",
+              description: "A 1–2 week assessment of one operational workflow: volumes, systems, success metric and expected return.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Workflow diagnostics",
-              serviceType: "Workflow diagnostic",
-              description: "Mapping repetitive operational work, inputs, failure points, outputs, quality constraints, and automation potential.",
+              name: "Workflow automation pilot",
+              serviceType: "AI workflow automation",
+              description: "A 3–6 week build on real data with human review, measured against the baseline.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Controlled AI workflow automation",
-              serviceType: "AI automation services",
-              description: "Designing AI-enabled workflows with source boundaries, rules, review points, audit trails, and human approval where needed.",
+              name: "Automation run and improve plan",
+              serviceType: "AI automation support",
+              description: "Monthly monitoring, fixes and improvements for automations in production, or a full handover to the client team.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "AI enablement programme",
-              serviceType: "AI enablement and adoption consulting",
-              description: "A 12-20 week programme covering AI maturity assessment, use-case prioritisation, practical governance, internal champions, workflow pilots, adoption measurement, and handover.",
+              name: "Fractional AI & automation lead",
+              serviceType: "Fractional AI leadership",
+              description: "A senior lead 1–3 days a week who owns AI priorities, governance, vendor choices and delivery cadence.",
             },
           },
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Operational intelligence systems",
-              serviceType: "Operational intelligence",
-              description: "Turning feedback, product data, content, reporting, and internal decision flows into clearer operational outputs.",
+              name: "Interim head of AI cover",
+              serviceType: "Interim AI leadership",
+              description: "Full-time cover for 3–12 months while a company hires, restructures or launches an AI programme.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Contract AI & automation engineers",
+              serviceType: "AI engineering contract",
+              description: "Engineers from 2 days a week for LLM applications, agents, integrations and workflow automation, contracted through a UK limited company.",
             },
           },
         ],
@@ -198,8 +207,8 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${siteConfig.url}/#ai-enablement-workflow-delivery-service`,
-      name: "AI enablement and workflow delivery",
-      serviceType: "Fractional AI enablement leadership and controlled workflow delivery",
+      name: "AI workflow automation and AI leads & engineers",
+      serviceType: "AI workflow automation and fractional, interim and contract AI people",
       description: siteConfig.description,
       provider: {
         "@id": `${siteConfig.url}/#organization`,

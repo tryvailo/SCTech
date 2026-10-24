@@ -4,9 +4,9 @@ export const siteConfig = {
   name: "SmartCore Technologies Ltd",
   shortName: "SmartCore Technologies",
   url: siteUrl,
-  title: "AI Enablement & AI Workflow Automation Services | SmartCore",
+  title: "AI Workflow Automation & Fractional AI Leads | SmartCore",
   description:
-    "AI enablement leadership and AI workflow automation services for US and UK mid-market teams, covering customer service, operations, governance and handover.",
+    "SmartCore automates operational workflows with AI and provides fractional, interim and contract AI & automation people for UK and US teams — remote, through a UK limited company.",
   email: "partnerships@smartcoretech.co.uk",
   privacyUpdatedAt: "2026-07-30",
   experts: {
@@ -41,6 +41,10 @@ export const siteConfig = {
     robotsUrl: `${siteUrl}/robots.txt`,
   },
   keywords: [
+    "fractional AI lead",
+    "interim head of AI",
+    "contract AI engineer",
+    "AI automation engineer contract",
     "AI automation consulting",
     "AI automation services",
     "workflow automation services",

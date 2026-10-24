@@ -4,10 +4,10 @@ import Link from "next/link"
 import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
-import { WorkSection } from "@/components/sections/work-section"
-import { ServicesSection } from "@/components/sections/services-section"
+import { AutomationSection } from "@/components/sections/automation-section"
+import { PeopleSection } from "@/components/sections/people-section"
+import { HowWeWorkSection } from "@/components/sections/how-we-work-section"
 import { ContactSection } from "@/components/sections/contact-section"
-import { AiEnablementSection } from "@/components/sections/ai-enablement-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
 
@@ -244,7 +244,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {["Home", "Business Value", "Delivery", "Ways to Work", "Contact"].map((item, index) => (
+          {["Home", "Automation", "AI Leads & Engineers", "How We Work", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -277,7 +277,7 @@ export default function Home() {
             Insights
           </Link>
           <MagneticButton className="hidden min-[360px]:inline-flex" variant="secondary" onClick={() => scrollToSection(4)}>
-            Discuss a Workflow
+            Get in Touch
           </MagneticButton>
         </div>
       </nav>
@@ -296,41 +296,79 @@ export default function Home() {
         }}
       >
         <section className="flex h-full w-screen shrink-0 flex-col justify-start overflow-y-auto px-6 pb-8 pt-6 md:justify-center md:px-12 md:py-14">
-          <div className="max-w-4xl">
+          <div className="max-w-5xl">
             <div className="mb-4 hidden flex-wrap gap-2 animate-in fade-in slide-in-from-bottom-4 duration-700 min-[360px]:flex md:mb-6">
-              <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Fractional AI Leadership</p>
-              </span>
-              <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Workflow Automation</p>
-              </span>
-              <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">Integration Delivery</p>
-              </span>
-              <span className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5">
-                <p className="font-mono text-[10px] text-foreground/90 md:text-xs">US + UK Teams</p>
-              </span>
+              {["AI Workflow Automation", "Fractional & Interim AI Leads", "Contract AI Engineers", "Remote · UK & US"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="inline-block rounded-full border border-foreground/20 bg-foreground/15 px-3 py-1 backdrop-blur-md md:px-4 md:py-1.5"
+                  >
+                    <p className="font-mono text-[10px] text-foreground/90 md:text-xs">{tag}</p>
+                  </span>
+                ),
+              )}
             </div>
             <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-7xl">
-              <span className="text-balance">AI Leadership and Workflow Automation for Operational Teams</span>
+              <span className="text-balance">Automate the work — or bring in the people who will.</span>
             </h1>
             <p className="mb-6 max-w-3xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-xl">
               <span className="text-pretty">
-                SmartCore helps US and UK teams decide where AI should create value, lead the work when interim or
-                fractional ownership is needed, and build controlled automations and integrations your team can own.
+                SmartCore helps UK and US teams in two ways: we design and build controlled AI automations for
+                operational workflows, or we embed experienced AI and automation leads and engineers on flexible B2B
+                contracts.
               </span>
             </p>
-            <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-3 duration-1000 delay-300 sm:flex-row sm:items-center sm:gap-4">
-              <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(1)}>
-                See Where We Help
-              </MagneticButton>
-              <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
-                Discuss a Role or Workflow
-              </MagneticButton>
+            <div className="grid animate-in fade-in slide-in-from-bottom-4 gap-3 duration-1000 delay-300 sm:grid-cols-2 sm:gap-4">
+              {[
+                {
+                  label: "01 · Automation",
+                  title: "Automate a workflow",
+                  description:
+                    "Support, documents, product data and reporting — from audit to a running system in weeks.",
+                  cta: "See automation",
+                  target: 1,
+                },
+                {
+                  label: "02 · People",
+                  title: "Bring in AI & automation people",
+                  description:
+                    "A fractional or interim AI lead, or contract engineers who join your team — remote, through our UK company.",
+                  cta: "See roles",
+                  target: 2,
+                },
+              ].map((door) => (
+                <button
+                  key={door.title}
+                  type="button"
+                  onClick={() => scrollToSection(door.target)}
+                  className="group rounded-2xl border border-foreground/20 bg-foreground/10 p-4 text-left backdrop-blur-md transition-colors hover:border-foreground/40 hover:bg-foreground/15 md:p-5"
+                >
+                  <span className="font-mono text-[10px] text-foreground/70 md:text-xs">{door.label}</span>
+                  <span className="mt-1 block font-sans text-lg font-light text-foreground md:text-2xl">{door.title}</span>
+                  <span className="mt-1.5 block text-xs leading-relaxed text-foreground/80 md:text-sm">
+                    {door.description}
+                  </span>
+                  <span className="mt-3 inline-flex items-center gap-1 font-mono text-[11px] text-foreground md:text-xs">
+                    {door.cta}
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                  </span>
+                </button>
+              ))}
             </div>
+            <p className="mt-4 animate-in fade-in text-xs text-foreground/80 duration-1000 delay-500 md:text-sm">
+              Not sure which you need?{" "}
+              <button
+                type="button"
+                onClick={() => scrollToSection(4)}
+                className="underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                Start with a 30-minute call.
+              </button>
+            </p>
           </div>
 
-          <div className="absolute bottom-20 left-1/2 hidden -translate-x-1/2 animate-in fade-in duration-1000 delay-500 md:bottom-8 md:block">
+          <div className="absolute bottom-20 left-1/2 hidden -translate-x-1/2 animate-in fade-in duration-1000 delay-500 md:bottom-8 2xl:block">
             <div className="flex items-center gap-2">
               <p className="font-mono text-xs text-foreground/80">Scroll to explore</p>
               <div className="flex h-6 w-12 items-center justify-center rounded-full border border-foreground/20 bg-foreground/15 backdrop-blur-md">
@@ -340,9 +378,9 @@ export default function Home() {
           </div>
         </section>
 
-        <ServicesSection />
-        <AiEnablementSection scrollToSection={scrollToSection} />
-        <WorkSection />
+        <AutomationSection scrollToSection={scrollToSection} />
+        <PeopleSection scrollToSection={scrollToSection} />
+        <HowWeWorkSection />
         <ContactSection />
       </div>
 

@@ -3,6 +3,8 @@ import { NextResponse } from "next/server"
 interface ContactRequest {
   name?: string
   email?: string
+  company?: string
+  interest?: string
   message?: string
   pageUrl?: string
   referrer?: string
@@ -14,6 +16,7 @@ interface ContactRequest {
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const allowedInterests = new Set(["automation", "people", "unsure"])
 
 function cleanValue(value: unknown) {
   return typeof value === "string" ? value.trim() : ""
@@ -36,6 +39,9 @@ export async function POST(request: Request) {
 
   const name = cleanValue(body.name)
   const email = cleanValue(body.email)
+  const company = cleanValue(body.company)
+  const rawInterest = cleanValue(body.interest)
+  const interest = allowedInterests.has(rawInterest) ? rawInterest : "unsure"
   const message = cleanValue(body.message)
   const pageUrl = cleanValue(body.pageUrl)
   const referrer = cleanValue(body.referrer)
@@ -59,6 +65,8 @@ export async function POST(request: Request) {
     submittedAt: new Date().toISOString(),
     name,
     email,
+    company,
+    interest,
     message,
     pageUrl,
     referrer,
