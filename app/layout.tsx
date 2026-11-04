@@ -122,9 +122,9 @@ const jsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "AI Opportunity Sprint",
-              serviceType: "AI opportunity and readiness assessment",
-              description: "A 2–4 week fixed-scope sprint: where AI will pay off, ranked use cases, a 90-day plan and the risks to manage.",
+              name: "Workflow automation audit",
+              serviceType: "Workflow automation assessment",
+              description: "A 1–2 week audit: the process, the systems, the metric and the expected return of automating one workflow.",
             },
           },
           {
@@ -143,6 +143,15 @@ const jsonLd = {
               name: "Automation run and improve plan",
               serviceType: "AI automation support",
               description: "Monthly monitoring, fixes and improvements for automations in production, or a full handover to the client team.",
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Opportunity Sprint",
+              serviceType: "AI opportunity and readiness assessment",
+              description: "A 2–4 week fixed-scope sprint: where AI will pay off, ranked use cases, a 90-day plan and the risks to manage.",
             },
           },
           {
@@ -207,7 +216,7 @@ const jsonLd = {
       areaServed: ["US", "GB"],
       audience: {
         "@type": "BusinessAudience",
-        audienceType: "Mid-sized, PE-backed and scale-up companies in the UK and US: CEOs, COOs, founders and operating partners",
+        audienceType: "Operations, support and finance teams in the UK and US; leadership teams that need an owner for AI",
       },
     },
   ],

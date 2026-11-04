@@ -1,100 +1,120 @@
 "use client"
 
 import Link from "next/link"
+import { MagneticButton } from "@/components/magnetic-button"
 import { useReveal } from "@/hooks/use-reveal"
 
-const principles = [
+const steps = [
   {
-    title: "Start small",
-    description: "One workflow or one engagement, with a clear metric.",
+    number: "01",
+    title: "Workflow Audit",
+    description: "We pick the process, map the systems, and agree the metric and expected return.",
+    timing: "1–2 weeks",
   },
   {
-    title: "Controls before autonomy",
-    description: "Human review first, autonomy as evidence grows.",
+    number: "02",
+    title: "Pilot",
+    description: "We build it ourselves on real data, with human review.",
+    timing: "3–6 weeks",
   },
   {
-    title: "Your systems, your data",
-    description: "We work inside your tools.",
-  },
-  {
-    title: "Handover by default",
-    description: "Your team can run what we build.",
-  },
-  {
-    title: "Remote by design",
-    description: "UK and US, with a fixed weekly rhythm.",
-  },
-  {
-    title: "Easy to combine",
-    description: "A lead can steer a project, a project can continue under a lead.",
+    number: "03",
+    title: "Run & improve",
+    description: "Monthly support and improvements, or a full handover to your team.",
+    timing: "Ongoing",
   },
 ]
 
-export function HowWeWorkSection() {
-  const { ref, isVisible } = useReveal(0.3)
+const principles = [
+  { title: "Controls before autonomy", description: "Human review first, autonomy as evidence grows." },
+  { title: "Your systems, your data", description: "Built inside your tools with n8n, LLMs and APIs." },
+  { title: "Handover by default", description: "Documentation and training, so your team can run it." },
+]
+
+const metrics = ["Hours saved", "Response time", "Error rate", "Cost per case"]
+
+interface HowWeWorkSectionProps {
+  scrollToSection: (index: number) => void
+}
+
+export function HowWeWorkSection({ scrollToSection }: HowWeWorkSectionProps) {
+  const { ref, isVisible } = useReveal(0.2)
+  const reveal = isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
 
   return (
     <section
-      id="how-we-work"
+      id="how-it-works"
       ref={ref}
-      className="flex h-full w-screen shrink-0 snap-start justify-center overflow-y-auto px-6 py-6 md:px-12 md:py-14 lg:items-center lg:px-16"
+      className="flex h-full w-screen shrink-0 snap-start items-start overflow-y-auto px-4 py-6 md:items-center md:px-12 md:py-14 lg:px-16"
     >
-      <div className="mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center">
-        <div
-          className={`mb-6 transition-all duration-700 md:mb-8 lg:mb-12 ${
-            isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
-          }`}
-        >
-          <h2 className="mb-1 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl lg:text-6xl">
-            How We Work
-          </h2>
-          <p className="font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
-            / Two ways in. The same way of working.
-          </p>
-        </div>
+      <div className="mx-auto w-full max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-16">
+          <div className={`flex flex-col justify-center transition-all duration-700 ${reveal}`}>
+            <h2 className="font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:text-5xl lg:text-6xl">
+              How a project runs
+            </h2>
+            <p className="mt-2 font-mono text-xs text-foreground/60 md:text-sm lg:text-base">
+              / One workflow first. Measured, then scaled.
+            </p>
 
-        <div className="grid gap-5 sm:grid-cols-2 md:gap-x-10 md:gap-y-7 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-10">
-          {principles.map((principle, index) => (
-            <div
-              key={principle.title}
-              className={`group transition-all duration-700 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-              }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="mb-2 flex items-center gap-3">
-                <div className="h-px w-8 bg-foreground/30 transition-all duration-300 group-hover:w-12 group-hover:bg-foreground/50" />
-                <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
-              </div>
-              <h3 className="mb-1 font-sans text-xl font-light text-foreground md:text-2xl">{principle.title}</h3>
-              <p className="max-w-sm text-xs leading-relaxed text-foreground/80 md:text-sm lg:text-base">
-                {principle.description}
-              </p>
+            <div className="mt-6 border-y border-foreground/20">
+              {steps.map((step) => (
+                <article
+                  key={step.number}
+                  className="grid gap-2 border-b border-foreground/20 py-4 last:border-b-0 md:grid-cols-[40px_1fr_auto] md:gap-5"
+                >
+                  <span className="font-mono text-[10px] text-foreground/60 md:text-xs">{step.number}</span>
+                  <div>
+                    <h3 className="text-lg font-light text-foreground md:text-xl lg:text-2xl">{step.title}</h3>
+                    <p className="mt-1 text-xs leading-relaxed text-foreground/75 md:text-sm lg:text-base">
+                      {step.description}
+                    </p>
+                  </div>
+                  <span className="whitespace-nowrap font-mono text-[10px] text-foreground/60 md:text-xs">
+                    {step.timing}
+                  </span>
+                </article>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div
-          className={`mt-8 transition-all duration-700 lg:mt-12 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-          }`}
-          style={{ transitionDelay: "650ms" }}
-        >
-          <p className="mb-4 text-sm text-foreground/85 md:text-base">
-            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/60 md:text-xs">
-              Sectors we know
-            </span>
-            <span className="mt-1 block">
-              E-commerce and marketplaces · B2B SaaS · Retail tech · Document-heavy operations (logistics, insurance,
-              professional services)
-            </span>
-          </p>
-          <Link
-            href="/insights/ai-readiness-assessment"
-            className="font-mono text-xs text-foreground/70 underline underline-offset-4 transition-colors hover:text-foreground md:text-sm"
-          >
-            Not sure where to start? Use our AI readiness checklist →
-          </Link>
+          <div className={`flex flex-col justify-center transition-all delay-200 duration-700 ${reveal}`}>
+            <h3 className="font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/60 md:text-xs">
+              What we measure
+            </h3>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {metrics.map((metric) => (
+                <li
+                  key={metric}
+                  className="rounded-full border border-foreground/30 px-3 py-1 text-xs text-foreground md:text-sm"
+                >
+                  {metric}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 grid gap-5">
+              {principles.map((principle) => (
+                <div key={principle.title} className="border-t border-foreground/20 pt-3">
+                  <h3 className="font-sans text-lg font-light text-foreground md:text-xl">{principle.title}</h3>
+                  <p className="mt-1 text-xs leading-relaxed text-foreground/80 md:text-sm">{principle.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-xs text-foreground/75 md:text-sm">Remote by design, with UK and US teams.</p>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+              <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
+                Start with an Audit
+              </MagneticButton>
+              <Link
+                href="/insights/ai-readiness-assessment"
+                className="font-mono text-xs text-foreground/70 underline underline-offset-4 transition-colors hover:text-foreground"
+              >
+                AI readiness checklist →
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

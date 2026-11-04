@@ -10,6 +10,7 @@ import { HowWeWorkSection } from "@/components/sections/how-we-work-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
+import { automationAreas } from "@/lib/automation-areas"
 
 export default function Home() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -244,7 +245,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 lg:flex">
-          {["Home", "Automation", "AI Leadership", "How We Work", "Contact"].map((item, index) => (
+          {["Home", "Automation", "How It Works", "AI Leadership", "Contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(index)}
@@ -299,80 +300,52 @@ export default function Home() {
           <div className="mx-auto grid w-full max-w-7xl items-center gap-8 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)] lg:gap-12 xl:gap-20">
             <div>
               <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-4xl font-light leading-[1.08] tracking-tight text-foreground duration-1000 md:mb-6 md:text-6xl lg:text-[clamp(2.75rem,4.4vw,4.5rem)]">
-                <span className="text-balance lg:hidden">Find where AI pays off. Then automate it or lead it.</span>
-                <span className="hidden whitespace-nowrap lg:block">Find where AI pays off.</span>
-                <span className="hidden whitespace-nowrap lg:block">Then automate it</span>
-                <span className="hidden whitespace-nowrap lg:block">or lead it.</span>
+                <span className="text-balance lg:hidden">Turn repetitive operations into reliable AI workflows.</span>
+                <span className="hidden whitespace-nowrap lg:block">Turn repetitive</span>
+                <span className="hidden whitespace-nowrap lg:block">operations into reliable</span>
+                <span className="hidden whitespace-nowrap lg:block">AI workflows.</span>
               </h1>
               <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-lg xl:text-xl">
                 <span className="text-pretty">
-                  We help mid-sized businesses, PE-backed companies and scale-ups find the AI use cases worth paying for.
-                  Then we turn them into measurable results: we build the automation, or lead the work as your fractional or
-                  interim AI lead.
+                  We find the workflows worth automating, build them into your systems and run them with human review, so
+                  your team spends less time on manual work.
                 </span>
               </p>
-              <div className="hidden animate-in fade-in duration-1000 delay-500 lg:block">
-                <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(4)}>
-                  Book a 30-Minute Call
+              <div className="flex animate-in flex-col gap-3 fade-in duration-1000 delay-500 sm:flex-row sm:items-center sm:gap-4">
+                <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>
+                  Discuss a Workflow
+                </MagneticButton>
+                <MagneticButton size="lg" variant="secondary" onClick={() => scrollToSection(1)}>
+                  See What We Automate
                 </MagneticButton>
               </div>
             </div>
 
             <div className="animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-300">
               <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70 md:text-xs">
-                Choose where to start
+                What we automate
               </p>
-              <div className="grid gap-3 md:gap-4">
-                {[
-                  {
-                    label: "01 · Automation",
-                    title: "Automate a workflow",
-                    description:
-                      "Support, documents, product data and reporting, live in weeks.",
-                    target: 1,
-                  },
-                  {
-                    label: "02 · Leadership",
-                    title: "Bring in AI leadership",
-                    description: "A fractional or interim AI lead who gets AI shipped.",
-                    target: 2,
-                  },
-                ].map((door) => (
+              <div className="grid grid-cols-2 gap-3">
+                {automationAreas.map((area) => (
                   <button
-                    key={door.title}
+                    key={area.title}
                     type="button"
-                    onClick={() => scrollToSection(door.target)}
-                    className="group flex items-start gap-4 rounded-2xl border border-foreground/20 bg-foreground/10 p-4 text-left backdrop-blur-md transition-colors hover:border-foreground/40 hover:bg-foreground/15 md:p-6"
+                    onClick={() => scrollToSection(1)}
+                    className="flex flex-col rounded-2xl border border-foreground/20 bg-foreground/10 p-3 text-left backdrop-blur-md transition-colors hover:border-foreground/40 hover:bg-foreground/15 md:p-5"
                   >
-                    <span className="flex-1">
-                      <span className="font-mono text-[10px] text-foreground/70 md:text-xs">{door.label}</span>
-                      <span className="mt-1 block font-sans text-lg font-light text-foreground md:text-2xl">
-                        {door.title}
-                      </span>
-                      <span className="mt-1.5 block text-xs leading-relaxed text-foreground/80 md:text-sm">
-                        {door.description}
-                      </span>
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="mt-5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-foreground/30 text-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:border-foreground/60"
-                    >
-                      →
-                    </span>
+                    <span className="font-sans text-sm font-light leading-snug text-foreground md:text-lg">{area.title}</span>
+                    <span className="mt-2 font-mono text-[10px] text-foreground/70 md:text-xs">{area.metric}</span>
                   </button>
                 ))}
               </div>
-              <p className="mt-4 text-xs leading-relaxed text-foreground/80 md:text-sm">
-                <span className="text-foreground">Not sure where to start?</span> Begin with a 2–4 week AI Opportunity
-                Sprint.{" "}
-                <button
-                  type="button"
-                  onClick={() => scrollToSection(4)}
-                  className="underline underline-offset-4 transition-colors hover:text-foreground lg:hidden"
-                >
-                  Book a call.
-                </button>
-              </p>
+              <button
+                type="button"
+                onClick={() => scrollToSection(3)}
+                className="mt-4 text-left text-xs leading-relaxed text-foreground/80 transition-colors hover:text-foreground md:text-sm"
+              >
+                Need someone to own AI across the business?{" "}
+                <span className="text-foreground underline underline-offset-4">Fractional AI leadership →</span>
+              </button>
             </div>
           </div>
 
@@ -387,8 +360,8 @@ export default function Home() {
         </section>
 
         <AutomationSection scrollToSection={scrollToSection} />
+        <HowWeWorkSection scrollToSection={scrollToSection} />
         <LeadershipSection scrollToSection={scrollToSection} />
-        <HowWeWorkSection />
         <ContactSection />
       </div>
 

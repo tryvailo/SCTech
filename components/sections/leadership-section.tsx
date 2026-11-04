@@ -17,24 +17,11 @@ const formats = [
   },
 ]
 
-const firstNinetyDays = [
-  { timing: "Weeks 1–4", title: "Diagnose", description: "Where AI pays off, what is blocking it, and a ranked plan." },
-  { timing: "By day 60", title: "First pilot live", description: "One use case running on real data." },
-  {
-    timing: "By day 90",
-    title: "Measured result and roadmap",
-    description: "What worked, what to scale, and who owns it.",
-  },
-]
+interface LeadershipSectionProps {
+  scrollToSection: (index: number) => void
+}
 
-const triggers = [
-  "After a funding round",
-  "In the first 100 days after a PE acquisition",
-  "Hiring AI engineers, but nobody sets direction",
-  "During a permanent Head of AI search",
-]
-
-export function LeadershipSection({ scrollToSection }: { scrollToSection: (index: number) => void }) {
+export function LeadershipSection({ scrollToSection }: LeadershipSectionProps) {
   const { ref, isVisible } = useReveal(0.2)
   const reveal = isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
 
@@ -48,26 +35,15 @@ export function LeadershipSection({ scrollToSection }: { scrollToSection: (index
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:gap-14">
           <div className={`transition-all duration-700 ${reveal}`}>
             <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-foreground/70 md:mb-4 md:text-xs">
-              02 · Fractional &amp; Interim AI Leadership
+              02 · Fractional AI Leadership
             </p>
             <h2 className="max-w-3xl font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground md:text-4xl xl:text-5xl">
-              Senior AI leadership, without a permanent hire
+              Need someone to own AI?
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-foreground/85 md:mt-4 md:text-base">
-              When you need someone to own AI, we step in as your fractional or interim lead and get it into production.
+              When AI needs an owner across the business, we step in as your fractional or interim AI lead and get the
+              first use cases into production.
             </p>
-
-            <h3 className="mt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/60 md:text-xs">
-              When companies bring us in
-            </h3>
-            <ul className="mt-2 grid gap-1.5">
-              {triggers.map((item) => (
-                <li key={item} className="flex items-start gap-2 text-xs text-foreground/85 md:text-sm">
-                  <span className="mt-2 h-px w-3 shrink-0 bg-foreground/50" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
 
           <div className={`flex flex-col justify-center transition-all delay-200 duration-700 ${reveal}`}>
@@ -81,22 +57,13 @@ export function LeadershipSection({ scrollToSection }: { scrollToSection: (index
               ))}
             </div>
 
-            <h3 className="mt-6 font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/60 md:text-xs">
-              Your first 90 days
-            </h3>
-            <div className="mt-2 border-y border-foreground/20">
-              {firstNinetyDays.map((step) => (
-                <div
-                  key={step.timing}
-                  className="grid gap-1 border-b border-foreground/20 py-3 last:border-b-0 sm:grid-cols-[96px_1fr] sm:gap-4"
-                >
-                  <span className="font-mono text-[10px] text-foreground/60 md:text-xs">{step.timing}</span>
-                  <p className="text-xs leading-relaxed text-foreground/80 md:text-sm">
-                    <span className="text-foreground">{step.title}.</span> {step.description}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <p className="mt-6 text-xs leading-relaxed text-foreground/80 md:text-sm">
+              <span className="text-foreground">First 90 days:</span> diagnose in weeks 1–4, first pilot live by day 60,
+              measured result and roadmap by day 90.
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-foreground/80 md:text-sm">
+              Not ready for a lead yet? Start with a 2–4 week AI Opportunity Sprint.
+            </p>
 
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>

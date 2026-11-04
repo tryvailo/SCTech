@@ -39,16 +39,16 @@ export function GET() {
 
 ${siteConfig.description}
 
-SmartCore Technologies helps mid-sized businesses (roughly 50–500 people), PE-backed companies and scale-ups in the UK and US find AI use cases that pay off, then turn them into measurable results in one of two ways. Most engagements start with a 2–4 week AI Opportunity Sprint: where AI will pay off, ranked use cases, a 90-day plan and the risks to manage.
+SmartCore Technologies automates operational workflows for UK and US teams. Fractional and interim AI leadership is a second service for companies that need someone to own AI.
 
-1. AI workflow automation: opportunity sprint (2–4 weeks), hands-on pilot on real data with human review (3–6 weeks), then a monthly run-and-improve plan or handover. Areas: customer support and feedback, documents and back office, product data and catalogue, reporting and decision support. Built with n8n, LLMs and the client's systems via API.
-2. Fractional and interim AI leadership: a fractional AI lead (1–3 days a week) or interim head of AI cover (3–12 months) who ranks profitable use cases, owns the automation and AI product roadmap, makes build, buy and vendor decisions, prepares AI policy and regulation readiness (ICO, EU AI Act), and runs governance, adoption and handover. First 90 days: diagnose (weeks 1–4), first pilot live (by day 60), measured result and roadmap (by day 90).
+1. AI workflow automation (main service): workflow audit (1–2 weeks: process, systems, metric and expected return), hands-on pilot on real data with human review (3–6 weeks), then a monthly run-and-improve plan or handover. Areas: customer support and feedback, documents and back office, product data and catalogue, reporting and decision support. Built with n8n, LLMs and the client's systems via API. Measured by hours saved, response time, error rate and cost per case.
+2. Fractional and interim AI leadership: a fractional AI lead (1–3 days a week) or interim head of AI cover (3–12 months) who owns AI priorities, the roadmap, vendor decisions, governance and regulation readiness (ICO, EU AI Act). First 90 days: diagnose (weeks 1–4), first pilot live (by day 60), measured result and roadmap (by day 90). Can start with a 2–4 week AI Opportunity Sprint.
 
 Sectors: e-commerce and marketplaces, B2B SaaS, retail tech, and document-heavy operations (logistics, insurance, professional services).
 
 ## Core Pages
 
-- [Home](${siteConfig.url}/): Two services: AI workflow automation (sprint, pilot, run) and fractional or interim AI leadership.
+- [Home](${siteConfig.url}/): AI workflow automation (audit, pilot, run), plus fractional or interim AI leadership.
 - [Insights](${siteConfig.url}/insights): Practical guides for AI enablement, readiness, adoption, governance, workflow automation, document processing, product data enrichment, and market monitoring.
 - [Contact](${siteConfig.url}/#contact): Discuss a workflow to automate or fractional or interim AI leadership.
 - [Privacy Notice](${siteConfig.url}/privacy): How enquiry data is handled.

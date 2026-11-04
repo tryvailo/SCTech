@@ -76,10 +76,10 @@ export default function Image() {
 
         <div style={{ position: "relative", display: "flex", flexDirection: "column" }}>
           <div style={{ maxWidth: 940, fontSize: 68, lineHeight: 0.98, letterSpacing: -2 }}>
-            Find where AI pays off. Then automate it or lead it.
+            Turn repetitive operations into reliable AI workflows.
           </div>
           <div style={{ marginTop: 28, maxWidth: 760, fontSize: 30, lineHeight: 1.35, color: "rgba(248,250,252,0.82)" }}>
-            AI workflow automation and fractional or interim AI leadership for UK and US teams.
+            AI workflow automation for UK and US operations teams, with fractional AI leadership when you need it.
           </div>
         </div>
       </div>
