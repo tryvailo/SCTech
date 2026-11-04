@@ -6,28 +6,27 @@ import { useReveal } from "@/hooks/use-reveal"
 const principles = [
   {
     title: "Start small",
-    description: "One workflow or one leadership engagement, with a clear scope and a metric agreed up front.",
+    description: "One workflow or one engagement, with a clear metric.",
   },
   {
     title: "Controls before autonomy",
-    description: "Source boundaries, human review and audit trails come first. Autonomy grows with evidence.",
+    description: "Human review first, autonomy as evidence grows.",
   },
   {
     title: "Your systems, your data",
-    description: "We work inside your tools and environment, not a black box of ours.",
+    description: "We work inside your tools.",
   },
   {
     title: "Handover by default",
-    description: "Documentation and walkthroughs so your team can run what we build.",
+    description: "Your team can run what we build.",
   },
   {
     title: "Remote by design",
-    description: "UK and US teams, async-friendly, with a fixed weekly rhythm of check-ins.",
+    description: "UK and US, with a fixed weekly rhythm.",
   },
   {
     title: "Easy to combine",
-    description:
-      "A fractional lead can scope and steer an automation project, and a project can continue under fractional leadership.",
+    description: "A lead can steer a project, a project can continue under a lead.",
   },
 ]
 
@@ -81,6 +80,15 @@ export function HowWeWorkSection() {
           }`}
           style={{ transitionDelay: "650ms" }}
         >
+          <p className="mb-4 text-sm text-foreground/85 md:text-base">
+            <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-foreground/60 md:text-xs">
+              Sectors we know
+            </span>
+            <span className="mt-1 block">
+              E-commerce and marketplaces · B2B SaaS · Retail tech · Document-heavy operations (logistics, insurance,
+              professional services)
+            </span>
+          </p>
           <Link
             href="/insights/ai-readiness-assessment"
             className="font-mono text-xs text-foreground/70 underline underline-offset-4 transition-colors hover:text-foreground md:text-sm"

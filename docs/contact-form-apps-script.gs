@@ -11,7 +11,9 @@
  *   2. Deploy → New deployment → Web app. Execute as: Me. Who has access: Anyone.
  *   3. Copy the web app URL (ends with /exec) into Vercel → sc-tech → Settings →
  *      Environment Variables → CONTACT_WEBHOOK_URL (Production), then redeploy.
- *   4. Optional: Script properties → NOTIFY_EMAIL = address to notify.
+ *   4. In the editor, choose the "authorize" function and press Run once: approve the permissions.
+ *      You should get a test email and a "Setup check" row in the sheet.
+ *   5. Optional: Script properties → NOTIFY_EMAIL = address to notify.
  */
 
 var SHEET_NAME = "Enquiries";
@@ -88,4 +90,13 @@ function sendNotification(data) {
 
 function respond(result) {
   return ContentService.createTextOutput(JSON.stringify(result)).setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * Run once from the Apps Script editor (Run → authorize) to grant permissions.
+ * Creates the sheet header and sends a test email to the script owner.
+ */
+function authorize() {
+  saveRow({ submittedAt: new Date().toISOString(), interest: "unsure", name: "Setup check", email: "setup@example.com", message: "Authorization test" });
+  sendNotification({ interest: "unsure", name: "Setup check", email: Session.getEffectiveUser().getEmail(), message: "If you can read this, website enquiries will reach this inbox." });
 }

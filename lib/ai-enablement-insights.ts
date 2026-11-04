@@ -63,7 +63,7 @@ export const aiEnablementInsights: Insight[] = [
     description:
       "A practical definition of AI enablement, the capabilities it includes, and how to turn disconnected pilots into governed, adopted workflows.",
     seoDescription:
-      "Learn what AI enablement means, how it differs from AI strategy, training, and implementation, and what a practical 12-20 week enablement programme delivers.",
+      "Learn what AI enablement means, how it differs from AI strategy, training, and implementation, and what a practical 12–20 week enablement programme delivers.",
     category: "Operating Model",
     readingTime: "10 min read",
     publishedAt: "2026-08-19",
@@ -140,7 +140,7 @@ export const aiEnablementInsights: Insight[] = [
         ],
       },
       {
-        heading: "What a 12-20 week programme should deliver",
+        heading: "What a 12–20 week programme should deliver",
         paragraphs: [
           "A bounded programme should leave the organisation with evidence and assets, not dependence on a consultant. Exact timing depends on access, risk, and workflow complexity, but the sequence should remain visible.",
         ],
@@ -191,7 +191,7 @@ export const aiEnablementInsights: Insight[] = [
       {
         question: "How long does an AI enablement programme take?",
         answer:
-          "A focused first programme often fits within 12-20 weeks. That is enough time to establish a baseline, prioritise use cases, create minimum guardrails, deliver bounded pilots, measure results, and transfer ownership.",
+          "A focused first programme often fits within 12–20 weeks. That is enough time to establish a baseline, prioritise use cases, create minimum guardrails, deliver bounded pilots, measure results, and transfer ownership.",
       },
       {
         question: "Who should own AI enablement?",

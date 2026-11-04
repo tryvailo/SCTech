@@ -306,8 +306,9 @@ export default function Home() {
               </h1>
               <p className="mb-6 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-base leading-relaxed text-foreground/90 duration-1000 delay-200 md:mb-8 md:text-lg xl:text-xl">
                 <span className="text-pretty">
-                  We help UK and US teams find the AI use cases worth paying for. Then we build the automation, or lead the
-                  work as your fractional or interim AI lead.
+                  We help mid-sized businesses, PE-backed companies and scale-ups find the AI use cases worth paying for.
+                  Then we turn them into measurable results: we build the automation, or lead the work as your fractional or
+                  interim AI lead.
                 </span>
               </p>
               <div className="hidden animate-in fade-in duration-1000 delay-500 lg:block">
@@ -327,14 +328,13 @@ export default function Home() {
                     label: "01 · Automation",
                     title: "Automate a workflow",
                     description:
-                      "Support, documents, product data and reporting, from audit to a running system in weeks.",
+                      "Support, documents, product data and reporting, live in weeks.",
                     target: 1,
                   },
                   {
                     label: "02 · Leadership",
                     title: "Bring in AI leadership",
-                    description:
-                      "A fractional or interim AI lead who picks the right use cases, steers automation and AI products, and gets them shipped.",
+                    description: "A fractional or interim AI lead who gets AI shipped.",
                     target: 2,
                   },
                 ].map((door) => (
@@ -362,14 +362,15 @@ export default function Home() {
                   </button>
                 ))}
               </div>
-              <p className="mt-4 text-xs text-foreground/80 md:text-sm lg:hidden">
-                Not sure which you need?{" "}
+              <p className="mt-4 text-xs leading-relaxed text-foreground/80 md:text-sm">
+                <span className="text-foreground">Not sure where to start?</span> Begin with a 2–4 week AI Opportunity
+                Sprint.{" "}
                 <button
                   type="button"
                   onClick={() => scrollToSection(4)}
-                  className="underline underline-offset-4 transition-colors hover:text-foreground"
+                  className="underline underline-offset-4 transition-colors hover:text-foreground lg:hidden"
                 >
-                  Book a 30-minute call.
+                  Book a call.
                 </button>
               </p>
             </div>

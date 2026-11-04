@@ -122,9 +122,9 @@ const jsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Workflow automation audit",
-              serviceType: "AI workflow automation",
-              description: "A 1–2 week assessment of one operational workflow: volumes, systems, success metric and expected return.",
+              name: "AI Opportunity Sprint",
+              serviceType: "AI opportunity and readiness assessment",
+              description: "A 2–4 week fixed-scope sprint: where AI will pay off, ranked use cases, a 90-day plan and the risks to manage.",
             },
           },
           {
@@ -133,7 +133,7 @@ const jsonLd = {
               "@type": "Service",
               name: "Workflow automation pilot",
               serviceType: "AI workflow automation",
-              description: "A 3–6 week build on real data with human review, measured against the baseline.",
+              description: "A 3–6 week hands-on build on real data with human review, measured against the baseline.",
             },
           },
           {
@@ -207,7 +207,7 @@ const jsonLd = {
       areaServed: ["US", "GB"],
       audience: {
         "@type": "BusinessAudience",
-        audienceType: "US and UK mid-market leadership, operations, customer support, product, and transformation teams",
+        audienceType: "Mid-sized, PE-backed and scale-up companies in the UK and US: CEOs, COOs, founders and operating partners",
       },
     },
   ],

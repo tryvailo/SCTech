@@ -4,41 +4,29 @@ import { MagneticButton } from "@/components/magnetic-button"
 import { useReveal } from "@/hooks/use-reveal"
 
 const areas = [
-  {
-    title: "Customer support & feedback",
-    description: "Triage, routing, draft replies, QA, and insight from tickets and reviews.",
-  },
-  {
-    title: "Documents & back office",
-    description: "Inboxes, PDFs, orders and invoices turned into validated records.",
-  },
-  {
-    title: "Product data & catalogue",
-    description: "Attribute enrichment, image checks and approved updates for PIM or ecommerce.",
-  },
-  {
-    title: "Reporting & decision support",
-    description: "Evidence-linked summaries, monitoring and alerts.",
-  },
+  { title: "Customer support & feedback" },
+  { title: "Documents & back office" },
+  { title: "Product data & catalogue" },
+  { title: "Reporting & decision support" },
 ]
 
 const steps = [
   {
     number: "01",
-    title: "Audit",
-    description: "Map the workflow, volumes and systems. Agree the metric and the expected return.",
-    timing: "1–2 weeks",
+    title: "Opportunity Sprint",
+    description: "Find the workflows worth automating and the expected return.",
+    timing: "2–4 weeks",
   },
   {
     number: "02",
     title: "Pilot",
-    description: "Build on real data with human review, measured against the baseline.",
+    description: "Built on real data, with human review.",
     timing: "3–6 weeks",
   },
   {
     number: "03",
     title: "Run & improve",
-    description: "Monitoring, fixes and improvements on a monthly plan, or a full handover to your team.",
+    description: "Monthly support, or a full handover.",
     timing: "Ongoing",
   },
 ]
@@ -83,8 +71,7 @@ export function AutomationSection({ scrollToSection }: { scrollToSection: (index
                     <div className="h-px w-6 bg-foreground/30 transition-all duration-300 group-hover:w-10 group-hover:bg-foreground/50" />
                     <span className="font-mono text-xs text-foreground/60">0{index + 1}</span>
                   </div>
-                  <h3 className="mb-1 font-sans text-base font-light text-foreground md:text-lg">{area.title}</h3>
-                  <p className="max-w-sm text-xs leading-relaxed text-foreground/80 md:text-sm">{area.description}</p>
+                  <h3 className="font-sans text-base font-light text-foreground md:text-lg">{area.title}</h3>
                 </div>
               ))}
             </div>
@@ -114,9 +101,8 @@ export function AutomationSection({ scrollToSection }: { scrollToSection: (index
               ))}
             </div>
 
-            <p className="mt-5 max-w-xl font-mono text-[10px] leading-relaxed text-foreground/60 md:text-xs">
-              Built with n8n, LLMs and your existing systems via API · can run in your own environment when data needs to
-              stay with you
+            <p className="mt-5 max-w-xl text-sm text-foreground/85 md:text-base">
+              Hands-on: we build the first pilot ourselves, with n8n, LLMs and your systems.
             </p>
             <div className="mt-5">
               <MagneticButton size="lg" variant="primary" onClick={() => scrollToSection(4)}>

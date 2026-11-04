@@ -6,7 +6,7 @@ export const siteConfig = {
   url: siteUrl,
   title: "AI Workflow Automation & Fractional AI Leadership | SmartCore",
   description:
-    "SmartCore helps UK and US teams find AI use cases that pay off, then automate operational workflows or lead AI programmes and products as a fractional or interim AI lead.",
+    "SmartCore helps mid-sized, PE-backed and scale-up companies in the UK and US find AI use cases that pay off, then automate operational workflows or lead AI programmes as a fractional or interim AI lead.",
   email: "partnerships@smartcoretech.co.uk",
   privacyUpdatedAt: "2026-07-30",
   experts: {
@@ -43,7 +43,10 @@ export const siteConfig = {
   keywords: [
     "fractional AI lead",
     "fractional AI leadership",
+    "fractional head of AI UK",
+    "fractional chief AI officer",
     "interim head of AI",
+    "AI opportunity sprint",
     "AI use case discovery",
     "AI automation consulting",
     "AI automation services",
